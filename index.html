@@ -5,23 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SGSA Construction</title>
   <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .font-archivo {
+      font-family: 'Archivo', sans-serif;
+    }
+  </style>
 </head>
-<body>
+<body class="font-archivo pb-20">
  
-  <div class="relative">
+  <div class="relative mb-20">
     <!-- Navbar -->
     <nav class="absolute top-[40px] left-0 right-0 z-10 bg-opacity-95 ">
-      <div class=" max-w-7xl mx-auto  sm:px-6 ">
+      <div class=" max-w-6xl mx-auto   ">
         <div class="flex justify-between items-center h-20">
           <!-- Logo -->
           <div class="flex-shrink-0">
             <a href="#" class="flex items-center">
-              <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" class="h-[90px]">
+              <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" class="h-[80px]">
             </a>
           </div>
 
           <!-- Navigation Links -->
-          <div class="hidden md:flex space-x-10">
+          <div class="hidden md:flex space-x-10 font-archivo">
             <a href="#home" class="text-white hover:text-sky-400 text-xl font-medium transition duration-300">Home</a>
             <a href="#about" class="text-white hover:text-sky-400 text-xl font-medium transition duration-300">About</a>
             <a href="#services" class="text-white hover:text-sky-400 text-xl font-medium transition duration-300">Services</a>
@@ -57,8 +65,8 @@
 
     <!-- Overlay -->
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-     <div class="absolute bottom-20 left-0 right-0 text-white px-4 sm:px-6 lg:px-8">
-      <div class="max-w-7xl mx-auto">
+     <div class="absolute bottom-24 left-0 right-0 text-white px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
         <div class="text-[75px] sm:text-5xl font-light  lg:text-[75px] leading-tight mb-8">
           Built on <span class="font-semibold">Experience</span>. <br>
           Driven by Your <span class="font-semibold"> Vision</span>. <br>
@@ -71,6 +79,50 @@
     </div>
   </div>
 
+  <!-- About Section -->
+  <div class="max-w-7xl mx-auto">
+    <div class="flex justify-between items-center s">
+    <div class="text-[18px] border-l-4 border-sky-500 pl-7">
+    <span class="text-[44px]  font-semibold leading-tight">
+      <span class="text-sky-500">Over 50 Years</span> of Expertise in <br> Property and Construction <br>
+    </span>
+    <div class="text-gray-500 mt-7">
+      Since 1972, TA Corporation has earned a strong reputation <br> with public agencies, municipalities, and private clients as <br> a leading construction and property development group <br> in Singapore and across the region. <br> <div class="mt-7">
+        Beyond our core role as a contractor, we have <span class="text-sky-500">
+          the expertise <br> to manage and support
+        </span> Pre-Construction Activities, <br> Design-Build, Design-Build-Assist, and Alternative <br> Delivery Method projects.
+      </div>
+    </div>
+    <button class="font-archivo text-[15px] font-light border border-sky-500 p-3 rounded-md px-7 mt-7 hover:bg-sky-500 hover:text-white ">ABOUT THE COMPANY</button>
+    </div>
+    <div>
+      <img class="w-[500px] h-[500px] rounded-3xl shadow-2xl object-cover" src="images/7.jpeg" alt="Construction Excellence">
+    </div>
+  </div>
+  </div>
+
+  <!-- Services -->
+  <div class="relative mt-[100px]">
+<!-- Hero Image -->
+    <img class="max-h-[500px] w-full object-cover" src="images/construction-site.jpg" alt="Construction Site">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gray-900  bg-opacity-95"></div>
+    <div class="absolute inset-0 text-white flex justify-center w-full items-center ">
+      <div class=" flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
+        <div class="text-3xl sm:text-5xl lg:text-5xl font-light leading-tight text-center mb-8">
+          Safety-Driven Excellence
+        </div>
+        <div class="text-lg text-gray-400 sm:text-xl lg:text-1xl text-center max-w-3xl">
+          We uphold the <span class="text-sky-500">highest standards</span> of project execution while maintaining an unwavering commitment to safety. Our safety culture empowers every employee to take ownership and act responsibly, with the ultimate goal of zero accidents. This commitment extends beyond our team and subcontractors to protect the safety of the general public impacted by our construction activities.
+        </div>
+        <button class="hover:bg-sky-600  text-white font-medium px-8 mt-6 py-3 border border-sky-600 rounded-lg transition duration-300 shadow-lg">OUR SERVICES</button>
+      </div>
+     <div>
+      <img class=" w-[500px] h-[400px] rounded-3xl shadow-2xl " src="images/Brown-Minimalist-Interior-Design-Photo-Collage-3.png" alt="">
+     </div>
+    </div>
+  </div>
   <script>
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
