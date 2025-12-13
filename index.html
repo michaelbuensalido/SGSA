@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SGSA Construction</title>
+  <title>SGSA Construction - Leading Construction Company in Singapore</title>
+  <meta name="description" content="SGSA Construction is Singapore's leading construction company with over 50 years of experience. We specialize in residential, commercial, and infrastructure projects with a commitment to safety and quality.">
   <script src="https://cdn.tailwindcss.com"></script>
    <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,7 +71,7 @@
 </head>
 <body class="font-archivo ">
  
-  <div class="relative mb-20">
+  <div class="relative mb-30">
     <!-- Navbar -->
     <nav id="navbar" class="fixed z-20 top-0 left-0 right-0 z-10 pb-[24px] pt-[24px]">
             <div class="max-w-6xl mx-auto">
@@ -78,19 +79,39 @@
                     <!-- Logo -->
                     <div class="flex-shrink-0">
                         <a href="#" class="flex items-center">
-                            <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" class="h-[80px]">
+                            <img class="w-[230px] " src="images/logo_new-removebg-preview.png" alt="">
                         </a>
                     </div>
 
                     <!-- Navigation Links -->
-                    <div class="hidden md:flex space-x-10 font-archivo">
-                        <a href="index.html" class="nav-link text-white hover:text-sky-400 text-md  font-medium transition duration-300">HOME</a>
+                    <div class="hidden md:flex space-x-10 font-archivo items-center">
+                        <a href="#home" class="nav-link text-white hover:text-sky-400 text-md  font-medium transition duration-300">HOME</a>
                         <a href="#about" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">ABOUT</a>
-                        <a href="#services" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">SERVICES</a>
-                        <a href="#projects" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">PROJECTS</a>
-                        <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">CONTACT US</a>
+                        
+                        <!-- Services Dropdown -->
+                        <div class="relative group">
+                            <button class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1">
+                                SERVICES
+                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                                </svg>
+                            </button>
+                            
+                            <!-- Dropdown Menu -->
+                            <div class="absolute left-0 mt-0 w-48 bg-white text-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <a href="#services" class="block px-4 py-3 hover:bg-gray-100 hover:text-sky-600 font-medium transition duration-300 rounded-t-md">All Services</a>
+                                <a href="#services" class="block px-4 py-3 hover:bg-gray-100 hover:text-sky-600 font-medium transition duration-300 border-t border-gray-200">Handyman Services</a>
+                                <a href="#services" class="block px-4 py-3 hover:bg-gray-100 hover:text-sky-600 font-medium transition duration-300 border-t border-gray-200 rounded-b-md">Renovation</a>
+                            </div>
+                        </div>
+                        
+                        <a href="#gallery" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">GALLERY</a>
+                        <a href="#contact" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">CONTACT</a>
+                        
                     </div>
-
+                    <div><a href="tel:+6560254678" class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">
+                            📞 Call Now
+                        </a></div>
                     <!-- Mobile Menu Button -->
                     <div class="md:hidden">
                         <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none">
@@ -105,80 +126,175 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
                 <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="index.html" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Home</a>
+                    <a href="#home" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Home</a>
                     <a href="#about" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">About</a>
-                    <a href="#services" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Services</a>
-                    <a href="#projects" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Projects</a>
-                    <a href="contacts.html" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Contact Us</a>
+                    
+                    <!-- Mobile Services Dropdown -->
+                    <div class="px-3 py-2">
+                        <button id="mobile-services-btn" class="w-full text-left text-gray-800 hover:text-sky-600 font-medium flex items-center justify-between">
+                            Services
+                            <svg id="mobile-services-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-services-menu" class="hidden mt-2 space-y-1 pl-3 border-l-2 border-sky-400">
+                            <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">All Services</a>
+                            <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Handyman Services</a>
+                            <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Renovation</a>
+                        </div>
+                    </div>
+                    
+                    <a href="#gallery" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Gallery</a>
+                    <a href="#contact" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Contact</a>
+                    <a href="tel:+6560254678" class="block px-3 py-2 bg-red-600 text-white hover:bg-red-700 font-bold rounded transition duration-300">📞 Call Now</a>
                 </div>
             </div>
         </nav>
 
-    <!-- Hero Image -->
-    <img class="h-[1000px] w-full object-cover" src="images/construction-site.jpg" alt="Construction Site">
+  <!-- Floating WhatsApp CTA Button -->
+  <a href="https://wa.me/6586955055?text=Hi%20SGSA%20Construction%20%7C%20I%20need%20handyman%20services" target="_blank" rel="noopener noreferrer" class="fixed bottom-20 right-6 z-40 group">
+    <div class="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 mb-5 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center w-16 h-16 hover:scale-110">
+      <svg fill="#ffffff" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>whatsapp</title> <path d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z"></path> </g></svg>
+    </div>
+    <div class="absolute bottom-20 right-0 bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap text-sm font-medium">
+      Chat on WhatsApp
+    </div>
+  </a>
 
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-     <div class="absolute bottom-24 left-0 right-0 text-white px-4 sm:px-6 lg:px-8">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-[75px] sm:text-5xl font-thin lg:text-[75px] leading-tight mb-8">
-          Built on <span class="font-semibold">Experience</span>. <br>
-          Driven by Your <span class="font-semibold"> Vision</span>. <br>
-          <span class="font-semibold">Trusted</span> by all.
-        </div>
-        <button class="bg-sky-600 hover:bg-white text-white hover:text-sky-600 font-semibold px-8 mt-6 py-3 rounded-lg transition duration-300 shadow-lg">
-          Learn More
+  <!-- Hero Section -->
+  <div class="relative min-h-screen bg-gradient-to-br from-cyan-50 via-white to-cyan-100 flex items-center justify-center px-4 sm:px-6 lg:px-8  pt-20  ">
+    <!-- Hero Background Image -->
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat h-[900px] " style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');"></div>
+<div class="absolute inset-0 bg-black h-[900px] bg-opacity-30"></div>
+    <!-- Content Overlay -->
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <!-- Main Headline -->
+      <div class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+        Reliable Handyman & Renovation <br>
+        <span class="text-cyan-500">Services in Singapore</span>
+      </div>
+
+      <!-- Subheading -->
+      <div class="text-xl sm:text-2xl lg:text-3xl font-light mb-8 text-white">
+        Fast, affordable, and professional home repair solutions
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+        <button class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-4 rounded-lg transition duration-300 shadow-lg text-lg">
+          Get a Free Quote
         </button>
+        <a href="tel:+6586955055" class="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-500 hover:text-white font-semibold px-8 py-4 rounded-lg transition duration-300 text-lg">
+          📞 Call Now / WhatsApp Us
+        </a>
       </div>
-    </div>
-  </div>
 
-  <!-- About Section -->
-  <div class="max-w-7xl mx-auto">
-    <div class="flex justify-between items-center s">
-    <div class="text-[18px] border-l-4 border-sky-500 pl-7">
-    <span class="text-[44px]  font-semibold leading-tight">
-      <span class="text-sky-500">Over 50 Years</span> of Expertise in <br> Property and Construction <br>
-    </span>
-    <div class="text-gray-500 mt-7">
-      Since 1972, TA Corporation has earned a strong reputation <br> with public agencies, municipalities, and private clients as <br> a leading construction and property development group <br> in Singapore and across the region. <br> <div class="mt-7">
-        Beyond our core role as a contractor, we have <span class="text-sky-500">
-          the expertise <br> to manage and support
-        </span> Pre-Construction Activities, <br> Design-Build, Design-Build-Assist, and Alternative <br> Delivery Method projects.
-      </div>
-    </div>
-    <button class="font-archivo text-[15px] font-light border border-sky-500 p-3 rounded-md px-7 mt-7 hover:bg-sky-500 hover:text-white ">ABOUT THE COMPANY</button>
-    </div>
-    <div>
-      <img class="w-[500px] h-[500px] rounded-3xl shadow-2xl object-cover" src="images/7.jpeg" alt="Construction Excellence">
-    </div>
-  </div>
-  </div>
-
-  <!-- Services -->
-  <div class="relative mt-[100px]">
-<!-- Hero Image -->
-    <img class="max-h-[500px] w-full object-cover" src="images/construction-site.jpg" alt="Construction Site">
-
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-gray-900  bg-opacity-95"></div>
-    <div class="absolute inset-0 text-white flex justify-center w-full items-center ">
-      <div class=" flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8">
-        <div class="text-3xl sm:text-5xl lg:text-5xl font-light leading-tight text-center mb-8">
-          Safety-Driven Excellence
+      <!-- Trust Elements -->
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center text-lg">
+        <!-- Google Rating -->
+        <div class="flex items-center gap-2">
+          <div class="flex text-yellow-400">
+            ⭐⭐⭐⭐⭐
+          </div>
+          <span class="text-white">Google Rating</span>
         </div>
-        <div class="text-lg text-gray-400 sm:text-xl lg:text-1xl text-center max-w-3xl">
-          We uphold the <span class="text-sky-500">highest standards</span> of project execution while maintaining an unwavering commitment to safety. Our safety culture empowers every employee to take ownership and act responsibly, with the ultimate goal of zero accidents. This commitment extends beyond our team and subcontractors to protect the safety of the general public impacted by our construction activities.
+
+        <!-- Years Experience -->
+        <div class="flex items-center gap-2">
+          <span class="bg-cyan-500 text-white px-3 py-1 rounded-full text-sm font-semibold">3+ Years</span>
+          <span class="text-white">Experience</span>
         </div>
-        <button class="hover:bg-sky-600  text-white font-medium px-8 mt-6 py-3 border border-sky-600 rounded-lg transition duration-300 shadow-lg">OUR SERVICES</button>
+
+        <!-- Licensed & Insured -->
+        <div class="flex items-center gap-2">
+          <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">✓ Licensed</span>
+          <span class="text-white">& Insured</span>
+        </div>
       </div>
-     <div>
-      <img class=" w-[500px] h-[450px] rounded-2xl shadow-2xl " src="images/Brown-Minimalist-Interior-Design-Photo-Collage-3.png" alt="">
-     </div>
     </div>
   </div>
 
- <section class="max-w-7xl mx-auto mt-20 mb-20">
+  <!-- Services Section -->
+  <section class="pb-10 mt-[-3px] bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      
+        
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+
+        <!-- Handyman Services -->
+        <div class="bg-white overflow-hidden border-4 border-t-red-600 shadow-xl">
+          <div class="relative h-53 bg-red-600 overflow-hidden">
+            <div class="h-53 bg-cover bg-center" >
+              <img src="images/image copy.png" alt="">
+            </div>
+            <div class="absolute top-4 left-4 bg-white rounded-lg p-3 shadow-lg">
+              <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="p-8 text-center">
+            <h3 class="text-2xl font-bold text-black mb-4">Handyman Services</h3>
+            <p class="text-gray-700 mb-6 leading-relaxed">General repairs, maintenance, and fixes for your home. From door repairs to shelf installation, we've got you covered.</p>
+            <button class="text-blue-600 font-bold px-6 py-2 mt-12 flex items-center gap-2">
+              View More <span class="text-lg">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Renovation -->
+        <div class="bg-white overflow-hidden border-4 border-t-blue-600 shadow-xl">
+          <div class="relative h-55 bg-blue-600 overflow-hidden">
+            <div class="h-55 bg-cover bg-center" > <img src="images/works.png" alt=""></div>
+            <div class="absolute top-4 left-4 bg-white rounded-lg p-3 shadow-lg">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="p-8 text-center">
+            <h3 class="text-2xl font-bold text-black mb-4">Renovation</h3>
+            <p class="text-gray-700 mb-6 leading-relaxed">Complete home renovation services including bathroom, kitchen, room makeovers, flooring upgrades, and full property transformations.</p>
+            <button class="text-blue-600 font-bold px-6 py-2 flex items-center gap-2">
+              View More <span class="text-lg">→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Electrical & Plumbing -->
+        <div class="bg-white overflow-hidden border-4 border-t-black shadow-xl">
+          <div class="relative h-55 bg-black overflow-hidden">
+            <div class="h-55 bg-cover bg-center" ><img src="images/Brown-Minimalist-Interior-Design-Photo-Collage-3.png" alt=""></div>
+            <div class="absolute top-4 left-4 bg-white rounded-lg p-3 shadow-lg">
+              <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="p-8 text-center">
+            <h3 class="text-2xl font-bold text-black mb-4">Electrical & Plumbing</h3>
+            <p class="text-gray-700 mb-6 leading-relaxed">Licensed electrical work and plumbing services including installations, repairs, and safety inspections. this too.</p>
+            <button class="text-blue-600 font-bold px-6 mt-12 py-2 flex items-center gap-2">
+              View More <span class="text-lg">→</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- View All Services Button -->
+      <div class="text-center mt-12">
+        <a href="#contact" class="inline-block bg-red-600 text-white font-bold px-8 py-3 shadow-lg">
+          View All Services →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-7xl mx-auto mt-20 mb-20">
         <div class="text-center mb-12">
           <p class="text-lg text-red-600 font-light">SGSA CONSTRUCTION COMPANY</p>
           <h1 class="text-4xl font-bold text-sky-900 mb-3">Empowering Vision through Action</h1>
@@ -214,7 +330,7 @@
                     <div class="project-title">
                         <h3 class="text-white text-xl font-bold">Sentosa</h3>
                         <p class="text-gray-300">Resort</p>
-                    </div>
+                        </div>
                 </div>
             </div>
             
@@ -249,9 +365,222 @@
         </div>
 
     </section>
+  
+  <section class="bg-gray-50 pt-20">
+    <!-- About Section -->
+  <div class="max-w-7xl mx-auto">
+    <div class="flex justify-between items-center s">
+    <div class="text-[18px] border-l-4 border-cyan-500 pl-7">
+    <span class="text-[44px]  font-semibold leading-tight">
+      <span class="text-cyan-500">Over 50 Years</span> of Expertise in <br> Property and Construction <br>
+    </span>
+    <div class="text-gray-500 mt-7">
+      Since 1972, TA Corporation has earned a strong reputation <br> with public agencies, municipalities, and private clients as <br> a leading construction and property development group <br> in Singapore and across the region. <br> <div class="mt-7">
+        Beyond our core role as a contractor, we have <span class="text-cyan-500">
+          the expertise <br> to manage and support
+        </span> Pre-Construction Activities, <br> Design-Build, Design-Build-Assist, and Alternative <br> Delivery Method projects.
+      </div>
+    </div>
+    <button class="font-archivo text-[15px] font-light border border-cyan-500 p-3 rounded-md px-7 mt-7 hover:bg-cyan-500 hover:text-white ">ABOUT THE COMPANY</button>
+    </div>
+    <div>
+      <!-- about image -->
+      <img class="w-[500px] h-[500px] rounded-3xl shadow-2xl object-cover" src="images/fotos-k72xVjAmVHE-unsplash.jpg" alt="Professional Handyman Services">
+    </div>
+  </div>
+  </div>
+
+  <!-- Statistics Section -->
+  <div class="mt-20 pt-10 pb-16 ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Stat 1: Years of Experience -->
+        <div class="text-center">
+          <div class="mb-4">
+            <h1 class="text-6xl font-bold text-blue-600">
+              <span class="stat-counter" data-target="4">0</span>+
+            </h1>
+          </div>
+          <div class="text-lg font-semibold text-black">Years of Experience</div>
+          
+        </div>
+
+        <!-- Stat 2: Clients Served -->
+        <div class="text-center">
+          <div class="mb-4">
+            <h1 class="text-6xl font-bold text-blue-600">
+              <span class="stat-counter" data-target="1000">0</span>+
+            </h1>
+          </div>
+          <div class="text-lg font-semibold text-black">Happy Clients</div>
+          
+        </div>
+
+        <!-- Stat 3: Projects Completed -->
+        <div class="text-center">
+          <div class="mb-4">
+            <h1 class="text-6xl font-bold text-blue-600">
+              <span class="stat-counter" data-target="3250">0</span>+
+            </h1>
+          </div>
+          <div class="text-lg font-semibold text-black">Projects Completed</div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- Call-To-Action Section -->
+  <section class="py-20 bg-gradient-to-r from-red-600 to-red-700 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -mr-48 -mt-48"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full -ml-48 -mb-48"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <!-- CTA Header -->
+      <h2 class="text-4xl sm:text-5xl font-bold text-white mb-4">Need Repairs or Renovation Today?</h2>
+      <p class="text-xl text-red-50 mb-8">Get a Free Quote in 24 Hours</p>
+      <p class="text-lg text-red-100 mb-12 max-w-2xl mx-auto">Our team is ready to help you transform your home. Contact us today for a professional assessment with zero obligation.</p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <!-- Primary CTA -->
+        <a href="#contact" class="inline-block bg-white text-red-600 font-bold px-10 py-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-lg">
+          Get a Free Quote
+        </a>
+
+        <!-- Secondary CTA -->
+        <a href="https://wa.me/6560254678?text=Hi%20SGSA%20Construction%20%7C%20I%20need%20handyman%20services" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-10 py-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-lg flex items-center gap-2">
+          💬 Chat on WhatsApp
+        </a>
+      </div>
+
+      <!-- Trust Badge -->
+      <div class="mt-12 pt-8 border-t border-red-500 border-opacity-30">
+        <p class="text-red-100 text-sm mb-3">✓ Trusted by Over 1,000 Happy Clients in Singapore</p>
+        <div class="flex justify-center items-center gap-2">
+          <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <span class="text-red-50 font-semibold">5.0 Rating (Based on Real Customer Reviews)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+    <!-- Customer Testimonials Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-black mb-4">Customer Testimonials</h2>
+        <p class="text-xl text-gray-700 max-w-2xl mx-auto">Hear from our satisfied customers who have trusted us with their home repair and renovation needs</p>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Testimonial 1 -->
+        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-red-600">
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              ★★★★★
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4 italic">"Excellent service! The team fixed my plumbing issues quickly and professionally. Highly recommended for anyone looking for reliable home repair services."</p>
+          <div>
+            <p class="font-bold text-black">Shohan</p>
+            <p class="text-gray-600 text-sm">Singapore</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-blue-600">
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              ★★★★★
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4 italic">"My kitchen renovation was completed on time and within budget. The team was professional, courteous, and the workmanship was outstanding."</p>
+          <div>
+            <p class="font-bold text-black">Ayesha Mredha</p>
+            <p class="text-gray-600 text-sm">Singapore</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-black">
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              ★★★★★
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4 italic">"I appreciated the transparent pricing and free consultation. No hidden charges, and the work quality exceeded my expectations. Thank you!"</p>
+          <div>
+            <p class="font-bold text-black">Baten Bhhuiyan</p>
+            <p class="text-gray-600 text-sm">Singapore</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-red-600">
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              ★★★★★
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4 italic">"The electrical work was completed safely and professionally. I felt confident having licensed technicians handle such an important project."</p>
+          <div>
+            <p class="font-bold text-black">Nazrul Islam</p>
+            <p class="text-gray-600 text-sm">Singapore</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-blue-600">
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              ★★★★★
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4 italic">"Fantastic handyman service! They completed multiple tasks around my house efficiently and left everything clean. Best investment for my home!"</p>
+          <div>
+            <p class="font-bold text-black">Sheikhforid</p>
+            <p class="text-gray-600 text-sm">Singapore</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 6 -->
+        <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-black">
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              ★★★★★
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4 italic">"Professional, reliable, and punctual. They communicated every step of the process. Would definitely hire them again for future projects."</p>
+          <div>
+            <p class="font-bold text-black">Mehedi Hasan</p>
+            <p class="text-gray-600 text-sm">Singapore</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Button -->
+      <div class="text-center mt-12">
+        <a href="https://www.google.com/search?client=safari&hs=81xo&sca_esv=ee636c63b9ed21ff&rls=en&sxsrf=AE3TifMvHrD1e_8kZCsSZ1dnA8nd90wS4g:1765595564130&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E2oPRAqHnyV5wKFy0qwDu8R82wrgS3IESsw4aNzl9gAPkBq-bvJbEY2tklRL-CXWB_5aTVOGh7x2hJvdEhBImGFNI_MG85R0Jrn0zVMqszodGK5W5g%3D%3D&q=SGSA+Construction+PTE.+LTD.+Reviews&sa=X&ved=2ahUKEwjj16qDzLmRAxVQTWwGHfQ-EowQ0bkNegQIJRAE&biw=1440&bih=810&dpr=2" class="inline-block bg-red-600 text-white font-bold px-8 py-3 shadow-lg">
+          Share Your Experience →
+        </a>
+      </div>
+    </div>
+  </section>
 
 
-     <section class=" bg-gray-50">
+     <section class="">
         <!-- Section Header -->
        <div class="max-w-7xl mx-auto py-20">
          
@@ -260,7 +589,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
             <!-- Column 1: Contact Details -->
             <div class=" rounded-lg  p-8">
-                <h3 class="text-2xl font-bold  mb-6 text-red-600 pb-3">Contact Details</h3>
+                <h3 class="text-2xl font-bold  mb-6 text-cyan-600 pb-3">Contact Details</h3>
                 
                 <!-- Phone -->
                 <div class="mb-6">
@@ -272,8 +601,8 @@
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-900 mb-1">Phone</h4>
-                            <p class="text-gray-600">+65 1234 5678</p>
-                            <p class="text-gray-600">+65 8765 4321</p>
+                            <p class="text-gray-600">+6560254678</p>
+                            <p class="text-gray-600">+6591758912</p>
                         </div>
                     </div>
                 </div>
@@ -288,7 +617,7 @@
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-900 mb-1">Email</h4>
-                            <p class="text-gray-600">info@sgsa.com</p>
+                            <p class="text-gray-600">sgsaconstruction@gmail.com</p>
                             <p class="text-gray-600">contact@sgsa.com</p>
                         </div>
                     </div>
@@ -305,8 +634,8 @@
                         </div>
                         <div>
                             <h4 class="font-semibold text-gray-900 mb-1">Address</h4>
-                            <p class="text-gray-600">123 Construction Avenue</p>
-                            <p class="text-gray-600">Singapore 123456</p>
+                            <p class="text-gray-600">45 Handyman Street</p>
+                            <p class="text-gray-600">Singapore 238455</p>
                         </div>
                     </div>
                 </div>
@@ -316,7 +645,7 @@
 
             <!-- Column 2: Office Hours -->
             <div class="rounded-lg  p-8">
-                <h3 class="text-2xl font-bold text-red-600 mb-6  pb-3">Office Hours</h3>
+                <h3 class="text-2xl font-bold text-cyan-600 mb-6  pb-3">Office Hours</h3>
                 
                 <div class="space-y-4">
                     <!-- Weekdays -->
@@ -356,7 +685,7 @@
                 <!-- Map Container -->
                 <div class="relative h-[400px] bg-gray-200 rounded-lg overflow-hidden mb-4">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127641.38049918616!2d103.70415279453126!3d1.3143393999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da11238a8b9375%3A0x887869cf52abf5c4!2sSingapore!5e0!3m2!1sen!2ssg!4v1234567890123!5m2!1sen!2ssg" 
+                        src="https://www.google.com/maps?q=Jalan%20Besar%20Plaza%20Singapore&output=embed" 
                         width="100%" 
                         height="100%" 
                         style="border:0;" 
@@ -368,7 +697,7 @@
                 </div>
 
                 <!-- Directions Button -->
-                <a href="https://maps.google.com/?q=Singapore" target="_blank" class="block w-full bg-sky-500 hover:bg-sky-600 text-white text-center font-semibold py-3 rounded-lg transition duration-300 mb-4">
+                <a href="https://www.google.com/maps/place/Jalan+Besar+Plaza/@1.3087498,103.8554413,17z/data=!3m2!4b1!5s0x31da19b7d302ddb1:0xc553616783af60d6!4m6!3m5!1s0x31da19e1d186e02d:0x2242714927df7e83!8m2!3d1.3087498!4d103.8580162!16s%2Fg%2F11g3hfdb5q?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" target="_blank" class="block w-full bg-sky-500 hover:bg-sky-600 text-white text-center font-semibold py-3 rounded-lg transition duration-300 mb-4">
                     Get Directions
                 </a>
 
@@ -399,20 +728,20 @@
        </div>
     </section>
 
-     <footer class=" bottom-0 bg-gray-900 text-white border-t-4 border-t-sky-600">
+     <footer class=" bottom-0 bg-gray-900 text-white border-t-4 border-t-cyan-600">
         <!-- First Row - Navigation Links -->
         <div class="border-b border-gray-700">
             <div class="max-w-7xl mx-auto px-4 py-6">
                 <nav class="flex flex-wrap justify-center md:justify-between items-center gap-6 md:gap-8 font-archivo">
-                    <a href="index.html" class="hover:text-sky-400 text-lg font-medium transition duration-300">Home</a>
-                    <span class="text-sky-600 hidden md:inline">/</span>
-                    <a href="about.html" class="hover:text-sky-400 text-lg font-medium transition duration-300">About</a>
-                    <span class="text-sky-600 hidden md:inline">/</span>
-                    <a href="services.html" class="hover:text-sky-400 text-lg font-medium transition duration-300">Services</a>
-                    <span class="text-sky-600 hidden md:inline">/</span>
-                    <a href="projects.html" class="hover:text-sky-400 text-lg font-medium transition duration-300">Projects</a>
-                    <span class="text-sky-600 hidden md:inline">/</span>
-                    <a href="contacts.html" class="hover:text-sky-400 text-lg font-medium transition duration-300">Contact Us</a>
+                    <a href="#home" class="hover:text-cyan-400 text-lg font-medium transition duration-300">Home</a>
+                    <span class="text-cyan-600 hidden md:inline">/</span>
+                    <a href="#about" class="hover:text-cyan-400 text-lg font-medium transition duration-300">About</a>
+                    <span class="text-cyan-600 hidden md:inline">/</span>
+                    <a href="#services" class="hover:text-cyan-400 text-lg font-medium transition duration-300">Services</a>
+                    <span class="text-cyan-600 hidden md:inline">/</span>
+                    <a href="#gallery" class="hover:text-cyan-400 text-lg font-medium transition duration-300">Gallery</a>
+                    <span class="text-cyan-600 hidden md:inline">/</span>
+                    <a href="#contact" class="hover:text-cyan-400 text-lg font-medium transition duration-300">Contact</a>
                 </nav>
             </div>
         </div>
@@ -486,12 +815,193 @@
             <div class="max-w-7xl mx-auto px-4 py-5">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-3">
                     <p class="text-gray-400 text-sm">&copy; 2024 SGSA Construction. All rights reserved.</p>
-                    <p class="text-gray-400 text-sm">SGSA Construction by <span class="text-sky-400 font-medium">Michael</span></p>
+                    <p class="text-gray-400 text-sm">SGSA Construction by <span class="text-cyan-400 font-medium">Michael</span></p>
                 </div>
             </div>
         </div>
     </footer>
+  <!-- Chat Widget -->
+  <div id="chat-widget" class="fixed bottom-6 right-6 z-50">
+    <button id="chat-toggle" class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full p-4 shadow-lg transition duration-300 transform hover:scale-110 flex items-center justify-center">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+      </svg>
+    </button>
+
+    <!-- Chat Window (hidden by default) -->
+    <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 h-96 bg-white rounded-lg shadow-2xl flex flex-col overflow-hidden border border-gray-200">
+      <!-- Chat Header -->
+      <div class="bg-cyan-500 text-white p-4 flex justify-between items-center">
+        <div>
+          <h3 class="font-semibold">SGSA Support</h3>
+          <p class="text-sm text-cyan-100">We're here to help</p>
+        </div>
+        <button id="chat-close" class="text-white hover:text-sky-200 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Chat Messages -->
+      <div id="chat-messages" class="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-4">
+        <div class="flex items-end space-x-2">
+          <div class="bg-blue-600 text-white rounded-lg p-3 mr-5 max-w-xs">
+            <p class="text-sm">Hello! How can we assist you with your construction project today?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Input -->
+      <div class="border-t border-gray-200 p-4 bg-white">
+        <form id="chat-form" class="flex space-x-2">
+          <input type="text" id="chat-input" placeholder="Type your message..." 
+                 class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm">
+          <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg px-4 py-2 transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // Company Information Database
+    const companyInfo = {
+      name: "SGSA Construction",
+      officeHours: {
+        monday: "9:00 AM - 6:00 PM",
+        tuesday: "9:00 AM - 6:00 PM",
+        wednesday: "9:00 AM - 6:00 PM",
+        thursday: "9:00 AM - 6:00 PM",
+        friday: "9:00 AM - 6:00 PM",
+        saturday: "9:00 AM - 2:00 PM",
+        sunday: "Closed",
+        publicHolidays: "Closed"
+      },
+      contact: {
+        phone: ["+6560254678", "+6591758912"],
+        email: ["sgsaconstruction@gmail.com", "contact@sgsa.com"],
+        address: "Jalan Besar Plaza #02-36, Singapore 208511"
+      },
+      services: [
+        "Residential Development",
+        "Commercial & Retail",
+        "Infrastructure & Civil Works",
+        "Specialized Construction",
+        "Design-Build",
+        "Project Management"
+      ],
+      about: "SGSA Construction is a leading construction company in Singapore with over 50 years of experience. We specialize in delivering exceptional construction projects with a commitment to safety, quality, and innovation.",
+      experience: "50+ years",
+      projectsCompleted: "500+",
+      clientSatisfaction: "98%"
+    };
+
+    // Smart Response Generator
+    function generateResponse(userMessage) {
+      const message = userMessage.toLowerCase().trim();
+      
+      // Hours/timing questions
+      if (message.includes('open') || message.includes('close') || message.includes('hours') || message.includes('time')) {
+        if (message.includes('monday')) {
+          return `We're open on Monday from ${companyInfo.officeHours.monday}. How else can we help?`;
+        } else if (message.includes('saturday')) {
+          return `We're open on Saturday from ${companyInfo.officeHours.saturday}. How else can we help?`;
+        } else if (message.includes('sunday')) {
+          return `We're ${companyInfo.officeHours.sunday.toLowerCase()} on Sunday. For urgent matters, please call our emergency line.`;
+        } else if (message.includes('weekend')) {
+          return `Weekend hours: Saturday ${companyInfo.officeHours.saturday}, Sunday ${companyInfo.officeHours.sunday}. How can we assist?`;
+        } else {
+          return `Our office hours are:\n• Monday-Friday: ${companyInfo.officeHours.monday}\n• Saturday: ${companyInfo.officeHours.saturday}\n• Sunday & Public Holidays: ${companyInfo.officeHours.sunday}`;
+        }
+      }
+      
+      // Contact/Phone questions
+      if (message.includes('phone') || message.includes('contact') || message.includes('call') || message.includes('number')) {
+        if (message.includes('site manager')) {
+          return `Our Site Manager's contact: ${companyInfo.contact.phone[1]}. You can reach them for project-specific inquiries.`;
+        }
+        return `You can reach us at:\n• Main: ${companyInfo.contact.phone[0]}\n• Site Manager: ${companyInfo.contact.phone[1]}`;
+      }
+      
+      // Email questions
+      if (message.includes('email') || message.includes('mail')) {
+        return `You can email us at:\n• ${companyInfo.contact.email[0]}\n• ${companyInfo.contact.email[1]}`;
+      }
+      
+      // Address questions
+      if (message.includes('address') || message.includes('location') || message.includes('where')) {
+        return `Our address is:\n${companyInfo.contact.address}`;
+      }
+      
+      // Services questions
+      if (message.includes('service') || message.includes('what do you') || message.includes('offer') || message.includes('do you do')) {
+        return `We offer:\n• ${companyInfo.services.join('\n• ')}\n\nLearn more on our Services page!`;
+      }
+      
+      // About company
+      if (message.includes('about') || message.includes('who are you') || message.includes('company') || message.includes('experience')) {
+        return `${companyInfo.about}\n\nOur Stats:\n• Experience: ${companyInfo.experience}\n• Projects: ${companyInfo.projectsCompleted} completed\n• Client Satisfaction: ${companyInfo.clientSatisfaction}`;
+      }
+      
+      // Project inquiry
+      if (message.includes('project') || message.includes('quote') || message.includes('estimate') || message.includes('bid')) {
+        return `For project inquiries and quotes, please contact our team:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}\n\nOur team will be happy to discuss your construction needs!`;
+      }
+      
+      // Safety questions
+      if (message.includes('safety') || message.includes('safe')) {
+        return `Safety is our top priority! We maintain the highest safety standards and have a zero-accident culture. All projects follow strict safety protocols and compliance regulations. For safety inquiries, please contact us directly.`;
+      }
+      
+      // Default response
+      return `Thank you for your inquiry! I'm an AI assistant here to help with basic information about SGSA Construction. For specific project details or inquiries, please contact us directly:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+    }
+
+    
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatClose = document.getElementById('chat-close');
+    const chatWindow = document.getElementById('chat-window');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chat-messages');
+
+    chatToggle.addEventListener('click', () => {
+      chatWindow.classList.toggle('hidden');
+    });
+
+    chatClose.addEventListener('click', () => {
+      chatWindow.classList.add('hidden');
+    });
+
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const message = chatInput.value.trim();
+      if (message) {
+        
+        const userMsg = document.createElement('div');
+        userMsg.className = 'flex justify-end';
+        userMsg.innerHTML = `<div class="bg-gray-300 text-gray-900 rounded-lg p-3 max-w-xs"><p class="text-sm">${message}</p></div>`;
+        chatMessages.appendChild(userMsg);
+        chatInput.value = '';
+
+       
+        setTimeout(() => {
+          const response = generateResponse(message);
+          const replyMsg = document.createElement('div');
+          replyMsg.className = 'flex items-end space-x-2';
+          replyMsg.innerHTML = `<div class="bg-sky-600 text-white rounded-lg p-3 max-w-xs"><p class="text-sm whitespace-pre-line">${response}</p></div>`;
+          chatMessages.appendChild(replyMsg);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 500);
+
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    });
+
     // Mobile menu toggle
      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -499,6 +1009,27 @@
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+
+        // Mobile services dropdown toggle
+        const mobileServicesBtn = document.getElementById('mobile-services-btn');
+        const mobileServicesMenu = document.getElementById('mobile-services-menu');
+        const mobileServicesArrow = document.getElementById('mobile-services-arrow');
+        
+        if (mobileServicesBtn) {
+          mobileServicesBtn.addEventListener('click', () => {
+            mobileServicesMenu.classList.toggle('hidden');
+            mobileServicesArrow.style.transform = mobileServicesMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+          });
+
+          // Close dropdown when clicking on a menu item
+          const mobileServiceLinks = mobileServicesMenu.querySelectorAll('a');
+          mobileServiceLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              mobileServicesMenu.classList.add('hidden');
+              mobileServicesArrow.style.transform = 'rotate(0deg)';
+            });
+          });
+        }
 
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
@@ -536,6 +1067,59 @@
                 mobileMenuButton.classList.add('text-white', 'hover:text-sky-400');
             }
         });
+
+    // Scroll-triggered statistics counter animation
+    let hasAnimated = false;
+
+    function animateCounters() {
+      if (hasAnimated) return;
+      hasAnimated = true;
+
+      const statCounters = document.querySelectorAll('.stat-counter');
+      const duration = 2000; // 2 seconds animation
+      const startTime = Date.now();
+
+      statCounters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const start = 0;
+
+        const animate = () => {
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const current = Math.floor(start + (target - start) * progress);
+          counter.textContent = current;
+
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          }
+        };
+
+        animate();
+      });
+    }
+
+    // Use Intersection Observer to trigger animation when section is in viewport
+    document.addEventListener('DOMContentLoaded', function() {
+      const statSection = document.querySelector('[class*="pt-16"][class*="pb-16"]') || document.querySelector('[class*="mt-20"]');
+      
+      if (statSection && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !hasAnimated) {
+              setTimeout(() => {
+                animateCounters();
+              }, 100);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.2 });
+
+        observer.observe(statSection);
+      } else if (!hasAnimated) {
+        // Fallback - animate on page load
+        setTimeout(animateCounters, 800);
+      }
+    });
   </script>
 </body>
 </html>
