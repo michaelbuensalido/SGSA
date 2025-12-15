@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services - SGSA Construction | Handyman & Renovation</title>
+  <meta name="description" content="Explore comprehensive handyman and renovation services from SGSA Construction. Renovation, carpentry, plumbing, electrical, waterproofing, and more.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .font-archivo {
+      font-family: 'Archivo', sans-serif;
+    }
+
+    .nav-link {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 50%;
+      background-color: #38bdf8;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    nav {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Service Card Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .service-card {
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .service-card:nth-child(1) { animation-delay: 0.1s; }
+    .service-card:nth-child(2) { animation-delay: 0.2s; }
+    .service-card:nth-child(3) { animation-delay: 0.3s; }
+    .service-card:nth-child(4) { animation-delay: 0.4s; }
+    .service-card:nth-child(5) { animation-delay: 0.5s; }
+    .service-card:nth-child(6) { animation-delay: 0.6s; }
+    .service-card:nth-child(7) { animation-delay: 0.7s; }
+
+    .service-card {
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-icon {
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover .service-icon {
+      transform: scale(1.1) rotate(-5deg);
+    }
+
+    .category-header {
+      animation: slideInLeft 0.6s ease-out;
+    }
+
+    .hero-section {
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .cta-button {
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(6, 182, 212, 0.4);
+    }
+  </style>
+</head>
+<body class="font-archivo bg-white">
+
+   <!-- Navbar -->
+    <nav id="navbar" class="fixed z-20 top-0 left-0 right-0 z-10 pb-[18px] pt-[18px]">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex justify-between items-center h-20 px-4">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="flex items-center">
+                            <img class="w-[230px] " src="images/logo_new-removebg-preview.png" alt="">
+                        </a>
+                    </div>
+
+                    <!-- Navigation Links -->
+                    <div class="hidden md:flex space-x-10 font-archivo items-center">
+                        <a href="index.html" class="nav-link text-white hover:text-sky-400 text-md  font-medium transition duration-300">HOME</a>
+                        <a href="#about" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">ABOUT</a>
+                        
+                        <!-- Services Mega Menu -->
+                        <div class="relative group">
+                            <button class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1">
+                                SERVICES
+                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                                </svg>
+                            </button>
+                            
+                            <!-- Mega Menu -->
+                            <div class="absolute left-0 mt-0 w-[600px] bg-white text-gray-800 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden">
+                                <!-- Header -->
+                                <div class="bg-gradient-to-r from-cyan-50 to-blue-50 px-8 py-4 border-b border-gray-200">
+                                    <a href="services.html" class="font-bold text-gray-900 hover:text-sky-600 text-lg transition duration-300">Browse All Services</a>
+                                </div>
+                                
+                                <!-- Content Grid -->
+                                <div class="grid grid-cols-2 gap-0 p-8">
+                                    <!-- Handyman Services -->
+                                    <div>
+                                        <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                            <span class="text-xl">🛠️</span>
+                                            Handyman Services
+                                        </h3>
+                                        <ul class="space-y-2">
+                                            <li><a href="services.html#mep" class="text-gray-700 hover:text-sky-600 hover:font-medium transition duration-300 text-sm">Plumbing</a></li>
+                                            <li><a href="services.html#mep" class="text-gray-700 hover:text-sky-600 hover:font-medium transition duration-300 text-sm">Electrical Works</a></li>
+                                            <li><a href="services.html#finishing" class="text-gray-700 hover:text-sky-600 hover:font-medium transition duration-300 text-sm">Painting</a></li>
+                                            <li><a href="services.html#renovation" class="text-gray-700 hover:text-sky-600 hover:font-medium transition duration-300 text-sm">Plastering Works</a></li>
+                                            <li><a href="services.html#finishing" class="text-gray-700 hover:text-sky-600 hover:font-medium transition duration-300 text-sm">Tile Laying</a></li>
+                                            <li><a href="services.html#mep" class="text-gray-700 hover:text-sky-600 hover:font-medium transition duration-300 text-sm">Air Con Service & Installation</a></li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <!-- Renovation Services -->
+                                    <div>
+                                        <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                            <span class="text-xl">🏗️</span>
+                                            Renovation Services
+                                        </h3>
+                                        <ul class="space-y-2">
+                                            <li><a href="services.html#renovation" class="text-gray-700 hover:text-sky-600 hover:font-medium transition duration-300 text-sm">Renovation Works</a></li>
+                                            <li><a href="services.html#renovation" class="text-gray-700 hover:text-sky-600 hover:font-medium transition duration-300 text-sm">Ceiling & Wall Partitions</a></li>
+                                            <li><a href="services.html#structural" class="text-gray-700 hover:text-sky-600 hover:font-medium transition duration-300 text-sm">Carpentry Works</a></li>
+                                            <li><a href="services.html#finishing" class="text-gray-700 hover:text-sky-600 hover:font-medium transition duration-300 text-sm">Waterproofing</a></li>
+                                            <li><a href="services.html#structural" class="text-gray-700 hover:text-sky-600 hover:font-medium transition duration-300 text-sm">Reinstatement, Hacking & Demolition</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#gallery" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">GALLERY</a>
+                        <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">CONTACT</a>
+                        
+                    </div>
+                    <div><a href="tel:+6560254678" class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">
+                            📞 Call Now
+                        </a></div>
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#home" class="block px-3 py-2 text-gray-600 bg-gray-50 font-medium transition duration-300">Home</a>
+                    <a href="#about" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">About</a>
+                    
+                    <!-- Mobile Services Dropdown -->
+                    <div class="px-3 py-2">
+                        <button id="mobile-services-btn" class="w-full text-left text-gray-800 hover:text-sky-600 font-medium flex items-center justify-between">
+                            Services
+                            <svg id="mobile-services-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-services-menu" class="hidden mt-2 space-y-2 pl-3 border-l-2 border-sky-400 pb-3">
+                            <a href="services.html" class="block px-3 py-2 text-gray-700 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">All Services</a>
+                            
+                            <!-- Handyman Services Group -->
+                            <div class="pt-2">
+                                <p class="px-3 py-1 text-xs font-bold text-gray-600 uppercase tracking-wide flex items-center gap-2">
+                                    <span>🛠️</span> Handyman
+                                </p>
+                                <ul class="space-y-1 ml-2">
+                                    <li><a href="services.html#mep" class="block px-3 py-1 text-sm text-gray-600 hover:text-sky-600 hover:bg-gray-50 transition duration-300">Plumbing</a></li>
+                                    <li><a href="services.html#mep" class="block px-3 py-1 text-sm text-gray-600 hover:text-sky-600 hover:bg-gray-50 transition duration-300">Electrical Works</a></li>
+                                    <li><a href="services.html#finishing" class="block px-3 py-1 text-sm text-gray-600 hover:text-sky-600 hover:bg-gray-50 transition duration-300">Painting</a></li>
+                                    <li><a href="services.html#renovation" class="block px-3 py-1 text-sm text-gray-600 hover:text-sky-600 hover:bg-gray-50 transition duration-300">Plastering Works</a></li>
+                                    <li><a href="services.html#finishing" class="block px-3 py-1 text-sm text-gray-600 hover:text-sky-600 hover:bg-gray-50 transition duration-300">Tile Laying</a></li>
+                                    <li><a href="services.html#mep" class="block px-3 py-1 text-sm text-gray-600 hover:text-sky-600 hover:bg-gray-50 transition duration-300">Air Con Service</a></li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Renovation Services Group -->
+                            <div class="pt-2">
+                                <p class="px-3 py-1 text-xs font-bold text-gray-600 uppercase tracking-wide flex items-center gap-2">
+                                    <span>🏗️</span> Renovation
+                                </p>
+                                <ul class="space-y-1 ml-2">
+                                    <li><a href="services.html#renovation" class="block px-3 py-1 text-sm text-gray-600 hover:text-sky-600 hover:bg-gray-50 transition duration-300">Renovation Works</a></li>
+                                    <li><a href="services.html#renovation" class="block px-3 py-1 text-sm text-gray-600 hover:text-sky-600 hover:bg-gray-50 transition duration-300">Ceiling & Wall</a></li>
+                                    <li><a href="services.html#structural" class="block px-3 py-1 text-sm text-gray-600 hover:text-sky-600 hover:bg-gray-50 transition duration-300">Carpentry Works</a></li>
+                                    <li><a href="services.html#finishing" class="block px-3 py-1 text-sm text-gray-600 hover:text-sky-600 hover:bg-gray-50 transition duration-300">Waterproofing</a></li>
+                                    <li><a href="services.html#structural" class="block px-3 py-1 text-sm text-gray-600 hover:text-sky-600 hover:bg-gray-50 transition duration-300">Hacking & Demolition</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#gallery" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Gallery</a>
+                    <a href="#contact" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Contact</a>
+                    <a href="tel:+6560254678" class="block px-3 py-2 bg-red-600 text-white hover:bg-red-700 font-bold rounded transition duration-300">📞 Call Now</a>
+                </div>
+            </div>
+        </nav>
+
+  <!-- Floating WhatsApp CTA Button -->
+  <a href="https://wa.me/6586955055?text=Hi%20SGSA%20Construction%20%7C%20I%20need%20handyman%20services" target="_blank" rel="noopener noreferrer" class="fixed bottom-20 right-6 z-40 group">
+    <div class="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 mb-5 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center w-16 h-16 hover:scale-110">
+      <svg fill="#ffffff" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><title>whatsapp</title><path d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z"></path></g></svg>
+    </div>
+    <div class="absolute bottom-20 right-0 bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap text-sm font-medium">
+      Chat on WhatsApp
+    </div>
+  </a>
+
+  <!-- Page Header with Background -->
+  <div class="relative min-h-64 bg-gradient-to-br from-cyan-50 via-white to-cyan-100 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=500&fit=crop'); z-index: 0;"></div>
+    <div class="absolute inset-0 bg-black opacity-50" style="z-index: 1;"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 text-center max-w-3xl hero-section">
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">Our Services</h1>
+      <p class="text-xl text-cyan-100">Comprehensive handyman and renovation solutions tailored to your needs</p>
+    </div>
+  </div>
+
+  <!-- Services Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+    <!-- Renovation & General Works Section -->
+    <section id="renovation" class="mb-20">
+      <div class="category-header mb-12">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-1 h-12 bg-red-600 rounded-full"></div>
+          <div>
+            <h2 class="text-4xl font-bold text-gray-900">Renovation & Construction</h2>
+            <p class="text-gray-600 text-lg mt-2">Transform your space with comprehensive renovation solutions</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Renovation Works Card -->
+        <div class="service-card bg-white rounded-lg shadow-lg border-t-4 border-t-red-600 overflow-hidden hover:shadow-2xl">
+          <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695c952952?w=500&h=400&fit=crop');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Renovation Works</h3>
+            <p class="text-gray-600">Complete home and office renovation services, from planning to execution with attention to detail and quality finishes.</p>
+          </div>
+        </div>
+
+        <!-- Ceiling & Wall Partition Card -->
+        <div class="service-card bg-white rounded-lg shadow-lg border-t-4 border-t-red-600 overflow-hidden hover:shadow-2xl">
+          <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500&h=400&fit=crop');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Ceiling & Wall Partition</h3>
+            <p class="text-gray-600">Professional installation of partition walls and ceiling systems for better space utilization and modern aesthetics.</p>
+          </div>
+        </div>
+
+        <!-- Plastering Works Card -->
+        <div class="service-card bg-white rounded-lg shadow-lg border-t-4 border-t-red-600 overflow-hidden hover:shadow-2xl">
+          <div class="h-48 bg-cover bg-center" >
+            <img class="h-48 w-full bg-cover bg-center" src="images/services images/image.png" alt="">
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Plastering Works</h3>
+            <p class="text-gray-600">Expert plastering services for smooth, durable wall finishes that provide the perfect base for painting or tiling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Structural & Carpentry Section -->
+    <section id="structural" class="mb-20">
+      <div class="category-header mb-12">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-1 h-12 bg-blue-600 rounded-full"></div>
+          <div>
+            <h2 class="text-4xl font-bold text-gray-900">Structural & Carpentry</h2>
+            <p class="text-gray-600 text-lg mt-2">Precision carpentry and structural solutions for lasting quality</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Carpentry Works Card -->
+        <div class="service-card bg-white rounded-lg shadow-lg border-t-4 border-t-blue-600 overflow-hidden hover:shadow-2xl">
+          <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=500&h=400&fit=crop');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Carpentry Works</h3>
+            <p class="text-gray-600">Custom carpentry solutions including built-ins, cabinets, doors, and structural modifications with professional craftsmanship.</p>
+          </div>
+        </div>
+
+        <!-- Reinstatement & Demolition Card -->
+        <div class="service-card bg-white rounded-lg shadow-lg border-t-4 border-t-blue-600 overflow-hidden hover:shadow-2xl">
+          <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695c952952?w=500&h=400&fit=crop');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Reinstatement, Hacking & Demolition</h3>
+            <p class="text-gray-600">Safe and efficient demolition and reinstatement work for renovations, with proper waste management and site cleanup.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Finishing & Surfaces Section -->
+    <section id="finishing" class="mb-20">
+      <div class="category-header mb-12">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-1 h-12 bg-amber-600 rounded-full"></div>
+          <div>
+            <h2 class="text-4xl font-bold text-gray-900">Finishing & Surfaces</h2>
+            <p class="text-gray-600 text-lg mt-2">Expert finishing touches that define your space's character</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Painting Card -->
+        <div class="service-card bg-white rounded-lg shadow-lg border-t-4 border-t-amber-600 overflow-hidden hover:shadow-2xl">
+          <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1589939705066-3d28bbc9af65?w=500&h=400&fit=crop');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Painting</h3>
+            <p class="text-gray-600">High-quality interior and exterior painting services with premium paints, expert color consultation, and flawless application.</p>
+          </div>
+        </div>
+
+        <!-- Tile Laying Card -->
+        <div class="service-card bg-white rounded-lg shadow-lg border-t-4 border-t-amber-600 overflow-hidden hover:shadow-2xl">
+          <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1576228676189-e3f50f3783c7?w=500&h=400&fit=crop');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Tile Laying</h3>
+            <p class="text-gray-600">Professional tile installation for bathrooms, kitchens, and floors with precise patterns and lasting durability.</p>
+          </div>
+        </div>
+
+        <!-- Waterproofing Card -->
+        <div class="service-card bg-white rounded-lg shadow-lg border-t-4 border-t-amber-600 overflow-hidden hover:shadow-2xl">
+          <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1585392900810-29cb67ea208f?w=500&h=400&fit=crop');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Waterproofing</h3>
+            <p class="text-gray-600">Complete waterproofing solutions for bathrooms, kitchens, and exterior areas to prevent water damage and leaks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEP Services Section -->
+    <section id="mep" class="mb-20">
+      <div class="category-header mb-12">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-1 h-12 bg-cyan-600 rounded-full"></div>
+          <div>
+            <h2 class="text-4xl font-bold text-gray-900">Mechanical, Electrical & Plumbing</h2>
+            <p class="text-gray-600 text-lg mt-2">Expert MEP installations for complete home functionality</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Plumbing Card -->
+        <div class="service-card bg-white rounded-lg shadow-lg border-t-4 border-t-cyan-600 overflow-hidden hover:shadow-2xl">
+          <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&h=400&fit=crop');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Plumbing</h3>
+            <p class="text-gray-600">Comprehensive plumbing services including pipe installation, repairs, and maintenance for reliable water systems.</p>
+          </div>
+        </div>
+
+        <!-- Electrical Works Card -->
+        <div class="service-card bg-white rounded-lg shadow-lg border-t-4 border-t-cyan-600 overflow-hidden hover:shadow-2xl">
+          <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=500&h=400&fit=crop');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Electrical Works</h3>
+            <p class="text-gray-600">Professional electrical installations, upgrades, and repairs ensuring safety and compliance with building codes.</p>
+          </div>
+        </div>
+
+        <!-- Air Con Service & Installation Card -->
+        <div class="service-card bg-white rounded-lg shadow-lg border-t-4 border-t-cyan-600 overflow-hidden hover:shadow-2xl">
+          <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&h=400&fit=crop');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Air Con Service & Installation</h3>
+            <p class="text-gray-600">Expert air conditioning installation, maintenance, and repair services for optimal cooling and energy efficiency.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose SGSA Section -->
+    <section class="mt-20 pt-16 border-t-2 border-gray-200">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose SGSA Construction?</h2>
+        <p class="text-xl text-gray-600">Professional, reliable, and customer-focused services</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div class="text-center p-6 bg-gradient-to-br from-red-50 to-red-100 rounded-lg">
+          <div class="text-4xl mb-3">⭐</div>
+          <h3 class="font-bold text-gray-900 mb-2">Expert Team</h3>
+          <p class="text-gray-600 text-sm">Highly skilled professionals with years of experience</p>
+        </div>
+
+        <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
+          <div class="text-4xl mb-3">🛡️</div>
+          <h3 class="font-bold text-gray-900 mb-2">Quality Assured</h3>
+          <p class="text-gray-600 text-sm">Premium materials and meticulous workmanship</p>
+        </div>
+
+        <div class="text-center p-6 bg-gradient-to-br from-amber-50 to-amber-100 rounded-lg">
+          <div class="text-4xl mb-3">💰</div>
+          <h3 class="font-bold text-gray-900 mb-2">Competitive Pricing</h3>
+          <p class="text-gray-600 text-sm">Transparent quotes with no hidden charges</p>
+        </div>
+
+        <div class="text-center p-6 bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-lg">
+          <div class="text-4xl mb-3">📅</div>
+          <h3 class="font-bold text-gray-900 mb-2">On-Time Delivery</h3>
+          <p class="text-gray-600 text-sm">Projects completed within agreed timelines</p>
+        </div>
+
+        <div class="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
+          <div class="text-4xl mb-3">🤝</div>
+          <h3 class="font-bold text-gray-900 mb-2">24/7 Support</h3>
+          <p class="text-gray-600 text-sm">Always available for your questions and concerns</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="mt-20 pt-16 pb-12 bg-gradient-to-r from-red-600 to-red-700 rounded-lg text-white text-center">
+      <h2 class="text-4xl font-bold mb-4">Ready to Transform Your Space?</h2>
+      <p class="text-xl mb-8 text-red-100">Get a free consultation and quote today</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="contacts.html" class="cta-button bg-white text-red-600 hover:bg-gray-100 font-bold px-8 py-3 rounded-lg inline-block">
+          Get Free Quote
+        </a>
+        <a href="https://wa.me/6586955055?text=Hi%20SGSA%20Construction%20%7C%20I%20need%20handyman%20services" target="_blank" rel="noopener noreferrer" class="cta-button border-2 border-white text-white hover:bg-red-700 font-bold px-8 py-3 rounded-lg inline-block">
+          WhatsApp Us
+        </a>
+        <a href="tel:+6560254678" class="cta-button border-2 border-white text-white hover:bg-red-700 font-bold px-8 py-3 rounded-lg inline-block">
+          📞 Call Now
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bottom-0 bg-gray-900 text-white border-t-4 border-t-cyan-600 mt-20">
+    <div class="border-b border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <!-- Logo -->
+          <div class="lg:col-span-2 md:col-span-1 items-center flex md:items-start justify-center :col-span-1">
+            <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" class="h-20 mb-3">
+          </div>
+
+          <!-- Location -->
+          <div class="flex flex-col items-center justify-center md:items-start">
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <div class="flex">
+                <div>
+                  <p class="text-gray-400 text-sm">Jalan Besar Plaza #02-36</p>
+                  <p class="text-gray-400 text-sm">Singapore 208511</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone Number -->
+          <div class="flex flex-col items-center justify-center md:items-start">
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+              </svg>
+              <div class="flex">
+                <div>
+                  <p class="text-gray-400 text-sm">Tel : +6560254678</p>
+                  <p class="text-gray-400 text-sm">Site Manager: +6591758912</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="flex flex-col items-center justify-center md:items-start">
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              <div class="flex">
+                <div>
+                  <p class="text-gray-400 text-sm">sgsaconstruction@gmail.com</p>
+                  <p class="text-gray-400 text-sm">contact@sgsa.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="bg-gray-950">
+      <div class="max-w-7xl mx-auto px-4 py-5">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-3">
+          <p class="text-gray-400 text-sm">&copy; 2024 SGSA Construction. All rights reserved.</p>
+          <p class="text-gray-400 text-sm">SGSA Construction by <span class="text-cyan-400 font-medium">Michael</span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chat Widget -->
+  <div id="chat-widget" class="fixed bottom-6 right-6 z-50">
+    <button id="chat-toggle" class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full p-4 shadow-lg transition duration-300 transform hover:scale-110 flex items-center justify-center">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+      </svg>
+    </button>
+
+    <!-- Chat Window (hidden by default) -->
+    <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 h-96 bg-white rounded-lg shadow-2xl flex flex-col overflow-hidden border border-gray-200">
+      <!-- Chat Header -->
+      <div class="bg-cyan-500 text-white p-4 flex justify-between items-center">
+        <div>
+          <h3 class="font-semibold">SGSA Support</h3>
+          <p class="text-sm text-cyan-100">We're here to help</p>
+        </div>
+        <button id="chat-close" class="text-white hover:text-sky-200 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Chat Messages -->
+      <div id="chat-messages" class="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-4">
+        <div class="flex items-end space-x-2">
+          <div class="bg-blue-600 text-white rounded-lg p-3 mr-5 max-w-xs">
+            <p class="text-sm">Hello! How can we assist you with your construction project today?</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Input -->
+      <div class="border-t border-gray-200 p-4 bg-gray-50">
+        <div class="flex items-center gap-2">
+          <input type="text" id="chat-input" placeholder="Type a message..." class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500">
+          <button id="chat-send" class="bg-cyan-500 hover:bg-cyan-600 text-white px-3 py-2 rounded-lg transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    
+
+    // Mobile Services Dropdown
+    document.getElementById('mobile-services-btn').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-services-menu');
+      const arrow = document.getElementById('mobile-services-arrow');
+      menu.classList.toggle('hidden');
+      arrow.style.transform = menu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+
+    // Chat Widget Toggle
+    document.getElementById('chat-toggle').addEventListener('click', function() {
+      document.getElementById('chat-window').classList.toggle('hidden');
+    });
+
+    document.getElementById('chat-close').addEventListener('click', function() {
+      document.getElementById('chat-window').classList.add('hidden');
+    });
+
+    // Chat Send
+    document.getElementById('chat-send').addEventListener('click', function() {
+      const input = document.getElementById('chat-input');
+      const message = input.value.trim();
+      
+      if (message) {
+        const chatMessages = document.getElementById('chat-messages');
+        
+        // User message
+        const userMessageDiv = document.createElement('div');
+        userMessageDiv.className = 'flex justify-end';
+        userMessageDiv.innerHTML = `
+          <div class="bg-cyan-500 text-white rounded-lg p-3 ml-5 max-w-xs">
+            <p class="text-sm">${message}</p>
+          </div>
+        `;
+        chatMessages.appendChild(userMessageDiv);
+        
+        // Clear input
+        input.value = '';
+        
+        // Auto-scroll to bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        
+        // Simulate bot response
+        setTimeout(function() {
+          const botMessageDiv = document.createElement('div');
+          botMessageDiv.className = 'flex items-end space-x-2';
+          botMessageDiv.innerHTML = `
+            <div class="bg-blue-600 text-white rounded-lg p-3 mr-5 max-w-xs">
+              <p class="text-sm">Thanks for your message! Our team will get back to you shortly. 📞 Call us at +6560254678 for immediate assistance.</p>
+            </div>
+          `;
+          chatMessages.appendChild(botMessageDiv);
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 1000);
+      }
+    });
+
+    // Chat input Enter key
+    document.getElementById('chat-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        document.getElementById('chat-send').click();
+      }
+    });
+
+    
+     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobile services dropdown toggle
+        const mobileServicesBtn = document.getElementById('mobile-services-btn');
+        const mobileServicesMenu = document.getElementById('mobile-services-menu');
+        const mobileServicesArrow = document.getElementById('mobile-services-arrow');
+        
+        if (mobileServicesBtn) {
+          mobileServicesBtn.addEventListener('click', () => {
+            mobileServicesMenu.classList.toggle('hidden');
+            mobileServicesArrow.style.transform = mobileServicesMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+          });
+
+          // Close dropdown when clicking on a menu item
+          const mobileServiceLinks = mobileServicesMenu.querySelectorAll('a');
+          mobileServiceLinks.forEach(link => {
+            link.addEventListener('click', () => {
+              mobileServicesMenu.classList.add('hidden');
+              mobileServicesArrow.style.transform = 'rotate(0deg)';
+            });
+          });
+        }
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        const navLinks = navbar.querySelectorAll('.nav-link');
+        const mobileMenuButton = document.getElementById('mobile-menu-btn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Scrolled state
+                navbar.classList.add('bg-white', 'shadow-lg');
+                navbar.classList.remove('bg-opacity-95');
+                
+                // Change text color to dark
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white', 'hover:text-sky-400');
+                    link.classList.add('text-gray-800', 'hover:text-sky-600');
+                });
+                
+                // Change mobile button color
+                mobileMenuButton.classList.remove('text-white', 'hover:text-sky-400');
+                mobileMenuButton.classList.add('text-gray-800', 'hover:text-sky-600');
+            } else {
+                // Top of page state
+                navbar.classList.remove('bg-white', 'shadow-lg');
+                navbar.classList.add('bg-opacity-95');
+                
+                // Change text color back to white
+                navLinks.forEach(link => {
+                    link.classList.remove('text-gray-800', 'hover:text-sky-600');
+                    link.classList.add('text-white', 'hover:text-sky-400');
+                });
+                
+                // Change mobile button color back
+                mobileMenuButton.classList.remove('text-gray-800', 'hover:text-sky-600');
+                mobileMenuButton.classList.add('text-white', 'hover:text-sky-400');
+            }
+        });
+  </script>
+
+</body>
+</html>
