@@ -206,24 +206,24 @@
  
   <div class="relative mb-30">
     <!-- Navbar -->
-   <nav id="navbar" class="fixed z-20 top-0 left-0 right-0 z-10 pb-[18px] pt-[18px]">
+   <nav id="navbar" class="fixed z-20 top-0  left-0 right-0 z-10 pb-[18px] pt-[18px]">
     <div class="max-w-6xl mx-auto">
         <div class="flex justify-between items-center h-20 px-4">
             <!-- Logo -->
             <div class="flex-shrink-0">
                 <a href="index.html" class="flex items-center">
-                    <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="">
+                    <img class="w-[260px]" src="images/logo_new-removebg-preview.png" alt="">
                 </a>
             </div>
 
             <!-- Navigation Links -->
             <div class="hidden md:flex space-x-10 font-archivo items-center">
-                <a href="index.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">HOME</a>
-                <a href="#about" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">ABOUT</a>
+                <a href="index.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">HOME</a>
+                <a href="#about" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">ABOUT</a>
                 
                 <!-- Services Dropdown with Nested Menu -->
                 <div class="relative dropdown-wrapper group">
-                    <button class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1">
+                    <button class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1">
                         SERVICES
                         <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -305,8 +305,8 @@
                     </div>
                 </div>
                 
-                <a href="completed-projects.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">GALLERY</a>
-                <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">CONTACT</a>
+                <a href="completed-projects.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">GALLERY</a>
+                <a href="contacts.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">CONTACT</a>
             </div>
             
             <div>
@@ -327,7 +327,7 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+    <div id="mobile-menu" class="hidden md:hidden   bg-white border-t">
         <div class="px-2 pt-2 pb-3 space-y-1">
             <a href="index.html" class="block px-3 py-2 text-gray-600 bg-gray-50 font-medium transition duration-300">Home</a>
             <a href="#about" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">About</a>
@@ -400,76 +400,82 @@
   </a>
 
   <!-- Hero Section -->
-  <div class="relative min-h-screen bg-gradient-to-br from-cyan-50 via-white to-cyan-100 flex items-center justify-center px-4 sm:px-6 lg:px-8  pt-20  ">
-    <!-- Hero Background Image -->
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat h-[900px] " style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');"></div>
-<div class="absolute inset-0 bg-black h-[900px] bg-opacity-30"></div>
-    <!-- Content Overlay -->
-    <div class="relative z-10 max-w-4xl mx-auto text-center">
-      <!-- Main Headline -->
-      <div class="hero-headline text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
-        Reliable Handyman & Renovation <br>
-        <span class="text-cyan-500">Services in Singapore</span>
-      </div>
+<div class="relative min-h-screen bg-sky-50 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-40 overflow-hidden">
+  <!-- Decorative Image 1 - Upper Right -->
+  <img src="images/heropagephoto.png" alt="" class="opacity-10 sm:opacity-70 absolute top-20 right-10 w-[400px] h-[400px] object-cover pointer-events-none z-0" />
+  
+  <!-- Decorative Image 2 - Lower Left -->
+  <img src="images/heropagephoto_2.png" alt="" class="opacity-10 sm:opacity-70 absolute bottom-0 left-0 w-[400px] h-[400px] object-cover pointer-events-none z-0" />
+  
+  <!-- Content -->
+  <div class="relative z-10 max-w-5xl mx-auto text-center">
+    <!-- Main Headline -->
+    <div class="hero-headline text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6 text-slate-900">
+      <span class="block">Reliable <span class="text-cyan-600 font-extrabold">Handyman</span> &</span>
+      <span class="block"><span class="text-cyan-600 font-extrabold">Renovation</span> Services</span>
+      <span class="block text-2xl sm:text-3xl lg:text-4xl font-semibold mt-2 sm:mt-3 text-cyan-700">in Singapore</span>
+    </div>
 
-      <!-- Subheading -->
-      <div class="hero-subheading text-xl sm:text-2xl lg:text-3xl font-light mb-8 text-white">
-        Fast, affordable, and professional home repair solutions
-      </div>
+    <!-- Subheading -->
+    <div class="hero-subheading text-lg sm:text-xl lg:text-2xl font-normal mb-6 sm:mb-8 text-slate-700 leading-relaxed max-w-3xl mx-auto">
+      Fast, affordable, and professional <span class="text-cyan-600 font-medium">home repair solutions</span>
+    </div>
 
-      <!-- CTA Buttons -->
-      <div class="hero-buttons flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-        <a href="contacts.html">
-          <button class="hero-button-primary bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-4 rounded-lg shadow-lg text-lg">
+    <!-- CTA Buttons -->
+    <div class="hero-buttons flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 sm:mb-8">
+      <a href="contacts.html">
+        <button class="hero-button-primary bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl text-lg transition-all duration-300 transform hover:scale-105">
           Get a Free Quote
         </button>
-        </a>
-        
-        <a href="tel:+6586955055" class="hero-button-secondary border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-500 hover:text-white font-semibold px-8 py-4 rounded-lg text-lg">
-          📞 Call Now / WhatsApp Us
-        </a>
+      </a>
+      
+      <a href="tel:+6586955055" class="hero-button-secondary border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+        📞 Call Now / WhatsApp Us
+      </a>
+    </div>
+
+    <!-- Trust Elements -->
+    <div class="hero-trust flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center text-base sm:text-lg">
+      <!-- Google Rating -->
+      <div class="trust-badge flex items-center gap-2">
+        <img class="w-32 h-15" src="images/homepage images/Google-Review-Logo-removebg-preview.png" alt="">
       </div>
 
-      <!-- Trust Elements -->
-      <div class="hero-trust flex flex-col sm:flex-row gap-6 justify-center items-center text-lg">
-        <!-- Google Rating -->
-        <div class="trust-badge flex items-center gap-2">
-          <div class="flex text-yellow-400">
-            ⭐⭐⭐⭐⭐
-          </div>
-          <span class="text-white">Google Rating</span>
-        </div>
+      <!-- Years Experience -->
+      <div class="trust-badge flex items-center gap-2">
+        <img class="w-24 h-15" src="images/homepage images/4years.png" alt="">
+      </div>
 
-        <!-- Years Experience -->
-        <div class="trust-badge flex items-center gap-2">
-          <span class="bg-cyan-500 text-white px-3 py-1 rounded-full text-sm font-semibold">4+ Years</span>
-          <span class="text-white">Experience</span>
-        </div>
+      <!-- Best Service -->
+      <div class="trust-badge flex items-center gap-2">
+        <img class="w-40 h-15" src="images/homepage images/best-service-rubber-stamp-sign-600nw-2493391847.jpg-removebg-preview.png" alt="">
+      </div>
 
-        <!-- Licensed & Insured -->
-        <div class="trust-badge flex items-center gap-2">
-          <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">✓ Licensed</span>
-          <span class="text-white">& Insured</span>
-        </div>
+      <!-- Licensed & Insured -->
+      <div class="trust-badge flex items-center gap-2">
+        <img class="w-40 h-15" src="images/homepage images/license.png" alt="">
       </div>
     </div>
   </div>
+</div>
 
   <!-- Services Section -->
-  <section class="pb-10 mt-[-3px] bg-white">
+  <section class="pb-12 sm:pb-14 mt-[-3px] bg-sky-50 pt-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
-      
-        
-      <!-- Services Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+       <!-- Section Header -->
+       <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+         <p class="text-sm sm:text-base uppercase tracking-[0.25em] text-red-600 font-semibold mb-3">Our Services</p>
+         <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Handyman & Renovation Expertise</h2>
+         
+       </div>
+         
+       <!-- Services Grid -->
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
 
         <!-- Handyman Services -->
-        <div class="bg-white overflow-hidden border-4 border-t-red-600 shadow-xl">
-          <div class="relative h-53 bg-red-600 overflow-hidden">
-            <div class="h-53 bg-cover bg-center" >
-              <img src="images/image copy.png" alt="">
-            </div>
+         <div class="bg-white overflow-hidden border-4 border-t-red-600 shadow-xl rounded-xl h-full flex flex-col">
+           <div class="relative h-56 sm:h-64 bg-red-600 overflow-hidden">
+               <img class="w-full h-full object-cover" src="images/image copy.png" alt="">
             <div class="absolute top-4 left-4 bg-white rounded-lg p-3 shadow-lg">
               <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
@@ -477,11 +483,11 @@
               </svg>
             </div>
           </div>
-          <div class="p-8 text-center">
-            <h3 class="text-2xl font-bold text-black mb-4">Handyman Services</h3>
-            <p class="text-gray-700 mb-6 leading-relaxed">General repairs, maintenance, and fixes for your home. From door repairs to shelf installation, we've got you covered.</p>
-            <div class="flex items-center w-full justify-center" >
-              <button class="text-red-500  font-bold px-6 py-2 flex items-center  gap-2">
+           <div class="p-7 sm:p-8 text-center flex-1 flex flex-col">
+             <h3 class="text-2xl font-bold text-black mb-3">Handyman Services</h3>
+             <p class="text-gray-700 mb-6 leading-relaxed text-base sm:text-[15px]">General repairs, maintenance, and fixes for your home. From door repairs to shelf installation, we've got you covered.</p>
+             <div class="mt-auto flex items-center w-full justify-center" >
+               <button class="text-red-600  font-bold px-6 py-2 flex items-center  gap-2">
               View More <span class="text-lg">→</span>
             </button>
             </div>
@@ -489,20 +495,20 @@
         </div>
 
         <!-- Renovation -->
-        <div class="bg-white overflow-hidden border-4 border-t-blue-600 shadow-xl">
-          <div class="relative h-55 bg-blue-600 overflow-hidden">
-            <div class="h-55 bg-cover bg-center" > <img src="images/works.png" alt=""></div>
+         <div class="bg-white overflow-hidden border-4 border-t-blue-600 shadow-xl rounded-xl h-full flex flex-col">
+           <div class="relative h-56 sm:h-64 bg-blue-600 overflow-hidden">
+             <img class="w-full h-full object-cover" src="images/works.png" alt="">
             <div class="absolute top-4 left-4 bg-white rounded-lg p-3 shadow-lg">
               <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"></path>
               </svg>
             </div>
           </div>
-          <div class="p-8 text-center">
-            <h3 class="text-2xl font-bold text-black mb-4">Renovation</h3>
-            <p class="text-gray-700 mb-3 leading-relaxed">Complete home renovation services including bathroom, kitchen, room makeovers, flooring upgrades, and full property transformations.</p>
-            <div class="flex items-center w-full justify-center" >
-              <button class="text-red-500  font-bold px-6 py-2 flex items-center  gap-2">
+           <div class="p-7 sm:p-8 text-center flex-1 flex flex-col">
+             <h3 class="text-2xl font-bold text-black mb-3">Renovation</h3>
+             <p class="text-gray-700 mb-6 leading-relaxed text-base sm:text-[15px]">Complete home renovation services including bathroom, kitchen, room makeovers, flooring upgrades, and full property transformations.</p>
+             <div class="mt-auto flex items-center w-full justify-center" >
+               <button class="text-red-600  font-bold px-6 py-2 flex items-center  gap-2">
               View More <span class="text-lg">→</span>
             </button>
             </div>
@@ -510,20 +516,20 @@
         </div>
 
         <!-- Electrical & Plumbing -->
-        <div class="bg-white overflow-hidden border-4 border-t-black shadow-xl">
-          <div class="relative h-55 bg-black overflow-hidden">
-            <div class="h-55 bg-cover bg-center" ><img src="images/Brown-Minimalist-Interior-Design-Photo-Collage-3.png" alt=""></div>
+         <div class="bg-white overflow-hidden border-4 border-t-black shadow-xl rounded-xl h-full flex flex-col">
+           <div class="relative h-56 sm:h-64 bg-black overflow-hidden">
+             <img class="w-full h-full object-cover" src="images/Brown-Minimalist-Interior-Design-Photo-Collage-3.png" alt="">
             <div class="absolute top-4 left-4 bg-white rounded-lg p-3 shadow-lg">
               <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
             </div>
           </div>
-          <div class="p-8 text-center">
-            <h3 class="text-2xl font-bold text-black mb-4">Electrical & Plumbing</h3>
-            <p class="text-gray-700 mb-6 leading-relaxed">Licensed electrical work and plumbing services including installations, repairs, and safety inspections. this too.</p>
-            <div class="flex items-center w-full justify-center" >
-              <button class="text-red-500  font-bold px-6 py-2 flex items-center  gap-2">
+           <div class="p-7 sm:p-8 text-center flex-1 flex flex-col">
+             <h3 class="text-2xl font-bold text-black mb-3">Electrical & Plumbing</h3>
+             <p class="text-gray-700 mb-6 leading-relaxed text-base sm:text-[15px]">Licensed electrical work and plumbing services including installations, repairs, and safety inspections.</p>
+             <div class="mt-auto flex items-center w-full justify-center" >
+               <button class="text-red-600  font-bold px-6 py-2 flex items-center  gap-2">
               View More <span class="text-lg">→</span>
             </button>
             </div>
@@ -533,8 +539,8 @@
       </div>
 
       <!-- View All Services Button -->
-      <div class="text-center mt-12">
-        <a href="#contact" class="inline-block bg-red-600 text-white font-bold px-8 py-3 shadow-lg">
+       <div class="text-center mt-10 sm:mt-12">
+         <a href="#contact" class="inline-block bg-red-600 text-white font-bold px-6 sm:px-8 py-3 shadow-lg rounded-lg">
           View All Services →
         </a>
       </div>
@@ -629,17 +635,76 @@
 
 
   <!-- Projects Section -->
-  <section class=" mx-auto py-20  ">
-    <div class="max-w-7xl mx-auto  ">
-        <div class="text-center mb-12">
-          <p class="text-lg text-red-600 font-light">SGSA CONSTRUCTION COMPANY</p>
-          <h1 class="text-4xl font-bold text-sky-900 mb-3">Empowering Vision through Action</h1>
+  <section class="mx-auto py-12 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8 sm:mb-12">
+          <p class="text-base sm:text-lg text-red-600 font-light">SGSA CONSTRUCTION COMPANY</p>
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-sky-900 mb-3">Empowering Vision through Action</h1>
         </div>
         
-        <div class="grid grid-cols-6 grid-rows-3 gap-4 h-[800px]">
+        <!-- Mobile: Stack vertically -->
+        <div class="flex flex-col md:hidden gap-4">
             <!-- First div: Republic Polytechnic Hotel -->
-            <div class="col-span-4 row-span-2 rounded-lg shadow-lg project-card ">
-                <img class="w-full h-full rounded-lg " src="images/11.jpeg" alt="Republic Polytechnic Hotel">
+            <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
+                <img class="w-full h-full rounded-lg object-cover" src="images/11.jpeg" alt="Republic Polytechnic Hotel">
+                <div class="project-overlay">
+                    <div class="project-title">
+                        <h3 class="text-white text-xl sm:text-2xl font-bold">Republic Polytechnic</h3>
+                        <p class="text-gray-300 text-base sm:text-lg">Hotel</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second div: Marina Bay Residence -->
+            <div class="w-full h-[200px] sm:h-[250px] rounded-lg shadow-lg project-card overflow-hidden">
+                <img class="w-full h-full rounded-lg object-cover" src="images/8.jpeg" alt="Marina Bay Residence">
+                <div class="project-overlay">
+                    <div class="project-title">
+                        <h3 class="text-white text-lg sm:text-xl font-bold">Marina Bay</h3>
+                        <p class="text-gray-300 text-sm sm:text-base">Residence</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Third div: Sentosa Resort -->
+            <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
+                <img class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort">
+                <div class="project-overlay">
+                    <div class="project-title">
+                        <h3 class="text-white text-lg sm:text-xl font-bold">Sentosa</h3>
+                        <p class="text-gray-300 text-sm sm:text-base">Resort</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fourth div: Orchard Plaza -->
+            <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
+                <img class="w-full h-full rounded-lg object-cover" src="images/9.jpeg" alt="Orchard Plaza">
+                <div class="project-overlay">
+                    <div class="project-title">
+                        <h3 class="text-white text-lg sm:text-xl font-bold">Orchard Plaza</h3>
+                        <p class="text-gray-300 text-sm sm:text-base">Commercial</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fifth div: Clarke Quay Tower -->
+            <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
+                <img class="w-full h-full rounded-lg object-cover" src="images/10.jpeg" alt="Clarke Quay Tower">
+                <div class="project-overlay">
+                    <div class="project-title">
+                        <h3 class="text-white text-lg sm:text-xl font-bold">Clarke Quay</h3>
+                        <p class="text-gray-300 text-sm sm:text-base">Tower</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop/Tablet: Original grid layout -->
+        <div class="hidden md:grid md:grid-cols-6 md:grid-rows-3 gap-4 md:h-[600px] lg:h-[800px]">
+            <!-- First div: Republic Polytechnic Hotel -->
+            <div class="col-span-4 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
+                <img class="w-full h-full rounded-lg object-cover" src="images/11.jpeg" alt="Republic Polytechnic Hotel">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-2xl font-bold">Republic Polytechnic</h3>
@@ -649,8 +714,8 @@
             </div>
             
             <!-- Second div: Marina Bay Residence -->
-            <div class="col-span-2 row-span-1 rounded-lg shadow-lg project-card">
-                <img class="w-full h-full rounded-lg" src="images/8.jpeg" alt="Marina Bay Residence">
+            <div class="col-span-2 row-span-1 rounded-lg shadow-lg project-card overflow-hidden">
+                <img class="w-full h-full rounded-lg object-cover" src="images/8.jpeg" alt="Marina Bay Residence">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-xl font-bold">Marina Bay</h3>
@@ -660,19 +725,19 @@
             </div>
             
             <!-- Third div: Sentosa Resort -->
-            <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card">
-                <img class="w-full h-full rounded-lg" src="images/12.png" alt="Sentosa Resort">
+            <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
+                <img class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-xl font-bold">Sentosa</h3>
                         <p class="text-gray-300">Resort</p>
-                        </div>
+                    </div>
                 </div>
             </div>
             
             <!-- Fourth div: Orchard Plaza -->
-            <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card">
-                <img class="w-full h-full rounded-lg" src="images/9.jpeg" alt="Orchard Plaza">
+            <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
+                <img class="w-full h-full rounded-lg object-cover" src="images/9.jpeg" alt="Orchard Plaza">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-xl font-bold">Orchard Plaza</h3>
@@ -682,8 +747,8 @@
             </div>
             
             <!-- Fifth div: Clarke Quay Tower -->
-            <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card">
-                <img class="w-full h-full rounded-lg" src="images/10.jpeg" alt="Clarke Quay Tower">
+            <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
+                <img class="w-full h-full rounded-lg object-cover" src="images/10.jpeg" alt="Clarke Quay Tower">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-xl font-bold">Clarke Quay</h3>
@@ -692,11 +757,11 @@
                 </div>
             </div>
         </div>
-        <div class="text-center mt-8">
-            <a href="#all-projects" class="group inline-block relative  border-2  border-sky-500 text-sky-500 font-semibold px-8 py-3 rounded-md shadow-lg transition-all duration-300 overflow-hidden hover:text-white hover:border-white">
+        <div class="text-center mt-6 sm:mt-8 px-4">
+            <a href="completed-projects.html" class="group inline-block relative border-2 border-sky-500 text-sky-500 font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-md shadow-lg transition-all duration-300 overflow-hidden hover:text-white hover:border-white text-sm sm:text-base">
                 <span class="relative z-10">View All Projects</span>
                 <span class="absolute inset-0 bg-sky-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                <span class="absolute inset-0 border-2  rounded-lg opacity-0 group-hover:opacity-100 group-hover:animate-pulse"></span>
+                <span class="absolute inset-0 border-2 rounded-lg opacity-0 group-hover:opacity-100 group-hover:animate-pulse"></span>
             </a>
         </div>
 </div>
@@ -915,60 +980,60 @@
     </div>
   </section>
 
-  <section class=" pt-20 bg-gray-100">
+  <section class="pt-20 bg-gray-100">
     <!-- About Section -->
-  <div class="max-w-7xl mx-auto">
-    <div class="flex justify-between items-center s">
-    <div class="text-[18px] border-l-4 border-cyan-500 pl-7">
-    <span class="text-[44px]  font-semibold leading-tight">
-      <span class="text-cyan-500">Over 4 Years</span> of Expertise in <br> Renovation and Reinstate <br>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 lg:gap-12">
+    <div class="text-base sm:text-lg border-l-4 border-cyan-500 pl-4 sm:pl-7 flex-1">
+    <span class="text-2xl sm:text-3xl lg:text-[44px] font-semibold leading-tight block">
+      <span class="text-cyan-500">Over 4 Years</span> of Expertise in <span class="hidden sm:inline"><br></span> Renovation and Reinstate <span class="hidden sm:inline"><br></span>
     </span>
-    <div class="text-gray-500 mt-7">
-     We provide reliable handyman and renovation services across <br> Singapore. Backed by skilled workers with over 23 years of <br> experience, we deliver quality repairs, renovations, and <br> reinstatement works with transparent pricing, timely <br> completion, and dependable workmanship you can trust.
+    <div class="text-gray-500 mt-4 sm:mt-7 text-sm sm:text-base leading-relaxed">
+     We provide reliable handyman and renovation services across <span class="hidden sm:inline"><br></span> Singapore. Backed by skilled workers with over 23 years of <span class="hidden sm:inline"><br></span> experience, we deliver quality repairs, renovations, and <span class="hidden sm:inline"><br></span> reinstatement works with transparent pricing, timely <span class="hidden sm:inline"><br></span> completion, and dependable workmanship you can trust.
     </div>
-    <button class="font-archivo text-[15px] font-light border border-cyan-500 p-3 rounded-md px-7 mt-7 hover:bg-cyan-500 hover:text-white ">ABOUT THE COMPANY</button>
+    <button class="font-archivo text-sm sm:text-[15px] font-light border border-cyan-500 p-3 rounded-md px-5 sm:px-7 mt-4 sm:mt-7 hover:bg-cyan-500 hover:text-white transition-colors">ABOUT THE COMPANY</button>
     </div>
-    <div>
+    <div class="flex-shrink-0 w-full lg:w-auto">
       <!-- about image -->
-      <img class="w-[500px] h-[500px] rounded-3xl shadow-2xl object-cover" src="images/fotos-k72xVjAmVHE-unsplash.jpg" alt="Professional Handyman Services">
+      <img class="w-full max-w-full sm:max-w-md lg:w-[500px] lg:h-[500px] h-auto sm:h-[400px] lg:h-[500px] rounded-3xl shadow-2xl object-cover mx-auto lg:mx-0" src="images/fotos-k72xVjAmVHE-unsplash.jpg" alt="Professional Handyman Services">
     </div>
   </div>
   </div>
 
   <!-- Statistics Section -->
-  <div class="mt-20  pb-16 ">
+  <div class="mt-12 sm:mt-20 pb-12 sm:pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         <!-- Stat 1: Years of Experience -->
         <div class="text-center">
-          <div class="mb-4">
-            <h1 class="text-6xl font-bold text-blue-600">
+          <div class="mb-3 sm:mb-4">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-blue-600">
               <span class="stat-counter" data-target="4">0</span>+
             </h1>
           </div>
-          <div class="text-lg font-semibold text-black">Years of Experience</div>
+          <div class="text-base sm:text-lg font-semibold text-black">Years of Experience</div>
           
         </div>
 
         <!-- Stat 2: Clients Served -->
         <div class="text-center">
-          <div class="mb-4">
-            <h1 class="text-6xl font-bold text-blue-600">
+          <div class="mb-3 sm:mb-4">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-blue-600">
               <span class="stat-counter" data-target="1000">0</span>+
             </h1>
           </div>
-          <div class="text-lg font-semibold text-black">Happy Clients</div>
+          <div class="text-base sm:text-lg font-semibold text-black">Happy Clients</div>
           
         </div>
 
         <!-- Stat 3: Projects Completed -->
         <div class="text-center">
-          <div class="mb-4">
-            <h1 class="text-6xl font-bold text-blue-600">
+          <div class="mb-3 sm:mb-4">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-blue-600">
               <span class="stat-counter" data-target="3250">0</span>+
             </h1>
           </div>
-          <div class="text-lg font-semibold text-black">Projects Completed</div>
+          <div class="text-base sm:text-lg font-semibold text-black">Projects Completed</div>
           
         </div>
       </div>
@@ -1491,7 +1556,7 @@
                 
                 // Change text color to dark
                 navLinks.forEach(link => {
-                    link.classList.remove('text-white', 'hover:text-sky-400');
+                    link.classList.remove('text-cyan-600', 'hover:text-sky-400');
                     link.classList.add('text-gray-800', 'hover:text-sky-600');
                 });
                 
@@ -1506,7 +1571,7 @@
                 // Change text color back to white
                 navLinks.forEach(link => {
                     link.classList.remove('text-gray-800', 'hover:text-sky-600');
-                    link.classList.add('text-white', 'hover:text-sky-400');
+                    link.classList.add('text-cyan-600', 'hover:text-sky-400');
                 });
                 
                 // Change mobile button color back
