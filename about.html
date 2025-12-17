@@ -1,466 +1,667 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - SGSA Construction</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    .font-archivo {
-      font-family: 'Archivo', sans-serif;
-    }
-    .nav-link {
-            position: relative;
-            display: inline-block;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | SGSA Construction - From HDB Repairs to Dream Renovations</title>
+    <meta name="description" content="Meet the team behind SGSA Construction. From humble beginnings in Jalan Besar to becoming Singapore's trusted handyman service. Our story, our people, our promise.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
         
+        .heading-font { font-family: 'Archivo', serif; }
+        .body-font { font-family: 'Inter', sans-serif; }
+        .font-archivo { font-family: 'Archivo', sans-serif; }
+        
+        .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card-hover:hover { transform: translateY(-8px); }
+        .icon-container { transition: all 0.4s ease; }
+        .card-hover:hover .icon-container { transform: scale(1.1); }
+        
+        .nav-link { position: relative; display: inline-block; }
         .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            background-color: #38bdf8;
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -5px; left: 50%; background-color: #38bdf8;
+            transition: all 0.3s ease; transform: translateX(-50%);
+        }
+        .nav-link:hover::after { width: 100%; }
+        nav { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+        
+        /* Hero animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-headline { animation: fadeInDown 0.8s ease-out; }
+        .hero-subheading { animation: fadeInUp 0.8s ease-out 0.2s both; }
+        
+        /* Timeline */
+        .timeline-line {
+            background: linear-gradient(to bottom, #06b6d4, #dc2626);
         }
         
-        .nav-link:hover::after {
-            width: 100%;
+        /* Team card */
+        .team-card:hover .team-overlay {
+            opacity: 1;
         }
-
-        /* Smooth transition for navbar background */
-        nav {
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        .team-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        .project-card {
+        
+        /* Quote styling */
+        .founder-quote {
             position: relative;
-            overflow: hidden;
-            cursor: pointer;
         }
-        
-        .project-card img {
-            transition: transform 0.5s ease, filter 0.5s ease;
-            object-fit: cover;
-        }
-        
-        .project-card:hover img {
-            transform: scale(1.1);
-            filter: brightness(0.7);
-        }
-        
-        .project-overlay {
+        .founder-quote::before {
+            content: '"';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1.5rem;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            top: -20px;
+            left: -10px;
+            font-size: 80px;
+            color: #06b6d4;
+            opacity: 0.3;
+            font-family: Georgia, serif;
         }
-        
-        .project-title {
-            border-left: 4px solid #38bdf8;
-            padding-left: 1rem;
+
+        /* Off-canvas mobile menu */
+        .mobile-menu-overlay {
+            opacity: 0; visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
-        .hero-overlay {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
+        .mobile-menu-panel {
+            transform: translateX(-100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
-  </style>
+        .mobile-menu-panel.active { transform: translateX(0); }
+        body.menu-open { overflow: hidden; }
+    </style>
 </head>
-<body class="font-archivo ">
- 
-  <div class="relative mb-20">
+
+<body class="font-archivo bg-white">
     <!-- Navbar -->
-    <nav id="navbar" class="fixed z-20 top-0 left-0 right-0 z-10 pb-[24px] pt-[24px]">
-            <div class="max-w-6xl mx-auto">
-                <div class="flex justify-between items-center h-20 px-4">
-                    <!-- Logo -->
-                    <div class="flex-shrink-0">
-                        <a href="index.html" class="flex items-center">
-                            <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" class="h-[80px]">
-                        </a>
-                    </div>
-
-                    <!-- Navigation Links -->
-                    <div class="hidden md:flex space-x-10 font-archivo">
-                        <a href="index.html" class="nav-link text-white hover:text-sky-400 text-md  font-medium transition duration-300">HOME</a>
-                        <a href="about.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">ABOUT</a>
-                        <a href="services.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">SERVICES</a>
-                        <a href="projects.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">PROJECTS</a>
-                        <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">CONTACT US</a>
-                    </div>
-
-                    <!-- Mobile Menu Button -->
-                    <div class="md:hidden">
-                        <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none">
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    <nav id="navbar" class="fixed z-20 top-0 left-0 right-0 pb-[18px] pt-[18px]  ">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-center h-20 px-4">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="flex items-center">
+                        <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="SGSA Construction">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-10 font-archivo items-center">
+                    <a href="index.html" class="nav-link text-sky-500 hover:text-sky-600 text-md font-medium transition duration-300">HOME</a>
+                    <a href="about.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">ABOUT</a>
+                    <div class="relative dropdown-wrapper group">
+                        <button class="nav-link text-sky-500 hover:text-sky-600 text-md font-medium transition duration-300 flex items-center gap-1">
+                            SERVICES
+                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </button>
+                        <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <div class="menu-item relative group/handyman">
+                                <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between border-b border-gray-100">
+                                    <span class="font-semibold text-gray-800">Handyman Services</span>
+                                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
+                                    <div class="py-2">
+                                        <a href="plumbing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                        <a href="electrical.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                        <a href="painting.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
+                                        <a href="plastering.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
+                                        <a href="tile-laying.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
+                                        <a href="aircon.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-item relative group/renovation">
+                                <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between">
+                                    <span class="font-semibold text-gray-800">Renovation Services</span>
+                                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </div>
+                                <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
+                                    <div class="py-2">
+                                        <a href="renovation-works.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
+                                        <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
+                                        <a href="carpentry.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
+                                        <a href="waterproofing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
+                                        <a href="hacking-demolition.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Hacking & Demolition</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <a href="completed-projects.html" class="nav-link text-sky-500 hover:text-sky-600 text-md font-medium transition duration-300">GALLERY</a>
+                    <a href="contacts.html" class="nav-link text-sky-500 hover:text-sky-600 text-md font-medium transition duration-300">CONTACT</a>
+                </div>
+                <div class="hidden sm:block">
+                    <a href="tel:+6560254678" class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">
+                        📞 Call Now
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-800 hover:text-sky-400 focus:outline-none">
+                        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                 </div>
             </div>
+        </div>
+    </nav>
 
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-                <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="index.html" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Home</a>
-                    <a href="about.html" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">About</a>
-                    <a href="services.html" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Services</a>
-                    <a href="projects.html" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Projects</a>
-                    <a href="contacts.html" class="block px-3 py-2 text-gray-800 hover:text-sky-600 hover:bg-gray-50 font-medium transition duration-300">Contact Us</a>
-                </div>
+    <!-- Mobile Off-Canvas Menu -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+    <div id="mobile-menu-panel" class="mobile-menu-panel fixed top-0 left-0 h-full w-[75%] max-w-[320px] bg-white z-50 md:hidden shadow-2xl flex flex-col">
+        <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-gray-50">
+            <a href="index.html">
+                <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction" class="w-[140px]">
+            </a>
+            <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
+                <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="flex-1 overflow-y-auto py-6 px-6">
+            <nav class="space-y-2">
+                <a href="index.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">Home</a>
+                <a href="about.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-cyan-600 bg-cyan-50 rounded-xl">About</a>
+                <a href="services.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">Services</a>
+                <a href="completed-projects.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">Gallery</a>
+                <a href="contacts.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">Contact</a>
+            </nav>
+        </div>
+        <div class="px-6 py-5 border-t border-gray-100 bg-gray-50">
+            <a href="tel:+6560254678" class="flex items-center justify-center gap-3 w-full bg-red-600 hover:bg-red-700 text-white text-lg font-bold py-4 rounded-xl shadow-lg transition">
+                📞 Call Now
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/6586955055?text=Hi%20SGSA%20Construction%20%7C%20I%20need%20handyman%20services" target="_blank" rel="noopener noreferrer" class="fixed bottom-20 right-6 z-40 group">
+        <div class="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 mb-5 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center w-16 h-16 hover:scale-110">
+            <svg fill="#ffffff" viewBox="0 0 32 32" class="w-8 h-8"><path d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0z"></path></svg>
+        </div>
+    </a>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="relative pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 right-20 w-72 h-72 bg-cyan-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 left-20 w-96 h-96 bg-red-500 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-6xl mx-auto px-4 text-center">
+            <p class="hero-headline text-cyan-400 text-sm uppercase tracking-[0.3em] font-semibold mb-4">Est. 2019 • Jalan Besar, Singapore</p>
+            <h1 class="hero-headline text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                We Fix Homes.<br>
+                <span class="text-cyan-400">We Build Trust.</span>
+            </h1>
+            <p class="hero-subheading text-xl text-slate-300 max-w-2xl mx-auto mb-8">
+                From a small workshop with two workers to serving over 1,000 happy homeowners across Singapore — this is our story.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+                <span class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    Family-Owned Business
+                </span>
+                <span class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    BCA Licensed
+                </span>
+                <span class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    3,250+ Projects Completed
+                </span>
             </div>
-        </nav>
-
-  </div>
-
-  <section class="hero-section relative h-[450px]">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80" 
-             alt="About SGSA Construction" 
-             class="w-full h-full object-cover">
-        <div class="absolute inset-0 hero-overlay flex items-center justify-center">
-            <h1 class="text-white text-5xl md:text-6xl font-bold tracking-wide">About SGSA Construction</h1>
         </div>
     </section>
 
-  <!-- About Section - Company History -->
-  <div class="max-w-7xl mx-auto px-4 py-20">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <img class="w-full h-[500px] rounded-lg shadow-2xl object-cover" src="images/7.jpeg" alt="SGSA Construction Legacy">
-      </div>
-      <div>
-        <h2 class="text-5xl font-bold text-gray-900 mb-6">Our Journey</h2>
-        <p class="text-lg text-gray-600 mb-4 leading-relaxed">
-          SGSA Construction was founded with a vision to revolutionize the construction industry through innovation, reliability, and integrity. Over the past decades, we've grown from a small team to a recognized leader in Singapore's construction sector.
-        </p>
-        <p class="text-lg text-gray-600 mb-4 leading-relaxed">
-          Our commitment to excellence has earned us the trust of major corporations, government agencies, and private developers across Asia. We don't just build structures—we build lasting relationships and deliver projects that stand the test of time.
-        </p>
-        <div class="grid grid-cols-3 gap-6 mt-10">
-          <div class="text-center">
-            <p class="text-4xl font-bold text-sky-600">500+</p>
-            <p class="text-gray-600 mt-2">Projects Completed</p>
-          </div>
-          <div class="text-center">
-            <p class="text-4xl font-bold text-sky-600">98%</p>
-            <p class="text-gray-600 mt-2">Client Satisfaction</p>
-          </div>
-          <div class="text-center">
-            <p class="text-4xl font-bold text-sky-600">50+</p>
-            <p class="text-gray-600 mt-2">Years Experience</p>
-          </div>
+    <!-- ==================== THE FOUNDER'S STORY ==================== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Side -->
+                <div class="relative">
+                    <img src="images/fotos-k72xVjAmVHE-unsplash.jpg" alt="SGSA Construction Team at Work" class="rounded-2xl shadow-2xl w-full h-[500px] object-cover">
+                    <!-- Floating Stats Card -->
+                    <div class="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-6 border-l-4 border-cyan-500">
+                        <p class="text-4xl font-bold text-slate-900">2019</p>
+                        <p class="text-slate-600 text-sm">Year Founded</p>
+                    </div>
+                    <!-- Small accent -->
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-red-600 rounded-xl -z-10"></div>
+                </div>
+                
+                <!-- Story Side -->
+                <div>
+                    <p class="text-red-600 text-sm uppercase tracking-[0.2em] font-semibold mb-3">Our Beginning</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                        It Started With a Leaky Tap and a Promise
+                    </h2>
+                    
+                    <div class="founder-quote bg-slate-50 rounded-xl p-6 mb-6 relative">
+                        <p class="text-slate-700 text-lg italic leading-relaxed">
+                            "My father was a carpenter for 30 years. He taught me that every home tells a story, and every repair is a chance to make someone's day better. When I started SGSA in 2019 with just my brother and a second-hand van, we had one rule: <strong class="text-cyan-600">treat every customer's home like it's your own.</strong>"
+                        </p>
+                        <p class="text-slate-500 mt-4 text-sm">— Michael Tan, Founder</p>
+                    </div>
+                    
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        What began as fixing a neighbor's leaky tap in Toa Payoh grew into something bigger. Word spread. Aunties recommended us to their friends. Soon, we were getting calls from all over Singapore — from HDB flats in Bedok to condos in Orchard.
+                    </p>
+                    
+                    <p class="text-slate-600 leading-relaxed">
+                        Today, we're still the same company at heart. We still answer our own phones. We still show up on time. And we still believe that a handshake is a promise.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- Core Values Section -->
-  <section class="bg-gradient-to-r from-gray-50 to-blue-50 py-20">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-5xl font-bold text-gray-900 mb-4">Our Core Values</h2>
-        <p class="text-xl text-gray-600">The principles that guide every decision we make</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Value 1 -->
-        <div class="bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition duration-300 border-t-4 border-sky-600">
-          <div class="text-5xl font-bold text-sky-600 mb-4">01</div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Safety First</h3>
-          <p class="text-gray-600">Zero tolerance for unsafe practices. Every team member goes home safely.</p>
+    <!-- ==================== OUR JOURNEY TIMELINE ==================== -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="text-red-600 text-sm uppercase tracking-[0.2em] font-semibold mb-3">Milestones</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Our Journey So Far</h2>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
+                
+                <!-- 2019 -->
+                <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12 pl-12 md:pl-0">
+                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 md:border-l-0 md:border-r-4 border-cyan-500">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">🚐 The Van Days</h3>
+                            <p class="text-slate-600">Started with a second-hand van, two workers, and $$500 in tools. Our first job? Fixing a ceiling fan in Ang Mo Kio for $40.</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-cyan-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <span class="inline-block bg-cyan-100 text-cyan-700 font-bold px-4 py-2 rounded-full text-sm">2019</span>
+                    </div>
+                </div>
+                
+                <!-- 2020 -->
+                <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12 pl-12 md:pl-0">
+                    <div class="md:w-1/2 md:pr-12 md:text-right order-1 md:order-1 mb-4 md:mb-0">
+                        <span class="inline-block bg-slate-100 text-slate-700 font-bold px-4 py-2 rounded-full text-sm">2020</span>
+                    </div>
+                    <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-slate-400 rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div class="md:w-1/2 md:pl-12 order-2 md:order-2">
+                        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-slate-400">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">😷 COVID Pivot</h3>
+                            <p class="text-slate-600">When circuit breaker hit, we became the "emergency guys." Fixed over 200 urgent home repairs while everyone was stuck at home. Grateful to serve.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2021 -->
+                <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12 pl-12 md:pl-0">
+                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 md:border-l-0 md:border-r-4 border-cyan-500">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">🏢 First Office</h3>
+                            <p class="text-slate-600">Moved into our current home at Jalan Besar Plaza. Added electrical and aircon services. Hired our first full-time team.</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-cyan-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <span class="inline-block bg-cyan-100 text-cyan-700 font-bold px-4 py-2 rounded-full text-sm">2021</span>
+                    </div>
+                </div>
+                
+                <!-- 2022 -->
+                <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12 pl-12 md:pl-0">
+                    <div class="md:w-1/2 md:pr-12 md:text-right order-1 md:order-1 mb-4 md:mb-0">
+                        <span class="inline-block bg-slate-100 text-slate-700 font-bold px-4 py-2 rounded-full text-sm">2022</span>
+                    </div>
+                    <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-slate-400 rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div class="md:w-1/2 md:pl-12 order-2 md:order-2">
+                        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-slate-400">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">🏠 Renovation Division</h3>
+                            <p class="text-slate-600">Launched full renovation services. Completed our first whole-flat HDB renovation in Punggol — a 4-room BTO transformed in 8 weeks.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2024 -->
+                <div class="relative flex flex-col md:flex-row items-start md:items-center pl-12 md:pl-0">
+                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
+                        <div class="bg-gradient-to-r from-red-50 to-cyan-50 rounded-xl p-6 shadow-lg border-l-4 md:border-l-0 md:border-r-4 border-red-500">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">🎉 Today</h3>
+                            <p class="text-slate-600">15+ skilled workers. 3,250+ projects completed. 1,000+ happy homeowners. Still answering our own phones. Still showing up on time.</p>
+                        </div>
+                    </div>
+                    <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-red-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <span class="inline-block bg-red-100 text-red-700 font-bold px-4 py-2 rounded-full text-sm">2024</span>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Value 2 -->
-        <div class="bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition duration-300 border-t-4 border-sky-600">
-          <div class="text-5xl font-bold text-sky-600 mb-4">02</div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Integrity</h3>
-          <p class="text-gray-600">Honesty and transparency in all our dealings with clients and partners.</p>
+    <!-- ==================== MEET THE TEAM ==================== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="text-red-600 text-sm uppercase tracking-[0.2em] font-semibold mb-3">The People Behind SGSA</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Meet Our Core Team</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Real people who care about your home as much as you do.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="team-card relative group">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face" alt="Michael Tan" class="w-full h-80 object-cover">
+                        <div class="team-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-6">
+                            <p class="text-white text-sm leading-relaxed">"Every job is personal. I still visit sites myself to make sure we're doing right by our customers."</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-lg font-bold text-slate-900">Michael Tan</h3>
+                        <p class="text-cyan-600 font-medium text-sm">Founder & Operations</p>
+                        <p class="text-slate-500 text-xs mt-1">10+ years in construction</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-card relative group">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face" alt="David Tan" class="w-full h-80 object-cover">
+                        <div class="team-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-6">
+                            <p class="text-white text-sm leading-relaxed">"I handle the schedules and customer calls. When you call SGSA, you're probably talking to me!"</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-lg font-bold text-slate-900">David Tan</h3>
+                        <p class="text-cyan-600 font-medium text-sm">Co-Founder & Customer Relations</p>
+                        <p class="text-slate-500 text-xs mt-1">Michael's brother</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-card relative group">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop&crop=face" alt="Ah Kow" class="w-full h-80 object-cover">
+                        <div class="team-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-6">
+                            <p class="text-white text-sm leading-relaxed">"25 years as a plumber. I've seen every kind of leak. There's no problem I can't solve."</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-lg font-bold text-slate-900">Ah Kow</h3>
+                        <p class="text-cyan-600 font-medium text-sm">Senior Plumber</p>
+                        <p class="text-slate-500 text-xs mt-1">25 years experience</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-card relative group">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop&crop=face" alt="Kumar" class="w-full h-80 object-cover">
+                        <div class="team-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-6">
+                            <p class="text-white text-sm leading-relaxed">"I lead our renovation projects. My goal: deliver on time, on budget, and with zero complaints."</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h3 class="text-lg font-bold text-slate-900">Kumar</h3>
+                        <p class="text-cyan-600 font-medium text-sm">Renovation Project Lead</p>
+                        <p class="text-slate-500 text-xs mt-1">15 years experience</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Stats -->
+            <div class="mt-16 bg-slate-900 rounded-2xl p-8 md:p-12">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <p class="text-4xl md:text-5xl font-bold text-cyan-400">15+</p>
+                        <p class="text-slate-400 mt-2">Skilled Workers</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl md:text-5xl font-bold text-cyan-400">23</p>
+                        <p class="text-slate-400 mt-2">Years Combined Experience</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl md:text-5xl font-bold text-cyan-400">98%</p>
+                        <p class="text-slate-400 mt-2">Customer Satisfaction</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl md:text-5xl font-bold text-cyan-400">24hr</p>
+                        <p class="text-slate-400 mt-2">Emergency Response</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Value 3 -->
-        <div class="bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition duration-300 border-t-4 border-sky-600">
-          <div class="text-5xl font-bold text-sky-600 mb-4">03</div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Excellence</h3>
-          <p class="text-gray-600">Consistent pursuit of the highest quality in every project we undertake.</p>
+    <!-- ==================== WHAT WE BELIEVE ==================== -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="text-red-600 text-sm uppercase tracking-[0.2em] font-semibold mb-3">Our Values</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">What We Believe In</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Value 1 -->
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border-t-4 border-cyan-500">
+                    <div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🤝</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">No BS Pricing</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        The price we quote is the price you pay. No "oh, we found another issue" surprises. If something comes up, we discuss it first — always.
+                    </p>
+                </div>
+                
+                <!-- Value 2 -->
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border-t-4 border-red-500">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🏠</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Your Home = Our Home</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        We take off our shoes. We lay down protective sheets. We clean up after ourselves. Your home deserves respect, and that's what we give it.
+                    </p>
+                </div>
+                
+                <!-- Value 3 -->
+                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border-t-4 border-slate-800">
+                    <div class="w-14 h-14 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">✅</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Fix It Right, First Time</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        We don't do "quick patches." Every repair is done properly so you don't have to call us back for the same problem. That's our promise.
+                    </p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Value 4 -->
-        <div class="bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition duration-300 border-t-4 border-sky-600">
-          <div class="text-5xl font-bold text-sky-600 mb-4">04</div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-3">Innovation</h3>
-          <p class="text-gray-600">Embracing new technologies and methods to stay ahead of the industry.</p>
+    <!-- ==================== BEFORE/AFTER SHOWCASE ==================== -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="text-red-600 text-sm uppercase tracking-[0.2em] font-semibold mb-3">Real Results</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">See Our Work in Action</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Real transformations from real Singapore homes.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="rounded-2xl overflow-hidden shadow-xl">
+                    <div class="relative">
+                        <img src="images/gallery/under.jpg" alt="Renovation in Progress" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-slate-900/80 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            During Work
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-50">
+                        <h3 class="font-bold text-slate-900 mb-1">4-Room HDB Renovation</h3>
+                        <p class="text-slate-600 text-sm">Punggol • Full flat renovation</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="rounded-2xl overflow-hidden shadow-xl">
+                    <div class="relative">
+                        <img src="images/gallery/finish.jpg" alt="Completed Renovation" class="w-full h-64 object-cover">
+                        <div class="absolute top-4 left-4 bg-cyan-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Completed
+                        </div>
+                    </div>
+                    <div class="p-6 bg-slate-50">
+                        <h3 class="font-bold text-slate-900 mb-1">Kitchen Transformation</h3>
+                        <p class="text-slate-600 text-sm">Toa Payoh • Complete kitchen overhaul</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="completed-projects.html" class="inline-block bg-slate-900 hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-lg transition shadow-lg">
+                    View Full Gallery →
+                </a>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Leadership Section -->
-  <section class="max-w-7xl mx-auto mt-20 mb-20 px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-5xl font-bold text-gray-900 mb-4">Our Leadership</h2>
-          <p class="text-xl text-gray-600">Experienced professionals driving our vision forward</p>
+    <!-- ==================== CTA SECTION ==================== -->
+    <section class="py-20 bg-gradient-to-r from-red-600 to-red-700 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -mr-48 -mt-48"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full -ml-48 -mb-48"></div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Leader 1 -->
-            <div class="group">
-                <div class="relative overflow-hidden rounded-lg mb-4 h-80">
-                    <img class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="images/7.jpeg" alt="CEO">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
-                        <div class="p-4 w-full">
-                            <p class="text-white text-sm">15+ years in construction industry</p>
-                        </div>
-                    </div>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-1">David Wong</h3>
-                <p class="text-sky-600 font-semibold mb-2">Chief Executive Officer</p>
-                <p class="text-gray-600 text-sm">Strategic leadership and vision</p>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Experience the SGSA Difference?
+            </h2>
+            <p class="text-red-100 text-lg mb-8 max-w-2xl mx-auto">
+                No hard sell. No pushy quotes. Just honest advice and quality work. Let's chat about your home.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contacts.html" class="bg-white hover:bg-gray-100 text-red-600 font-bold px-10 py-4 rounded-lg shadow-xl transition text-lg">
+                    Get a Free Quote
+                </a>
+                <a href="https://wa.me/6586955055" class="bg-green-500 hover:bg-green-600 text-white font-bold px-10 py-4 rounded-lg shadow-xl transition text-lg flex items-center justify-center gap-2">
+                    💬 WhatsApp Us
+                </a>
             </div>
-
-            <!-- Leader 2 -->
-            <div class="group">
-                <div class="relative overflow-hidden rounded-lg mb-4 h-80">
-                    <img class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="images/8.jpeg" alt="COO">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
-                        <div class="p-4 w-full">
-                            <p class="text-white text-sm">20+ years of operations expertise</p>
-                        </div>
-                    </div>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-1">Angela Tan</h3>
-                <p class="text-sky-600 font-semibold mb-2">Chief Operating Officer</p>
-                <p class="text-gray-600 text-sm">Project management excellence</p>
-            </div>
-
-            <!-- Leader 3 -->
-            <div class="group">
-                <div class="relative overflow-hidden rounded-lg mb-4 h-80">
-                    <img class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="images/9.jpeg" alt="CFO">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
-                        <div class="p-4 w-full">
-                            <p class="text-white text-sm">Financial acumen and planning</p>
-                        </div>
-                    </div>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-1">Marcus Lee</h3>
-                <p class="text-sky-600 font-semibold mb-2">Chief Financial Officer</p>
-                <p class="text-gray-600 text-sm">Financial strategy & growth</p>
-            </div>
-
-            <!-- Leader 4 -->
-            <div class="group">
-                <div class="relative overflow-hidden rounded-lg mb-4 h-80">
-                    <img class="w-full h-full object-cover group-hover:scale-105 transition duration-300" src="images/10.jpeg" alt="Head of Safety">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end">
-                        <div class="p-4 w-full">
-                            <p class="text-white text-sm">Safety & compliance specialist</p>
-                        </div>
-                    </div>
-                </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-1">Sarah Ibrahim</h3>
-                <p class="text-sky-600 font-semibold mb-2">Head of Safety</p>
-                <p class="text-gray-600 text-sm">Zero-accident culture champion</p>
-            </div>
+            
+            <p class="text-red-200 text-sm mt-8">
+                📍 Visit us at Jalan Besar Plaza #02-36 • Open Mon-Sat, 9am-6pm
+            </p>
         </div>
-  </section>
+    </section>
 
-  <!-- Our Capabilities Section -->
-  <section class="max-w-7xl mx-auto py-20 px-4">
-    <div class="text-center mb-16">
-      <h2 class="text-5xl font-bold text-gray-900 mb-4">Our Capabilities</h2>
-      <p class="text-xl text-gray-600">Comprehensive construction solutions across multiple sectors</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-      <!-- Capability 1 -->
-      <div class="bg-white border-l-4 border-sky-600 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <h3 class="text-2xl font-bold text-gray-900 mb-3">Residential Development</h3>
-        <p class="text-gray-600 mb-4">From luxury condominiums to affordable housing, we deliver residential projects that combine quality craftsmanship with modern design.</p>
-        <ul class="space-y-2 text-gray-600">
-          <li class="flex items-center"><span class="text-sky-600 mr-3">✓</span> High-rise apartments</li>
-          <li class="flex items-center"><span class="text-sky-600 mr-3">✓</span> Townhouses & villas</li>
-          <li class="flex items-center"><span class="text-sky-600 mr-3">✓</span> Mixed-use developments</li>
-        </ul>
-      </div>
-
-      <!-- Capability 2 -->
-      <div class="bg-white border-l-4 border-sky-600 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <h3 class="text-2xl font-bold text-gray-900 mb-3">Commercial & Retail</h3>
-        <p class="text-gray-600 mb-4">We specialize in creating functional and attractive commercial spaces that drive business success.</p>
-        <ul class="space-y-2 text-gray-600">
-          <li class="flex items-center"><span class="text-sky-600 mr-3">✓</span> Office towers</li>
-          <li class="flex items-center"><span class="text-sky-600 mr-3">✓</span> Shopping centers</li>
-          <li class="flex items-center"><span class="text-sky-600 mr-3">✓</span> Business parks</li>
-        </ul>
-      </div>
-
-      <!-- Capability 3 -->
-      <div class="bg-white border-l-4 border-sky-600 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <h3 class="text-2xl font-bold text-gray-900 mb-3">Infrastructure & Civil Works</h3>
-        <p class="text-gray-600 mb-4">Large-scale infrastructure projects that support Singapore's continued development.</p>
-        <ul class="space-y-2 text-gray-600">
-          <li class="flex items-center"><span class="text-sky-600 mr-3">✓</span> Roads & highways</li>
-          <li class="flex items-center"><span class="text-sky-600 mr-3">✓</span> Bridges & tunnels</li>
-          <li class="flex items-center"><span class="text-sky-600 mr-3">✓</span> Utilities infrastructure</li>
-        </ul>
-      </div>
-
-      <!-- Capability 4 -->
-      <div class="bg-white border-l-4 border-sky-600 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-        <h3 class="text-2xl font-bold text-gray-900 mb-3">Specialized Construction</h3>
-        <p class="text-gray-600 mb-4">Expert handling of complex and specialized construction requirements.</p>
-        <ul class="space-y-2 text-gray-600">
-          <li class="flex items-center"><span class="text-sky-600 mr-3">✓</span> Heritage conservation</li>
-          <li class="flex items-center"><span class="text-sky-600 mr-3">✓</span> Renovation & retrofit</li>
-          <li class="flex items-center"><span class="text-sky-600 mr-3">✓</span> Sustainable building</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <footer class=" bottom-0 bg-gray-900 text-white border-t-4 border-t-sky-600">
-        <!-- First Row - Navigation Links -->
-        <div class="border-b border-gray-700">
-            <div class="max-w-7xl mx-auto px-4 py-6">
-                <nav class="flex flex-wrap justify-center md:justify-between items-center gap-6 md:gap-8 font-archivo">
-                    <a href="index.html" class="hover:text-sky-400 text-lg font-medium transition duration-300">Home</a>
-                    <span class="text-sky-600 hidden md:inline">/</span>
-                    <a href="about.html" class="hover:text-sky-400 text-lg font-medium transition duration-300">About</a>
-                    <span class="text-sky-600 hidden md:inline">/</span>
-                    <a href="services.html" class="hover:text-sky-400 text-lg font-medium transition duration-300">Services</a>
-                    <span class="text-sky-600 hidden md:inline">/</span>
-                    <a href="projects.html" class="hover:text-sky-400 text-lg font-medium transition duration-300">Projects</a>
-                    <span class="text-sky-600 hidden md:inline">/</span>
-                    <a href="contacts.html" class="hover:text-sky-400 text-lg font-medium transition duration-300">Contact Us</a>
-                </nav>
-            </div>
-        </div>
-
-        <!-- Second Row - Company Info (4 Divs) -->
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-gray-900 text-white border-t-4 border-t-cyan-600">
         <div class="border-b border-gray-700">
             <div class="max-w-7xl mx-auto px-4 py-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-                    <!-- Logo -->
-                    <div class="lg:col-span-2 md:col-span-1 items-center md:items-start">
+                    <div class="lg:col-span-2 md:col-span-1 items-center flex md:items-start justify-center">
                         <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" class="h-20 mb-3">
-                        
                     </div>
-
-                    <!-- Location -->
                     <div class="flex flex-col items-center justify-center md:items-start">
                         <div class="flex items-start gap-3">
                             <svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                             </svg>
-                            <div class="flex">
-                                
-                                <div>
-                                    <p class="text-gray-400 text-sm">Jalan Besar Plaza #02-36</p>
-                                    <p class="text-gray-400 text-sm">Singapore 208511
-
-</p>
-                                </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Jalan Besar Plaza #02-36</p>
+                                <p class="text-gray-400 text-sm">Singapore 208511</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Phone Number -->
                     <div class="flex flex-col items-center justify-center md:items-start">
                         <div class="flex items-start gap-3">
                             <svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                             </svg>
-                            <div class="flex ">
-                                
-                                <div>
-                                    <p class="text-gray-400 text-sm">Tel : +6560254678</p>
-                                <p class="text-gray-400 text-sm">Site Manager: +6591758912</p>
-                                </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Tel: +65 6025 4678</p>
+                                <p class="text-gray-400 text-sm">WhatsApp: +65 8695 5055</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Email -->
                     <div class="flex flex-col items-center justify-center md:items-start">
                         <div class="flex items-start gap-3">
                             <svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
-                            <div class="flex">
-                                
-                                <div >
-                                    <p class="text-gray-400 text-sm">sgsaconstruction@gmail.com</p>
-                                <p class="text-gray-400 text-sm">contact@sgsa.com</p>
-                                </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">sgsaconstruction@gmail.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Third Row - Copyright & Credits -->
         <div class="bg-gray-950">
             <div class="max-w-7xl mx-auto px-4 py-5">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-3">
                     <p class="text-gray-400 text-sm">&copy; 2024 SGSA Construction. All rights reserved.</p>
-                    <p class="text-gray-400 text-sm">SGSA Construction by <span class="text-sky-400 font-medium">Michael</span></p>
+                    <p class="text-gray-400 text-sm">Built with ❤️ in Singapore</p>
                 </div>
             </div>
         </div>
     </footer>
-  <script>
-    // Mobile menu toggle
-     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
 
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        const navLinks = navbar.querySelectorAll('.nav-link');
-        const mobileMenuButton = document.getElementById('mobile-menu-btn');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                // Scrolled state
-                navbar.classList.add('bg-white', 'shadow-lg');
-                navbar.classList.remove('bg-opacity-95');
-                
-                // Change text color to dark
-                navLinks.forEach(link => {
-                    link.classList.remove('text-white', 'hover:text-sky-400');
-                    link.classList.add('text-gray-800', 'hover:text-sky-600');
-                });
-                
-                // Change mobile button color
-                mobileMenuButton.classList.remove('text-white', 'hover:text-sky-400');
-                mobileMenuButton.classList.add('text-gray-800', 'hover:text-sky-600');
-            } else {
-                // Top of page state
-                navbar.classList.remove('bg-white', 'shadow-lg');
-                navbar.classList.add('bg-opacity-95');
-                
-                // Change text color back to white
-                navLinks.forEach(link => {
-                    link.classList.remove('text-gray-800', 'hover:text-sky-600');
-                    link.classList.add('text-white', 'hover:text-sky-400');
-                });
-                
-                // Change mobile button color back
-                mobileMenuButton.classList.remove('text-gray-800', 'hover:text-sky-600');
-                mobileMenuButton.classList.add('text-white', 'hover:text-sky-400');
-            }
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        function openMobileMenu() {
+            mobileMenuPanel.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            document.body.classList.add('menu-open');
+        }
+
+        function closeMobileMenu() {
+            mobileMenuPanel.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+        if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
+        if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close menu on link click
+        const mobileMenuLinks = mobileMenuPanel?.querySelectorAll('a');
+        mobileMenuLinks?.forEach(link => {
+            link.addEventListener('click', () => setTimeout(closeMobileMenu, 150));
         });
-  </script>
+    </script>
 </body>
 </html>
