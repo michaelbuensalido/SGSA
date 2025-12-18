@@ -115,10 +115,10 @@ body.menu-open {
                </a>
            </div>
            <div class="hidden md:flex space-x-10 font-archivo items-center">
-               <a href="index.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">HOME</a>
-               <a href="index.html#about" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">ABOUT</a>
+               <a href="index.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">HOME</a>
+               <a href="about.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">ABOUT</a>
                <div class="relative dropdown-wrapper group">
-                   <button class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1">SERVICES
+                   <button class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1">SERVICES
                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                        </svg>
@@ -166,8 +166,8 @@ body.menu-open {
                        </div>
                    </div>
                </div>
-               <a href="completed-projects.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">GALLERY</a>
-               <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">CONTACT</a>
+               <a href="completed-projects.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">GALLERY</a>
+               <a href="contacts.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">CONTACT</a>
            </div>
            <div>
                <a href="tel:+6560254678" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
@@ -306,7 +306,7 @@ body.menu-open {
 
   <!-- Single Project Before / After Card -->
   <section class="pb-20 pt-10 bg-white">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Project Meta / Controls -->
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-8 gap-4">
         <div>
@@ -327,11 +327,11 @@ body.menu-open {
       <!-- Card -->
       <div
         id="project-card"
-        class="relative bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden card-hover cursor-pointer max-w-4xl mx-auto"
+        class="relative bg-white rounded-3xl   overflow-hidden card-hover cursor-pointer max-w-6xl mx-auto"
       >
         <div class="grid md:grid-cols-5">
           <!-- Image Area -->
-          <div class="md:col-span-3 ba-wrapper h-[260px] sm:h-[340px] bg-slate-900">
+          <div class="md:col-span-3 ba-wrapper h-[30px] sm:h-[440px] bg-slate-900">
             <!-- After image (default visible) -->
             <img
               id="after-image"
@@ -378,7 +378,7 @@ body.menu-open {
                 <span id="project-tag">Kitchen / Carpentry / Tiling</span>
               </div>
               <p id="project-summary" class="text-slate-700 text-sm sm:text-[15px] leading-relaxed">
-                Clean cabinetry, updated lighting, and new surfaces transformed this once-tired kitchen into a bright, efficient space.
+
               </p>
               <ul id="project-highlights" class="mt-3 space-y-1 text-xs sm:text-sm text-slate-600">
                 <li>• Improved storage and work zones</li>
@@ -533,7 +533,7 @@ body.menu-open {
         title: 'Condominium Kitchen Upgrade',
         location: 'Singapore',
         tag: 'Kitchen / Carpentry / Tiling',
-        summary: 'Clean cabinetry, updated lighting, and new surfaces transformed this once-tired kitchen into a bright, efficient space.',
+        summary: 'This kitchen renovation in Singapore transformed a once outdated space into a bright, functional, and modern kitchen designed for daily use. Custom cabinetry, updated lighting, and new countertops were carefully installed to improve storage, workflow, and overall efficiency. The layout was refined to create well-defined work zones, making cooking and meal preparation more comfortable and practical.',
         highlights: [
           'Improved storage and work zones',
           'Durable finishes suitable for daily use',
@@ -620,7 +620,7 @@ body.menu-open {
       afterLabelEl.style.opacity = '0.4';
       afterLabelEl.style.transform = 'translateY(4px)';
       beforeLabelEl.style.opacity = '1';
-      beforeLabelEl.style.transform = 'translateY(0)';
+      beforeLabelEl.style.transform = 'translateY(4px)';
     }
 
     function setToAfterState(immediate = false) {
@@ -638,7 +638,7 @@ body.menu-open {
       }
       afterLabelEl.style.opacity = '1';
       afterLabelEl.style.transform = 'translateY(0)';
-      beforeLabelEl.style.opacity = '0';
+      beforeLabelEl.style.opacity = '';
       beforeLabelEl.style.transform = 'translateY(4px)';
     }
 
@@ -852,8 +852,8 @@ body.menu-open {
             
             // Change text color back to white
             navLinks.forEach(link => {
-                link.classList.remove('text-gray-800', 'hover:text-sky-600');
-                link.classList.add('text-white', 'hover:text-sky-400');
+             
+                link.classList.add('text-sky-500', 'hover:text-sky-400');
             });
             
             // Change mobile button color back

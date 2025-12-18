@@ -40,6 +40,14 @@
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
         .hero-headline { animation: fadeInDown 0.8s ease-out; }
         .hero-subheading { animation: fadeInUp 0.8s ease-out 0.2s both; }
         
@@ -71,128 +79,219 @@
             opacity: 0.3;
             font-family: Georgia, serif;
         }
+        .hero-trust {
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        .trust-badge {
+            animation: float 2s ease-in-out infinite;
+        }
 
-        /* Off-canvas mobile menu */
-        .mobile-menu-overlay {
-            opacity: 0; visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+        .trust-badge:nth-child(2) {
+            animation-delay: 0.3s;
         }
-        .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
-        .mobile-menu-panel {
-            transform: translateX(-100%);
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+        .trust-badge:nth-child(3) {
+            animation-delay: 0.6s;
         }
-        .mobile-menu-panel.active { transform: translateX(0); }
-        body.menu-open { overflow: hidden; }
-    </style>
+
+         /* Off-canvas mobile menu */
+.mobile-menu-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-menu-panel {
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu-panel.active {
+  transform: translateX(0);
+}
+body.menu-open {
+  overflow: hidden;
+}
+</style>
+
 </head>
+<body class="font-archivo">
+  <div class="relative ">
+<nav id="navbar" class="fixed z-20 top-0 left-0 right-0 z-10 pb-[18px] pt-[18px]">
+   <div class="max-w-6xl mx-auto">
+       <div class="flex justify-between items-center h-20 px-4">
+           <div class="flex-shrink-0">
+               <a href="index.html" class="flex items-center">
+                   <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="">
+               </a>
+           </div>
+           <div class="hidden md:flex space-x-10 font-archivo items-center">
+               <a href="index.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">HOME</a>
+               <a href="about.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">ABOUT</a>
+               <div class="relative dropdown-wrapper group">
+                   <button class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1">SERVICES
+                       <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                       </svg>
+                   </button>
+                   <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                       <div class="menu-item relative group/handyman">
+                           <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between border-b border-gray-100">
+                               <div class="flex items-center gap-3">
+                                   <span class="font-semibold text-gray-800">Handyman Services</span>
+                               </div>
+                               <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                               </svg>
+                           </div>
+                           <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
+                               <div class="py-2">
+                            
+                                   <a href="plastering.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
+                                   <a href="aircon.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="menu-item relative group/renovation">
+                           <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between">
+                               <div class="flex items-center gap-3">
+                                   <span class="font-semibold text-gray-800">Renovation Services</span>
+                               </div>
+                               <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                               </svg>
+                           </div>
+                           <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
+                               <div class="py-2">
+                                <a href="plumbing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                   <a href="electrical.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                   <a href="painting.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
+                                   <a href="tile-laying.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
+                                   <a href="renovation-works.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
+                                   <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
+                                   <a href="carpentry.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
+                                   <a href="waterproofing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
+                                   <a href="hacking-demolition.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <a href="completed-projects.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">GALLERY</a>
+               <a href="contacts.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">CONTACT</a>
+           </div>
+           <div>
+               <a href="tel:+6560254678" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
+           </div>
+           <div class="md:hidden">
+               <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none">
+                   <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                   </svg>
+               </button>
+           </div>
+       </div>
+   </div>
+</nav>
 
-<body class="font-archivo bg-white">
-    <!-- Navbar -->
-    <nav id="navbar" class="fixed z-20 top-0 left-0 right-0 pb-[18px] pt-[18px]  ">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex justify-between items-center h-20 px-4">
-                <div class="flex-shrink-0">
-                    <a href="index.html" class="flex items-center">
-                        <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="SGSA Construction">
-                    </a>
+<!-- Mobile Off-Canvas Menu Overlay -->
+<div id="mobile-menu-overlay" class="mobile-menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+<!-- Mobile Off-Canvas Menu Panel -->
+<div id="mobile-menu-panel" class="mobile-menu-panel fixed top-0 left-0 h-full w-[75%] max-w-[320px] bg-white z-50 md:hidden shadow-2xl flex flex-col">
+    <!-- Header with Logo & Close -->
+    <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-gray-50">
+        <a href="index.html">
+            <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction" class="w-[160px]">
+        </a>
+        <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
+            <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+    
+    <!-- Menu Content -->
+    <div class="flex-1 overflow-y-auto py-4">
+        <!-- Primary Links -->
+        <nav class="px-4 space-y-1">
+            <a href="index.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                Home
+            </a>
+            <a href="index.html#about" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                About
+            </a>
+        </nav>
+        
+        <!-- Divider -->
+        <div class="my-4 mx-6 border-t border-gray-200"></div>
+        
+        <!-- Services Section -->
+        <div class="px-4">
+            <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Services</p>
+            
+            <!-- Handyman Accordion -->
+            <div class="mb-2">
+                <button id="mobile-handyman-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
+                    <span class="flex items-center gap-3">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        Handyman Services
+                    </span>
+                    <svg id="mobile-handyman-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div id="mobile-handyman-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+                    <a href="plastering.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plastering Works</a>
+                    <a href="aircon.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Air Con Service</a>
                 </div>
-                <div class="hidden md:flex space-x-10 font-archivo items-center">
-                    <a href="index.html" class="nav-link text-sky-500 hover:text-sky-600 text-md font-medium transition duration-300">HOME</a>
-                    <a href="about.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">ABOUT</a>
-                    <div class="relative dropdown-wrapper group">
-                        <button class="nav-link text-sky-500 hover:text-sky-600 text-md font-medium transition duration-300 flex items-center gap-1">
-                            SERVICES
-                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                            <div class="menu-item relative group/handyman">
-                                <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between border-b border-gray-100">
-                                    <span class="font-semibold text-gray-800">Handyman Services</span>
-                                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
-                                <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
-                                    <div class="py-2">
-                                        <a href="plumbing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                                        <a href="electrical.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
-                                        <a href="painting.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
-                                        <a href="plastering.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
-                                        <a href="tile-laying.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
-                                        <a href="aircon.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="menu-item relative group/renovation">
-                                <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between">
-                                    <span class="font-semibold text-gray-800">Renovation Services</span>
-                                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                    </svg>
-                                </div>
-                                <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
-                                    <div class="py-2">
-                                        <a href="renovation-works.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
-                                        <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
-                                        <a href="carpentry.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
-                                        <a href="waterproofing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
-                                        <a href="hacking-demolition.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Hacking & Demolition</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="completed-projects.html" class="nav-link text-sky-500 hover:text-sky-600 text-md font-medium transition duration-300">GALLERY</a>
-                    <a href="contacts.html" class="nav-link text-sky-500 hover:text-sky-600 text-md font-medium transition duration-300">CONTACT</a>
-                </div>
-                <div class="hidden sm:block">
-                    <a href="tel:+6560254678" class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">
-                        📞 Call Now
-                    </a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-800 hover:text-sky-400 focus:outline-none">
-                        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
+            </div>
+            
+            <!-- Renovation Accordion -->
+            <div class="mb-2">
+                <button id="mobile-renovation-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
+                    <span class="flex items-center gap-3">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                        Renovation Services
+                    </span>
+                    <svg id="mobile-renovation-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div id="mobile-renovation-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+                  <a href="plumbing.html" class="block px-4 py-3 text-base text-cyan-700 bg-cyan-50 font-medium rounded-lg">Plumbing</a>
+                    <a href="electrical.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
+                    <a href="painting.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Painting</a>
+                    
+                    <a href="tile-laying.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Tile Laying</a>
+                    <a href="renovation-works.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Renovation Works</a>
+                    <a href="ceiling-wall-partitions.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Ceiling & Partitions</a>
+                    <a href="carpentry.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Carpentry Works</a>
+                    <a href="waterproofing.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Waterproofing</a>
+                    <a href="hacking-demolition.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Hacking & Demolition</a>
                 </div>
             </div>
         </div>
-    </nav>
-
-    <!-- Mobile Off-Canvas Menu -->
-    <div id="mobile-menu-overlay" class="mobile-menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
-    <div id="mobile-menu-panel" class="mobile-menu-panel fixed top-0 left-0 h-full w-[75%] max-w-[320px] bg-white z-50 md:hidden shadow-2xl flex flex-col">
-        <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-gray-50">
-            <a href="index.html">
-                <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction" class="w-[140px]">
+        
+        <!-- Divider -->
+        <div class="my-4 mx-6 border-t border-gray-200"></div>
+        
+        <!-- Secondary Links -->
+        <nav class="px-4 space-y-1">
+            <a href="completed-projects.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                Gallery
             </a>
-            <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
-                <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-        <div class="flex-1 overflow-y-auto py-6 px-6">
-            <nav class="space-y-2">
-                <a href="index.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">Home</a>
-                <a href="about.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-cyan-600 bg-cyan-50 rounded-xl">About</a>
-                <a href="services.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">Services</a>
-                <a href="completed-projects.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">Gallery</a>
-                <a href="contacts.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">Contact</a>
-            </nav>
-        </div>
-        <div class="px-6 py-5 border-t border-gray-100 bg-gray-50">
-            <a href="tel:+6560254678" class="flex items-center justify-center gap-3 w-full bg-red-600 hover:bg-red-700 text-white text-lg font-bold py-4 rounded-xl shadow-lg transition">
-                📞 Call Now
+            <a href="contacts.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                Contact
             </a>
-        </div>
+        </nav>
     </div>
-
+    
+   
+</div>
+</div>
     <!-- Floating WhatsApp -->
     <a href="https://wa.me/6586955055?text=Hi%20SGSA%20Construction%20%7C%20I%20need%20handyman%20services" target="_blank" rel="noopener noreferrer" class="fixed bottom-20 right-6 z-40 group">
         <div class="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 mb-5 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center w-16 h-16 hover:scale-110">
@@ -208,29 +307,36 @@
             <div class="absolute bottom-20 left-20 w-96 h-96 bg-red-500 rounded-full blur-3xl"></div>
         </div>
         
-        <div class="relative z-10 max-w-6xl mx-auto px-4 text-center">
+        <div class="relative z-10 max-w-6xl mx-auto px-4 text-center ">
             <p class="hero-headline text-cyan-400 text-sm uppercase tracking-[0.3em] font-semibold mb-4">Est. 2019 • Jalan Besar, Singapore</p>
             <h1 class="hero-headline text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 We Fix Homes.<br>
                 <span class="text-cyan-400">We Build Trust.</span>
             </h1>
-            <p class="hero-subheading text-xl text-slate-300 max-w-2xl mx-auto mb-8">
+            <p class="hero-subheading text-xl text-slate-300 max-w-2xl text-center mx-auto mb-8">
                 From a small workshop with two workers to serving over 1,000 happy homeowners across Singapore — this is our story.
             </p>
-            <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
-                <span class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    Family-Owned Business
-                </span>
-                <span class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    BCA Licensed
-                </span>
-                <span class="flex items-center gap-2">
-                    <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    3,250+ Projects Completed
-                </span>
-            </div>
+            <div class="hero-trust flex flex-col justify-center sm:flex-row gap-4 sm:gap-6  items-center text-base sm:text-lg">
+                        <!-- Google Rating -->
+                        <div class="trust-badge flex items-center gap-2">
+                          <img class="w-32 h-15" src="images/homepage images/Google-Review-Logo-removebg-preview.png" alt="">
+                        </div>
+                  
+                        <!-- Years Experience -->
+                        <div class="trust-badge flex items-center gap-2">
+                          <img class="w-24 h-15" src="images/homepage images/4years.png" alt="">
+                        </div>
+                  
+                        <!-- Best Service -->
+                        <div class="trust-badge flex items-center gap-2">
+                          <img class="w-40 h-15" src="images/homepage images/best-service-rubber-stamp-sign-600nw-2493391847.jpg-removebg-preview.png" alt="">
+                        </div>
+                  
+                        <!-- Licensed & Insured -->
+                        <div class="trust-badge flex items-center gap-2">
+                          <img class="w-40 h-15" src="images/homepage images/license.png" alt="">
+                        </div>
+                        </div>
         </div>
     </section>
 
@@ -241,11 +347,7 @@
                 <!-- Image Side -->
                 <div class="relative">
                     <img src="images/fotos-k72xVjAmVHE-unsplash.jpg" alt="SGSA Construction Team at Work" class="rounded-2xl shadow-2xl w-full h-[500px] object-cover">
-                    <!-- Floating Stats Card -->
-                    <div class="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-6 border-l-4 border-cyan-500">
-                        <p class="text-4xl font-bold text-slate-900">2019</p>
-                        <p class="text-slate-600 text-sm">Year Founded</p>
-                    </div>
+                   
                     <!-- Small accent -->
                     <div class="absolute -top-4 -left-4 w-24 h-24 bg-red-600 rounded-xl -z-10"></div>
                 </div>
@@ -276,92 +378,7 @@
         </div>
     </section>
 
-    <!-- ==================== OUR JOURNEY TIMELINE ==================== -->
-    <section class="py-20 bg-slate-50">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <p class="text-red-600 text-sm uppercase tracking-[0.2em] font-semibold mb-3">Milestones</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Our Journey So Far</h2>
-            </div>
-            
-            <!-- Timeline -->
-            <div class="relative">
-                <!-- Timeline Line -->
-                <div class="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
-                
-                <!-- 2019 -->
-                <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12 pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
-                        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 md:border-l-0 md:border-r-4 border-cyan-500">
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">🚐 The Van Days</h3>
-                            <p class="text-slate-600">Started with a second-hand van, two workers, and $$500 in tools. Our first job? Fixing a ceiling fan in Ang Mo Kio for $40.</p>
-                        </div>
-                    </div>
-                    <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-cyan-500 rounded-full border-4 border-white shadow-lg z-10"></div>
-                    <div class="md:w-1/2 md:pl-12">
-                        <span class="inline-block bg-cyan-100 text-cyan-700 font-bold px-4 py-2 rounded-full text-sm">2019</span>
-                    </div>
-                </div>
-                
-                <!-- 2020 -->
-                <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12 pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pr-12 md:text-right order-1 md:order-1 mb-4 md:mb-0">
-                        <span class="inline-block bg-slate-100 text-slate-700 font-bold px-4 py-2 rounded-full text-sm">2020</span>
-                    </div>
-                    <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-slate-400 rounded-full border-4 border-white shadow-lg z-10"></div>
-                    <div class="md:w-1/2 md:pl-12 order-2 md:order-2">
-                        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-slate-400">
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">😷 COVID Pivot</h3>
-                            <p class="text-slate-600">When circuit breaker hit, we became the "emergency guys." Fixed over 200 urgent home repairs while everyone was stuck at home. Grateful to serve.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 2021 -->
-                <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12 pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
-                        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 md:border-l-0 md:border-r-4 border-cyan-500">
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">🏢 First Office</h3>
-                            <p class="text-slate-600">Moved into our current home at Jalan Besar Plaza. Added electrical and aircon services. Hired our first full-time team.</p>
-                        </div>
-                    </div>
-                    <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-cyan-500 rounded-full border-4 border-white shadow-lg z-10"></div>
-                    <div class="md:w-1/2 md:pl-12">
-                        <span class="inline-block bg-cyan-100 text-cyan-700 font-bold px-4 py-2 rounded-full text-sm">2021</span>
-                    </div>
-                </div>
-                
-                <!-- 2022 -->
-                <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12 pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pr-12 md:text-right order-1 md:order-1 mb-4 md:mb-0">
-                        <span class="inline-block bg-slate-100 text-slate-700 font-bold px-4 py-2 rounded-full text-sm">2022</span>
-                    </div>
-                    <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-slate-400 rounded-full border-4 border-white shadow-lg z-10"></div>
-                    <div class="md:w-1/2 md:pl-12 order-2 md:order-2">
-                        <div class="bg-white rounded-xl p-6 shadow-lg border-l-4 border-slate-400">
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">🏠 Renovation Division</h3>
-                            <p class="text-slate-600">Launched full renovation services. Completed our first whole-flat HDB renovation in Punggol — a 4-room BTO transformed in 8 weeks.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 2024 -->
-                <div class="relative flex flex-col md:flex-row items-start md:items-center pl-12 md:pl-0">
-                    <div class="md:w-1/2 md:pr-12 md:text-right mb-4 md:mb-0">
-                        <div class="bg-gradient-to-r from-red-50 to-cyan-50 rounded-xl p-6 shadow-lg border-l-4 md:border-l-0 md:border-r-4 border-red-500">
-                            <h3 class="text-xl font-bold text-slate-900 mb-2">🎉 Today</h3>
-                            <p class="text-slate-600">15+ skilled workers. 3,250+ projects completed. 1,000+ happy homeowners. Still answering our own phones. Still showing up on time.</p>
-                        </div>
-                    </div>
-                    <div class="absolute left-2 md:left-1/2 md:-translate-x-1/2 w-5 h-5 bg-red-500 rounded-full border-4 border-white shadow-lg z-10"></div>
-                    <div class="md:w-1/2 md:pl-12">
-                        <span class="inline-block bg-red-100 text-red-700 font-bold px-4 py-2 rounded-full text-sm">2024</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+  
     <!-- ==================== MEET THE TEAM ==================== -->
     <section class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-4">
@@ -433,74 +450,11 @@
                 </div>
             </div>
             
-            <!-- Team Stats -->
-            <div class="mt-16 bg-slate-900 rounded-2xl p-8 md:p-12">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    <div>
-                        <p class="text-4xl md:text-5xl font-bold text-cyan-400">15+</p>
-                        <p class="text-slate-400 mt-2">Skilled Workers</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl md:text-5xl font-bold text-cyan-400">23</p>
-                        <p class="text-slate-400 mt-2">Years Combined Experience</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl md:text-5xl font-bold text-cyan-400">98%</p>
-                        <p class="text-slate-400 mt-2">Customer Satisfaction</p>
-                    </div>
-                    <div>
-                        <p class="text-4xl md:text-5xl font-bold text-cyan-400">24hr</p>
-                        <p class="text-slate-400 mt-2">Emergency Response</p>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </section>
 
-    <!-- ==================== WHAT WE BELIEVE ==================== -->
-    <section class="py-20 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <p class="text-red-600 text-sm uppercase tracking-[0.2em] font-semibold mb-3">Our Values</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">What We Believe In</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Value 1 -->
-                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border-t-4 border-cyan-500">
-                    <div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mb-6">
-                        <span class="text-3xl">🤝</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">No BS Pricing</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        The price we quote is the price you pay. No "oh, we found another issue" surprises. If something comes up, we discuss it first — always.
-                    </p>
-                </div>
-                
-                <!-- Value 2 -->
-                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border-t-4 border-red-500">
-                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
-                        <span class="text-3xl">🏠</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Your Home = Our Home</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        We take off our shoes. We lay down protective sheets. We clean up after ourselves. Your home deserves respect, and that's what we give it.
-                    </p>
-                </div>
-                
-                <!-- Value 3 -->
-                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg border-t-4 border-slate-800">
-                    <div class="w-14 h-14 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
-                        <span class="text-3xl">✅</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Fix It Right, First Time</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        We don't do "quick patches." Every repair is done properly so you don't have to call us back for the same problem. That's our promise.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- ==================== BEFORE/AFTER SHOWCASE ==================== -->
     <section class="py-20 bg-white">
@@ -549,36 +503,7 @@
         </div>
     </section>
 
-    <!-- ==================== CTA SECTION ==================== -->
-    <section class="py-20 bg-gradient-to-r from-red-600 to-red-700 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -mr-48 -mt-48"></div>
-            <div class="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full -ml-48 -mb-48"></div>
-        </div>
-        
-        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Experience the SGSA Difference?
-            </h2>
-            <p class="text-red-100 text-lg mb-8 max-w-2xl mx-auto">
-                No hard sell. No pushy quotes. Just honest advice and quality work. Let's chat about your home.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="contacts.html" class="bg-white hover:bg-gray-100 text-red-600 font-bold px-10 py-4 rounded-lg shadow-xl transition text-lg">
-                    Get a Free Quote
-                </a>
-                <a href="https://wa.me/6586955055" class="bg-green-500 hover:bg-green-600 text-white font-bold px-10 py-4 rounded-lg shadow-xl transition text-lg flex items-center justify-center gap-2">
-                    💬 WhatsApp Us
-                </a>
-            </div>
-            
-            <p class="text-red-200 text-sm mt-8">
-                📍 Visit us at Jalan Besar Plaza #02-36 • Open Mon-Sat, 9am-6pm
-            </p>
-        </div>
-    </section>
-
+   
     <!-- ==================== FOOTER ==================== -->
     <footer class="bg-gray-900 text-white border-t-4 border-t-cyan-600">
         <div class="border-b border-gray-700">
@@ -635,32 +560,103 @@
 
     <!-- JavaScript -->
     <script>
-        // Mobile menu
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenuPanel = document.getElementById('mobile-menu-panel');
-        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-
-        function openMobileMenu() {
-            mobileMenuPanel.classList.add('active');
-            mobileMenuOverlay.classList.add('active');
-            document.body.classList.add('menu-open');
-        }
-
-        function closeMobileMenu() {
-            mobileMenuPanel.classList.remove('active');
-            mobileMenuOverlay.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
-
-        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
-        if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu);
-        if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMobileMenu);
-
-        // Close menu on link click
-        const mobileMenuLinks = mobileMenuPanel?.querySelectorAll('a');
-        mobileMenuLinks?.forEach(link => {
-            link.addEventListener('click', () => setTimeout(closeMobileMenu, 150));
+        
+    // Off-canvas mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    
+    function openMobileMenu() {
+        mobileMenuPanel.classList.add('active');
+        mobileMenuOverlay.classList.add('active');
+        document.body.classList.add('menu-open');
+    }
+    
+    function closeMobileMenu() {
+        mobileMenuPanel.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
+    
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+    }
+    
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+    }
+    
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+    }
+    
+    // Close menu on link click
+    const mobileMenuLinks = mobileMenuPanel?.querySelectorAll('a:not([href="#"])');
+    mobileMenuLinks?.forEach(link => {
+        link.addEventListener('click', () => {
+            setTimeout(closeMobileMenu, 150);
+        });
+    });
+    
+    // Mobile handyman accordion
+    const mobileHandymanBtn = document.getElementById('mobile-handyman-btn');
+    const mobileHandymanMenu = document.getElementById('mobile-handyman-menu');
+    const mobileHandymanArrow = document.getElementById('mobile-handyman-arrow');
+    
+    if (mobileHandymanBtn && mobileHandymanMenu && mobileHandymanArrow) {
+        mobileHandymanBtn.addEventListener('click', () => {
+            mobileHandymanMenu.classList.toggle('hidden');
+            mobileHandymanArrow.classList.toggle('rotate-180');
+        });
+    }
+    
+    // Mobile renovation accordion
+    const mobileRenovationBtn = document.getElementById('mobile-renovation-btn');
+    const mobileRenovationMenu = document.getElementById('mobile-renovation-menu');
+    const mobileRenovationArrow = document.getElementById('mobile-renovation-arrow');
+    
+    if (mobileRenovationBtn && mobileRenovationMenu && mobileRenovationArrow) {
+        mobileRenovationBtn.addEventListener('click', () => {
+            mobileRenovationMenu.classList.toggle('hidden');
+            mobileRenovationArrow.classList.toggle('rotate-180');
+        });
+    }
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        const navLinks = navbar.querySelectorAll('.nav-link');
+        const mobileMenuButton = document.getElementById('mobile-menu-btn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Scrolled state
+                navbar.classList.add('bg-white', 'shadow-lg');
+                navbar.classList.remove('bg-opacity-95');
+                
+                // Change text color to dark
+                navLinks.forEach(link => {
+                    link.classList.remove('text-cyan-500', 'hover:text-sky-400');
+                    link.classList.add('text-gray-800', 'hover:text-sky-600');
+                });
+                
+                // Change mobile button color
+                mobileMenuButton.classList.remove('text-white', 'hover:text-sky-400');
+                mobileMenuButton.classList.add('text-gray-800', 'hover:text-sky-600');
+            } else {
+                // Top of page state
+                navbar.classList.remove('bg-white', 'shadow-lg');
+                navbar.classList.add('bg-opacity-95');
+                
+                // Change text color back to white
+                navLinks.forEach(link => {
+                    link.classList.remove('text-gray-800', 'hover:text-sky-600');
+                    link.classList.add('text-cyan-600', 'hover:text-sky-400');
+                });
+                
+                // Change mobile button color back
+                mobileMenuButton.classList.remove('text-gray-800', 'hover:text-sky-600');
+                mobileMenuButton.classList.add('text-white', 'hover:text-sky-400');
+            }
         });
     </script>
 </body>
