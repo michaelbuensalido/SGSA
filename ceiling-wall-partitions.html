@@ -110,8 +110,9 @@ body.menu-open {
                            <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
                                <div class="py-2">
                             
-                                   <a href="plastering.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
                                    <a href="aircon.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
+                                   <a href="plumbing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                   <a href="electrical.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
                                </div>
                            </div>
                        </div>
@@ -126,6 +127,7 @@ body.menu-open {
                            </div>
                            <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
                                <div class="py-2">
+                                <a href="plastering.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
                                 <a href="plumbing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
                                    <a href="electrical.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
                                    <a href="painting.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
@@ -205,8 +207,9 @@ body.menu-open {
                     <svg id="mobile-handyman-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                 </button>
                 <div id="mobile-handyman-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
-                    <a href="plastering.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plastering Works</a>
                     <a href="aircon.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Air Con Service</a>
+                    <a href="plumbing.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plumbing</a>
+                    <a href="electrical.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
                 </div>
             </div>
             
@@ -220,6 +223,7 @@ body.menu-open {
                     <svg id="mobile-renovation-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                 </button>
                 <div id="mobile-renovation-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+                  <a href="plastering.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plastering Works</a>
                   <a href="plumbing.html" class="block px-4 py-3 text-base text-cyan-700 bg-cyan-50 font-medium rounded-lg">Plumbing</a>
                     <a href="electrical.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
                     <a href="painting.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Painting</a>
@@ -1281,28 +1285,137 @@ body.menu-open {
     </div>
 
     <script>
-      const chatToggle = document.getElementById("chat-toggle"),
-        chatClose = document.getElementById("chat-close"),
-        chatWindow = document.getElementById("chat-window"),
-        chatForm = document.getElementById("chat-form"),
-        chatInput = document.getElementById("chat-input"),
-        chatMessages = document.getElementById("chat-messages");
-      chatToggle.addEventListener("click", () =>
-        chatWindow.classList.toggle("hidden")
-      );
-      chatClose.addEventListener("click", () =>
-        chatWindow.classList.add("hidden")
-      );
-      chatForm.addEventListener("submit", (e) => {
+      // Company Information Database
+      const companyInfo = {
+        name: "SGSA Construction",
+        officeHours: {
+          monday: "9:00 AM - 6:00 PM",
+          tuesday: "9:00 AM - 6:00 PM",
+          wednesday: "9:00 AM - 6:00 PM",
+          thursday: "9:00 AM - 6:00 PM",
+          friday: "9:00 AM - 6:00 PM",
+          saturday: "9:00 AM - 2:00 PM",
+          sunday: "Closed",
+          publicHolidays: "Closed"
+        },
+        contact: {
+          phone: ["+6560254678", "+6591758912"],
+          email: ["sgsaconstruction@gmail.com", "contact@sgsa.com"],
+          address: "Jalan Besar Plaza #02-36, Singapore 208511"
+        },
+        services: [
+          "Residential Development",
+          "Commercial & Retail",
+          "Infrastructure & Civil Works",
+          "Specialized Construction",
+          "Design-Build",
+          "Project Management"
+        ],
+        about: "SGSA Construction is a leading construction company in Singapore with over 50 years of experience. We specialize in delivering exceptional construction projects with a commitment to safety, quality, and innovation.",
+        experience: "50+ years",
+        projectsCompleted: "500+",
+        clientSatisfaction: "98%"
+      };
+  
+      // Smart Response Generator
+      function generateResponse(userMessage) {
+        const message = userMessage.toLowerCase().trim();
+        
+        // Hours/timing questions
+        if (message.includes('open') || message.includes('close') || message.includes('hours') || message.includes('time')) {
+          if (message.includes('monday')) {
+            return `We're open on Monday from ${companyInfo.officeHours.monday}. How else can we help?`;
+          } else if (message.includes('saturday')) {
+            return `We're open on Saturday from ${companyInfo.officeHours.saturday}. How else can we help?`;
+          } else if (message.includes('sunday')) {
+            return `We're ${companyInfo.officeHours.sunday.toLowerCase()} on Sunday. For urgent matters, please call our emergency line.`;
+          } else if (message.includes('weekend')) {
+            return `Weekend hours: Saturday ${companyInfo.officeHours.saturday}, Sunday ${companyInfo.officeHours.sunday}. How can we assist?`;
+          } else {
+            return `Our office hours are:\n• Monday-Friday: ${companyInfo.officeHours.monday}\n• Saturday: ${companyInfo.officeHours.saturday}\n• Sunday & Public Holidays: ${companyInfo.officeHours.sunday}`;
+          }
+        }
+        
+        // Contact/Phone questions
+        if (message.includes('phone') || message.includes('contact') || message.includes('call') || message.includes('number')) {
+          if (message.includes('site manager')) {
+            return `Our Site Manager's contact: ${companyInfo.contact.phone[1]}. You can reach them for project-specific inquiries.`;
+          }
+          return `You can reach us at:\n• Main: ${companyInfo.contact.phone[0]}\n• Site Manager: ${companyInfo.contact.phone[1]}`;
+        }
+        
+        // Email questions
+        if (message.includes('email') || message.includes('mail')) {
+          return `You can email us at:\n• ${companyInfo.contact.email[0]}\n• ${companyInfo.contact.email[1]}`;
+        }
+        
+        // Address questions
+        if (message.includes('address') || message.includes('location') || message.includes('where')) {
+          return `Our address is:\n${companyInfo.contact.address}`;
+        }
+        
+        // Services questions
+        if (message.includes('service') || message.includes('what do you') || message.includes('offer') || message.includes('do you do')) {
+          return `We offer:\n• ${companyInfo.services.join('\n• ')}\n\nLearn more on our Services page!`;
+        }
+        
+        // About company
+        if (message.includes('about') || message.includes('who are you') || message.includes('company') || message.includes('experience')) {
+          return `${companyInfo.about}\n\nOur Stats:\n• Experience: ${companyInfo.experience}\n• Projects: ${companyInfo.projectsCompleted} completed\n• Client Satisfaction: ${companyInfo.clientSatisfaction}`;
+        }
+        
+        // Project inquiry
+        if (message.includes('project') || message.includes('quote') || message.includes('estimate') || message.includes('bid')) {
+          return `For project inquiries and quotes, please contact our team:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}\n\nOur team will be happy to discuss your construction needs!`;
+        }
+        
+        // Safety questions
+        if (message.includes('safety') || message.includes('safe')) {
+          return `Safety is our top priority! We maintain the highest safety standards and have a zero-accident culture. All projects follow strict safety protocols and compliance regulations. For safety inquiries, please contact us directly.`;
+        }
+        
+        // Default response
+        return `Thank you for your inquiry! I'm an AI assistant here to help with basic information about SGSA Construction. For specific project details or inquiries, please contact us directly:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+      }
+  
+      
+      const chatToggle = document.getElementById('chat-toggle');
+      const chatClose = document.getElementById('chat-close');
+      const chatWindow = document.getElementById('chat-window');
+      const chatForm = document.getElementById('chat-form');
+      const chatInput = document.getElementById('chat-input');
+      const chatMessages = document.getElementById('chat-messages');
+  
+      chatToggle.addEventListener('click', () => {
+        chatWindow.classList.toggle('hidden');
+      });
+  
+      chatClose.addEventListener('click', () => {
+        chatWindow.classList.add('hidden');
+      });
+  
+      chatForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const m = chatInput.value.trim();
-        if (m) {
-          chatMessages.innerHTML += `<div class="flex justify-end"><div class="bg-gray-300 text-gray-900 rounded-lg p-3 max-w-xs"><p class="text-sm">${m}</p></div></div>`;
-          chatInput.value = "";
+        const message = chatInput.value.trim();
+        if (message) {
+          
+          const userMsg = document.createElement('div');
+          userMsg.className = 'flex justify-end';
+          userMsg.innerHTML = `<div class="bg-gray-300 text-gray-900 rounded-lg p-3 max-w-xs"><p class="text-sm">${message}</p></div>`;
+          chatMessages.appendChild(userMsg);
+          chatInput.value = '';
+  
+         
           setTimeout(() => {
-            chatMessages.innerHTML += `<div class="flex items-end space-x-2"><div class="bg-sky-600 text-white rounded-lg p-3 max-w-xs"><p class="text-sm">Thank you! Contact us: +6560254678</p></div></div>`;
+            const response = generateResponse(message);
+            const replyMsg = document.createElement('div');
+            replyMsg.className = 'flex items-end space-x-2';
+            replyMsg.innerHTML = `<div class="bg-sky-600 text-white rounded-lg p-3 max-w-xs"><p class="text-sm whitespace-pre-line">${response}</p></div>`;
+            chatMessages.appendChild(replyMsg);
             chatMessages.scrollTop = chatMessages.scrollHeight;
           }, 500);
+  
+          chatMessages.scrollTop = chatMessages.scrollHeight;
         }
       });
       // Off-canvas mobile menu
