@@ -64,22 +64,67 @@
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Before / After card specific styles */
-        .ba-wrapper {
-          position: relative;
-          overflow: hidden;
+        /* Before / After Gallery Styles */
+        .gallery-row {
+          width: 100%;
         }
-        .ba-image {
+        
+        .gallery-image-wrapper {
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-bottom: 75%; /* 4:3 aspect ratio */
+          overflow: hidden;
+          background-color: #f3f4f6;
+        }
+        
+        .gallery-image {
           position: absolute;
-          inset: 0;
+          top: 0;
+          left: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.6s ease-in-out, opacity 0.5s ease-in-out;
-          will-change: transform, opacity;
+          transition: transform 0.5s ease, opacity 0.4s ease;
         }
-        .ba-label {
-          transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        
+        .gallery-image-wrapper:hover .gallery-image {
+          transform: scale(1.05);
+        }
+        
+        .gallery-image-wrapper::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0);
+          transition: background 0.4s ease;
+          pointer-events: none;
+        }
+        
+        .gallery-image-wrapper:hover::after {
+          background: rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (min-width: 768px) {
+          .gallery-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+          }
+          
+          .gallery-image-wrapper {
+            padding-bottom: 75%; /* Maintain 4:3 aspect ratio on desktop */
+          }
+        }
+        
+        @media (max-width: 767px) {
+          .gallery-image-wrapper {
+            padding-bottom: 75%; /* Same aspect ratio on mobile */
+            margin-bottom: 1rem;
+          }
         }
   /* Off-canvas mobile menu */
 .mobile-menu-overlay {
@@ -313,101 +358,55 @@ body.menu-open {
     </div>
   </section>
 
-  <!-- Single Project Before / After Card -->
-  <section class="pb-20 pt-10 bg-white">
+  <!-- Before & After Gallery -->
+  <section class="py-16 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Project Meta / Controls -->
-      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-8 gap-4">
-        <div>
-          <p class="uppercase tracking-[0.2em] text-xs text-cyan-600 mb-2">Project</p>
-          <h2 id="project-title" class="text-2xl sm:text-3xl font-bold text-slate-900">Condominium Kitchen Upgrade</h2>
-          <p id="project-location" class="text-sm text-slate-500 mt-1">Singapore</p>
-        </div>
-        <div class="flex items-center gap-3">
-          <button id="prev-project" class="text-sm px-3 py-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 flex items-center gap-1">
-            <span class="text-lg">←</span> Previous
-          </button>
-          <button id="next-project" class="text-sm px-3 py-2 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50 flex items-center gap-1">
-            Next <span class="text-lg">→</span>
-          </button>
-        </div>
-      </div>
+      <!-- Gallery Grid -->
+      <div class="space-y-6 sm:space-y-8">
+        
+       
 
-      <!-- Card -->
-      <div
-        id="project-card"
-        class="relative bg-white rounded-3xl   overflow-hidden card-hover cursor-pointer max-w-6xl mx-auto"
-      >
-        <div class="grid md:grid-cols-5">
-          <!-- Image Area -->
-          <div class="md:col-span-3 ba-wrapper h-[30px] sm:h-[440px] bg-slate-900">
-            <!-- After image (default visible) -->
-            <img
-              id="after-image"
-              class="ba-image z-10"
-              src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1800&q=80"
-              alt="After renovation - illustrative"
-            />
-            <!-- Before image (hidden initially, slides in) -->
-            <img
-              id="before-image"
-              class="ba-image z-0"
-              src="https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?auto=format&fit=crop&w=1800&q=80"
-              alt="Before renovation - illustrative"
-            />
-
-            <!-- Labels -->
-            <div class="absolute top-4 left-4 flex items-center gap-2">
-              <span id="after-label" class="ba-label inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 text-gray-800 text-xs font-medium shadow-sm">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                After
-              </span>
-              <span id="before-label" class="ba-label inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/70 text-slate-100 text-xs font-medium shadow-sm opacity-0 translate-y-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
-                Before
-              </span>
-            </div>
-
-            <!-- Hint overlay -->
-            <div class="absolute inset-x-4 bottom-4 flex items-center justify-between text-xs text-slate-100/90 pointer-events-none">
-              <span class="hidden sm:inline-flex items-center gap-2">
-                <span class="inline-block w-6 h-[1px] bg-slate-200/70"></span>
-                Move mouse left / right to reveal
-              </span>
-              <span class="inline-flex sm:hidden items-center gap-2">
-                Tap to toggle before / after
-              </span>
-            </div>
+        <!-- Project 2 -->
+        <div class="gallery-row grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div class="gallery-image-wrapper">
+            <img src="images/7.jpeg" alt="Before" class="gallery-image">
           </div>
-
-          <!-- Text Area -->
-          <div class="md:col-span-2 p-6 sm:p-8 flex flex-col justify-between bg-slate-50">
-            <div class="space-y-3">
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-100 text-sky-700 text-xs font-semibold">
-                <span id="project-tag">Kitchen / Carpentry / Tiling</span>
-              </div>
-              <p id="project-summary" class="text-slate-700 text-sm sm:text-[15px] leading-relaxed">
-
-              </p>
-              <ul id="project-highlights" class="mt-3 space-y-1 text-xs sm:text-sm text-slate-600">
-                <li>• Improved storage and work zones</li>
-                <li>• Durable finishes suitable for daily use</li>
-                <li>• Coordinated wet works and carpentry</li>
-              </ul>
-            </div>
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a href="contacts.html" class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-sm font-semibold shadow-sm">
-                Request Similar Work
-              </a>
-              <a href="https://wa.me/6586955055?text=Hi%20SGSA%20Construction%20%7C%20I%20am%20interested%20in%20a%20similar%20project" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 rounded-lg border border-slate-300 text-slate-700 text-sm font-semibold hover:bg-white">
-                Chat on WhatsApp
-              </a>
-            </div>
+          <div class="gallery-image-wrapper">
+            <img src="images/8.jpeg" alt="After" class="gallery-image">
           </div>
         </div>
-      </div>
 
-     
+        <!-- Project 3 -->
+        <div class="gallery-row grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div class="gallery-image-wrapper">
+            <img src="images/9.jpeg" alt="Before" class="gallery-image">
+          </div>
+          <div class="gallery-image-wrapper">
+            <img src="images/10.jpeg" alt="After" class="gallery-image">
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="gallery-row grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div class="gallery-image-wrapper">
+            <img src="images/11.jpeg" alt="Before" class="gallery-image">
+          </div>
+          <div class="gallery-image-wrapper">
+            <img src="images/12.png" alt="After" class="gallery-image">
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="gallery-row grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <div class="gallery-image-wrapper">
+            <img src="images/Brown-Minimalist-Interior-Design-Photo-Collage-3.png" alt="Before" class="gallery-image">
+          </div>
+          <div class="gallery-image-wrapper">
+            <img src="images/image copy.png" alt="After" class="gallery-image">
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -536,178 +535,6 @@ body.menu-open {
   </div>
 
   <script>
-    // Simple project data (one visible at a time)
-    const projects = [
-      {
-        title: 'Condominium Kitchen Upgrade',
-        location: 'Singapore',
-        tag: 'Kitchen / Carpentry / Tiling',
-        summary: 'This kitchen renovation in Singapore transformed a once outdated space into a bright, functional, and modern kitchen designed for daily use. Custom cabinetry, updated lighting, and new countertops were carefully installed to improve storage, workflow, and overall efficiency. The layout was refined to create well-defined work zones, making cooking and meal preparation more comfortable and practical.',
-        highlights: [
-          'Improved storage and work zones',
-          'Durable finishes suitable for daily use',
-          'Coordinated wet works and carpentry'
-        ],
-        after: 'images/gallery/finish.jpg',
-        before: 'images/gallery/under.jpg'
-      },
-      {
-        title: 'Living Room Reinstatement & Painting',
-        location: 'HDB Flat, Singapore',
-        tag: 'Painting / Plastering',
-        summary: 'Smoothened walls, fresh paint, and tidy reinstatement brought this living space back to handover condition.',
-        highlights: [
-          'Hairline crack treatment and skim coat',
-          'Neutral, light-reflective colour palette',
-          'Clean edges and protection of existing flooring'
-        ],
-        after: 'https://images.unsplash.com/photo-1505691723518-36a5ac3be353?auto=format&fit=crop&w=1800&q=80',
-        before: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1800&q=80'
-      },
-      {
-        title: 'Bathroom Tiling & Waterproofing',
-        location: 'Condominium, Singapore',
-        tag: 'Waterproofing / Tile Laying',
-        summary: 'Renewed tiling and waterproofing enhanced both performance and aesthetics in this compact bathroom.',
-        highlights: [
-          'New tiles with improved slip resistance',
-          'Re-applied membrane in wet zone',
-          'Clean grout lines and proper falls to drain'
-        ],
-        after: 'https://images.unsplash.com/photo-1617099404995-0a2e3d60e27c?auto=format&fit=crop&w=1800&q=80',
-        before: 'https://images.unsplash.com/photo-1564540583246-934409427776?auto=format&fit=crop&w=1800&q=80'
-      }
-    ];
-
-    // DOM references
-    const projectTitleEl = document.getElementById('project-title');
-    const projectLocationEl = document.getElementById('project-location');
-    const projectTagEl = document.getElementById('project-tag');
-    const projectSummaryEl = document.getElementById('project-summary');
-    const projectHighlightsEl = document.getElementById('project-highlights');
-    const afterImageEl = document.getElementById('after-image');
-    const beforeImageEl = document.getElementById('before-image');
-    const afterLabelEl = document.getElementById('after-label');
-    const beforeLabelEl = document.getElementById('before-label');
-    const projectCardEl = document.getElementById('project-card');
-    const prevProjectBtn = document.getElementById('prev-project');
-    const nextProjectBtn = document.getElementById('next-project');
-
-    let currentProjectIndex = 0;
-    let showingBefore = false;
-    let lastMouseX = null;
-
-    function renderProject(index) {
-      const project = projects[index];
-      projectTitleEl.textContent = project.title;
-      projectLocationEl.textContent = project.location;
-      projectTagEl.textContent = project.tag;
-      projectSummaryEl.textContent = project.summary;
-      projectHighlightsEl.innerHTML = project.highlights
-        .map(item => `<li>• ${item}</li>`)
-        .join('');
-      afterImageEl.src = project.after;
-      beforeImageEl.src = project.before;
-      // Reset to After state on project change
-      showingBefore = false;
-      setToAfterState(true);
-    }
-
-    function setToBeforeState(immediate = false) {
-      showingBefore = true;
-      if (immediate) {
-        beforeImageEl.style.transform = 'translateX(0)';
-        beforeImageEl.style.opacity = '1';
-        afterImageEl.style.transform = 'translateX(100%)';
-        afterImageEl.style.opacity = '0';
-      } else {
-        beforeImageEl.style.transform = 'translateX(0)';
-        beforeImageEl.style.opacity = '1';
-        afterImageEl.style.transform = 'translateX(100%)';
-        afterImageEl.style.opacity = '0';
-      }
-      afterLabelEl.style.opacity = '0.4';
-      afterLabelEl.style.transform = 'translateY(4px)';
-      beforeLabelEl.style.opacity = '1';
-      beforeLabelEl.style.transform = 'translateY(4px)';
-    }
-
-    function setToAfterState(immediate = false) {
-      showingBefore = false;
-      if (immediate) {
-        beforeImageEl.style.transform = 'translateX(-100%)';
-        beforeImageEl.style.opacity = '0';
-        afterImageEl.style.transform = 'translateX(0)';
-        afterImageEl.style.opacity = '1';
-      } else {
-        beforeImageEl.style.transform = 'translateX(-100%)';
-        beforeImageEl.style.opacity = '0';
-        afterImageEl.style.transform = 'translateX(0)';
-        afterImageEl.style.opacity = '1';
-      }
-      afterLabelEl.style.opacity = '1';
-      afterLabelEl.style.transform = 'translateY(0)';
-      beforeLabelEl.style.opacity = '';
-      beforeLabelEl.style.transform = 'translateY(4px)';
-    }
-
-    // Initial render
-    renderProject(currentProjectIndex);
-
-    // Desktop interaction: mouse movement to detect direction
-    projectCardEl.addEventListener('mousemove', (e) => {
-      const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      if (isTouch) return; // skip for touch devices
-
-      if (lastMouseX === null) {
-        lastMouseX = e.clientX;
-        return;
-      }
-      const deltaX = e.clientX - lastMouseX;
-      lastMouseX = e.clientX;
-
-      if (deltaX < -2 && !showingBefore) {
-        // moving left
-        setToBeforeState();
-      } else if (deltaX > 2 && showingBefore) {
-        // moving right
-        setToAfterState();
-      }
-    });
-
-    projectCardEl.addEventListener('mouseleave', () => {
-      const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      if (isTouch) return;
-      lastMouseX = null;
-      setToAfterState();
-    });
-
-    // Mobile interaction: tap to toggle
-    function toggleStateForTouch() {
-      const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      if (!isTouch) return;
-      if (showingBefore) {
-        setToAfterState();
-      } else {
-        setToBeforeState();
-      }
-    }
-
-    projectCardEl.addEventListener('click', toggleStateForTouch);
-    projectCardEl.addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      toggleStateForTouch();
-    }, { passive: false });
-
-    // Project navigation
-    prevProjectBtn.addEventListener('click', () => {
-      currentProjectIndex = (currentProjectIndex - 1 + projects.length) % projects.length;
-      renderProject(currentProjectIndex);
-    });
-    nextProjectBtn.addEventListener('click', () => {
-      currentProjectIndex = (currentProjectIndex + 1) % projects.length;
-      renderProject(currentProjectIndex);
-    });
 
     // Chat widget logic (simplified but aligned with homepage behaviour)
     const chatToggle = document.getElementById('chat-toggle');
