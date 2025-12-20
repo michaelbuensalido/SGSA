@@ -76,6 +76,13 @@
           padding-bottom: 75%; /* 4:3 aspect ratio */
           overflow: hidden;
           background-color: #f3f4f6;
+          cursor: pointer;
+          text-decoration: none;
+          color: inherit;
+        }
+        
+        .gallery-image-wrapper:hover {
+          text-decoration: none;
         }
         
         .gallery-image {
@@ -85,33 +92,89 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.5s ease, opacity 0.4s ease;
+          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          will-change: transform;
         }
         
-        .gallery-image-wrapper:hover .gallery-image {
-          transform: scale(1.05);
+        .gallery-image-wrapper:hover .gallery-image,
+        .gallery-image-wrapper.overlay-active .gallery-image {
+          transform: scale(1.08);
         }
         
-        .gallery-image-wrapper::after {
-          content: '';
+        .gallery-overlay {
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
           bottom: 0;
           background: rgba(0, 0, 0, 0);
-          transition: background 0.4s ease;
-          pointer-events: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                      visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                      background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          z-index: 10;
+          padding: 1.5rem;
         }
         
-        .gallery-image-wrapper:hover::after {
-          background: rgba(0, 0, 0, 0.1);
+        .gallery-image-wrapper:hover .gallery-overlay,
+        .gallery-image-wrapper.overlay-active .gallery-overlay {
+          opacity: 0.8;
+          visibility: visible;
+          background: rgba(0, 0, 0, 0.75);
+        }
+        
+        .gallery-overlay-content {
+          text-align: center;
+          color: white;
+          transform: translateY(10px);
+          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+        }
+        
+        .gallery-image-wrapper:hover .gallery-overlay-content,
+        .gallery-image-wrapper.overlay-active .gallery-overlay-content {
+          transform: translateY(0);
+        }
+        
+        .gallery-service-type {
+          font-family: 'Archivo', sans-serif;
+          font-size: 1.125rem;
+          font-weight: 700;
+          letter-spacing: 0.1em;
+          margin-bottom: 0.75rem;
+          text-transform: uppercase;
+          opacity: 0;
+          transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+        }
+        
+        .gallery-image-wrapper:hover .gallery-service-type,
+        .gallery-image-wrapper.overlay-active .gallery-service-type {
+          opacity: 1;
+        }
+        
+        .gallery-description {
+          font-family: 'Inter', sans-serif;
+          font-size: 0.9375rem;
+          font-weight: 400;
+          line-height: 1.6;
+          max-width: 90%;
+          margin: 0 auto;
+          opacity: 0;
+          transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+        }
+        
+        .gallery-image-wrapper:hover .gallery-description,
+        .gallery-image-wrapper.overlay-active .gallery-description {
+          opacity: 1;
         }
         
         @media (min-width: 768px) {
           .gallery-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
           }
           
@@ -120,10 +183,51 @@
           }
         }
         
+        @media (min-width: 1024px) {
+          .gallery-row {
+            gap: 2rem;
+          }
+        }
+        
         @media (max-width: 767px) {
           .gallery-image-wrapper {
             padding-bottom: 75%; /* Same aspect ratio on mobile */
             margin-bottom: 1rem;
+          }
+          
+          .gallery-overlay {
+            padding: 1rem;
+          }
+          
+          .gallery-service-type {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+          }
+          
+          .gallery-description {
+            font-size: 0.8125rem;
+          }
+        }
+        
+        /* Mobile tap support */
+        @media (hover: none) and (pointer: coarse) {
+          .gallery-image-wrapper:active .gallery-overlay {
+            opacity: 1;
+            visibility: visible;
+            background: rgba(0, 0, 0, 0.75);
+          }
+          
+          .gallery-image-wrapper:active .gallery-image {
+            transform: scale(1.08);
+          }
+          
+          .gallery-image-wrapper:active .gallery-overlay-content {
+            transform: translateY(0);
+          }
+          
+          .gallery-image-wrapper:active .gallery-service-type,
+          .gallery-image-wrapper:active .gallery-description {
+            opacity: 1;
           }
         }
   /* Off-canvas mobile menu */
@@ -340,21 +444,21 @@ body.menu-open {
   </a>
 
   <!-- Hero Section for Completed Projects -->
-  <section class="relative pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+  <section class="relative pt-32 pb-24 sm:pb-28 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
     <!-- Background Pattern -->
     <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 right-20 w-72 h-72 bg-cyan-500 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 left-20 w-96 h-96 bg-red-500 rounded-full blur-3xl"></div>
     </div>
     
-    <div class="max-w-4xl mx-auto relative text-center">
-      <p class="uppercase tracking-[0.25em] text-sm text-cyan-500 mb-4">Completed Projects</p>
-      <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4 leading-tight">
-        Before & After Gallery
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center">
+        <p class="uppercase tracking-[0.3em] text-sm sm:text-base text-cyan-400 font-semibold mb-6">Our Portfolio</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          Completed <span class="text-cyan-400">Projects</span> Gallery
       </h1>
-      <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto">
-        Explore a selection of completed works and see how we transform spaces from their original state to clean, modern finishes.
-      </p>
+        <div class="w-24 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent mx-auto"></div>
+      </div>
     </div>
   </section>
 
@@ -364,48 +468,142 @@ body.menu-open {
       <!-- Gallery Grid -->
       <div class="space-y-6 sm:space-y-8">
         
-       
+        <!-- Row 1 -->
+        <div class="gallery-row grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          
 
-        <!-- Project 2 -->
-        <div class="gallery-row grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          <div class="gallery-image-wrapper">
-            <img src="images/7.jpeg" alt="Before" class="gallery-image">
-          </div>
-          <div class="gallery-image-wrapper">
-            <img src="images/8.jpeg" alt="After" class="gallery-image">
-          </div>
+      <a href="carpentry.html" class="gallery-image-wrapper block">
+        <img src="images/carpentry/kitchen.PNG" alt="Carpentry" class="gallery-image">
+        <div class="gallery-overlay">
+          <div class="gallery-overlay-content">
+            <p class="gallery-service-type">Carpentry</p>
+            <p class="gallery-description">Custom kitchen cabinetry and carpentry work with precision craftsmanship and quality materials.</p>
         </div>
-
-        <!-- Project 3 -->
-        <div class="gallery-row grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          <div class="gallery-image-wrapper">
-            <img src="images/9.jpeg" alt="Before" class="gallery-image">
-          </div>
-          <div class="gallery-image-wrapper">
-            <img src="images/10.jpeg" alt="After" class="gallery-image">
-          </div>
         </div>
-
-        <!-- Project 4 -->
-        <div class="gallery-row grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          <div class="gallery-image-wrapper">
+      </a>
+         
+          <a href="electrical.html" class="gallery-image-wrapper block">
             <img src="images/11.jpeg" alt="Before" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Electrical</p>
+                <p class="gallery-description">LED lighting installation for commercial spaces with modern energy-efficient solutions.</p>
+      </div>
+            </div>
+          </a>
+          
+
+            <a href="carpentry.html" class="gallery-image-wrapper block">
+              <img src="images/carpentry/tv.PNG" alt="Carpentry" class="gallery-image">
+              <div class="gallery-overlay">
+                <div class="gallery-overlay-content">
+                  <p class="gallery-service-type">Carpentry</p>
+                  <p class="gallery-description">Professional TV unit installation and custom carpentry solutions for modern living spaces.</p>
+            </div>
+            </div>
+            </a>
+            </div>
+
+        <!-- Row 2 -->
+        <div class="gallery-row grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <a href="tile-laying.html" class="gallery-image-wrapper block">
+            <img src="images/tile services/PATHWAY.png" alt="After" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Tile Laying</p>
+                <p class="gallery-description">Professional tile installation for floors with precise patterns and lasting durability.</p>
+            </div>
           </div>
-          <div class="gallery-image-wrapper">
+          </a>
+
+         
+
+          <a href="tile-laying.html" class="gallery-image-wrapper block">
+            <img src="images/tile services/WALL TILE.png" alt="After" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Tile Laying</p>
+                <p class="gallery-description">Professional tile installation for walls with precise patterns and lasting durability.</p>
+              </div>
+            </div>
+          </a>
+          
+
+
+
+          <a href="tile-laying.html" class="gallery-image-wrapper block">
+            <img src="images/tile services/TILE WORK.png" alt="Before" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Tile Laying</p>
+                <p class="gallery-description">Professional tile installation for swimming pool with precise patterns and lasting durability.</p>
+            </div>
+            </div>
+              </a>
+            </div>
+
+        <!-- Row 3 -->
+        <div class="gallery-row grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          
+          <a href="electrical.html" class="gallery-image-wrapper block">
+            <img src="images/7.jpeg" alt="Before" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Electrical</p>
+                <p class="gallery-description">Professional electrical installation and upgrades for office spaces.</p>
+              </div>
+            </div>
+          </a>
+
+     
+          <a href="painting.html" class="gallery-image-wrapper block">
             <img src="images/12.png" alt="After" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Painting</p>
+                <p class="gallery-description">Professional wall painting with premium paints, expert color consultation, and flawless application.</p>
+            </div>
           </div>
+          </a>
+          
+          <a href="plastering.html" class="gallery-image-wrapper block">
+            <img src="images/8.jpeg" alt="After" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Plastering</p>
+                <p class="gallery-description">Smooth wall finishes and professional reinstatement work for residential and commercial properties.</p>
+        </div>
+      </div>
+          </a>
+
         </div>
 
-        <!-- Project 5 -->
-        <div class="gallery-row grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          <div class="gallery-image-wrapper">
-            <img src="images/Brown-Minimalist-Interior-Design-Photo-Collage-3.png" alt="Before" class="gallery-image">
-          </div>
-          <div class="gallery-image-wrapper">
-            <img src="images/image copy.png" alt="After" class="gallery-image">
-          </div>
+        <!-- Row 4 - Carpentry -->
+        <div class="gallery-row grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          
+          <a href="painting.html" class="gallery-image-wrapper block">
+            <img src="images/9.jpeg" alt="Before" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Painting</p>
+                <p class="gallery-description">High-quality painting services with premium paints, expert color consultation, and flawless application.</p>
+              </div>
+            </div>
+          </a>
+          
+          <a href="carpentry.html" class="gallery-image-wrapper block">
+            <img src="images/carpentry/wardrobe.PNG" alt="Carpentry" class="gallery-image">
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Carpentry</p>
+                <p class="gallery-description">Built-in wardrobe installation with custom design and efficient storage solutions.</p>
+              </div>
+            </div>
+          </a>
         </div>
 
+      </div>
+     
       </div>
     </div>
   </section>
@@ -535,6 +733,40 @@ body.menu-open {
   </div>
 
   <script>
+    // Gallery mobile tap handler
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryWrappers = document.querySelectorAll('.gallery-image-wrapper');
+      
+      galleryWrappers.forEach(wrapper => {
+        let isOverlayActive = false;
+        
+        // Handle touch events for mobile devices
+        wrapper.addEventListener('touchstart', function(e) {
+          e.preventDefault();
+          
+          // Toggle overlay on tap
+          if (isOverlayActive) {
+            wrapper.classList.remove('overlay-active');
+            isOverlayActive = false;
+      } else {
+            // Remove active state from all other wrappers
+            galleryWrappers.forEach(w => {
+              w.classList.remove('overlay-active');
+            });
+            wrapper.classList.add('overlay-active');
+            isOverlayActive = true;
+          }
+    }, { passive: false });
+
+        // Close overlay when tapping outside
+        document.addEventListener('touchstart', function(e) {
+          if (!wrapper.contains(e.target) && isOverlayActive) {
+            wrapper.classList.remove('overlay-active');
+            isOverlayActive = false;
+          }
+        });
+      });
+    });
 
     // Chat widget logic (simplified but aligned with homepage behaviour)
     const chatToggle = document.getElementById('chat-toggle');
