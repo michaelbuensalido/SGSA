@@ -1479,28 +1479,48 @@ body.menu-open {
             mobileRenovationArrow.classList.toggle('rotate-180');
         });
     }
-      const navbar = document.getElementById("navbar"),
-        navLinks = navbar.querySelectorAll(".nav-link"),
-        mobileMenuButton = document.getElementById("mobile-menu-btn");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          navbar.classList.add("bg-white", "shadow-lg");
-          navLinks.forEach((l) => {
-            l.classList.remove("text-white", "hover:text-sky-400");
-            l.classList.add("text-gray-800", "hover:text-sky-600");
-          });
-          mobileMenuButton?.classList.remove("text-white");
-          mobileMenuButton?.classList.add("text-gray-800");
-        } else {
-          navbar.classList.remove("bg-white", "shadow-lg");
-          navLinks.forEach((l) => {
-            l.classList.remove("text-gray-800", "hover:text-sky-600");
-            l.classList.add("text-white", "hover:text-sky-400");
-          });
-          mobileMenuButton?.classList.remove("text-gray-800");
-          mobileMenuButton?.classList.add("text-white");
-        }
-      });
+      // Navbar scroll effect for service pages
+      const navbar = document.getElementById("navbar");
+      const navLinks = navbar?.querySelectorAll(".nav-link");
+      const mobileMenuButton = document.getElementById("mobile-menu-btn");
+      
+      if (navbar && navLinks) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            // Scrolled state - white background with dark text
+            navbar.classList.add("bg-white", "shadow-lg");
+            navbar.classList.remove("bg-transparent");
+            
+            // Change nav links to dark text
+            navLinks.forEach((link) => {
+              link.classList.remove("text-white", "hover:text-sky-400");
+              link.classList.add("text-sky-600", "hover:text-sky-500");
+            });
+            
+            // Change mobile button to dark
+            if (mobileMenuButton) {
+              mobileMenuButton.classList.remove("text-white", "hover:text-sky-400");
+              mobileMenuButton.classList.add("text-gray-800", "hover:text-sky-600");
+            }
+          } else {
+            // Top of page state - transparent background with white text
+            navbar.classList.remove("bg-white", "shadow-lg");
+            navbar.classList.add("bg-transparent");
+            
+            // Change nav links back to white text
+            navLinks.forEach((link) => {
+              link.classList.remove("text-sky-600", "hover:text-sky-500");
+              link.classList.add("text-white", "hover:text-sky-400");
+            });
+            
+            // Change mobile button back to white
+            if (mobileMenuButton) {
+              mobileMenuButton.classList.remove("text-gray-800", "hover:text-sky-600");
+              mobileMenuButton.classList.add("text-white", "hover:text-sky-400");
+            }
+          }
+        });
+      }
     </script>
   </body>
 </html>
