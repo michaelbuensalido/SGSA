@@ -20,21 +20,7 @@
             font-family: 'Inter', sans-serif;
         }
         
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
         
-        .card-hover:hover {
-            transform: translateY(-8px);
-        }
-        
-        .icon-container {
-            transition: all 0.4s ease;
-        }
-        
-        .card-hover:hover .icon-container {
-            transform: scale(1.1);
-        }
     .font-archivo {
       font-family: 'Archivo', sans-serif;
     }
@@ -220,6 +206,45 @@
 body.menu-open {
   overflow: hidden;
 }
+.service-description {
+  transform: translateY(-60px);
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+  z-index: 10;
+  position: relative;
+}
+.service-card-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  transform-origin: top left;
+  opacity: 0;
+  background-color: rgba(19, 106, 144, 0.75); /* cyan-400 with 75% opacity */
+  transition: transform 0.3s ease-in-out, opacity 0.4s ease-in-out;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card-container:hover .service-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+.service-card-container:hover .service-card-overlay {
+  transform: scale(1);
+  opacity: 1;
+}
+.service-card-container:hover .service-card-image {
+  transform: scale(1.35);
+  transition: transform 1s ease-in-out;
+}
+.service-card-container {
+  cursor: pointer;
+}
 </style>
 
 </head>
@@ -329,7 +354,7 @@ body.menu-open {
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
                 Home
             </a>
-            <a href="index.html#about" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
+            <a href="about.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 About
             </a>
@@ -475,81 +500,79 @@ body.menu-open {
 </div>
 
   <!-- Services Section -->
-  <section class="pb-12 sm:pb-14 mt-[-3px] bg-slate-50 pt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="pb-12 sm:pb-14   bg-slate-50 pt-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
        <!-- Section Header -->
        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
          <p class="text-sm sm:text-base uppercase tracking-[0.25em] text-red-600 font-semibold mb-3">Our Services</p>
          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Handyman & Renovation Expertise</h2>
-         
+         <div class="w-20 h-1 bg-red-600 mx-auto mt-6"></div>
+         </div>
        </div>
          
        <!-- Services Grid -->
-       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+       <div class="grid max-w-7xl mx-auto grid-cols-1 md:grid-cols-3  mb-12">
 
         <!-- Handyman Services -->
-         <div class="bg-white overflow-hidden border-4 border-t-red-600 shadow-xl rounded-xl h-full flex flex-col">
-           <div class="relative h-56 sm:h-64 bg-red-600 overflow-hidden">
-               <img class="w-full h-full object-cover" src="images/image copy.png" alt="">
-            
-          </div>
-           <div class="p-7 sm:p-8 text-center flex-1 flex flex-col">
-             <h3 class="text-2xl font-bold text-black mb-3">Handyman Services</h3>
-             <p class="text-gray-700 mb-6 leading-relaxed text-base sm:text-[15px]">General repairs, maintenance, and fixes for your home. From door repairs to shelf installation, we've got you covered.</p>
-             <div class="mt-auto flex items-center w-full justify-center" >
-               <button class="text-red-600  font-bold px-6 py-2 flex items-center  gap-2">
-              View More <span class="text-lg">→</span>
-            </button>
+         <div class="bg-white overflow-hidden  h-full flex flex-col">
+           <div class="relative service-card-container h-74 sm:h-74 bg-red-600 overflow-hidden">
+            <div class="service-card-overlay">
+              
             </div>
+               <img class="w-full service-card-image h-full object-cover" src="images/image copy.png" alt="">
+               <div class="service-description absolute w-full h-full flex justify-center items-center  bottom-0  p-4 text-center text-white w-64"> 
+                <p>Professional handyman services for <br> all  your home repair needs. From <br>minor fixes to major installations, <br> our skilled technicians deliver quality <br> workmanship with transparent pricing <br> and reliable timelines.</p>
+               </div>
+          </div>
+           <div class="sm:p-3 text-center flex-1 bg-cyan-600 flex flex-col">
+             <h3 class="text-xl  text-white mb-3">Handyman Services</h3>
+
           </div>
         </div>
 
         <!-- Renovation -->
-         <div class="bg-white overflow-hidden border-4 border-t-blue-600 shadow-xl rounded-xl h-full flex flex-col">
-           <div class="relative h-56 sm:h-64 bg-blue-600 overflow-hidden">
-             <img class="w-full h-full object-cover" src="images/works.png" alt="">
+         <div class="bg-white overflow-hidden h-full flex flex-col">
+           <div class="relative service-card-container h-74 sm:h-74 bg-blue-600 overflow-hidden">
+             <div class="service-card-overlay">
+               
+             </div>
+             <img class="w-full service-card-image h-full object-cover" src="images/works.png" alt="">
+             <div class="service-description absolute w-full h-full flex justify-center items-center  bottom-0  p-4 text-center text-white w-64"> 
+              <p>Transform your space with our <br> comprehensive renovation services. <br>We handle everything from planning <br> to execution, ensuring quality finishes <br> and attention to detail that exceeds <br> expectations.</p>
+             </div>
            
           </div>
-           <div class="p-7 sm:p-8 text-center flex-1 flex flex-col">
-             <h3 class="text-2xl font-bold text-black mb-3">Renovation</h3>
-             <p class="text-gray-700 mb-6 leading-relaxed text-base sm:text-[15px]">Complete home renovation services including bathroom, kitchen, room makeovers, flooring upgrades, and full property transformations.</p>
-             <div class="mt-auto flex items-center w-full justify-center" >
-               <button class="text-red-600  font-bold px-6 py-2 flex items-center  gap-2">
-              View More <span class="text-lg">→</span>
-            </button>
-            </div>
+           <div class=" sm:p-3 text-center flex-1 bg-cyan-700 flex flex-col">
+             <h3 class="text-xl font-archivo  text-white mb-3">Renovation</h3>
+             
           </div>
         </div>
 
         <!-- Electrical & Plumbing -->
-         <div class="bg-white overflow-hidden border-4 border-t-black shadow-xl rounded-xl h-full flex flex-col">
-           <div class="relative h-56 sm:h-64 bg-black overflow-hidden">
-             <img class="w-full h-full object-cover" src="images/Brown-Minimalist-Interior-Design-Photo-Collage-3.png" alt="">
-            
+         <div class="bg-white overflow-hidden   h-full flex flex-col">
+           <div class="relative service-card-container h-74 sm:h-74 bg-black overflow-hidden">
+             <div class="service-card-overlay">
+               
+             </div>
+             <img class="w-full service-card-image h-full object-cover" src="images/Brown-Minimalist-Interior-Design-Photo-Collage-3.png" alt="">
+             <div class="service-description absolute w-full h-full text-md flex justify-center items-center  bottom-0  p-4 text-center text-white w-64"> 
+              Licensed electrical and plumbing <br> experts  ready to handleinstallations, <br> repairs, and maintenance. We ensure <br> safety compliance, quality workmanship, <br> and reliable solutions for all your <br> utility needs.
+             </div>
+
           </div>
-           <div class="p-7 sm:p-8 text-center flex-1 flex flex-col">
-             <h3 class="text-2xl font-bold text-black mb-3">Electrical & Plumbing</h3>
-             <p class="text-gray-700 mb-6 leading-relaxed text-base sm:text-[15px]">Licensed electrical work and plumbing services including installations, repairs, and safety inspections.</p>
-             <div class="mt-auto flex items-center w-full justify-center" >
-               <button class="text-red-600  font-bold px-6 py-2 flex items-center  gap-2">
-              View More <span class="text-lg">→</span>
-            </button>
-            </div>
+           <div class=" sm:p-3 text-center flex-1 flex  flex-col bg-cyan-600">
+             <h3 class="text-xl text-white mb-3">Electrical & Plumbing</h3>
+            
           </div>
         </div>
 
       </div>
 
-      <!-- View All Services Button -->
-       <div class="text-center mt-10 sm:mt-12">
-         <a href="#contact" class="inline-block bg-red-600 text-white font-bold px-6 sm:px-8 py-3 shadow-lg rounded-lg">
-          View All Services →
-        </a>
-      </div>
+     
     </div>
   </section>
 
-   <section class="py-20 px-6 lg:px-8 bg-white">
+   <section class="py-20 px-6 lg:px-8 bg-slate-50">
     
         <div class="max-w-7xl mx-auto">
             
@@ -568,62 +591,70 @@ body.menu-open {
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 
                 <!-- Card 1: Master Craftsmanship -->
-                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-slate-100">
-                    <div class="icon-container w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
+                <div class="card-hover bg-slate-50 rounded-2xl p-8 ">
+                    <div class="flex items-center justify-center">
+                      <div class="icon-container w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75"></path>
                         </svg>
                     </div>
-                    <h3 class="heading-font text-2xl font-semibold text-slate-900 mb-4">
+                    </div>
+                    <h3 class="heading-font text-2xl text-center font-semibold text-slate-900 mb-4">
                         Master Craftsmanship
                     </h3>
-                    <p class="text-slate-600 leading-relaxed">
+                    <p class="text-slate-600 text-center leading-relaxed">
                         Our skilled artisans bring 23+ years of refined expertise to every detail, ensuring flawless execution and lasting quality that stands the test of time.
                     </p>
                 </div>
 
                 <!-- Card 2: Premium Materials -->
-                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-slate-100">
+                <div class="card-hover bg-slate-50 rounded-2xl p-8 ">
+                  <div class="flex items-center justify-center">
                     <div class="icon-container w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                        </svg>
+                      <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                      </svg>
                     </div>
-                    <h3 class="heading-font text-2xl font-semibold text-slate-900 mb-4">
+                  </div>
+                    <h3 class="heading-font text-2xl text-center font-semibold text-slate-900 mb-4">
                         Attention to Detail & Quality Finish
                     </h3>
-                    <p class="text-slate-600 leading-relaxed">
+                    <p class="text-slate-600 leading-relaxed text-center">
                         Every project is handled with care to ensure clean execution, durability, and lasting results.
                     </p>
                 </div>
 
                 <!-- Card 3: Transparent Pricing -->
-                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-slate-100">
+                <div class="card-hover bg-slate-50 rounded-2xl p-8 ">
+                  <div class="flex items-center justify-center">
                     <div class="icon-container w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="heading-font text-2xl font-semibold text-slate-900 mb-4">
+                      <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                      </svg>
+                  </div>
+                  </div>
+                    <h3 class="heading-font text-2xl font-semibold text-center  text-slate-900 mb-4">
                         Transparent Pricing
                     </h3>
-                    <p class="text-slate-600 leading-relaxed">
+                    <p class="text-slate-600 text-center leading-relaxed">
                         No hidden fees, no surprises. We provide detailed, honest quotes upfront, so you can make informed decisions with complete confidence and peace of mind.
                     </p>
                 </div>
 
                 <!-- Card 4: Reliable Timelines -->
-                <div class="card-hover bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-slate-100">
-                    <div class="icon-container w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
+                <div class="card-hover bg-slate-50 rounded-2xl p-8 ">
+                    <div class="flex items-center justify-center">
+                      <div class="icon-container w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="heading-font text-2xl font-semibold text-slate-900 mb-4">
+                    </div>
+                    <h3 class="heading-font text-center text-2xl font-semibold text-slate-900 mb-4">
                         Reliable Timelines
                     </h3>
-                    <p class="text-slate-600 leading-relaxed">
+                    <p class="text-slate-600 text-center leading-relaxed">
                         We respect your schedule as much as our own. With meticulous planning and disciplined execution, we deliver exceptional results on time, every time.
                     </p>
                 </div>
@@ -648,57 +679,67 @@ body.menu-open {
         <div class="flex flex-col md:hidden gap-4">
             <!-- First div: Republic Polytechnic Hotel -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
-                <img class="w-full h-full rounded-lg object-cover" src="images/11.jpeg" alt="Republic Polytechnic Hotel">
+                <a href="electrical.html">
+                  <img class="w-full h-full rounded-lg object-cover" src="images/11.jpeg" alt="Republic Polytechnic Hotel">
                 <div class="project-overlay">
                     <div class="project-title">
-                        <h3 class="text-white text-xl sm:text-2xl font-bold">Republic Polytechnic</h3>
-                        <p class="text-gray-300 text-base sm:text-lg">Hotel</p>
+                        <h3 class="text-white text-xl sm:text-2xl font-bold">Light Installation</h3>
+                        <p class="text-gray-300 text-base sm:text-lg">HDB</p>
                     </div>
                 </div>
+                </a>
             </div>
             
             <!-- Second div: Marina Bay Residence -->
             <div class="w-full h-[200px] sm:h-[250px] rounded-lg shadow-lg project-card overflow-hidden">
-                <img class="w-full h-full rounded-lg object-cover" src="images/8.jpeg" alt="Marina Bay Residence">
+                <a href="plastering.html">
+                  <img class="w-full h-full rounded-lg object-cover" src="images/8.jpeg" alt="Marina Bay Residence">
                 <div class="project-overlay">
                     <div class="project-title">
-                        <h3 class="text-white text-lg sm:text-xl font-bold">Marina Bay</h3>
-                        <p class="text-gray-300 text-sm sm:text-base">Residence</p>
+                        <h3 class="text-white text-lg sm:text-xl font-bold">Wall Plastering</h3>
+                        <p class="text-gray-300 text-sm sm:text-base">Commercial</p>
                     </div>
                 </div>
+                </a>
             </div>
             
             <!-- Third div: Sentosa Resort -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
-                <img class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort">
+                <a href="painting.html">
+                  <img class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort">
                 <div class="project-overlay">
                     <div class="project-title">
-                        <h3 class="text-white text-lg sm:text-xl font-bold">Sentosa</h3>
-                        <p class="text-gray-300 text-sm sm:text-base">Resort</p>
+                        <h3 class="text-white text-lg sm:text-xl font-bold">Landed Property Painting</h3>
+                        <p class="text-gray-300 text-sm sm:text-base">Commercial</p>
                     </div>
                 </div>
+                </a>
             </div>
             
             <!-- Fourth div: Orchard Plaza -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
-                <img class="w-full h-full rounded-lg object-cover" src="images/9.jpeg" alt="Orchard Plaza">
-                <div class="project-overlay">
+                <a href="painting.html">
+                  <img class="w-full h-full rounded-lg object-cover" src="images/9.jpeg" alt="Orchard Plaza">
+                  <div class="project-overlay">
                     <div class="project-title">
-                        <h3 class="text-white text-lg sm:text-xl font-bold">Orchard Plaza</h3>
-                        <p class="text-gray-300 text-sm sm:text-base">Commercial</p>
+                      <h3 class="text-white text-lg sm:text-xl font-bold">Wall Painting</h3>
+                      <p class="text-gray-300 text-sm sm:text-base">Office</p>
                     </div>
-                </div>
+                  </div>
+                </a>
             </div>
             
-            <!-- Fifth div: Clarke Quay Tower -->
+            <!-- Fifth div: Clarke Quay Tower --> -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
-                <img class="w-full h-full rounded-lg object-cover" src="images/10.jpeg" alt="Clarke Quay Tower">
-                <div class="project-overlay">
+                <a href="electrical.html">
+                  <img class="w-full h-full rounded-lg object-cover" src="images/10.jpeg" alt="Clarke Quay Tower">
+                  <div class="project-overlay">
                     <div class="project-title">
-                        <h3 class="text-white text-lg sm:text-xl font-bold">Clarke Quay</h3>
-                        <p class="text-gray-300 text-sm sm:text-base">Tower</p>
+                        <h3 class="text-white text-lg sm:text-xl font-bold">Light Installation</h3>
+                        <p class="text-gray-300 text-sm sm:text-base">Office</p>
                     </div>
-                </div>
+                  </div>
+                </a>
             </div>
         </div>
 
@@ -706,55 +747,64 @@ body.menu-open {
         <div class="hidden md:grid md:grid-cols-6 md:grid-rows-3 gap-4 md:h-[600px] lg:h-[800px]">
             <!-- First div: Republic Polytechnic Hotel -->
             <div class="col-span-4 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
-                <img class="w-full h-full rounded-lg object-cover" src="images/11.jpeg" alt="Republic Polytechnic Hotel">
+                <a href="electrical.html">
+                  <img class="w-full h-full rounded-lg object-cover" src="images/11.jpeg" alt="Republic Polytechnic Hotel">
                 <div class="project-overlay">
                     <div class="project-title">
-                        <h3 class="text-white text-2xl font-bold">Republic Polytechnic</h3>
-                        <p class="text-gray-300 text-lg">Hotel</p>
+                        <h3 class="text-white text-2xl font-bold">Light Installation</h3>
+                        <p class="text-gray-300 text-lg">HDB</p>
                     </div>
                 </div>
+                </a>
             </div>
             
             <!-- Second div: Marina Bay Residence -->
             <div class="col-span-2 row-span-1 rounded-lg shadow-lg project-card overflow-hidden">
-                <img class="w-full h-full rounded-lg object-cover" src="images/8.jpeg" alt="Marina Bay Residence">
+                <a href="plastering.html">
+                  <img class="w-full h-full rounded-lg object-cover" src="images/8.jpeg" alt="Marina Bay Residence">
                 <div class="project-overlay">
                     <div class="project-title">
-                        <h3 class="text-white text-xl font-bold">Marina Bay</h3>
-                        <p class="text-gray-300">Residence</p>
+                        <h3 class="text-white text-xl font-bold">Wall Plastering</h3>
+                        <p class="text-gray-300">Commercial</p>
                     </div>
                 </div>
+                </a>
             </div>
             
             <!-- Third div: Sentosa Resort -->
             <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
-                <img class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort">
+                <a href="painting.html">
+                  <img class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort">
                 <div class="project-overlay">
                     <div class="project-title">
-                        <h3 class="text-white text-xl font-bold">Sentosa</h3>
-                        <p class="text-gray-300">Resort</p>
+                        <h3 class="text-white text-xl font-bold">Wall Painting</h3>
+                        <p class="text-gray-300">Landed Property</p>
                     </div>
                 </div>
+                </a>
             </div>
             
             <!-- Fourth div: Orchard Plaza -->
             <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
-                <img class="w-full h-full rounded-lg object-cover" src="images/9.jpeg" alt="Orchard Plaza">
+                <a href="painting.html">
+                  <img class="w-full h-full rounded-lg object-cover" src="images/9.jpeg" alt="Orchard Plaza">
                 <div class="project-overlay">
                     <div class="project-title">
-                        <h3 class="text-white text-xl font-bold">Orchard Plaza</h3>
-                        <p class="text-gray-300">Commercial</p>
+                      <h3 class="text-white text-xl font-bold">Wall Painting</h3>
+                        <p class="text-gray-300">Office</p>
                     </div>
                 </div>
+                </a>
             </div>
             
             <!-- Fifth div: Clarke Quay Tower -->
             <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
-                <img class="w-full h-full rounded-lg object-cover" src="images/10.jpeg" alt="Clarke Quay Tower">
+                <a href="electrical.html">
+                  <img class="w-full h-full rounded-lg object-cover" src="images/10.jpeg" alt="Clarke Quay Tower">
                 <div class="project-overlay">
                     <div class="project-title">
-                        <h3 class="text-white text-xl font-bold">Clarke Quay</h3>
-                        <p class="text-gray-300">Tower</p>
+                        <h3 class="text-white text-xl font-bold">Light Installation</h3>
+                        <p class="text-gray-300">Office</p>
                     </div>
                 </div>
             </div>
@@ -1742,4 +1792,5 @@ window.addEventListener('scroll', function() {
    
   </script>
 </body>
+</html>
 </html>

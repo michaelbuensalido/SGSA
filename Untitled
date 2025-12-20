@@ -1,0 +1,16 @@
+ <!-- FAQ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <p class="uppercase text-sm text-red-600 tracking-[0.2em]">FAQs</p>
+        <h2 class="text-3xl font-bold text-slate-900">Questions we often get</h2>
+        <p class="text-slate-600">If you don't see your question, reach out and we'll help right away.</p>
+      </div>
+      <div class="">
+        <div class="bg-white border border-slate-200 rounded-xl p-4 faq-card"><p class="font-semibold text-slate-900 mb-2">Can you handle concealed wiring?</p><p class="text-slate-600 text-sm leading-relaxed">Yes, we plan routes with minimal hacking and reinstate surfaces cleanly.</p></div>
+        <div class="bg-white my-2 border border-slate-100 rounded-xl p-4 faq-card"><p class="font-semibold text-slate-900 mb-2">Do you certify works?</p><p class="text-slate-600 text-sm leading-relaxed">Works are performed under licensed supervision; certification provided where applicable.</p></div>
+        <div class="bg-white mb-2 border border-slate-100 rounded-xl p-4 faq-card"><p class="font-semibold text-slate-900 mb-2">Can you upgrade my DB?</p><p class="text-slate-600 text-sm leading-relaxed">We replace outdated breakers, add RCBOs, and balance loads for modern usage.</p></div>
+        <div class="bg-white border border-slate-100 rounded-xl p-4 faq-card"><p class="font-semibold text-slate-900 mb-2">Will there be power downtime?</p><p class="text-slate-600 text-sm leading-relaxed">We isolate in phases to reduce downtime and coordinate with you beforehand.</p></div>
+      </div>
+    </div>
+  </section>
