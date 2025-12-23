@@ -326,7 +326,16 @@
 <!-- Right: Contact Form -->
 <div class="bg-white p-8 rounded-lg shadow-lg">
      <h2 class="text-3xl font-bold text-gray-800 mb-6">SEND US A MESSAGE</h2>
-    <form id="contact-form" class="space-y-5">
+    <!-- Success/Error Message -->
+    <div id="form-message" class="hidden mb-4 p-4 rounded-md"></div>
+    
+    <form id="contact-form" action="" method="POST" class="space-y-5">
+        <!-- FormSubmit configuration -->
+        <input type="hidden" name="_subject" value="New Contact Form Submission - SGSA Construction">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" id="form-next-url" value="">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_autoresponse" value="Thank you for contacting SGSA Construction! We have received your message and will get back to you within 24 hours.">
         <div>
             <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
             <input type="text" id="name" name="name" required
@@ -380,7 +389,7 @@
                             height="100%" 
                             style="border:0;" 
                             allowfullscreen="" 
-                            loading="lazy" 
+                            loading="eager" 
                             referrerpolicy="no-referrer-when-downgrade"
                             class="rounded-2xl">
                         </iframe>
@@ -621,41 +630,51 @@
         // Contact Form Handling
         const contactForm = document.getElementById('contact-form');
         const formMessage = document.getElementById('form-message');
+        const formNextUrl = document.getElementById('form-next-url');
+        
+        // Set the redirect URL to current page with success parameter
+        if (formNextUrl) {
+            const currentUrl = window.location.href.split('?')[0]; // Remove existing query params
+            formNextUrl.value = currentUrl + '?success=true';
+        }
         
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form data
-                const formData = new FormData(contactForm);
-                const data = Object.fromEntries(formData);
-                
                 // Show loading state
                 const submitBtn = contactForm.querySelector('button[type="submit"]');
                 const originalText = submitBtn.textContent;
                 submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
                 
-                // Simulate form submission (replace with actual API call)
+                // Hide any previous messages
+                formMessage.classList.add('hidden');
+                
+                // Form will submit to FormSubmit, but we'll handle the response
+                // Note: FormSubmit redirects after submission, so this handles the case
+                // where JavaScript is enabled and form submits normally
+                
+                // If form submission fails (network error, etc.), this will catch it
                 setTimeout(() => {
-                    // Show success message
-                    formMessage.classList.remove('hidden');
-                    formMessage.classList.add('bg-green-100', 'border-green-400', 'text-green-700', 'border');
-                    formMessage.textContent = 'Thank you! Your message has been sent. We\'ll get back to you within 24 hours.';
-                    
-                    // Reset form
-                    contactForm.reset();
-                    
-                    // Reset button
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    
-                    // Hide message after 5 seconds
-                    setTimeout(() => {
-                        formMessage.classList.add('hidden');
-                    }, 5000);
-                }, 1000);
+                    // If we're still on the page after 2 seconds, show a message
+                    // This handles cases where FormSubmit might have issues
+                    if (document.getElementById('contact-form')) {
+                        formMessage.classList.remove('hidden');
+                        formMessage.classList.add('bg-blue-100', 'border-blue-400', 'text-blue-700', 'border', 'p-4', 'rounded-md');
+                        formMessage.textContent = 'Sending your message... Please wait.';
+                    }
+                }, 2000);
             });
+            
+            // Handle form submission success (FormSubmit redirects, but we can check URL params)
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('success') === 'true') {
+                formMessage.classList.remove('hidden');
+                formMessage.classList.add('bg-green-100', 'border-green-400', 'text-green-700', 'border', 'p-4', 'rounded-md');
+                formMessage.textContent = 'Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.';
+                
+                // Clear URL params
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
         }
         
         // Off-canvas mobile menu

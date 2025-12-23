@@ -148,21 +148,21 @@
         }
 
         .hero-button-primary {
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .hero-button-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(6, 182, 212, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(6, 182, 212, 0.25);
         }
 
         .hero-button-secondary {
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .hero-button-secondary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(6, 182, 212, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(6, 182, 212, 0.2);
         }
 
         .trust-badge {
@@ -198,7 +198,7 @@
 }
 .mobile-menu-panel {
   transform: translateX(-100%);
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .mobile-menu-panel.active {
   transform: translateX(0);
@@ -239,11 +239,266 @@ body.menu-open {
   opacity: 1;
 }
 .service-card-container:hover .service-card-image {
-  transform: scale(1.35);
-  transition: transform 1s ease-in-out;
+  transform: scale(1.02);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .service-card-container {
   cursor: pointer;
+}
+
+/* ============================================
+   PROFESSIONAL ANIMATIONS SYSTEM
+   ============================================ */
+
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   ABOUT SECTION ANIMATIONS
+   ============================================ */
+
+/* Fade-in + upward movement animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About section elements - initially hidden */
+.about-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-animate.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for about section children */
+.about-animate-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.about-animate-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.about-animate-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.about-animate-delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* ============================================
+   SERVICE / VALUE CARDS ANIMATIONS
+   ============================================ */
+
+/* Value cards hover effect - subtle elevation */
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s ease-out;
+  will-change: transform;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Service cards - refined hover */
+.service-card-container {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-card-container:hover {
+  transform: translateY(-2px);
+}
+
+.service-card-image {
+  transition: transform 0.6s ease-in-out,
+              opacity 0.4s ease-out;
+}
+
+.service-card-container:hover .service-card-image {
+  transform: scale(1.2);
+  opacity: 0.95;
+}
+
+/* Service card overlay - smooth fade */
+.service-card-overlay {
+  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-description {
+  transition: opacity 0s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s ease-in-out;
+}
+
+/* ============================================
+   BUTTONS & CTAs ANIMATIONS
+   ============================================ */
+
+/* Base button transition */
+.btn-animate,
+a[href*="contacts"],
+a[href*="tel"],
+button {
+  transition: background-color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+
+/* Button hover with arrow movement */
+.btn-with-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-with-arrow::after {
+  content: '→';
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  display: inline-block;
+}
+
+.btn-with-arrow:hover::after {
+  transform: translateX(3px);
+}
+
+/* Focus states for accessibility */
+.btn-animate:focus,
+a:focus,
+button:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   IMAGE ANIMATIONS
+   ============================================ */
+
+/* Project card images - gentle hover */
+.project-card img {
+  transition: transform 0.5s ease-in-out,
+              filter 0.5s ease-out,
+              opacity 0.4s ease-out;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(0.85);
+}
+
+/* About section image */
+.about-image {
+  transition: opacity 0.4s ease-out,
+              transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.about-image:hover {
+  opacity: 0.95;
+}
+
+/* ============================================
+   NAVIGATION ANIMATIONS
+   ============================================ */
+
+/* Smooth underline animation - already exists, refine it */
+.nav-link::after {
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Mobile menu - refined transition */
+.mobile-menu-panel {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-menu-overlay {
+  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+              visibility 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================
+   SCROLL-TRIGGERED ANIMATIONS
+   ============================================ */
+
+/* Elements that animate on scroll */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-animate.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered scroll animations */
+.scroll-animate-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.scroll-animate-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.scroll-animate-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.scroll-animate-delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* ============================================
+   REFINED EXISTING ANIMATIONS
+   ============================================ */
+
+/* Keep existing trust-badge animation (preserved from original) */
+/* Note: trust-badge animation is defined above in original code */
+
+/* Refine hero animations to be more subtle */
+.hero-headline,
+.hero-subheading,
+.hero-buttons,
+.hero-trust {
+  animation-duration: 0.6s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Refine project card hover */
+.project-card {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
 }
 </style>
 
@@ -464,12 +719,12 @@ body.menu-open {
     <!-- CTA Buttons -->
     <div class="hero-buttons flex flex-col sm:flex-row gap-4 justify-center items-center mb-6 sm:mb-8">
       <a href="contacts.html">
-        <button class="hero-button-primary bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl text-lg transition-all duration-300 transform hover:scale-105">
+        <button class="btn-animate btn-with-arrow hero-button-primary bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl text-lg">
           Get a Free Quote
         </button>
       </a>
       
-      <a href="tel:+6586955055" class="hero-button-secondary border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+      <a href="tel:+6586955055" class="btn-animate hero-button-secondary border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white font-semibold px-8 py-4 rounded-lg text-lg shadow-lg">
         📞 Call Now / WhatsApp Us
       </a>
     </div>
@@ -519,12 +774,12 @@ body.menu-open {
             <div class="service-card-overlay">
               
             </div>
-               <img class="w-full service-card-image h-full object-cover" src="images/image copy.png" alt="">
+               <img class="w-full service-card-image h-full object-cover" src="images/image copy.png" alt="" loading="lazy">
                <div class="service-description absolute w-full h-full flex justify-center items-center  bottom-0  p-4 text-center text-white w-64"> 
                 <p>Professional handyman services for <br> all  your home repair needs. From <br>minor fixes to major installations, <br> our skilled technicians deliver quality <br> workmanship with transparent pricing <br> and reliable timelines.</p>
                </div>
           </div>
-           <div class="sm:p-3 text-center flex-1 bg-cyan-600 flex flex-col">
+           <div class="sm:p-2 text-center flex-1 bg-cyan-600 flex flex-col">
              <h3 class="text-xl  text-white mb-3">Handyman Services</h3>
 
           </div>
@@ -536,13 +791,13 @@ body.menu-open {
              <div class="service-card-overlay">
                
              </div>
-             <img class="w-full service-card-image h-full object-cover" src="images/works.png" alt="">
+             <img class="w-full service-card-image h-full object-cover" src="images/works.png" alt="" loading="lazy">
              <div class="service-description absolute w-full h-full flex justify-center items-center  bottom-0  p-4 text-center text-white w-64"> 
               <p>Transform your space with our <br> comprehensive renovation services. <br>We handle everything from planning <br> to execution, ensuring quality finishes <br> and attention to detail that exceeds <br> expectations.</p>
              </div>
            
           </div>
-           <div class=" sm:p-3 text-center flex-1 bg-cyan-700 flex flex-col">
+           <div class=" sm:p-2 text-center flex-1 bg-cyan-700 flex flex-col">
              <h3 class="text-xl font-archivo  text-white mb-3">Renovation</h3>
              
           </div>
@@ -554,13 +809,13 @@ body.menu-open {
              <div class="service-card-overlay">
                
              </div>
-             <img class="w-full service-card-image h-full object-cover" src="images/Brown-Minimalist-Interior-Design-Photo-Collage-3.png" alt="">
+             <img class="w-full service-card-image h-full object-cover" src="images/Brown-Minimalist-Interior-Design-Photo-Collage-3.png" alt="" loading="lazy">
              <div class="service-description absolute w-full h-full text-md flex justify-center items-center  bottom-0  p-4 text-center text-white w-64"> 
               Licensed electrical and plumbing <br> experts  ready to handleinstallations, <br> repairs, and maintenance. We ensure <br> safety compliance, quality workmanship, <br> and reliable solutions for all your <br> utility needs.
              </div>
 
           </div>
-           <div class=" sm:p-3 text-center flex-1 flex  flex-col bg-cyan-600">
+           <div class=" sm:p-2 text-center flex-1 flex  flex-col bg-cyan-600">
              <h3 class="text-xl text-white mb-3">Electrical & Plumbing</h3>
             
           </div>
@@ -577,21 +832,19 @@ body.menu-open {
         <div class="max-w-7xl mx-auto">
             
             <!-- Header -->
-            <div class="text-center max-w-3xl mx-auto mb-20">
+            <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="heading-font text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
                     Why Choose Us
                 </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-slate-800 to-transparent mx-auto mb-8"></div>
-                <p class="text-lg lg:text-xl text-slate-600 leading-relaxed font-light">
-                    Years of trusted handyman and renovation expertise allow us to transform your space with precision, care, and lasting results.
-                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-slate-800 to-transparent mx-auto "></div>
+                
             </div>
 
             <!-- Cards Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 
                 <!-- Card 1: Master Craftsmanship -->
-                <div class="card-hover bg-slate-50 rounded-2xl p-8 ">
+                <div class="card-hover scroll-animate scroll-animate-delay-1 bg-slate-50 rounded-2xl p-8 ">
                     <div class="flex items-center justify-center">
                       <div class="icon-container w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -609,7 +862,7 @@ body.menu-open {
                 </div>
 
                 <!-- Card 2: Premium Materials -->
-                <div class="card-hover bg-slate-50 rounded-2xl p-8 ">
+                <div class="card-hover scroll-animate scroll-animate-delay-2 bg-slate-50 rounded-2xl p-8 ">
                   <div class="flex items-center justify-center">
                     <div class="icon-container w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
                       <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -626,7 +879,7 @@ body.menu-open {
                 </div>
 
                 <!-- Card 3: Transparent Pricing -->
-                <div class="card-hover bg-slate-50 rounded-2xl p-8 ">
+                <div class="card-hover scroll-animate scroll-animate-delay-3 bg-slate-50 rounded-2xl p-8 ">
                   <div class="flex items-center justify-center">
                     <div class="icon-container w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
                       <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -643,7 +896,7 @@ body.menu-open {
                 </div>
 
                 <!-- Card 4: Reliable Timelines -->
-                <div class="card-hover bg-slate-50 rounded-2xl p-8 ">
+                <div class="card-hover scroll-animate scroll-animate-delay-4 bg-slate-50 rounded-2xl p-8 ">
                     <div class="flex items-center justify-center">
                       <div class="icon-container w-16 h-16 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -680,7 +933,7 @@ body.menu-open {
             <!-- First div: Republic Polytechnic Hotel -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
-                  <img class="w-full h-full rounded-lg object-cover" src="images/11.jpeg" alt="Republic Polytechnic Hotel">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/light-installation.jpg" alt="Republic Polytechnic Hotel">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-xl sm:text-2xl font-bold">Light Installation</h3>
@@ -693,7 +946,7 @@ body.menu-open {
             <!-- Second div: Marina Bay Residence -->
             <div class="w-full h-[200px] sm:h-[250px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="plastering.html">
-                  <img class="w-full h-full rounded-lg object-cover" src="images/8.jpeg" alt="Marina Bay Residence">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/8.jpeg" alt="Marina Bay Residence">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-lg sm:text-xl font-bold">Wall Plastering</h3>
@@ -706,7 +959,7 @@ body.menu-open {
             <!-- Third div: Sentosa Resort -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="painting.html">
-                  <img class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-lg sm:text-xl font-bold">Landed Property Painting</h3>
@@ -719,7 +972,7 @@ body.menu-open {
             <!-- Fourth div: Orchard Plaza -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="painting.html">
-                  <img class="w-full h-full rounded-lg object-cover" src="images/9.jpeg" alt="Orchard Plaza">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/9.jpeg" alt="Orchard Plaza">
                   <div class="project-overlay">
                     <div class="project-title">
                       <h3 class="text-white text-lg sm:text-xl font-bold">Wall Painting</h3>
@@ -732,7 +985,7 @@ body.menu-open {
             <!-- Fifth div: Clarke Quay Tower -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
-                  <img class="w-full h-full rounded-lg object-cover" src="images/10.jpeg" alt="Clarke Quay Tower">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/10.jpeg" alt="Clarke Quay Tower">
                   <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-lg sm:text-xl font-bold">Light Installation</h3>
@@ -748,7 +1001,7 @@ body.menu-open {
             <!-- First div: Republic Polytechnic Hotel -->
             <div class="col-span-4 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
-                  <img class="w-full h-full rounded-lg object-cover" src="images/11.jpeg" alt="Republic Polytechnic Hotel">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/light-installation.jpg" alt="Republic Polytechnic Hotel">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-2xl font-bold">Light Installation</h3>
@@ -761,7 +1014,7 @@ body.menu-open {
             <!-- Second div: Marina Bay Residence -->
             <div class="col-span-2 row-span-1 rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="plastering.html">
-                  <img class="w-full h-full rounded-lg object-cover" src="images/8.jpeg" alt="Marina Bay Residence">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/8.jpeg" alt="Marina Bay Residence">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-xl font-bold">Wall Plastering</h3>
@@ -774,7 +1027,7 @@ body.menu-open {
             <!-- Third div: Sentosa Resort -->
             <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="painting.html">
-                  <img class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-xl font-bold">Wall Painting</h3>
@@ -787,7 +1040,7 @@ body.menu-open {
             <!-- Fourth div: Orchard Plaza -->
             <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="painting.html">
-                  <img class="w-full h-full rounded-lg object-cover" src="images/9.jpeg" alt="Orchard Plaza">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/9.jpeg" alt="Orchard Plaza">
                 <div class="project-overlay">
                     <div class="project-title">
                       <h3 class="text-white text-xl font-bold">Wall Painting</h3>
@@ -800,7 +1053,7 @@ body.menu-open {
             <!-- Fifth div: Clarke Quay Tower -->
             <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
-                  <img class="w-full h-full rounded-lg object-cover" src="images/10.jpeg" alt="Clarke Quay Tower">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/10.jpeg" alt="Clarke Quay Tower">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-xl font-bold">Light Installation</h3>
@@ -1037,17 +1290,39 @@ body.menu-open {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 lg:gap-12">
     <div class="text-base sm:text-lg border-l-4 border-cyan-500 pl-4 sm:pl-7 flex-1">
-    <span class="text-2xl sm:text-3xl lg:text-[44px] font-semibold leading-tight block">
-      <span class="text-cyan-500">Over 4 Years</span> of Expertise in <span class="hidden sm:inline"><br></span> Renovation and Reinstate <span class="hidden sm:inline"><br></span>
+    <span class="text-2xl sm:text-3xl lg:text-[44px] font-semibold leading-tight block mb-6 about-animate about-animate-delay-1">
+      <span class="text-cyan-500">Built on Experience,</span> <span class="hidden sm:inline"><br></span> Delivered with Precision
     </span>
-    <div class="text-gray-500 mt-4 sm:mt-7 text-sm sm:text-base leading-relaxed">
-     We provide reliable handyman and renovation services across <span class="hidden sm:inline"><br></span> Singapore. Backed by skilled workers with over 23 years of <span class="hidden sm:inline"><br></span> experience, we deliver quality repairs, renovations, and <span class="hidden sm:inline"><br></span> reinstatement works with transparent pricing, timely <span class="hidden sm:inline"><br></span> completion, and dependable workmanship you can trust.
+    
+    <!-- Company Story -->
+    <div class="mb-6 about-animate about-animate-delay-2">
+      <h3 class="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Why We Exist</h3>
+      <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+        SGSA Construction specializes in handyman services and renovation works across Singapore. We combine skilled craftsmen with over 23 years of field experience and systematic project management, delivering reliable repairs and renovations with transparent pricing and quality workmanship.
+      </p>
     </div>
-    <button class="font-archivo text-sm sm:text-[15px] font-light border border-cyan-500 p-3 rounded-md px-5 sm:px-7 mt-4 sm:mt-7 hover:bg-cyan-500 hover:text-white transition-colors">ABOUT THE COMPANY</button>
+
+    <!-- Trust Building -->
+    <div class="mb-6 about-animate about-animate-delay-3">
+      <h3 class="text-lg sm:text-xl font-semibold text-slate-900 mb-3">Proven Track Record</h3>
+      <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+        Over 4 years serving Singapore's residential and commercial sectors, we've completed 3,250+ handyman and renovation projects for 1,000+ satisfied clients. Every project meets strict quality standards and full compliance with local building codes and safety regulations.
+      </p>
+    </div>
+
+    
+
+    <!-- CTA -->
+    <div class="mt-6 sm:mt-8 about-animate about-animate-delay-4">
+      <a href="contacts.html" class="btn-animate btn-with-arrow inline-block font-archivo text-sm sm:text-[15px] font-medium border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white p-3 rounded-md px-6 sm:px-8">
+        Schedule a Site Visit
+      </a>
+      <span class="text-gray-600 text-sm ml-4">or call <a href="tel:+6560254678" class="btn-animate text-cyan-600 hover:text-cyan-700 font-medium">+65 6025 4678</a></span>
+    </div>
     </div>
     <div class="flex-shrink-0 w-full lg:w-auto">
       <!-- about image -->
-      <img class="w-full max-w-full sm:max-w-md lg:w-[500px] lg:h-[500px] h-auto sm:h-[400px] lg:h-[500px] rounded-3xl shadow-2xl object-cover mx-auto lg:mx-0" src="images/fotos-k72xVjAmVHE-unsplash.jpg" alt="Professional Handyman Services">
+      <img class="about-image w-full max-w-full sm:max-w-md lg:w-[1000px] rounded-lg lg:h-[500px] h-auto sm:h-[400px] lg:h-[300px] shadow-2xl object-cover mx-auto lg:mx-0 scroll-animate scroll-animate-delay-2" src="images/construction-site.jpg" alt="Professional Handyman Services" loading="lazy">
     </div>
   </div>
   </div>
@@ -1110,12 +1385,12 @@ body.menu-open {
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <!-- Primary CTA -->
-        <a href="contacts.html" class="inline-block bg-white text-red-600 font-bold px-10 py-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-lg">
+        <a href="contacts.html" class="btn-animate btn-with-arrow inline-block bg-white text-red-600 font-bold px-10 py-4 rounded-lg shadow-xl hover:shadow-2xl text-lg">
           Get a Free Quote
         </a>
 
         <!-- Secondary CTA -->
-        <a href="https://wa.me/6560254678?text=Hi%20SGSA%20Construction%20%7C%20I%20need%20handyman%20services" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-10 py-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-lg flex items-center gap-2">
+        <a href="https://wa.me/6560254678?text=Hi%20SGSA%20Construction%20%7C%20I%20need%20handyman%20services" target="_blank" rel="noopener noreferrer" class="btn-animate inline-block bg-green-500 hover:bg-green-600 text-white font-bold px-10 py-4 rounded-lg shadow-xl hover:shadow-2xl text-lg flex items-center gap-2">
           💬 Chat on WhatsApp
         </a>
       </div>
@@ -1248,7 +1523,7 @@ body.menu-open {
                         height="100%" 
                         style="border:0;" 
                         allowfullscreen="" 
-                        loading="lazy" 
+                        loading="eager" 
                         referrerpolicy="no-referrer-when-downgrade"
                         class="rounded-lg">
                     </iframe>
@@ -1415,6 +1690,55 @@ body.menu-open {
   </div>
 
   <script>
+    // ============================================
+    // PROFESSIONAL SCROLL-TRIGGERED ANIMATIONS
+    // ============================================
+    
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    // IntersectionObserver for scroll animations
+    function initScrollAnimations() {
+      if (prefersReducedMotion) {
+        // If user prefers reduced motion, show all elements immediately
+        document.querySelectorAll('.about-animate, .scroll-animate').forEach(el => {
+          el.classList.add('animated');
+        });
+        return;
+      }
+      
+      const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+            // Unobserve after animation to improve performance
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      // Observe all elements with animation classes
+      document.querySelectorAll('.about-animate, .scroll-animate').forEach(el => {
+        observer.observe(el);
+      });
+    }
+    
+    // Initialize animations when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initScrollAnimations);
+    } else {
+      initScrollAnimations();
+    }
+    
+    // ============================================
+    // END SCROLL ANIMATIONS
+    // ============================================
+    
     // Company Information Database
     const companyInfo = {
       name: "SGSA Construction",
