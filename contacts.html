@@ -9,8 +9,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "VBU1jdWiJJzySbP_e",
+        });
+    })();
+    </script>
     <style>
+           @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes checkmark {
+            0% {
+                stroke-dashoffset: 100;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        .animate-slideDown {
+            animation: slideDown 0.4s ease-out;
+        }
+        .checkmark-circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            animation: checkmark 0.6s ease-in-out forwards;
+        }
+        .checkmark-check {
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: checkmark 0.3s 0.3s ease-in-out forwards;
+        }
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
         
         .heading-font { font-family: 'Archivo', serif; }
@@ -324,53 +364,51 @@
 </div>
 
 <!-- Right: Contact Form -->
-<div class="bg-white p-8 rounded-lg shadow-lg">
-     <h2 class="text-3xl font-bold text-gray-800 mb-6">SEND US A MESSAGE</h2>
-    <!-- Success/Error Message -->
-    <div id="form-message" class="hidden mb-4 p-4 rounded-md"></div>
+<div class="max-w-6xl ">
+    <div class="grid">
+        <!-- Right: Contact Form -->
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">SEND US A MESSAGE</h2>
+            
+            <!-- Success/Error Message -->
+            <div id="form-message" class="hidden mb-4 p-4 rounded-md"></div>
+            
+            <form id="contact-form" class="space-y-5">
+                <div>
+                    <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                    <input type="tel" id="phone" name="phone"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                </div>
+                <div>
+                    <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
+                    <input type="text" id="subject" name="subject" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition resize-none"></textarea>
+                </div>
+                <button type="button" onclick="sendMail(event)" 
+                    class="w-full bg-sky-500 text-white py-3 px-6 rounded-md font-semibold hover:bg-sky-600 transition duration-300 transform hover:scale-105">
+                    Send Message
+                </button>
+            </form>
+        </div>
     
-    <form id="contact-form" action="" method="POST" class="space-y-5">
-        <!-- FormSubmit configuration -->
-        <input type="hidden" name="_subject" value="New Contact Form Submission - SGSA Construction">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" id="form-next-url" value="">
-        <input type="hidden" name="_template" value="box">
-        <input type="hidden" name="_autoresponse" value="Thank you for contacting SGSA Construction! We have received your message and will get back to you within 24 hours.">
-        <div>
-            <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-            <input type="text" id="name" name="name" required
-                   class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
-        </div>
-
-        <div>
-            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-            <input type="email" id="email" name="email" required
-                   class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
-        </div>
-
-        <div>
-            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-            <input type="tel" id="phone" name="phone"
-                   class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
-        </div>
-        <div>
-            <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
-            <input type="text" id="subject" name="subject" required
-                   class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
-        </div>
-
-        <div>
-            <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
-            <textarea id="message" name="message" rows="5" required
-                      class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-500 transition resize-none"></textarea>
-        </div>
-
-        <button type="submit" 
-                class="w-full bg-sky-500 text-white py-3 px-6 rounded-md font-semibold hover:bg-sky-600 transition duration-300 transform hover:scale-105">
-            Send Message
-        </button>
-    </form>
+    </div>
 </div>
+
 </div>
 </div>
 </section>
@@ -525,7 +563,37 @@
       projectsCompleted: "500+",
       clientSatisfaction: "98%"
     };
-
+    function sendMail(e) {
+    e.preventDefault();
+    
+    let parms = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+    };
+    
+    // Show loading state
+    const submitBtn = document.querySelector('button[onclick="sendMail(event)"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    emailjs.send("service_f88b1cj", "template_x6cpg37", parms)
+        .then(function(response) {
+            alert("✅ Message sent successfully!\n\nThank you for contacting us. We'll get back to you within 24 hours.");
+            document.getElementById("contact-form").reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        })
+        .catch(function(error) {
+            alert("❌ Failed to send message.\n\nPlease try again or contact us directly at:\n📧 sgsaconstruction@gmail.com\n📞 +65 6025 4678");
+            console.error("EmailJS error:", error);
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
+}
     // Smart Response Generator
     function generateResponse(userMessage) {
       const message = userMessage.toLowerCase().trim();
