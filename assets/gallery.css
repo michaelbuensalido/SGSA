@@ -23,6 +23,8 @@ body.lightbox-no-scroll {
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
 }
 
 .gallery-image-wrapper:hover {
@@ -36,13 +38,17 @@ body.lightbox-no-scroll {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              filter 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .gallery-image-wrapper:hover .gallery-image,
 .gallery-image-wrapper.overlay-active .gallery-image {
-  transform: scale(1.08);
+  transform: scale(1.08) translateZ(0);
+  filter: brightness(0.95);
 }
 
 .gallery-overlay {
@@ -57,16 +63,18 @@ body.lightbox-no-scroll {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              visibility 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 10;
   padding: 1.5rem;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .gallery-image-wrapper:hover .gallery-overlay,
 .gallery-image-wrapper.overlay-active .gallery-overlay {
-  opacity: 0.8;
+  opacity: 1;
   visibility: visible;
   background: rgba(0, 0, 0, 0.75);
 }
@@ -74,8 +82,9 @@ body.lightbox-no-scroll {
 .gallery-overlay-content {
   text-align: center;
   color: white;
-  transform: translateY(10px);
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+  transform: translateY(15px);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+  backface-visibility: hidden;
 }
 
 .gallery-image-wrapper:hover .gallery-overlay-content,
@@ -91,12 +100,16 @@ body.lightbox-no-scroll {
   margin-bottom: 0.75rem;
   text-transform: uppercase;
   opacity: 0;
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s,
+              transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.15s;
+  transform: translateY(5px);
+  backface-visibility: hidden;
 }
 
 .gallery-image-wrapper:hover .gallery-service-type,
 .gallery-image-wrapper.overlay-active .gallery-service-type {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .gallery-description {
@@ -107,12 +120,16 @@ body.lightbox-no-scroll {
   max-width: 90%;
   margin: 0 auto;
   opacity: 0;
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s,
+              transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s;
+  transform: translateY(5px);
+  backface-visibility: hidden;
 }
 
 .gallery-image-wrapper:hover .gallery-description,
 .gallery-image-wrapper.overlay-active .gallery-description {
   opacity: 1;
+  transform: translateY(0);
 }
 
 @media (min-width: 768px) {
@@ -150,7 +167,8 @@ body.lightbox-no-scroll {
   }
 
   .gallery-image-wrapper:active .gallery-image {
-    transform: scale(1.08);
+    transform: scale(1.08) translateZ(0);
+    filter: brightness(0.95);
   }
 
   .gallery-image-wrapper:active .gallery-overlay-content {
@@ -160,6 +178,7 @@ body.lightbox-no-scroll {
   .gallery-image-wrapper:active .gallery-service-type,
   .gallery-image-wrapper:active .gallery-description {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
