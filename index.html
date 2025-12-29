@@ -567,7 +567,20 @@ button:focus {
                        </div>
                    </div>
                </div>
-               <a href="completed-projects.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">GALLERY</a>
+               <!-- OUR PROJECTS dropdown -->
+            <div class="relative group" data-projects-dropdown>
+              <button type="button" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
+                OUR PROJECTS
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" data-projects-dropdown-panel>
+                <div class="py-2">
+                  <a href="projects-handyman.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
+                  <a href="projects-residential.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
+                  <a href="projects-commercial.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
+                </div>
+              </div>
+            </div>
                <a href="contacts.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">CONTACT</a>
            </div>
            <div>
@@ -668,10 +681,21 @@ button:focus {
         
         <!-- Secondary Links -->
         <nav class="px-4 space-y-1">
-            <a href="completed-projects.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                Gallery
-            </a>
+            <!-- Our Projects Accordion -->
+            <div class="mb-2">
+              <button id="mobile-projects-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition" aria-expanded="false">
+                <span class="flex items-center gap-3">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  Our Projects
+                </span>
+                <svg id="mobile-projects-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div id="mobile-projects-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+                <a href="projects-handyman.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Handyman</a>
+                <a href="projects-residential.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Residential</a>
+                <a href="projects-commercial.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
+              </div>
+            </div>
             <a href="contacts.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 Contact
@@ -735,16 +759,14 @@ button:focus {
       <div class="trust-badge flex items-center gap-2">
         <img class="w-32 h-15" src="images/homepage images/Google-Review-Logo-removebg-preview.png" alt="">
       </div>
-
+      <div class="trust-badge flex items-center gap-2">
+        <img class="w-32 h-15" src="images/homepage images/BCA.png" alt="">
+      </div>
       <!-- Years Experience -->
       <div class="trust-badge flex items-center gap-2">
         <img class="w-24 h-15" src="images/homepage images/4years.png" alt="">
       </div>
 
-      <!-- Best Service -->
-      <div class="trust-badge flex items-center gap-2">
-        <img class="w-40 h-15" src="images/homepage images/best-service-rubber-stamp-sign-600nw-2493391847.jpg-removebg-preview.png" alt="">
-      </div>
 
       <!-- Licensed & Insured -->
       <div class="trust-badge flex items-center gap-2">
@@ -1771,6 +1793,44 @@ button:focus {
       clientSatisfaction: "98%"
     };
 
+    // =============================================
+    // FAQ KNOWLEDGE BASE (Approved Content)
+    // =============================================
+    const faqKnowledge = {
+      generalRenovation: {
+        inspection: "Yes, we offer a free site inspection and a no-obligation quotation.",
+        compliance: "All renovation works comply with HDB, BCA and PUB regulations where applicable.",
+        projectTypes: "We handle residential, commercial, and industrial projects.",
+        services: "Our services include civil works, carpentry, electrical, plumbing, painting, and reinstatement.",
+        duration: "Duration depends on scope and size. A detailed timeline is provided after site inspection.",
+        designSupport: "Layout planning and design support are available.",
+        partialRenovation: "Yes, we handle partial renovations including kitchen, bathroom, or selected areas.",
+        warranty: "Workmanship warranty is provided subject to agreed terms.",
+        permits: "We assist with all required permits and approvals.",
+        stayDuringRenovation: "Whether you can stay depends on the scope. This is advised after assessment.",
+        pricing: "We provide clear quotations with no hidden charges.",
+        budget: "Options are available to match your budget.",
+        hacking: "Hacking and demolition services are provided.",
+        workerSafety: "All workers are trained and insured."
+      },
+      electrical: {
+        services: "We provide wiring, rewiring, lighting, sockets, power points, fault repair, and troubleshooting for residential and commercial works. LED and smart system installation available. All works are performed by licensed electricians only.",
+        licensed: "Yes, all electrical works are performed by licensed electricians only."
+      },
+      plumbing: {
+        services: "We handle residential and commercial plumbing including leak repair, burst pipe repair, blockage clearance, fixture installation (taps, sinks, toilets, showers), water heater installation, and pipe replacement."
+      },
+      waterproofing: {
+        services: "We provide waterproofing for bathrooms, kitchens, balconies, and rooftops. Services include leak repair and waterproofing using liquid membrane, cementitious, and bitumen systems. Old surface preparation is included. Typical duration is 1-3 days."
+      },
+      painting: {
+        services: "We provide professional painting services for residential and commercial properties, including interior and exterior painting, feature walls, and touch-up works."
+      },
+      tiling: {
+        services: "We provide tile laying and surface works including tile installation, replacement, grouting, and sealing for floors and walls."
+      }
+    };
+
     // Smart Response Generator
     function generateResponse(userMessage) {
       const message = userMessage.toLowerCase().trim();
@@ -1808,6 +1868,90 @@ button:focus {
         return `Our address is:\n${companyInfo.contact.address}`;
       }
       
+      // =============================================
+      // FAQ INTENT MATCHING (New Content)
+      // =============================================
+      
+      // General Renovation Questions - Free Inspection
+      if (message.includes('inspection') || (message.includes('free') && (message.includes('site') || message.includes('visit') || message.includes('quote') || message.includes('quotation')))) {
+        return `Yes, we offer a free site inspection and a no-obligation quotation. For details, please contact us:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+      }
+      
+      if (message.includes('compliance') || message.includes('hdb') || message.includes('bca') || message.includes('pub') || message.includes('regulation') || message.includes('permit')) {
+        if (message.includes('permit')) {
+          return faqKnowledge.generalRenovation.permits + ` For specific permit requirements, please contact us for assistance.`;
+        }
+        return faqKnowledge.generalRenovation.compliance;
+      }
+      
+      if (message.includes('project type') || message.includes('residential') || message.includes('commercial') || message.includes('industrial')) {
+        return faqKnowledge.generalRenovation.projectTypes;
+      }
+      
+      if (message.includes('duration') || message.includes('how long') || message.includes('timeline') || message.includes('time frame')) {
+        return faqKnowledge.generalRenovation.duration;
+      }
+      
+      if (message.includes('design') || message.includes('layout') || message.includes('planning')) {
+        return faqKnowledge.generalRenovation.designSupport;
+      }
+      
+      if (message.includes('partial') || message.includes('kitchen only') || message.includes('bathroom only') || (message.includes('selected') && message.includes('area'))) {
+        return faqKnowledge.generalRenovation.partialRenovation;
+      }
+      
+      if (message.includes('warranty') || message.includes('guarantee')) {
+        return faqKnowledge.generalRenovation.warranty;
+      }
+      
+      if (message.includes('stay') || message.includes('live') || (message.includes('during') && message.includes('renovation'))) {
+        return faqKnowledge.generalRenovation.stayDuringRenovation;
+      }
+      
+      if (message.includes('pricing') || message.includes('price') || message.includes('cost') || message.includes('hidden') || message.includes('transparent')) {
+        return faqKnowledge.generalRenovation.pricing;
+      }
+      
+      if (message.includes('budget') || message.includes('affordable') || message.includes('cheap')) {
+        return faqKnowledge.generalRenovation.budget;
+      }
+      
+      if (message.includes('hacking') || message.includes('demolition') || message.includes('demolish')) {
+        return faqKnowledge.generalRenovation.hacking;
+      }
+      
+      if (message.includes('worker') && (message.includes('safety') || message.includes('insured') || message.includes('trained'))) {
+        return faqKnowledge.generalRenovation.workerSafety;
+      }
+      
+      // Electrical Works Questions
+      if (message.includes('electrical') || message.includes('electric') || message.includes('wiring') || message.includes('rewiring') || message.includes('lighting') || message.includes('socket') || message.includes('power point') || message.includes('db') || message.includes('circuit') || message.includes('fault') || message.includes('led') || message.includes('smart system')) {
+        if (message.includes('licensed') || message.includes('electrician')) {
+          return faqKnowledge.electrical.licensed + `\n\n${faqKnowledge.electrical.services}`;
+        }
+        return faqKnowledge.electrical.services;
+      }
+      
+      // Plumbing Works Questions
+      if (message.includes('plumbing') || message.includes('plumber') || message.includes('leak') || message.includes('burst') || message.includes('pipe') || message.includes('blockage') || message.includes('clog') || message.includes('tap') || message.includes('sink') || message.includes('toilet') || message.includes('shower') || message.includes('water heater') || message.includes('fixture')) {
+        return faqKnowledge.plumbing.services;
+      }
+      
+      // Waterproofing Questions
+      if (message.includes('waterproof') || message.includes('waterproofing') || message.includes('membrane') || message.includes('cementitious') || message.includes('bitumen')) {
+        return faqKnowledge.waterproofing.services;
+      }
+      
+      // Painting Questions
+      if (message.includes('paint') || message.includes('painting') || message.includes('painter')) {
+        return faqKnowledge.painting.services;
+      }
+      
+      // Tiling Questions
+      if (message.includes('tile') || message.includes('tiling') || message.includes('grout') || message.includes('sealing')) {
+        return faqKnowledge.tiling.services;
+      }
+      
       // Services questions
       if (message.includes('service') || message.includes('what do you') || message.includes('offer') || message.includes('do you do')) {
         return `We offer:\n• ${companyInfo.services.join('\n• ')}\n\nLearn more on our Services page!`;
@@ -1828,7 +1972,7 @@ button:focus {
         return `Safety is our top priority! We maintain the highest safety standards and have a zero-accident culture. All projects follow strict safety protocols and compliance regulations. For safety inquiries, please contact us directly.`;
       }
       
-      // Default response
+      // Default response (fallback to human follow-up)
       return `Thank you for your inquiry! I'm an AI assistant here to help with basic information about SGSA Construction. For specific project details or inquiries, please contact us directly:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
     }
 
@@ -2115,6 +2259,6 @@ window.addEventListener('scroll', function() {
 
    
   </script>
+  <script src="assets/site.js"></script>
 </body>
-</html>
 </html>
