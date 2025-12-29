@@ -1,0 +1,165 @@
+/* Shared Gallery/Project styles
+   - Keeps the existing hover overlay behavior consistent
+   - Adds a small utility for preventing scroll when lightbox is open
+*/
+
+/* Prevent background scroll when lightbox is open */
+body.lightbox-no-scroll {
+  overflow: hidden;
+}
+
+/* === Existing hover overlay system (copied as-is from completed-projects.html) === */
+.gallery-row {
+  width: 100%;
+}
+
+.gallery-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%; /* 4:3 aspect ratio (can be overridden inline per item) */
+  overflow: hidden;
+  background-color: #f3f4f6;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.gallery-image-wrapper:hover {
+  text-decoration: none;
+}
+
+.gallery-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.gallery-image-wrapper:hover .gallery-image,
+.gallery-image-wrapper.overlay-active .gallery-image {
+  transform: scale(1.08);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  padding: 1.5rem;
+}
+
+.gallery-image-wrapper:hover .gallery-overlay,
+.gallery-image-wrapper.overlay-active .gallery-overlay {
+  opacity: 0.8;
+  visibility: visible;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.gallery-overlay-content {
+  text-align: center;
+  color: white;
+  transform: translateY(10px);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+}
+
+.gallery-image-wrapper:hover .gallery-overlay-content,
+.gallery-image-wrapper.overlay-active .gallery-overlay-content {
+  transform: translateY(0);
+}
+
+.gallery-service-type {
+  font-family: "Archivo", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+}
+
+.gallery-image-wrapper:hover .gallery-service-type,
+.gallery-image-wrapper.overlay-active .gallery-service-type {
+  opacity: 1;
+}
+
+.gallery-description {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 90%;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.gallery-image-wrapper:hover .gallery-description,
+.gallery-image-wrapper.overlay-active .gallery-description {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .gallery-image-wrapper {
+    padding-bottom: 75%;
+  }
+}
+
+@media (max-width: 767px) {
+  .gallery-image-wrapper {
+    padding-bottom: 75%;
+    margin-bottom: 1rem;
+  }
+
+  .gallery-overlay {
+    padding: 1rem;
+  }
+
+  .gallery-service-type {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .gallery-description {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Mobile tap support */
+@media (hover: none) and (pointer: coarse) {
+  .gallery-image-wrapper:active .gallery-overlay {
+    opacity: 1;
+    visibility: visible;
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  .gallery-image-wrapper:active .gallery-image {
+    transform: scale(1.08);
+  }
+
+  .gallery-image-wrapper:active .gallery-overlay-content {
+    transform: translateY(0);
+  }
+
+  .gallery-image-wrapper:active .gallery-service-type,
+  .gallery-image-wrapper:active .gallery-description {
+    opacity: 1;
+  }
+}
+

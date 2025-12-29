@@ -49,6 +49,35 @@ nav { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
 body.menu-open {
   overflow: hidden;
 }
+
+/* Service Type Dropdown - Minimalist */
+#service-type-dropdown-menu {
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.service-dropdown-btn:focus {
+  outline: none;
+}
+
+/* SGSA Signature Layout System - Section Reveal */
+.sgsa-reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.sgsa-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 
 </head>
@@ -116,7 +145,20 @@ body.menu-open {
                        </div>
                    </div>
                </div>
-               <a href="completed-projects.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">GALLERY</a>
+               <!-- OUR PROJECTS dropdown -->
+            <div class="relative group" data-projects-dropdown>
+              <button type="button" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
+                OUR PROJECTS
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" data-projects-dropdown-panel>
+                <div class="py-2">
+                  <a href="projects-handyman.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
+                  <a href="projects-residential.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
+                  <a href="projects-commercial.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
+                </div>
+              </div>
+            </div>
                <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">CONTACT</a>
            </div>
            <div>
@@ -217,10 +259,21 @@ body.menu-open {
         
         <!-- Secondary Links -->
         <nav class="px-4 space-y-1">
-            <a href="completed-projects.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                Gallery
-            </a>
+            <!-- Our Projects Accordion -->
+            <div class="mb-2">
+              <button id="mobile-projects-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition" aria-expanded="false">
+                <span class="flex items-center gap-3">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  Our Projects
+                </span>
+                <svg id="mobile-projects-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div id="mobile-projects-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+                <a href="projects-handyman.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Handyman</a>
+                <a href="projects-residential.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Residential</a>
+                <a href="projects-commercial.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
+              </div>
+            </div>
             <a href="contacts.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 Contact
@@ -304,111 +357,243 @@ body.menu-open {
     </div>
   </section>
 
-  <!-- Service Cards with Pricing -->
-  <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <!-- Electrical Services - Residential & Commercial -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <!-- Section Header -->
+   
+
+    <!-- Service Type Dropdown (Right Aligned) -->
+    <div class="flex justify-end mb-12">
+      <div class="relative inline-block text-left" data-service-dropdown>
+        <button type="button" class="service-dropdown-btn inline-flex items-center justify-between gap-2 px-4 py-2 bg-transparent border-b border-slate-300 text-sm font-normal text-slate-700 hover:text-slate-900 transition-colors duration-200 focus:outline-none focus:border-slate-900" aria-expanded="false" aria-haspopup="true" id="service-type-dropdown-btn">
+          <span class="text-sm" id="selected-service-text">Residential</span>
+          <svg class="w-3 h-3 text-slate-400 transition-transform duration-200" id="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
         
-        <!-- Card 1: Light Installation -->
-        <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
-          <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center">
-            <img src="images/light-installation.jpg" alt="Light installation electrical service" loading="lazy">
-          </div>
-          <div class="p-6 flex flex-col flex-grow">
-            <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">Light Installation</h3>
-            <div class="mb-5 flex-grow">
-              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3">Common Services:</h4>
-              <ul class="space-y-2.5">
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Ceiling light installation</span></li>
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Downlight / LED panel</span></li>
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Track / feature lighting</span></li>
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Outdoor / balcony lights</span></li>
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Chandelier mounting</span></li>
-              </ul>
-            </div>
-            <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto">
-              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2">
-                <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                Pricing
-              </h4>
-              <div class="space-y-3">
-                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Basic light:</span><span class="text-lg font-bold text-red-600">S$50</span></div>
-                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Downlight:</span><span class="text-lg font-bold text-red-600">S$80</span></div>
-                <div class="flex justify-between items-center"><span class="text-slate-700 text-[15px]">Feature light:</span><span class="text-lg font-bold text-red-600">S$120</span></div>
-              </div>
-              <p class="text-xs text-slate-500 italic mt-4">*Prices may vary by site conditions</p>
-            </div>
+        <div class="hidden absolute right-0 mt-1 w-40 bg-white border border-slate-200 z-50" id="service-type-dropdown-menu" role="menu" aria-orientation="vertical">
+          <div class="py-1" role="none">
+            <button class="service-option w-full text-left px-4 py-2.5 text-sm font-normal text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors duration-150" data-service="residential" role="menuitem">
+              Residential
+            </button>
+            <button class="service-option w-full text-left px-4 py-2.5 text-sm font-normal text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors duration-150" data-service="commercial" role="menuitem">
+              Commercial
+            </button>
           </div>
         </div>
-
-        <!-- Card 2: Power Point Installation -->
-        <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
-          <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center">
-            <img src="images/electrical/power-point-installation.jpg" alt="Power point installation electrical service" loading="lazy">
-          </div>
-          <div class="p-6 flex flex-col flex-grow">
-            <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">Power Point Installation</h3>
-            <div class="mb-5 flex-grow">
-              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3">Common Services:</h4>
-              <ul class="space-y-2.5">
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">New power point addition</span></li>
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Socket replacement</span></li>
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">USB socket installation</span></li>
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Data / LAN point</span></li>
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Switch replacement</span></li>
-              </ul>
-            </div>
-            <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto">
-              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2">
-                <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                Pricing
-              </h4>
-              <div class="space-y-3">
-                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Power point:</span><span class="text-lg font-bold text-red-600">S$80</span></div>
-                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Switch:</span><span class="text-lg font-bold text-red-600">S$50</span></div>
-                <div class="flex justify-between items-center"><span class="text-slate-700 text-[15px]">Data point:</span><span class="text-lg font-bold text-red-600">S$150</span></div>
-              </div>
-              <p class="text-xs text-slate-500 italic mt-4">*Prices may vary by site conditions</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3: DB / Panel Upgrade -->
-        <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
-          <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center">
-           <img src="images/electrical/db-panel-upgrade.jpg" alt="DB panel upgrade electrical service" loading="lazy">
-          </div>
-          <div class="p-6 flex flex-col flex-grow">
-            <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">DB / Panel Upgrade</h3>
-            <div class="mb-5 flex-grow">
-              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3">Common Services:</h4>
-              <ul class="space-y-2.5">
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">DB box replacement</span></li>
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">RCBO installation</span></li>
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Circuit breaker replacement</span></li>
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Surge protection</span></li>
-                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Electrical troubleshooting</span></li>
-              </ul>
-            </div>
-            <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto">
-              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2">
-                <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                Pricing
-              </h4>
-              <div class="space-y-3">
-                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Troubleshooting:</span><span class="text-lg font-bold text-red-600">S$80</span></div>
-                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">RCBO:</span><span class="text-lg font-bold text-red-600">S$150</span></div>
-                <div class="flex justify-between items-center"><span class="text-slate-700 text-[15px]">DB upgrade:</span><span class="text-lg font-bold text-red-600">S$300</span></div>
-              </div>
-              <p class="text-xs text-slate-500 italic mt-4">*Prices may vary by site conditions</p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
-  </section>
 
+    <!-- Residential Services Cards (Default Visible) -->
+    <div id="residential-services" class="services-container">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1: Electrical Installation & Rewiring -->
+        <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
+          <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
+            <img src="images/electrical/power-point-installation.jpg" alt="Residential electrical rewiring and installation service" loading="lazy">
+
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">Home Installation & Rewiring</h3>
+            <div class="mb-5 flex-grow">
+              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3">Common Services:</h4>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Complete house electrical rewiring</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Power socket & switch installation</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Kitchen & bathroom electrical works</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Water heater & appliance connections</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">LED & feature lighting installation</span></li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto">
+              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2">
+                <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Singapore Pricing
+              </h4>
+              <div class="space-y-3">
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Socket installation:</span><span class="text-lg font-bold text-red-600">S$80 - S$120</span></div>
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">LED downlight:</span><span class="text-lg font-bold text-red-600">S$80 - S$150</span></div>
+                <div class="flex justify-between items-center"><span class="text-slate-700 text-[15px]">Complete rewiring:</span><span class="text-lg font-bold text-red-600">S$400 - S$800/room</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: DB & Electrical System Upgrade -->
+        <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
+          <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
+            <img src="images/electrical/db-panel-upgrade.jpg" alt="Residential DB panel and electrical system upgrade" loading="lazy">
+
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">DB & System Upgrade</h3>
+            <div class="mb-5 flex-grow">
+              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3">Common Services:</h4>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Distribution board (DB) replacement</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">DB box upgrading</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">RCBO/MCB installation</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Circuit breaker replacement</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Fault finding & troubleshooting</span></li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto">
+              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2">
+                <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Singapore Pricing
+              </h4>
+              <div class="space-y-3">
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">RCBO installation:</span><span class="text-lg font-bold text-red-600">S$120 - S$200</span></div>
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Basic DB upgrade:</span><span class="text-lg font-bold text-red-600">S$350 - S$600</span></div>
+                <div class="flex justify-between items-center"><span class="text-slate-700 text-[15px]">Complete DB replacement:</span><span class="text-lg font-bold text-red-600">S$800 - S$1,500</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Lighting & Electrical Repair -->
+        <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
+          <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
+            <img src="images/electrical/2152007080.jpg" alt="Residential lighting installation and electrical repair" loading="lazy">
+
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">Lighting & Electrical Repair</h3>
+            <div class="mb-5 flex-grow">
+              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3">Common Services:</h4>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">LED lighting installation</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Feature & ambient lighting</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Appliance power point connection</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Fault finding & troubleshooting</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Electrical repair works</span></li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto">
+              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2">
+                <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Singapore Pricing
+              </h4>
+              <div class="space-y-3">
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Basic light installation:</span><span class="text-lg font-bold text-red-600">S$50 - S$100</span></div>
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Electrical troubleshooting:</span><span class="text-lg font-bold text-red-600">S$80 - S$150</span></div>
+                <div class="flex justify-between items-center"><span class="text-slate-700 text-[15px]">Repair works (per hour):</span><span class="text-lg font-bold text-red-600">S$60 - S$100</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Commercial Services Cards (Hidden by Default) -->
+    <div id="commercial-services" class="services-container hidden">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1: Commercial Electrical Setup -->
+        <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
+          <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
+            <img src="images/electrical/commercial-electrical.png" alt="Commercial office and shop electrical setup" loading="lazy">
+
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">Commercial Electrical Setup</h3>
+            <div class="mb-5 flex-grow">
+              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3">Common Services:</h4>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Office & shop electrical setup</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Warehouse electrical installation</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">New electrical wiring installation</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Power point & trunking works</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Electrical upgrading for renovation</span></li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto">
+              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2">
+                <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Singapore Pricing
+              </h4>
+              <div class="space-y-3">
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Commercial power point:</span><span class="text-lg font-bold text-blue-600">S$150 - S$300</span></div>
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Trunking works (per meter):</span><span class="text-lg font-bold text-blue-600">S$30 - S$80</span></div>
+                <div class="flex justify-between items-center"><span class="text-slate-700 text-[15px]">Office setup (basic):</span><span class="text-lg font-bold text-blue-600">S$1,500 - S$3,500</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Commercial DB & Power Systems -->
+        <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
+          <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
+            <img src="images/electrical/15201.jpg" alt="Commercial distribution board installation and upgrading" loading="lazy">
+
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">Commercial DB & Power Systems</h3>
+            <div class="mb-5 flex-grow">
+              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3">Common Services:</h4>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Commercial DB installation</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Distribution board upgrading</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Load testing & analysis</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Circuit protection works</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Compliance & safety standards</span></li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto">
+              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2">
+                <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Singapore Pricing
+              </h4>
+              <div class="space-y-3">
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Load testing:</span><span class="text-lg font-bold text-blue-600">S$300 - S$800</span></div>
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Commercial DB upgrade:</span><span class="text-lg font-bold text-blue-600">S$1,200 - S$3,500</span></div>
+                <div class="flex justify-between items-center"><span class="text-slate-700 text-[15px]">New DB installation:</span><span class="text-lg font-bold text-blue-600">S$2,500 - S$6,000</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Commercial Lighting & Data Systems -->
+        <div class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
+          <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
+            <img src="images/electrical/lighting-system.jpg" alt="Commercial lighting and data system installation" loading="lazy">
+
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">Lighting & Data Systems</h3>
+            <div class="mb-5 flex-grow">
+              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3">Common Services:</h4>
+              <ul class="space-y-2.5">
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Office lighting system installation</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Retail & display lighting</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Data & LAN point installation</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Structured cabling systems</span></li>
+                <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-blue-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-slate-700 text-[15px] leading-relaxed">Emergency lighting systems</span></li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto">
+              <h4 class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2">
+                <svg class="w-4 h-4 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Singapore Pricing
+              </h4>
+              <div class="space-y-3">
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Data/LAN point:</span><span class="text-lg font-bold text-blue-600">S$150 - S$250</span></div>
+                <div class="flex justify-between items-center pb-2.5 border-b border-slate-200"><span class="text-slate-700 text-[15px]">Commercial lighting:</span><span class="text-lg font-bold text-blue-600">S$120 - S$300</span></div>
+                <div class="flex justify-between items-center"><span class="text-slate-700 text-[15px]">Cabling system (per point):</span><span class="text-lg font-bold text-blue-600">S$200 - S$400</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+  </div>
+</section>
+
+        
   <!-- What We Deliver -->
   <section class="py-16 bg-slate-50">
     <div class="max-w-6xl mx-auto px-10">
@@ -480,27 +665,29 @@ body.menu-open {
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-16 bg-gradient-to-r from-red-600 to-red-700 text-white">
-    <div class="max-w-5xl mx-auto px-4">
-      <div class="grid md:grid-cols-3 gap-8 items-center">
-        <div class="md:col-span-2 space-y-4">
-          <p class="uppercase text-sm tracking-[0.2em] text-red-100">Peace of mind</p>
-          <h3 class="text-3xl font-bold">Assured quality, tidy sites, and accountable service</h3>
-          <ul class="space-y-2 text-red-50">
-            <li>• Detailed scope and transparent pricing before work starts</li>
-            <li>• Protection for floors, walls, and fixtures during works</li>
-            <li>• Workmanship warranty with responsive aftercare</li>
-          </ul>
+  <!-- =============================================
+       CTA (SGSA Signature - Reusable)
+       ============================================= -->
+  <section class="py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-12 gap-8 items-center sgsa-reveal">
+        
+        <div class="col-span-12 lg:col-span-8">
+          <p class="text-xs tracking-[0.25em] uppercase text-sky-400 mb-4">Ready to Build?</p>
+          <h2 class="text-3xl lg:text-4xl font-semibold text-white tracking-tight leading-tight">
+            Let's discuss your project.
+          </h2>
         </div>
-        <div class="bg-white/10 border border-white/20 rounded-2xl p-6 shadow-xl space-y-3">
-          <p class="text-sm text-red-100">Need guidance?</p>
-          <p class="text-xl font-semibold">Share photos or floor plans for a faster quote.</p>
-          <div class="flex flex-col gap-3">
-            <a href="https://wa.me/6586955055?text=Hi%20SGSA%20Construction%20%7C%20I%20need%20electrical%20services" class="bg-white text-red-700 font-semibold py-3 rounded-lg text-center hover:scale-[1.02] transition">Chat on WhatsApp</a>
-            <a href="contacts.html" class="border border-white text-white font-semibold py-3 rounded-lg text-center hover:bg-white hover:text-red-700 transition">Request a Quote</a>
-          </div>
+        
+        <div class="col-span-12 lg:col-span-4 lg:text-right">
+          <a href="contacts.html" class="inline-flex items-center gap-3 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold transition-all duration-300 shadow-lg hover:shadow-xl">
+            <span>Contact Us</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
         </div>
+        
       </div>
     </div>
   </section>
@@ -604,6 +791,91 @@ body.menu-open {
   </div>
   
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Service Type Dropdown Functionality
+    const dropdownBtn = document.getElementById('service-type-dropdown-btn');
+    const dropdownMenu = document.getElementById('service-type-dropdown-menu');
+    const dropdownArrow = document.getElementById('dropdown-arrow');
+    const serviceOptions = document.querySelectorAll('.service-option');
+    const residentialServices = document.getElementById('residential-services');
+    const commercialServices = document.getElementById('commercial-services');
+    
+    let currentService = 'residential'; // Default to residential
+    
+    // Toggle dropdown
+    if (dropdownBtn && dropdownMenu) {
+      dropdownBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isHidden = dropdownMenu.classList.contains('hidden');
+        
+        if (isHidden) {
+          dropdownMenu.classList.remove('hidden');
+          dropdownArrow.classList.add('rotate-180');
+          dropdownBtn.setAttribute('aria-expanded', 'true');
+        } else {
+          dropdownMenu.classList.add('hidden');
+          dropdownArrow.classList.remove('rotate-180');
+          dropdownBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(e) {
+        const dropdown = document.querySelector('[data-service-dropdown]');
+        if (dropdown && !dropdown.contains(e.target)) {
+          dropdownMenu.classList.add('hidden');
+          dropdownArrow.classList.remove('rotate-180');
+          dropdownBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      
+      // Handle service option clicks
+      serviceOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const serviceType = this.getAttribute('data-service');
+          currentService = serviceType;
+          
+          // Update button text
+          const selectedServiceText = document.getElementById('selected-service-text');
+          const serviceName = this.textContent.trim();
+          
+          if (selectedServiceText) {
+            selectedServiceText.textContent = serviceName;
+          }
+          
+          // Show/hide services
+          if (serviceType === 'residential') {
+            residentialServices.classList.remove('hidden');
+            commercialServices.classList.add('hidden');
+          } else {
+            commercialServices.classList.remove('hidden');
+            residentialServices.classList.add('hidden');
+          }
+          
+          // Update active state on options (minimal - just text color)
+          serviceOptions.forEach(opt => {
+            opt.classList.remove('text-slate-900', 'bg-slate-50');
+            opt.classList.add('text-slate-700');
+          });
+          
+          this.classList.add('text-slate-900', 'bg-slate-50');
+          this.classList.remove('text-slate-700');
+          
+          // Close dropdown
+          dropdownMenu.classList.add('hidden');
+          dropdownArrow.classList.remove('rotate-180');
+          dropdownBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+      
+      // Set default state (Residential)
+      const defaultOption = document.querySelector('.service-option[data-service="residential"]');
+      if (defaultOption) {
+        defaultOption.classList.add('text-slate-900', 'bg-slate-50');
+        defaultOption.classList.remove('text-slate-700');
+      }
+    }
+  });
    // Company Information Database
    const companyInfo = {
       name: "SGSA Construction",
@@ -840,7 +1112,44 @@ const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             }
         });
     }
+
+    /* =============================================
+       SGSA Signature Layout — Scroll Reveal System
+       ============================================= */
+    (function() {
+      const revealElements = document.querySelectorAll('.sgsa-reveal, .sgsa-reveal-children, .sgsa-line, .sgsa-vline');
+      
+      if (!revealElements.length) return;
+      
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const triggerPoint = windowHeight * 0.85;
+        
+        revealElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < triggerPoint) {
+            el.classList.add('visible');
+          }
+        });
+      };
+      
+      // Initial check
+      revealOnScroll();
+      
+      // Throttled scroll listener
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            revealOnScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
 </script>
 
+<script src="assets/site.js"></script>
 </body>
 </html>

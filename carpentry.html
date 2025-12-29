@@ -75,6 +75,17 @@
 body.menu-open {
   overflow: hidden;
 }
+
+/* SGSA Signature Layout System - Section Reveal */
+.sgsa-reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.sgsa-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 
 </head>
@@ -142,7 +153,20 @@ body.menu-open {
                        </div>
                    </div>
                </div>
-               <a href="completed-projects.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">GALLERY</a>
+               <!-- OUR PROJECTS dropdown -->
+            <div class="relative group" data-projects-dropdown>
+              <button type="button" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
+                OUR PROJECTS
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" data-projects-dropdown-panel>
+                <div class="py-2">
+                  <a href="projects-handyman.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
+                  <a href="projects-residential.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
+                  <a href="projects-commercial.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
+                </div>
+              </div>
+            </div>
                <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">CONTACT</a>
            </div>
            <div>
@@ -243,10 +267,21 @@ body.menu-open {
         
         <!-- Secondary Links -->
         <nav class="px-4 space-y-1">
-            <a href="completed-projects.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                Gallery
-            </a>
+            <!-- Our Projects Accordion -->
+            <div class="mb-2">
+              <button id="mobile-projects-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition" aria-expanded="false">
+                <span class="flex items-center gap-3">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  Our Projects
+                </span>
+                <svg id="mobile-projects-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div id="mobile-projects-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+                <a href="projects-handyman.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Handyman</a>
+                <a href="projects-residential.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Residential</a>
+                <a href="projects-commercial.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
+              </div>
+            </div>
             <a href="contacts.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 Contact
@@ -1015,44 +1050,29 @@ body.menu-open {
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-16 bg-gradient-to-r from-red-600 to-red-700 text-white">
-      <div class="max-w-5xl mx-auto px-4">
-        <div class="grid md:grid-cols-3 gap-8 items-center">
-          <div class="md:col-span-2 space-y-4">
-            <p class="uppercase text-sm tracking-[0.2em] text-red-100">
-              Peace of mind
-            </p>
-            <h3 class="text-3xl font-bold">
-              Assured quality, tidy sites, and accountable service
-            </h3>
-            <ul class="space-y-2 text-red-50">
-              <li>
-                • Detailed scope and transparent pricing before work starts
-              </li>
-              <li>• Protection for floors, walls, and fixtures during works</li>
-              <li>• Workmanship warranty with responsive aftercare</li>
-            </ul>
+    <!-- =============================================
+         CTA (SGSA Signature - Reusable)
+         ============================================= -->
+    <section class="py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-12 gap-8 items-center sgsa-reveal">
+          
+          <div class="col-span-12 lg:col-span-8">
+            <p class="text-xs tracking-[0.25em] uppercase text-sky-400 mb-4">Ready to Build?</p>
+            <h2 class="text-3xl lg:text-4xl font-semibold text-white tracking-tight leading-tight">
+              Let's discuss your project.
+            </h2>
           </div>
-          <div
-            class="bg-white/10 border border-white/20 rounded-2xl p-6 shadow-xl space-y-3"
-          >
-            <p class="text-sm text-red-100">Need guidance?</p>
-            <p class="text-xl font-semibold">
-              Share photos for a faster quote.
-            </p>
-            <div class="flex flex-col gap-3">
-              <a
-                href="https://wa.me/6586955055?text=Hi%20SGSA%20%7C%20I%20need%20carpentry%20services"
-                class="bg-white text-red-700 font-semibold py-3 rounded-lg text-center hover:scale-[1.02] transition"
-                >Chat on WhatsApp</a
-              ><a
-                href="contacts.html"
-                class="border border-white text-white font-semibold py-3 rounded-lg text-center hover:bg-white hover:text-red-700 transition"
-                >Request a Quote</a
-              >
-            </div>
+          
+          <div class="col-span-12 lg:col-span-4 lg:text-right">
+            <a href="contacts.html" class="inline-flex items-center gap-3 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold transition-all duration-300 shadow-lg hover:shadow-xl">
+              <span>Contact Us</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
           </div>
+          
         </div>
       </div>
     </section>
@@ -1489,6 +1509,43 @@ body.menu-open {
           }
         });
       }
+
+    /* =============================================
+       SGSA Signature Layout — Scroll Reveal System
+       ============================================= */
+    (function() {
+      const revealElements = document.querySelectorAll('.sgsa-reveal, .sgsa-reveal-children, .sgsa-line, .sgsa-vline');
+      
+      if (!revealElements.length) return;
+      
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const triggerPoint = windowHeight * 0.85;
+        
+        revealElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < triggerPoint) {
+            el.classList.add('visible');
+          }
+        });
+      };
+      
+      // Initial check
+      revealOnScroll();
+      
+      // Throttled scroll listener
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            revealOnScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
     </script>
-  </body>
+  <script src="assets/site.js"></script>
+</body>
 </html>

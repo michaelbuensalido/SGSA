@@ -94,6 +94,112 @@
             animation-delay: 0.6s;
         }
 
+        /* =============================================
+           SGSA SIGNATURE LAYOUT SYSTEM
+           ============================================= */
+        
+        /* Section Reveal Animation (Blueprint-style) */
+        .sgsa-reveal {
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .sgsa-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered children reveal */
+        .sgsa-reveal-children > * {
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .sgsa-reveal-children.visible > *:nth-child(1) { transition-delay: 0.05s; }
+        .sgsa-reveal-children.visible > *:nth-child(2) { transition-delay: 0.1s; }
+        .sgsa-reveal-children.visible > *:nth-child(3) { transition-delay: 0.15s; }
+        .sgsa-reveal-children.visible > *:nth-child(4) { transition-delay: 0.2s; }
+        .sgsa-reveal-children.visible > *:nth-child(5) { transition-delay: 0.25s; }
+        .sgsa-reveal-children.visible > *:nth-child(6) { transition-delay: 0.3s; }
+        .sgsa-reveal-children.visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .sgsa-reveal-children:not(.visible) > * {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+
+        /* Line Expansion Animation */
+        .sgsa-line {
+            width: 0;
+            transition: width 0.6s ease-out;
+        }
+        .sgsa-line.visible {
+            width: 4rem; /* w-16 */
+        }
+        .sgsa-line-long.visible {
+            width: 100%;
+        }
+
+        /* Vertical accent line */
+        .sgsa-vline {
+            height: 0;
+            transition: height 0.6s ease-out;
+        }
+        .sgsa-vline.visible {
+            height: 100%;
+        }
+
+        /* Grid offset pattern */
+        .sgsa-offset-heading {
+            grid-column: 1 / span 8;
+        }
+        .sgsa-offset-body {
+            grid-column: 3 / span 10;
+        }
+        @media (max-width: 1024px) {
+            .sgsa-offset-heading,
+            .sgsa-offset-body {
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* Subtle hover interactions */
+        .sgsa-hover {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .sgsa-hover:hover {
+            transform: translateX(2px);
+            opacity: 0.85;
+        }
+
+        /* Service item styling */
+        .sgsa-service-item {
+            position: relative;
+        }
+        .sgsa-service-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 1px;
+            background: #0ea5e9; /* sky-500 */
+            transition: width 0.4s ease-out;
+        }
+        .sgsa-service-item:hover::before {
+            width: 100%;
+        }
+
+        /* Certificate image hover (subtle opacity change) */
+        .sgsa-cert-image {
+            transition: opacity 0.3s ease;
+        }
+        .sgsa-cert-image:hover {
+            opacity: 0.9;
+        }
+
          /* Off-canvas mobile menu */
 .mobile-menu-overlay {
   opacity: 0;
@@ -181,7 +287,20 @@ body.menu-open {
                        </div>
                    </div>
                </div>
-               <a href="completed-projects.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">GALLERY</a>
+               <!-- OUR PROJECTS dropdown -->
+            <div class="relative group" data-projects-dropdown>
+              <button type="button" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
+                OUR PROJECTS
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" data-projects-dropdown-panel>
+                <div class="py-2">
+                  <a href="projects-handyman.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
+                  <a href="projects-residential.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
+                  <a href="projects-commercial.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
+                </div>
+              </div>
+            </div>
                <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">CONTACT</a>
            </div>
            <div>
@@ -282,10 +401,21 @@ body.menu-open {
         
         <!-- Secondary Links -->
         <nav class="px-4 space-y-1">
-            <a href="completed-projects.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                Gallery
-            </a>
+            <!-- Our Projects Accordion -->
+            <div class="mb-2">
+              <button id="mobile-projects-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition" aria-expanded="false">
+                <span class="flex items-center gap-3">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  Our Projects
+                </span>
+                <svg id="mobile-projects-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div id="mobile-projects-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+                <a href="projects-handyman.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Handyman</a>
+                <a href="projects-residential.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Residential</a>
+                <a href="projects-commercial.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
+              </div>
+            </div>
             <a href="contacts.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 Contact
@@ -303,160 +433,517 @@ body.menu-open {
         </div>
     </a>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <section class="relative pt-32 pb-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-20 right-20 w-72 h-72 bg-cyan-500 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-20 left-20 w-96 h-96 bg-red-500 rounded-full blur-3xl"></div>
-        </div>
+    <!-- ==================== MAIN CONTENT — SGSA SIGNATURE LAYOUT ==================== -->
+    <main class="bg-sky-50">
+
+      <!-- =============================================
+           SECTION 1: HERO / INTRO
+           ============================================= -->
+      <section class="relative pt-40 pb-10 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+        <!-- Subtle grid pattern background (blueprint aesthetic) -->
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 60px 60px;"></div>
         
-        <div class="relative z-10 max-w-6xl mx-auto px-4 text-center ">
-            <p class="hero-headline text-cyan-400 text-sm uppercase tracking-[0.3em] font-semibold mb-4">Est. 2019 • Jalan Besar, Singapore</p>
-            <h1 class="hero-headline text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                We Fix Homes.<br>
-                <span class="text-cyan-400">We Build Trust.</span>
-            </h1>
-            <p class="hero-subheading text-xl text-slate-300 max-w-2xl text-center mx-auto mb-8">
-                From a small workshop with two workers to serving over 1,000 happy homeowners across Singapore — this is our story.
-            </p>
-            <div class="hero-trust flex flex-col justify-center sm:flex-row gap-4 sm:gap-6  items-center text-base sm:text-lg">
-                        <!-- Google Rating -->
-                        <div class="trust-badge flex items-center gap-2">
-                          <img class="w-32 h-15" src="images/homepage images/Google-Review-Logo-removebg-preview.png" alt="">
-                        </div>
-                  
-                        <!-- Years Experience -->
-                        <div class="trust-badge flex items-center gap-2">
-                          <img class="w-24 h-15" src="images/homepage images/4years.png" alt="">
-                        </div>
-                  
-                        <!-- Best Service -->
-                        <div class="trust-badge flex items-center gap-2">
-                          <img class="w-40 h-15" src="images/homepage images/best-service-rubber-stamp-sign-600nw-2493391847.jpg-removebg-preview.png" alt="">
-                        </div>
-                  
-                        <!-- Licensed & Insured -->
-                        <div class="trust-badge flex items-center gap-2">
-                          <img class="w-40 h-15" src="images/homepage images/license.png" alt="">
-                        </div>
-                        </div>
-        </div>
-    </section>
-
-    <!-- ==================== THE FOUNDER'S STORY ==================== -->
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Image Side -->
-                <div class="relative">
-                    <img src="images/fotos-k72xVjAmVHE-unsplash.jpg" alt="SGSA Construction Team at Work" class="rounded-2xl shadow-2xl w-full h-[500px] object-cover">
-                   
-                    <!-- Small accent -->
-                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-red-600 rounded-xl -z-10"></div>
-                </div>
-                
-                <!-- Story Side -->
-                <div>
-                    <p class="text-red-600 text-sm uppercase tracking-[0.2em] font-semibold mb-3">Our Beginning</p>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                        It Started With a Leaky Tap and a Promise
-                    </h2>
-                    
-                    <div class="founder-quote bg-slate-50 rounded-xl p-6 mb-6 relative">
-                        <p class="text-slate-700 text-lg italic leading-relaxed">
-                            "My father was a carpenter for 30 years. He taught me that every home tells a story, and every repair is a chance to make someone's day better. When I started SGSA in 2019 with just my brother and a second-hand van, we had one rule: <strong class="text-cyan-600">treat every customer's home like it's your own.</strong>"
-                        </p>
-                        <p class="text-slate-500 mt-4 text-sm">— Founder</p>
-                    </div>
-                    
-                    <p class="text-slate-600 leading-relaxed mb-6">
-                        What began as fixing a neighbor's leaky tap in Toa Payoh grew into something bigger. Word spread. Aunties recommended us to their friends. Soon, we were getting calls from all over Singapore — from HDB flats in Bedok to condos in Orchard.
-                    </p>
-                    
-                    <p class="text-slate-600 leading-relaxed">
-                        Today, we're still the same company at heart. We still answer our own phones. We still show up on time. And we still believe that a handshake is a promise.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-  
-    <!-- ==================== MEET THE TEAM ==================== -->
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <p class="text-red-600 text-sm uppercase tracking-[0.2em] font-semibold mb-3">The People Behind SGSA</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Meet Our Core Team</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto">Real people who care about your home as much as you do.</p>
+        <!-- Vertical accent line (cyan) -->
+        <div class="absolute left-8 lg:left-16 top-0 bottom-0 w-px bg-sky-600"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+          <!-- 12-column grid with offset pattern -->
+          <div class="grid grid-cols-12 gap-4">
+            
+            <!-- Section label -->
+            <div class="col-span-12 lg:col-span-8 sgsa-reveal">
+              <p class="text-xs tracking-[0.25em] uppercase text-sky-400 mb-6">About SGSA Construction Pte Ltd</p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Team Member 1 -->
-                <div class="team-card relative group">
-                    <div class="relative overflow-hidden rounded-2xl">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face" alt="Michael Tan" class="w-full h-80 object-cover">
-                        <div class="team-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-6">
-                            <p class="text-white text-sm leading-relaxed">"Every job is personal. I still visit sites myself to make sure we're doing right by our customers."</p>
-                        </div>
-                    </div>
-                    <div class="mt-4 text-center">
-                        <h3 class="text-lg font-bold text-slate-900">Michael Tan</h3>
-                        <p class="text-cyan-600 font-medium text-sm">Founder & Operations</p>
-                        <p class="text-slate-500 text-xs mt-1">10+ years in construction</p>
-                    </div>
-                </div>
-                
-                <!-- Team Member 2 -->
-                <div class="team-card relative group">
-                    <div class="relative overflow-hidden rounded-2xl">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face" alt="David Tan" class="w-full h-80 object-cover">
-                        <div class="team-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-6">
-                            <p class="text-white text-sm leading-relaxed">"I handle the schedules and customer calls. When you call SGSA, you're probably talking to me!"</p>
-                        </div>
-                    </div>
-                    <div class="mt-4 text-center">
-                        <h3 class="text-lg font-bold text-slate-900">David Tan</h3>
-                        <p class="text-cyan-600 font-medium text-sm">Co-Founder & Customer Relations</p>
-                        <p class="text-slate-500 text-xs mt-1">Michael's brother</p>
-                    </div>
-                </div>
-                
-                <!-- Team Member 3 -->
-                <div class="team-card relative group">
-                    <div class="relative overflow-hidden rounded-2xl">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop&crop=face" alt="Ah Kow" class="w-full h-80 object-cover">
-                        <div class="team-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-6">
-                            <p class="text-white text-sm leading-relaxed">"25 years as a plumber. I've seen every kind of leak. There's no problem I can't solve."</p>
-                        </div>
-                    </div>
-                    <div class="mt-4 text-center">
-                        <h3 class="text-lg font-bold text-slate-900">Ah Kow</h3>
-                        <p class="text-cyan-600 font-medium text-sm">Senior Plumber</p>
-                        <p class="text-slate-500 text-xs mt-1">25 years experience</p>
-                    </div>
-                </div>
-                
-                <!-- Team Member 4 -->
-                <div class="team-card relative group">
-                    <div class="relative overflow-hidden rounded-2xl">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=500&fit=crop&crop=face" alt="Kumar" class="w-full h-80 object-cover">
-                        <div class="team-overlay absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/50 to-transparent flex flex-col justify-end p-6">
-                            <p class="text-white text-sm leading-relaxed">"I lead our renovation projects. My goal: deliver on time, on budget, and with zero complaints."</p>
-                        </div>
-                    </div>
-                    <div class="mt-4 text-center">
-                        <h3 class="text-lg font-bold text-slate-900">Kumar</h3>
-                        <p class="text-cyan-600 font-medium text-sm">Renovation Project Lead</p>
-                        <p class="text-slate-500 text-xs mt-1">15 years experience</p>
-                    </div>
-                </div>
+            <!-- Main headline (offset: starts earlier in grid) -->
+            <div class="col-span-12 lg:col-span-10 sgsa-reveal">
+              <h1 class="text-4xl lg:text-6xl xl:text-7xl font-semibold tracking-tight text-white leading-[1.1] mb-8">
+                Repair. Renovate.<br>
+                <span class="text-sky-400">Restore.</span>
+              </h1>
             </div>
             
-           
+            <!-- Intro paragraph (offset: starts later in grid) -->
+            <div class="col-span-12 lg:col-start-2 lg:col-span-9 sgsa-reveal">
+              <p class="text-lg lg:text-xl text-gray-300 leading-relaxed mb-10">
+                A distinguished Singapore-based construction company delivering high-quality building and renovation solutions. We are committed to setting elevated standards in construction through meticulous workmanship, strategic planning, and dependable project execution.
+              </p>
+            </div>
+            
+            <!-- Horizontal divider line (cyan) -->
+            <div class="col-span-12 lg:col-start-2 lg:col-span-6 sgsa-reveal">
+              <div class="sgsa-line h-px bg-sky-500"></div>
+            </div>
+            
+            <!-- Trust Elements (Badge Images from Homepage) -->
+            <div class="col-span-12 lg:col-start-2 lg:col-span-10  sgsa-reveal">
+              <div class="hero-trust flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start items-center text-base sm:text-lg">
+                <!-- Google Rating -->
+                <div class="trust-badge flex items-center gap-2">
+                  <img class="w-32 h-15" src="images/homepage images/Google-Review-Logo-removebg-preview.png" alt="Google Reviews 4.9 Stars">
+                </div>
+
+                <!-- Years Experience -->
+                <div class="trust-badge flex items-center gap-2">
+                  <img class="w-24 h-15" src="images/homepage images/4years.png" alt="4+ Years Experience">
+                </div>
+
+                <!-- Best Service -->
+                <div class="trust-badge flex items-center gap-2">
+                  <img class="w-40 h-15" src="images/homepage images/BCA.png" alt="Best Service Award">
+                </div>
+
+                <!-- Licensed & Insured -->
+                <div class="trust-badge flex items-center gap-2">
+                  <img class="w-40 h-15" src="images/homepage images/license.png" alt="Licensed & Insured">
+                </div>
+              </div>
+            </div>
+            
+          </div>
         </div>
-    </section>
+      </section>
+
+      <!-- =============================================
+           SECTION 2: COMPANY OVERVIEW
+           ============================================= -->
+      <section class="py-24 lg:py-32 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          
+          <!-- Section label + heading -->
+          <div class="grid grid-cols-12 gap-4 mb-16 sgsa-reveal">
+            <div class="col-span-12 lg:col-span-8">
+              <p class="text-xs tracking-[0.25em] uppercase text-sky-600 mb-4">Who We Are</p>
+              <h2 class="text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight leading-tight">
+                Building Excellence,<br>Delivering Trust
+              </h2>
+            </div>
+          </div>
+          
+          <!-- Horizontal line under heading (cyan accent) -->
+          <div class="sgsa-reveal mb-16">
+            <div class="sgsa-line h-px bg-sky-500"></div>
+          </div>
+          
+          <!-- Two-column content with vertical divider -->
+          <div class="grid grid-cols-12 gap-8 lg:gap-0">
+            
+            <!-- Left column -->
+            <div class="col-span-12 lg:col-span-5 lg:pr-12 sgsa-reveal">
+              <div class="relative">
+                <!-- Vertical accent line (cyan) -->
+                <div class="hidden lg:block absolute -left-6 top-0 bottom-0 w-px bg-sky-200"></div>
+                
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                  With a strong understanding of industry best practices and regulatory compliance in Singapore, our team manages projects across <strong class="text-cyan-600">residential, commercial, and industrial sectors.</strong>
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                  Every project is approached with a focus on quality, safety, and long-term value, ensuring outcomes that meet both functional and aesthetic expectations.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Vertical divider (desktop) -->
+            <div class="hidden lg:flex col-span-2 justify-center">
+              <div class="w-px bg-gray-200 sgsa-vline"></div>
+            </div>
+            
+            <!-- Right column -->
+            <div class="col-span-12 lg:col-span-5 sgsa-reveal">
+              <div class="space-y-6">
+                <p class="text-lg text-gray-600 leading-relaxed">
+                  At SGSA Construction, we believe <strong class="text-cyan-600">excellence lies in the details.</strong> From initial planning to final handover, we work collaboratively with clients, consultants, and stakeholders to deliver seamless construction experiences.
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                  Our structured processes, skilled workforce, and hands-on management allow us to maintain consistency, transparency, and efficiency throughout every stage of the project.
+                </p>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                  Guided by professionalism and a commitment to continuous improvement, SGSA Construction Pte Ltd strives to be a trusted partner recognized for reliability, superior workmanship, and enduring quality.
+                </p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 3: CORE SERVICES
+           ============================================= -->
+      <section class="py-24 lg:py-32 bg-sky-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          
+          <!-- Section label + heading (offset pattern) -->
+          <div class="grid grid-cols-12 gap-4 mb-16 sgsa-reveal">
+            <div class="col-span-12 lg:col-span-8">
+              <p class="text-xs tracking-[0.25em] uppercase text-sky-600 mb-4">What We Deliver</p>
+              <h2 class="text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight leading-tight">
+                Our Core Services
+              </h2>
+            </div>
+          </div>
+          
+          <!-- Horizontal line (cyan accent) -->
+          <div class="sgsa-reveal mb-16">
+            <div class="sgsa-line h-px bg-sky-500"></div>
+          </div>
+          
+          <!-- Services grid (no cards, strong alignment, all services) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-14 sgsa-reveal-children">
+            
+            <!-- Service 1: Renovation Works -->
+            <article class="sgsa-service-item pt-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Comprehensive Renovation Works</h3>
+              <div class="w-12 h-px bg-sky-300 mb-4"></div>
+              <p class="text-gray-600 leading-relaxed">
+                Tailored renovation solutions executed with precision, quality craftsmanship, and attention to detail.
+              </p>
+            </article>
+            
+            <!-- Service 2: Ceiling & Wall -->
+            <article class="sgsa-service-item pt-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Ceiling & Wall Partition Systems</h3>
+              <div class="w-12 h-px bg-sky-300 mb-4"></div>
+              <p class="text-gray-600 leading-relaxed">
+                Professional installation of durable and functional ceiling and partition systems for residential and commercial spaces.
+              </p>
+            </article>
+            
+            <!-- Service 3: Painting -->
+            <article class="sgsa-service-item pt-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Painting & Finishing Works</h3>
+              <div class="w-12 h-px bg-sky-300 mb-4"></div>
+              <p class="text-gray-600 leading-relaxed">
+                High-quality painting services delivering refined finishes that enhance both aesthetics and longevity.
+              </p>
+            </article>
+            
+            <!-- Service 4: Tile Laying -->
+            <article class="sgsa-service-item pt-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Tile Laying & Surface Works</h3>
+              <div class="w-12 h-px bg-sky-300 mb-4"></div>
+              <p class="text-gray-600 leading-relaxed">
+                Expert tile installation with precise alignment and superior workmanship for floors and walls.
+              </p>
+            </article>
+            
+            <!-- Service 5: Plumbing -->
+            <article class="sgsa-service-item pt-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Plumbing Services</h3>
+              <div class="w-12 h-px bg-sky-300 mb-4"></div>
+              <p class="text-gray-600 leading-relaxed">
+                Reliable plumbing solutions including installation, replacement, and rectification works in compliance with industry standards.
+              </p>
+            </article>
+            
+            <!-- Service 6: Electrical -->
+            <article class="sgsa-service-item pt-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Electrical Works</h3>
+              <div class="w-12 h-px bg-sky-300 mb-4"></div>
+              <p class="text-gray-600 leading-relaxed">
+                Safe and efficient electrical installations, rewiring, and maintenance carried out by qualified professionals.
+              </p>
+            </article>
+            
+            <!-- Service 7: Hacking & Demolition -->
+            <article class="sgsa-service-item pt-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Reinstatement, Hacking & Demolition</h3>
+              <div class="w-12 h-px bg-sky-300 mb-4"></div>
+              <p class="text-gray-600 leading-relaxed">
+                Controlled and compliant dismantling, hacking, and reinstatement services ensuring site safety and readiness for subsequent works.
+              </p>
+            </article>
+            
+            <!-- Service 8: Air Con Service -->
+            <article class="sgsa-service-item pt-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Air Con Service & Installation</h3>
+              <div class="w-12 h-px bg-sky-300 mb-4"></div>
+              <p class="text-gray-600 leading-relaxed">
+                Complete air conditioning solutions including installation, servicing, chemical wash, and repair works by certified technicians.
+              </p>
+            </article>
+            
+            <!-- Service 9: Plastering -->
+            <article class="sgsa-service-item pt-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Plastering Works</h3>
+              <div class="w-12 h-px bg-sky-300 mb-4"></div>
+              <p class="text-gray-600 leading-relaxed">
+                Professional plastering and skim coat services for smooth wall finishes and surface preparation prior to painting.
+              </p>
+            </article>
+            
+            <!-- Service 10: Carpentry -->
+            <article class="sgsa-service-item pt-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Carpentry Works</h3>
+              <div class="w-12 h-px bg-sky-300 mb-4"></div>
+              <p class="text-gray-600 leading-relaxed">
+                Custom carpentry solutions including built-in wardrobes, kitchen cabinets, TV consoles, and feature walls with quality materials.
+              </p>
+            </article>
+            
+            <!-- Service 11: Waterproofing -->
+            <article class="sgsa-service-item pt-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Waterproofing Services</h3>
+              <div class="w-12 h-px bg-sky-300 mb-4"></div>
+              <p class="text-gray-600 leading-relaxed">
+                Comprehensive waterproofing solutions for bathrooms, balconies, and roofs to prevent water seepage and structural damage.
+              </p>
+            </article>
+            
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 4: OUR VALUES (9 Principles)
+           ============================================= -->
+      <section class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          
+          <!-- Section label + heading (offset pattern) -->
+          <div class="grid grid-cols-12 gap-4 mb-16 sgsa-reveal">
+            <div class="col-span-12 lg:col-span-8">
+              <p class="text-xs tracking-[0.25em] uppercase text-sky-600 mb-4">Our Principles</p>
+              <h2 class="text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight leading-tight">
+                Our Values
+              </h2>
+            </div>
+          </div>
+          
+          <!-- Horizontal line (cyan accent) -->
+          <div class="sgsa-reveal mb-16">
+            <div class="sgsa-line h-px bg-sky-500"></div>
+          </div>
+          
+          <!-- Values grid (numbered, structured, 9 values) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 sgsa-reveal-children">
+            
+            <!-- Value 1 -->
+            <article class="flex gap-5 group sgsa-hover">
+              <div class="flex-shrink-0">
+                <span class="text-3xl font-light text-sky-200 tracking-tight">01</span>
+              </div>
+              <div class="border-l border-sky-200 pl-5">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Excellence in Workmanship</h3>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  We uphold the highest standards of quality, precision, and craftsmanship in every project we undertake.
+                </p>
+              </div>
+            </article>
+            
+            <!-- Value 2 -->
+            <article class="flex gap-5 group sgsa-hover">
+              <div class="flex-shrink-0">
+                <span class="text-3xl font-light text-sky-200 tracking-tight">02</span>
+              </div>
+              <div class="border-l border-sky-200 pl-5">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Integrity & Transparency</h3>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  We conduct our business with honesty, clear communication, and accountability at every stage.
+                </p>
+              </div>
+            </article>
+            
+            <!-- Value 3 -->
+            <article class="flex gap-5 group sgsa-hover">
+              <div class="flex-shrink-0">
+                <span class="text-3xl font-light text-sky-200 tracking-tight">03</span>
+              </div>
+              <div class="border-l border-sky-200 pl-5">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Safety & Compliance</h3>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  Safety is a core priority. All works are carried out in strict compliance with regulatory and industry requirements.
+                </p>
+              </div>
+            </article>
+            
+            <!-- Value 4 -->
+            <article class="flex gap-5 group sgsa-hover">
+              <div class="flex-shrink-0">
+                <span class="text-3xl font-light text-sky-200 tracking-tight">04</span>
+              </div>
+              <div class="border-l border-sky-200 pl-5">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Client-Centric Delivery</h3>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  We place our clients at the center of our process, ensuring their objectives are met with professionalism and care.
+                </p>
+              </div>
+            </article>
+            
+            <!-- Value 5 -->
+            <article class="flex gap-5 group sgsa-hover">
+              <div class="flex-shrink-0">
+                <span class="text-3xl font-light text-sky-200 tracking-tight">05</span>
+              </div>
+              <div class="border-l border-sky-200 pl-5">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Reliability & Accountability</h3>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  We deliver on our commitments through structured planning, dependable execution, and timely completion.
+                </p>
+              </div>
+            </article>
+            
+            <!-- Value 6 -->
+            <article class="flex gap-5 group sgsa-hover">
+              <div class="flex-shrink-0">
+                <span class="text-3xl font-light text-sky-200 tracking-tight">06</span>
+              </div>
+              <div class="border-l border-sky-200 pl-5">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Professionalism & Expertise</h3>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  Our team brings technical knowledge, experience, and disciplined project management to every engagement.
+                </p>
+              </div>
+            </article>
+            
+            <!-- Value 7 -->
+            <article class="flex gap-5 group sgsa-hover">
+              <div class="flex-shrink-0">
+                <span class="text-3xl font-light text-sky-200 tracking-tight">07</span>
+              </div>
+              <div class="border-l border-sky-200 pl-5">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Attention to Detail</h3>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  We believe excellence lies in the details, ensuring superior finishes and long-lasting results.
+                </p>
+              </div>
+            </article>
+            
+            <!-- Value 8 -->
+            <article class="flex gap-5 group sgsa-hover">
+              <div class="flex-shrink-0">
+                <span class="text-3xl font-light text-sky-200 tracking-tight">08</span>
+              </div>
+              <div class="border-l border-sky-200 pl-5">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Continuous Improvement</h3>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  We constantly refine our processes, skills, and technologies to deliver better outcomes and added value.
+                </p>
+              </div>
+            </article>
+            
+            <!-- Value 9 -->
+            <article class="flex gap-5 group sgsa-hover">
+              <div class="flex-shrink-0">
+                <span class="text-3xl font-light text-sky-200 tracking-tight">09</span>
+              </div>
+              <div class="border-l border-sky-200 pl-5">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Collaborative Approach</h3>
+                <p class="text-gray-600 leading-relaxed text-sm">
+                  We work closely with clients, consultants, and partners to achieve seamless project coordination and success.
+                </p>
+              </div>
+            </article>
+            
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 5: OUR ACCREDITATIONS
+           ============================================= -->
+      <section class="py-24 lg:py-32 bg-slate-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          
+          <!-- Section label + heading (offset pattern) -->
+          <div class="grid grid-cols-12 gap-4 mb-16 sgsa-reveal">
+            <div class="col-span-12 lg:col-span-8">
+              <p class="text-xs tracking-[0.25em] uppercase text-sky-600 mb-4">Professional Standards</p>
+              <h2 class="text-4xl lg:text-5xl font-semibold text-gray-900 tracking-tight leading-tight">
+                Our Accreditations
+              </h2>
+            </div>
+          </div>
+          
+          <!-- Horizontal line (cyan accent) -->
+          <div class="sgsa-reveal mb-16">
+            <div class="sgsa-line sgsa-line-long h-px bg-sky-500"></div>
+          </div>
+          
+          <!-- Certificates Grid (Two certificates side-by-side) -->
+          <div class="grid grid-cols-12 gap-8 lg:gap-12 sgsa-reveal-children">
+            
+            <!-- Certificate 1: BCA Registration -->
+            <div class="col-span-12 lg:col-span-6 border-b border-gray-300 pb-8 lg:pb-0 lg:border-b-0 lg:border-r lg:pr-8 lg:pr-12">
+              <div class="flex flex-col gap-6">
+                <!-- Certificate Image -->
+                <div class="w-full aspect-[4/3] border border-gray-300 bg-white flex items-center justify-center p-8 sgsa-cert-image">
+                  <img src="images/homepage images/BCA.png" alt="BCA Registration Certificate" class="max-w-full max-h-full object-contain" loading="lazy">
+                </div>
+                
+                <!-- Certificate Details -->
+                <div class="space-y-2">
+                  <h3 class="text-xl font-semibold text-gray-900 tracking-tight">
+                    BCA Registration
+                  </h3>
+                  <p class="text-sm text-gray-500 uppercase tracking-wide">
+                    Building and Construction Authority
+                  </p>
+                  <p class="text-sm text-gray-600 leading-relaxed pt-2">
+                    Registered contractor with the Building and Construction Authority of Singapore.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Certificate 2: BizSAFE Certification -->
+            <div class="col-span-12 lg:col-span-6 lg:pl-8 lg:pl-12">
+              <div class="flex flex-col gap-6">
+                <!-- Certificate Image -->
+                <div class="w-full aspect-[4/3] border border-gray-300 bg-white flex items-center justify-center p-8 sgsa-cert-image">
+                  <img src="images/homepage images/license.png" alt="BizSAFE Certification" class="max-w-full max-h-full object-contain" loading="lazy">
+                </div>
+                
+                <!-- Certificate Details -->
+                <div class="space-y-2">
+                  <h3 class="text-xl font-semibold text-gray-900 tracking-tight">
+                    BizSAFE Certification
+                  </h3>
+                  <p class="text-sm text-gray-500 uppercase tracking-wide">
+                    Workplace Safety and Health Council
+                  </p>
+                  <p class="text-sm text-gray-600 leading-relaxed pt-2">
+                    Certified for workplace safety and health management systems.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- =============================================
+           SECTION 6: CTA (Minimal, Engineered)
+           ============================================= -->
+      <section class="py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+          <div class="grid grid-cols-12 gap-8 items-center sgsa-reveal">
+            
+            <div class="col-span-12 lg:col-span-8">
+              <p class="text-xs tracking-[0.25em] uppercase text-sky-400 mb-4">Ready to Build?</p>
+              <h2 class="text-3xl lg:text-4xl font-semibold text-white tracking-tight leading-tight">
+                Let's discuss your project.
+              </h2>
+            </div>
+            
+            <div class="col-span-12 lg:col-span-4 lg:text-right">
+              <a href="contacts.html" class="inline-flex items-center gap-3 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold transition-all duration-300 shadow-lg hover:shadow-xl">
+                <span>Contact Us</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </a>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+    </main>
 
 
    
@@ -791,6 +1278,43 @@ body.menu-open {
                 }
             });
         }
+
+    /* =============================================
+       SGSA Signature Layout — Scroll Reveal System
+       ============================================= */
+    (function() {
+      const revealElements = document.querySelectorAll('.sgsa-reveal, .sgsa-reveal-children, .sgsa-line, .sgsa-vline');
+      
+      if (!revealElements.length) return;
+      
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const triggerPoint = windowHeight * 0.85;
+        
+        revealElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < triggerPoint) {
+            el.classList.add('visible');
+          }
+        });
+      };
+      
+      // Initial check
+      revealOnScroll();
+      
+      // Throttled scroll listener
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            revealOnScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
     </script>
+    <script src="assets/site.js"></script>
 </body>
 </html>
