@@ -55,22 +55,28 @@
         transform: translateY(-4px);
       }
     
-/* Off-canvas mobile menu */
+/* Mobile menu dropdown */
 .mobile-menu-overlay {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mobile-menu-overlay.active {
   opacity: 1;
   visibility: visible;
 }
 .mobile-menu-panel {
-  transform: translateX(-100%);
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(-100%) scale(0.95);
+  opacity: 0;
+  transform-origin: top center;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
 }
 .mobile-menu-panel.active {
-  transform: translateX(0);
+  transform: translateY(0) scale(1);
+  opacity: 1;
 }
 body.menu-open {
   overflow: hidden;
@@ -173,8 +179,9 @@ body.menu-open {
                <a href="tel:+6560254678" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
            </div>
            <div class="md:hidden">
-               <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none">
-                   <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+                   <!-- Hamburger icon -->
+                   <svg id="hamburger-icon" class="h-10 w-10 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                    </svg>
                </button>
@@ -186,12 +193,12 @@ body.menu-open {
 <!-- Mobile Off-Canvas Menu Overlay -->
 <div id="mobile-menu-overlay" class="mobile-menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
 
-<!-- Mobile Off-Canvas Menu Panel -->
-<div id="mobile-menu-panel" class="mobile-menu-panel fixed top-0 left-0 h-full w-[75%] max-w-[320px] bg-white z-50 md:hidden shadow-2xl flex flex-col">
+<!-- Mobile Menu Dropdown Panel -->
+<div id="mobile-menu-panel" class="mobile-menu-panel fixed top-0 left-0 right-0 w-full bg-white z-50 md:hidden shadow-2xl flex flex-col">
     <!-- Header with Logo & Close -->
-    <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100 bg-gray-50">
+    <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
         <a href="index.html">
-            <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction" class="w-[160px]">
+            <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction" class="w-[230px]">
         </a>
         <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
             <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -204,13 +211,9 @@ body.menu-open {
     <div class="flex-1 overflow-y-auto py-4">
         <!-- Primary Links -->
         <nav class="px-4 space-y-1">
-            <a href="index.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                Home
+            <a href="index.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Home
             </a>
-            <a href="about.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                About
+            <a href="about.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">About
             </a>
         </nav>
         
@@ -225,7 +228,7 @@ body.menu-open {
             <div class="mb-2">
                 <button id="mobile-handyman-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
                     <span class="flex items-center gap-3">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+ 
                         Handyman Services
                     </span>
                     <svg id="mobile-handyman-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -241,7 +244,7 @@ body.menu-open {
             <div class="mb-2">
                 <button id="mobile-renovation-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
                     <span class="flex items-center gap-3">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+ 
                         Renovation Services
                     </span>
                     <svg id="mobile-renovation-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
@@ -270,9 +273,9 @@ body.menu-open {
             <!-- Our Projects Accordion -->
             <div class="mb-2">
               <button id="mobile-projects-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition" aria-expanded="false">
-                <span class="flex items-center gap-3">
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                  Our Projects
+                  <span class="flex items-center gap-3">
+ 
+                    Our Projects
                 </span>
                 <svg id="mobile-projects-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
               </button>
@@ -282,9 +285,7 @@ body.menu-open {
                 <a href="projects-commercial.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
               </div>
             </div>
-            <a href="contacts.html" class="flex items-center gap-4 px-4 py-4 text-lg font-semibold text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 rounded-xl transition">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                Contact
+            <a href="contacts.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Contact
             </a>
         </nav>
     </div>
@@ -292,13 +293,41 @@ body.menu-open {
    
 </div>
 </div>
-    <a
-      href="https://wa.me/6586955055?text=Hi%20SGSA%20Construction%20%7C%20I%20need%20renovation%20services"
-      target="_blank"
-      class="fixed bottom-20 right-6 z-40 group"
-      ><div class="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 mb-5 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center w-16 h-16 hover:scale-110">
-        <svg fill="#ffffff" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>whatsapp</title> <path d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z"></path> </g></svg>
-      </div></a>
+    <a href="https://wa.me/6590577505?text=Hi%20SGSA%20Construction%20%7C%20I%20need%20handyman%20services" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="fixed bottom-20 right-6 z-40 group">
+  
+  <!-- Outer ring with construction color theme -->
+  <div class="absolute -inset-4 bg-gradient-to-r from-orange-500/20 to-emerald-500/20 rounded-full animate-ping opacity-20"></div>
+  
+  <!-- Main button with construction-themed colors and animations -->
+  <div class="relative bg-gradient-to-br from-emerald-500 via-green-500 to-emerald-600 text-white rounded-full p-4 mb-5 shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center w-16 h-16 hover:scale-110 animate-construction-pulse hover:animate-construction-shake group-hover:animate-jackhammer">
+    
+    <!-- Construction gear icon effect -->
+    <div class="absolute inset-0 border-2 border-white/30 rounded-full animate-spin-slow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+    
+    <!-- WhatsApp Icon -->
+    <svg fill="#ffffff" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" class="relative z-10 w-8 h-8">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <g id="SVGRepo_iconCarrier"> 
+        <title>whatsapp</title> 
+        <path d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z"></path> 
+      </g>
+    </svg>
+    
+    <!-- Construction hard hat mini icon on hover -->
+    <div class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center opacity-0 transform scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 delay-150">
+      ⚒
+    </div>
+    </div>
+  
+ 
+  <!-- Subtle notification dot -->
+  <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
+  <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-600 rounded-full"></div>
+  </a>
 
     <!-- Hero Section -->
     <section
@@ -1268,6 +1297,276 @@ body.menu-open {
     </div>
 
     <script>
+      (() => {
+        "use strict";
+      
+        const qs = (sel, root = document) => root.querySelector(sel);
+        const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+      
+        const isCoarsePointer = () =>
+          window.matchMedia &&``
+          window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+      
+        /* ---------------------------------------------
+         * Navbar: Our Projects dropdown (desktop hover, mobile click, keyboard)
+         * --------------------------------------------- */
+        function initProjectsDropdown() {
+          const wrapper = qs("[data-projects-dropdown]");
+          if (!wrapper) return;
+      
+          const button = qs("[data-projects-dropdown-button]", wrapper);
+          const panel = qs("[data-projects-dropdown-panel]", wrapper);
+          if (!button || !panel) return;
+      
+          let open = false;
+      
+          const setOpen = (next) => {
+            open = Boolean(next);
+            button.setAttribute("aria-expanded", open ? "true" : "false");
+      
+            // JS-driven open state for mobile/touch + keyboard.
+            // Desktop hover still works via Tailwind group-hover/group-focus-within.
+            if (open) {
+              panel.style.opacity = "1";
+              panel.style.visibility = "visible";
+              panel.style.pointerEvents = "auto";
+            } else {
+              panel.style.opacity = "";
+              panel.style.visibility = "";
+              panel.style.pointerEvents = "";
+            }
+          };
+      
+          // Toggle on click (important for touch devices).
+          button.addEventListener("click", (e) => {
+            e.preventDefault();
+            setOpen(!open);
+          });
+      
+          // Keyboard support
+          wrapper.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+              setOpen(false);
+              button.focus();
+            }
+            if ((e.key === "Enter" || e.key === " ") && document.activeElement === button) {
+              e.preventDefault();
+              setOpen(!open);
+            }
+          });
+      
+          // Close when clicking outside.
+          document.addEventListener("click", (e) => {
+            if (!open) return;
+            if (!wrapper.contains(e.target)) setOpen(false);
+          });
+      
+          // Close when focus leaves the dropdown.
+          wrapper.addEventListener("focusout", () => {
+            window.setTimeout(() => {
+              if (!wrapper.contains(document.activeElement)) setOpen(false);
+            }, 0);
+          });
+        }
+      
+        /* ---------------------------------------------
+         * Mobile off-canvas: Our Projects accordion
+         * --------------------------------------------- */
+        function initMobileProjectsAccordion() {
+          const btn = qs("#mobile-projects-btn");
+          const menu = qs("#mobile-projects-menu");
+          const arrow = qs("#mobile-projects-arrow");
+          if (!btn || !menu) return;
+      
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const isHidden = menu.classList.contains("hidden");
+            menu.classList.toggle("hidden");
+            if (arrow) arrow.classList.toggle("rotate-180", isHidden);
+            btn.setAttribute("aria-expanded", isHidden ? "true" : "false");
+          });
+        }
+      
+        /* ---------------------------------------------
+         * Project pages: Fade in images on load
+         * --------------------------------------------- */
+        function initProjectImageFadeIn() {
+          const grid = qs("[data-project-grid]");
+          if (!grid) return;
+      
+          qsa("img[data-project-img]", grid).forEach((img) => {
+            const onLoad = () => {
+              img.classList.remove("opacity-0");
+              img.classList.add("opacity-100");
+            };
+            if (img.complete) onLoad();
+            else img.addEventListener("load", onLoad, { once: true });
+          });
+        }
+      
+        /* ---------------------------------------------
+         * Project pages: Mobile tap-to-preview overlay (keep existing behavior)
+         * --------------------------------------------- */
+        function initOverlayTap() {
+          const wrappers = qsa(".gallery-image-wrapper");
+          if (!wrappers.length) return;
+      
+          // Only enhance tap behavior on coarse pointer devices.
+          if (!isCoarsePointer()) return;
+      
+          const closeAll = () => {
+            wrappers.forEach((w) => w.classList.remove("overlay-active"));
+          };
+      
+          wrappers.forEach((wrapper) => {
+            wrapper.addEventListener(
+              "touchstart",
+              (e) => {
+                // First tap shows overlay; second tap can proceed to lightbox click.
+                const isOpen = wrapper.classList.contains("overlay-active");
+                if (!isOpen) {
+                  e.preventDefault();
+                  closeAll();
+                  wrapper.classList.add("overlay-active");
+                }
+              },
+              { passive: false }
+            );
+          });
+      
+          // Close overlay when tapping outside any image
+          document.addEventListener(
+            "touchstart",
+            (e) => {
+              if (wrappers.some((w) => w.contains(e.target))) return;
+              closeAll();
+            },
+            { passive: true }
+          );
+        }
+      
+        /* ---------------------------------------------
+         * Project pages: Lightbox modal (accessible)
+         * --------------------------------------------- */
+        function initLightbox() {
+          const modal = qs("[data-lightbox]");
+          if (!modal) return;
+      
+          const backdrop = qs("[data-lightbox-backdrop]", modal);
+          const dialog = qs("[data-lightbox-dialog]", modal);
+          const img = qs("[data-lightbox-img]", modal);
+          const caption = qs("[data-lightbox-caption]", modal);
+          const closeBtn = qs("[data-lightbox-close]", modal);
+          const triggers = qsa("[data-lightbox-trigger]");
+      
+          if (!backdrop || !dialog || !img || !closeBtn) return;
+      
+          let lastActive = null;
+      
+          const focusableSelector =
+            'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+      
+          const getFocusables = () => qsa(focusableSelector, dialog).filter((el) => el.offsetParent !== null);
+      
+          const trapFocus = (e) => {
+            if (e.key !== "Tab") return;
+            const focusables = getFocusables();
+            if (!focusables.length) return;
+      
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+      
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          };
+      
+          const open = ({ src, alt, label }) => {
+            lastActive = document.activeElement;
+      
+            img.src = src;
+            img.alt = alt || "";
+            if (caption) caption.textContent = label || alt || "";
+      
+            modal.classList.remove("hidden");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("lightbox-no-scroll");
+      
+            // Animate in
+            requestAnimationFrame(() => {
+              backdrop.classList.remove("opacity-0");
+              backdrop.classList.add("opacity-100");
+              dialog.classList.remove("opacity-0", "scale-95");
+              dialog.classList.add("opacity-100", "scale-100");
+            });
+      
+            closeBtn.focus();
+            document.addEventListener("keydown", onKeydown);
+            dialog.addEventListener("keydown", trapFocus);
+          };
+      
+          const close = () => {
+            // Animate out
+            backdrop.classList.add("opacity-0");
+            backdrop.classList.remove("opacity-100");
+            dialog.classList.add("opacity-0", "scale-95");
+            dialog.classList.remove("opacity-100", "scale-100");
+      
+            modal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("lightbox-no-scroll");
+      
+            window.setTimeout(() => {
+              modal.classList.add("hidden");
+              img.src = "";
+            }, 180);
+      
+            document.removeEventListener("keydown", onKeydown);
+            dialog.removeEventListener("keydown", trapFocus);
+      
+            if (lastActive && typeof lastActive.focus === "function") lastActive.focus();
+          };
+      
+          const onKeydown = (e) => {
+            if (e.key === "Escape") close();
+          };
+      
+          // Open handlers
+          triggers.forEach((a) => {
+            a.addEventListener("click", (e) => {
+              // On touch devices, first tap is reserved for showing the overlay.
+              if (isCoarsePointer() && !a.classList.contains("overlay-active")) {
+                e.preventDefault();
+                return;
+              }
+      
+              e.preventDefault();
+              const src = a.getAttribute("href") || a.getAttribute("data-full") || "";
+              const alt = a.getAttribute("data-alt") || qs("img", a)?.getAttribute("alt") || "";
+              const label = a.getAttribute("data-label") || "";
+              if (!src) return;
+              open({ src, alt, label });
+            });
+          });
+      
+          // Close handlers
+          closeBtn.addEventListener("click", close);
+          backdrop.addEventListener("click", close);
+        }
+      
+        document.addEventListener("DOMContentLoaded", () => {
+          initProjectsDropdown();
+          initMobileProjectsAccordion();
+          initProjectImageFadeIn();
+          initOverlayTap();
+          initLightbox();
+        });
+      })();
+      
       // Company Information Database
     const companyInfo = {
       name: "SGSA Construction",
@@ -1727,16 +2026,33 @@ body.menu-open {
         mobileMenuPanel.classList.add('active');
         mobileMenuOverlay.classList.add('active');
         document.body.classList.add('menu-open');
+    
+        // Update ARIA
+        if (mobileMenuBtn) {
+            mobileMenuBtn.setAttribute(\'aria-expanded\', \'true\');
+        }
     }
     
     function closeMobileMenu() {
         mobileMenuPanel.classList.remove('active');
         mobileMenuOverlay.classList.remove('active');
         document.body.classList.remove('menu-open');
+    
+        // Update ARIA
+        if (mobileMenuBtn) {
+            mobileMenuBtn.setAttribute(\'aria-expanded\', \'false\');
+        }
     }
     
     if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuBtn.addEventListener('click', () => {
+            // Toggle between open and close
+            if (mobileMenuPanel.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        });
     }
     
     if (mobileMenuClose) {

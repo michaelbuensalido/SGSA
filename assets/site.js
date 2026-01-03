@@ -18,7 +18,7 @@
   const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   const isCoarsePointer = () =>
-    window.matchMedia &&
+    window.matchMedia &&``
     window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
   /* ---------------------------------------------
@@ -92,7 +92,9 @@
     const arrow = qs("#mobile-projects-arrow");
     if (!btn || !menu) return;
 
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       const isHidden = menu.classList.contains("hidden");
       menu.classList.toggle("hidden");
       if (arrow) arrow.classList.toggle("rotate-180", isHidden);
