@@ -84,12 +84,86 @@ body.menu-open {
   opacity: 1;
   transform: translateY(0);
 }
+
+    /* ============================================
+       SGSA ANIMATION SYSTEM (Clean & Professional)
+       ============================================ */
+
+    /* 1️⃣ SECTION FADE + SLIDE - Main Animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 700ms ease-out, transform 700ms ease-out;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 2️⃣ STAGGERED CHILDREN - For grids & lists */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 700ms ease-out, transform 700ms ease-out;
+    }
+
+    .stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(2) { transition-delay: 120ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(3) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(4) { transition-delay: 360ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(5) { transition-delay: 480ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(6) { transition-delay: 600ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(7) { transition-delay: 720ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(8) { transition-delay: 840ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(9) { transition-delay: 960ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(10) { transition-delay: 1080ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(11) { transition-delay: 1200ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(12) { transition-delay: 1320ms; opacity: 1; transform: translateY(0); }
+
+    /* 3️⃣ HOVER MOTION - Subtle but noticeable */
+    .hover-lift {
+      transition: transform 200ms ease-out;
+    }
+    .hover-lift:hover {
+      transform: translateY(-2px);
+    }
+
+    .hover-slide {
+      transition: transform 200ms ease-out;
+    }
+    .hover-slide:hover {
+      transform: translateX(2px);
+    }
+
+    /* Mobile: Slightly faster */
+    @media (max-width: 768px) {
+      .fade-up,
+      .stagger-children > * {
+        transition-duration: 600ms;
+      }
+
+      .stagger-children.visible > *:nth-child(n+6) {
+        transition-delay: 600ms;
+      }
+    }
+
+    /* Reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up,
+      .stagger-children > * {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
 </style>
 
 </head>
 <body class="font-archivo">
   <div class="relative ">
-    <nav id="navbar" class="fixed z-20 top-0 left-0 right-0 z-10 pb-[18px] pt-[18px]">
+    <nav id="navbar" class="fixed z-20 top-0 left-0 right-0 z-10 pb-[5px] pt-[5px]">
        <div class="max-w-6xl mx-auto">
            <div class="flex justify-between items-center h-20 px-4">
                <div class="flex-shrink-0">
@@ -97,11 +171,11 @@ body.menu-open {
                        <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="">
                    </a>
                </div>
-               <div class="hidden md:flex space-x-10 font-archivo items-center">
-                   <a href="index.html" class="nav-link text-white hover:text-sky-400 text-sm  font-medium transition duration-300">HOME</a>
-                   <a href="about.html" class="nav-link text-white hover:text-sky-400 text-sm font-medium transition duration-300">ABOUT US</a>
+               <div class="hidden md:flex space-x-6 font-archivo items-center">
+                   <a href="index.html" class="nav-link text-white hover:text-sky-400 text-xs  font-medium transition duration-300">HOME</a>
+                   <a href="about.html" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">ABOUT US</a>
                    <div class="relative dropdown-wrapper group">
-                       <button class="nav-link text-white hover:text-sky-400 text-sm font-medium transition duration-300 flex items-center gap-1">OUR SERVICES
+                       <button class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1">OUR SERVICES
                            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                            </svg>
@@ -110,7 +184,7 @@ body.menu-open {
                            <div class="menu-item relative group/handyman">
                                <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between border-b border-gray-100">
                                    <div class="flex items-center gap-3">
-                                       <span class="font-light text-sm text-gray-800">Handyman Services</span>
+                                       <span class="font-light text-xs text-gray-800">Handyman Services</span>
                                    </div>
                                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -119,16 +193,16 @@ body.menu-open {
                                <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white  shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
                                    <div class="py-2">
                                 
-                                       <a href="aircon.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
-                                       <a href="plumbing.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                                       <a href="electrical.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                       <a href="aircon.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
+                                       <a href="plumbing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                       <a href="electrical.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
                                    </div>
                                </div>
                            </div>
                            <div class="menu-item relative group/renovation">
                                <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between">
                                    <div class="flex items-center gap-3">
-                                       <span class="font-light text-sm text-gray-800">Renovation Services</span>
+                                       <span class="font-light text-xs text-gray-800">Renovation Services</span>
                                    </div>
                                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -136,16 +210,16 @@ body.menu-open {
                                </div>
                                <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
                                    <div class="py-2">
-                                    <a href="plastering.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
-                                    <a href="plumbing.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                                       <a href="electrical.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
-                                       <a href="painting.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
-                                       <a href="tile-laying.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
-                                       <a href="renovation-works.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
-                                       <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
-                                       <a href="carpentry.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
-                                       <a href="waterproofing.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
-                                       <a href="hacking-demolition.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
+                                    <a href="plastering.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>  
+                                    <a href="plumbing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                       <a href="electrical.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                       <a href="painting.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
+                                       <a href="tile-laying.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
+                                       <a href="renovation-works.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
+                                       <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
+                                       <a href="carpentry.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
+                                       <a href="waterproofing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
+                                       <a href="hacking-demolition.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
                                    </div>
                                </div>
                            </div>
@@ -153,22 +227,21 @@ body.menu-open {
                    </div>
                    <!-- OUR PROJECTS dropdown -->
                 <div class="relative group" data-projects-dropdown>
-                  <button type="button" class="nav-link text-white hover:text-sky-400 text-sm font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
+                  <button type="button" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
                     OUR PROJECTS
                     <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                   </button>
                   <div class="absolute left-0 mt-2 w-56 bg-white  shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" data-projects-dropdown-panel>
-                    <div class="py-2">
-                      <a href="projects-handyman.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
-                      <a href="projects-residential.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
-                      <a href="projects-commercial.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
+                    <div class="py-2">      
+                      <a href="projects-residential.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
+                      <a href="projects-commercial.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
                     </div>
                   </div>
                 </div>
-                   <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-sm font-medium transition duration-300">CONTACT</a>
+                   <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">CONTACT</a>
                </div>
                <div>
-                   <a href="tel:+6560254678" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
+                   <a href="tel:+6590577505" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
                </div>
                <div class="md:hidden">
                    <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
@@ -1890,6 +1963,31 @@ body.menu-open {
   })();
 </script>
 
-<script src="assets/site.js"></script>
+<script src="assets/site.js">
+    /* ============================================
+       SCROLL ANIMATION OBSERVER
+       Triggers fade-up and stagger animations
+       ============================================ */
+    (function initScrollAnimations() {
+      const animatedElements = document.querySelectorAll('.fade-up, .stagger-children');
+      
+      if (!animatedElements.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Animate once only
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      animatedElements.forEach(el => observer.observe(el));
+    })();
+
+    </script>
 </body>
 </html>

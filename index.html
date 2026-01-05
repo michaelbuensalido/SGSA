@@ -24,6 +24,83 @@
     .font-archivo {
       font-family: 'Archivo', sans-serif;
     }
+
+    /* ============================================
+       SGSA ANIMATION SYSTEM (Clean & Professional)
+       ============================================ */
+
+    /* 1️⃣ SECTION FADE + SLIDE - Main Animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 700ms ease-out, transform 700ms ease-out;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 2️⃣ STAGGERED CHILDREN - For grids & lists */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 700ms ease-out, transform 700ms ease-out;
+    }
+
+    .stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(2) { transition-delay: 120ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(3) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(4) { transition-delay: 360ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(5) { transition-delay: 480ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(6) { transition-delay: 600ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(7) { transition-delay: 720ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(8) { transition-delay: 840ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(9) { transition-delay: 960ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(10) { transition-delay: 1080ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(11) { transition-delay: 1200ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(12) { transition-delay: 1320ms; opacity: 1; transform: translateY(0); }
+
+    /* 3️⃣ HOVER MOTION - Subtle but noticeable */
+    .hover-lift {
+      transition: transform 200ms ease-out;
+    }
+    .hover-lift:hover {
+      transform: translateY(-2px);
+    }
+
+    .hover-slide {
+      transition: transform 200ms ease-out;
+    }
+    .hover-slide:hover {
+      transform: translateX(2px);
+    }
+
+    /* Mobile: Slightly faster */
+    @media (max-width: 768px) {
+      .fade-up,
+      .stagger-children > * {
+        transition-duration: 600ms;
+      }
+
+      .stagger-children.visible > *:nth-child(n+6) {
+        transition-delay: 600ms;
+      }
+    }
+
+    /* Reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up,
+      .stagger-children > * {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      body {
+        transition: none;
+      }
+    }
+
     .nav-link {
             position: relative;
             display: inline-block;
@@ -802,7 +879,7 @@ button:focus {
   
 </div>
 
-<nav id="navbar" class="fixed z-20 top-[36px] md:top-[36px] left-0 right-0 z-10 pb-[10px] pt-[10px]">
+<nav id="navbar" class="fixed z-20 top-[36px] md:top-[36px] left-0 right-0 z-10 pb-[5px] pt-[5px]">
    <div class="max-w-7xl mx-auto">
        <div class="flex justify-between items-center h-20 px-4">
            <div class="flex-shrink-0">
@@ -811,10 +888,10 @@ button:focus {
                </a>
            </div>
            <div class="hidden md:flex space-x-6 font-archivo items-center">
-               <a href="index.html" class="nav-link text-slate-900 hover:text-sky-400 text-sm font-medium transition duration-300">HOME</a>
-               <a href="about.html" class="nav-link text-slate-900 hover:text-sky-400 text-sm  font-medium transition duration-300">ABOUT US</a>
+               <a href="index.html" class="nav-link text-slate-900 hover:text-sky-400 text-xs    font-medium transition duration-300">HOME</a>
+               <a href="about.html" class="nav-link text-slate-900 hover:text-sky-400 text-xs  font-medium transition duration-300">ABOUT US</a>
                <div class="relative dropdown-wrapper group">
-                   <button class="nav-link text-slate-900 hover:text-sky-400 text-sm font-medium transition duration-300 flex items-center gap-1">OUR SERVICES
+                   <button class="nav-link text-slate-900 hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1">OUR SERVICES
                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                        </svg>
@@ -823,7 +900,7 @@ button:focus {
                        <div class="menu-item relative group/handyman">
                            <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between border-b border-gray-100">
                                <div class="flex items-center gap-3">
-                                   <span class="font-light text-sm text-gray-800">Handyman Services</span>
+                                   <span class="font-light text-xs text-gray-800">Handyman Services</span>
                                </div>
                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -832,16 +909,16 @@ button:focus {
                            <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white  shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
                                <div class="py-2">
                             
-                                   <a href="aircon.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
-                                   <a href="plumbing.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                                   <a href="electrical.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                   <a href="aircon.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
+                                   <a href="plumbing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                   <a href="electrical.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
                                </div>
                            </div>
                        </div>
                        <div class="menu-item relative group/renovation">
                            <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between">
                                <div class="flex items-center gap-3">
-                                   <span class="font-light text-sm text-gray-800">Renovation Services</span>
+                                   <span class="font-light text-xs text-gray-800">Renovation Services</span>
                                </div>
                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -849,16 +926,16 @@ button:focus {
                            </div>
                            <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white  shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
                                <div class="py-2">
-                                <a href="plastering.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Plastering Works</a>
-                                <a href="plumbing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600  text-sm transition duration-200 font-light">Plumbing</a>
-                                   <a href="electrical.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600  text-sm transition duration-200 font-light">Electrical Works</a>
-                                   <a href="painting.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Painting</a>
-                                   <a href="tile-laying.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Tile Laying</a>
-                                   <a href="renovation-works.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Renovation Works</a>
-                                   <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Ceiling & Wall Partitions</a>
-                                   <a href="carpentry.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Carpentry Works</a>
-                                   <a href="waterproofing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Waterproofing</a>
-                                   <a href="hacking-demolition.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Reinstatement, Hacking & Demolition</a>
+                                <a href="plastering.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
+                                <a href="plumbing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                   <a href="electrical.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                   <a href="painting.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
+                                   <a href="tile-laying.html" class="block px-6 py-3 text-xs
+                                   <a href="renovation-works.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
+                                   <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
+                                   <a href="carpentry.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
+                                   <a href="waterproofing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
+                                   <a href="hacking-demolition.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
                                </div>
                            </div>
                        </div>
@@ -866,23 +943,24 @@ button:focus {
                </div>
                <!-- OUR PROJECTS dropdown -->
             <div class="relative group" data-projects-dropdown>
-              <button type="button" class="nav-link text-slate-900 hover:text-sky-400 text-sm font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
+              <button type="button" class="nav-link text-slate-900 hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
                 OUR PROJECTS
                 <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
               </button>
               <div class="absolute left-0 mt-2 w-56 bg-white  shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" data-projects-dropdown-panel>
                 <div class="py-2">
-                  <a href="projects-handyman.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
-                  <a href="projects-residential.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
-                  <a href="projects-commercial.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
+                   <a href="projects-handyman.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
+                  <a href="projects-residential.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
+                  <a href="projects-commercial.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
                 </div>
               </div>
             </div>
-               <a href="contacts.html" class="nav-link text-slate-900 hover:text-sky-400 text-sm font-medium transition duration-300">CONTACT</a>
+               <a href="contacts.html" class="nav-link text-slate-900 hover:text-sky-400 text-xs font-medium transition duration-300">CONTACT</a>
+               
            </div>
            <div>
-               <a href="tel:+6585864098" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 +65 8658 64098</a>
-           </div> 
+            <a href="tel:+6585864098" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-sm transition duration-300 flex items-center gap-2">📞 +65 8658 64098</a>
+        </div> 
            <div class="md:hidden">
                <button id="mobile-menu-btn" class="text-slate-900 hover:text-sky-400 focus:outline-none transition-colors duration-300" aria-label="Toggle mobile menu" aria-expanded="false">
                    <!-- Hamburger icon -->
@@ -1065,10 +1143,10 @@ button:focus {
 
     <!-- CTA Buttons -->
       <div class="hero-buttons flex flex-col sm:flex-row gap-3 justify-center items-center mb-10">
-        <a href="contacts.html" class="btn-animate hero-button-primary bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-7 py-3.5 rounded-md shadow-lg text-base">
+        <a href="contacts.html" class="hover-lift btn-animate hero-button-primary bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-7 py-3.5 rounded-md shadow-lg text-base">
           Request a Free Quote
         </a>
-        <a href="tel:+6585864098" class="btn-animate hero-button-secondary border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white font-semibold px-7 py-3.5 rounded-md text-base">
+        <a href="tel:+6585864098" class="hover-lift btn-animate hero-button-secondary border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white font-semibold px-7 py-3.5 rounded-md text-base">
           📞 Call or WhatsApp
       </a>
     </div>
@@ -1095,19 +1173,18 @@ button:focus {
   </section>
 
   <!-- Services Section -->
-  <section class="py-16 sm:py-20 bg-slate-50">
+  <section class="py-16 sm:py-20 bg-white-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
       
       <!-- Section Header (SGSA Signature Layout) -->
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <p class="text-xs tracking-[0.2em] uppercase text-red-600 font-medium mb-3">Our Services</p>
-        <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mb-4">What We Do</h2>
-        <p class="text-base text-slate-600 leading-relaxed">Careful work for homes, offices, and commercial spaces.</p>
-        <div class="w-12 h-px bg-slate-300 mx-auto mt-6"></div>
-       </div>
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+        <p class="text-sm sm:text-base uppercase tracking-[0.25em] text-red-600 font-semibold mb-3">Our Services</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Handyman & Renovation Expertise</h2>
+        
+      </div>
          
       <!-- Services Grid (all services) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-1">
+      <div class="stagger-children grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-1">
 
         <!-- Aircon Service -->
         <a href="aircon.html" class="group bg-white overflow-hidden flex flex-col">
@@ -1280,7 +1357,7 @@ button:focus {
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
             
             <!-- Section Header - BOLD -->
-            <div class="section-header-bold mb-16">
+            <div class="fade-up section-header-bold mb-16">
               <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
                 <div>
                   <div class="flex items-center gap-4 mb-4">
@@ -1303,7 +1380,7 @@ button:focus {
             </div>
       
             <!-- Values Grid - Bold Cards with Vertical Accent -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="stagger-children grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               
                <!-- Value 1: Licensed Trades -->
                <div class="scroll-animate scroll-animate-delay-1 bg-slate-800/50 border border-slate-700 p-8 hover:border-cyan-500 transition-all duration-300">
@@ -1360,15 +1437,14 @@ button:focus {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
       
       <!-- Section Header (SGSA Signature Layout) -->
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <p class="text-xs tracking-[0.2em] uppercase text-red-600 font-medium mb-3">Our Completed Works</p>
-        <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mb-4">Recent Projects</h2>
-        <p class="text-base text-slate-600 leading-relaxed">A selection of renovation and handyman work for homes and businesses.</p>
-        <div class="w-12 h-px bg-slate-300 mx-auto mt-6"></div>
-        </div>
+      <div class="text-center mb-8 sm:mb-12">
+        <p class="text-base sm:text-lg text-red-600 font-light">SGSA CONSTRUCTION COMPANY</p>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-sky-900 mb-3">Empowering Vision through Action</h1>
+      </div>
+      
         
         <!-- Mobile: Stack vertically -->
-        <div class="flex flex-col md:hidden gap-4">
+        <div class="fade-up flex flex-col md:hidden gap-4">
             <!-- First div: Republic Polytechnic Hotel -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
@@ -1384,7 +1460,7 @@ button:focus {
             
             <!-- Second div: Marina Bay Residence -->
             <div class="w-full h-[200px] sm:h-[250px] rounded-lg shadow-lg project-card overflow-hidden">
-                <a href="plastering.html">
+                <a href="plumbing.html">
                   <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Marina Bay Residence">
                 <div class="project-overlay">
                     <div class="project-title">
@@ -1436,7 +1512,7 @@ button:focus {
         </div>
 
         <!-- Desktop/Tablet: Original grid layout -->
-        <div class="hidden md:grid md:grid-cols-6 md:grid-rows-3 gap-4 md:h-[600px] lg:h-[800px]">
+        <div class="fade-up hidden md:grid md:grid-cols-6 md:grid-rows-3 gap-4 md:h-[600px] lg:h-[800px]">
             <!-- First div: Republic Polytechnic Hotel -->
             <div class="col-span-4 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
@@ -1452,7 +1528,7 @@ button:focus {
             
             <!-- Second div: Marina Bay Residence -->
             <div class="col-span-2 row-span-1 rounded-2xl shadow-lg project-card overflow-hidden">
-                <a href="plastering.html">
+                <a href="plumbing.html">
                   <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Marina Bay Residence">
                 <div class="project-overlay">
                     <div class="project-title">
@@ -1478,7 +1554,7 @@ button:focus {
             
             <!-- Fourth div: Orchard Plaza -->
               <div class="col-span-2 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
-                <a href="painting.html">
+                <a href="carpentry.html">
                   <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/carpentry/feature-walls-tv-consoles.png" alt="Orchard Plaza">
                 <div class="project-overlay">
                     <div class="project-title">
@@ -1491,7 +1567,7 @@ button:focus {
             
             <!-- Fifth div: Clarke Quay Tower -->
             <div class="col-span-2 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
-                <a href="electrical.html">
+                <a href="renovation-works.html">
                   <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/commercial/school/IMG20251223154650.jpg" alt="Clarke Quay Tower">
                 <div class="project-overlay">
                     <div class="project-title">
@@ -1501,8 +1577,8 @@ button:focus {
                 </div>
             </div>
         </div>
-        <div class="text-center mt-6 sm:mt-8 px-4">
-            <a href="completed-projects.html" class="group inline-block relative border-2 border-sky-500 text-sky-500 font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-md shadow-lg transition-all duration-300 overflow-hidden hover:text-white hover:border-white text-sm sm:text-base">
+        <div class="fade-up text-center mt-6 sm:mt-8 px-4">
+            <a href="completed-projects.html" class="hover-lift group inline-block relative border-2 border-sky-500 text-sky-500 font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-md shadow-lg transition-all duration-300 overflow-hidden hover:text-white hover:border-white text-sm sm:text-base">
                 <span class="relative z-10">View All Projects</span>
                 <span class="absolute inset-0 bg-sky-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 <span class="absolute inset-0 border-2 rounded-lg opacity-0 group-hover:opacity-100 group-hover:animate-pulse"></span>
@@ -1521,7 +1597,7 @@ button:focus {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
       
       <!-- Section Header -->
-      <div class="text-center mb-12">
+      <div class="fade-up text-center mb-12">
         <p class="text-xs tracking-[0.2em] uppercase text-slate-400 font-medium mb-3">What Clients Say</p>
         <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-4">Customer Reviews</h2>
         <div class="w-12 h-px bg-cyan-500 mx-auto"></div>
@@ -1731,10 +1807,10 @@ button:focus {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
       
       <!-- Two Column Layout -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div class="stagger-children grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         
         <!-- Left Column: Content -->
-        <div class="about-animate about-animate-delay-1">
+        <div>
           
           <!-- Section Label -->
           <p class="text-xs tracking-[0.2em] uppercase text-slate-500 font-medium mb-4">About SGSA</p>
@@ -1758,15 +1834,15 @@ button:focus {
           </div>
 
     <!-- CTA -->
-          <div class="mt-8 about-animate about-animate-delay-3">
-            <a href="about.html" class="inline-block text-sm font-medium text-cyan-600 border-b border-cyan-600 pb-1 hover:text-cyan-700 hover:border-cyan-700 transition-colors">
+          <div class="mt-8">
+            <a href="about.html" class="hover-slide inline-block text-sm font-medium text-cyan-600 border-b border-cyan-600 pb-1 hover:text-cyan-700 hover:border-cyan-700 transition-colors">
               Learn More About Us →
             </a>
     </div>
     </div>
         
         <!-- Right Column: Image -->
-        <div class="about-animate about-animate-delay-2">
+        <div>
           <img class="w-full rounded-2xl h-64 sm:h-80 lg:h-96 object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="SGSA Construction Team at Work" loading="lazy">
     </div>
         
@@ -1774,24 +1850,24 @@ button:focus {
 
       <!-- Statistics Row -->
       <div class="mt-16 pt-12 border-t border-slate-200">
-        <div class="grid grid-cols-3 gap-6 text-center">
+        <div class="stagger-children grid grid-cols-3 gap-6 text-center">
           <!-- Stat 1 -->
           <div class="scroll-animate scroll-animate-delay-1">
-            <div class="text-3xl sm:text-4xl font-semibold text-cyan-600 mb-1">
+            <div class="text-3xl sm:text-4xl font-semibold text-blue-600 mb-1">
               <span class="stat-counter" data-target="24">0</span>+
           </div>
             <div class="text-xs sm:text-sm text-slate-600">Years Experience</div>
         </div>
           <!-- Stat 2 -->
           <div class="scroll-animate scroll-animate-delay-2">
-            <div class="text-3xl sm:text-4xl font-semibold text-cyan-600 mb-1">
+            <div class="text-3xl sm:text-4xl font-semibold text-blue-600 mb-1">
               <span class="stat-counter" data-target="800">0</span>+
           </div>
             <div class="text-xs sm:text-sm text-slate-600">Happy Clients</div>
         </div>
           <!-- Stat 3 -->
           <div class="scroll-animate scroll-animate-delay-3">
-            <div class="text-3xl sm:text-4xl font-semibold text-cyan-600 mb-1">
+            <div class="text-3xl sm:text-4xl font-semibold text-blue-600 mb-1">
               <span class="stat-counter" data-target="650">0</span>+
           </div>
             <div class="text-xs sm:text-sm text-slate-600">Projects Done</div>
@@ -1821,7 +1897,7 @@ button:focus {
           Request a Quote
         </a>
         <a href="https://wa.me/6560254678?text=Hi%20SGSA%20Construction%20%7C%20I%20need%20handyman%20services" target="_blank" rel="noopener noreferrer" class="btn-animate inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-7 py-3.5 rounded-md shadow-lg text-base">
-          💬 WhatsApp Us
+          💬 Chat on WhatsApp
         </a>
       </div>
 
@@ -3259,6 +3335,30 @@ window.addEventListener('scroll', function() {
       marquee.addEventListener('mouseleave', () => {
         isAnimating = true;
       });
+    })();
+
+    /* ============================================
+       SCROLL ANIMATION OBSERVER
+       Triggers fade-up and stagger animations
+       ============================================ */
+    (function initScrollAnimations() {
+      const animatedElements = document.querySelectorAll('.fade-up, .stagger-children');
+      
+      if (!animatedElements.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Animate once only
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      animatedElements.forEach(el => observer.observe(el));
     })();
 
   </script>
