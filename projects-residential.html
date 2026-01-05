@@ -36,166 +36,202 @@
 <body class="font-archivo">
 
   <!-- Navbar -->
-  <header>
-    <nav id="navbar" class="fixed z-20 top-0 left-0 right-0 pb-[18px] pt-[18px]">
-      <div class="max-w-6xl mx-auto">
-        <div class="flex justify-between items-center h-20 px-4">
-          <div class="flex-shrink-0">
-            <a href="index.html" class="flex items-center"><img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo"></a>
-          </div>
-          <div class="hidden md:flex space-x-10 font-archivo items-center">
-            <a href="index.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">HOME</a>
-            <a href="about.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">ABOUT US</a>
-            <div class="relative dropdown-wrapper group">
-              <button class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1">OUR SERVICES
-                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </button>
-              <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div class="menu-item relative group/handyman">
-                  <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between border-b border-gray-100">
-                    <span class="font-semibold text-gray-800">Handyman Services</span>
-                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                  </div>
-                  <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
+  <div class="relative ">
+    <nav id="navbar" class="fixed z-20 top-0 left-0 right-0 z-10 pb-[18px] pt-[18px]">
+       <div class="max-w-6xl mx-auto">
+           <div class="flex justify-between items-center h-20 px-4">
+               <div class="flex-shrink-0">
+                   <a href="index.html" class="flex items-center">
+                       <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="">
+                   </a>
+               </div>
+               <div class="hidden md:flex space-x-10 font-archivo items-center">
+                   <a href="index.html" class="nav-link text-white hover:text-sky-400 text-sm  font-medium transition duration-300">HOME</a>
+                   <a href="about.html" class="nav-link text-white hover:text-sky-400 text-sm font-medium transition duration-300">ABOUT US</a>
+                   <div class="relative dropdown-wrapper group">
+                       <button class="nav-link text-white hover:text-sky-400 text-sm font-medium transition duration-300 flex items-center gap-1">OUR SERVICES
+                           <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                           </svg>
+                       </button>
+                       <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                           <div class="menu-item relative group/handyman">
+                               <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between border-b border-gray-100">
+                                   <div class="flex items-center gap-3">
+                                       <span class="font-light text-sm text-gray-800">Handyman Services</span>
+                                   </div>
+                                   <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                   </svg>
+                               </div>
+                               <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white  shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
+                                   <div class="py-2">
+                                
+                                       <a href="aircon.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
+                                       <a href="plumbing.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                       <a href="electrical.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="menu-item relative group/renovation">
+                               <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between">
+                                   <div class="flex items-center gap-3">
+                                       <span class="font-light text-sm text-gray-800">Renovation Services</span>
+                                   </div>
+                                   <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                   </svg>
+                               </div>
+                               <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
+                                   <div class="py-2">
+                                    <a href="plastering.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
+                                    <a href="plumbing.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                       <a href="electrical.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                       <a href="painting.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
+                                       <a href="tile-laying.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
+                                       <a href="renovation-works.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
+                                       <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
+                                       <a href="carpentry.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
+                                       <a href="waterproofing.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
+                                       <a href="hacking-demolition.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- OUR PROJECTS dropdown -->
+                <div class="relative group" data-projects-dropdown>
+                  <button type="button" class="nav-link text-white hover:text-sky-400 text-sm font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
+                    OUR PROJECTS
+                    <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                  </button>
+                  <div class="absolute left-0 mt-2 w-56 bg-white  shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" data-projects-dropdown-panel>
                     <div class="py-2">
-                      <a href="aircon.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
-                      <a href="plumbing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                      <a href="electrical.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                      <a href="projects-handyman.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
+                      <a href="projects-residential.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
+                      <a href="projects-commercial.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
                     </div>
                   </div>
                 </div>
-                <div class="menu-item relative group/renovation">
-                  <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between">
-                    <span class="font-semibold text-gray-800">Renovation Services</span>
-                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                  </div>
-                  <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
-                    <div class="py-2">
-                      <a href="plastering.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
-                      <a href="plumbing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                      <a href="electrical.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
-                      <a href="painting.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
-                      <a href="tile-laying.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
-                      <a href="renovation-works.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
-                      <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
-                      <a href="carpentry.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
-                      <a href="waterproofing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
-                      <a href="hacking-demolition.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- OUR PROJECTS dropdown -->
-            <div class="relative group" data-projects-dropdown>
-              <button type="button" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" aria-controls="projects-dropdown-menu" data-projects-dropdown-button>
-                OUR PROJECTS
-                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-              </button>
-              <div id="projects-dropdown-menu" class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" aria-label="Project categories" data-projects-dropdown-panel>
-                <div class="py-2">
-                  <a href="projects-handyman.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
-                  <a href="projects-residential.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
-                  <a href="projects-commercial.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
-                </div>
-              </div>
-            </div>
-            <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-md font-medium transition duration-300">CONTACT</a>
-          </div>
-          <div>
-            <a href="tel:+6560254678" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
-          </div>
-          <div class="md:hidden">
-            <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
-                   <!-- Hamburger icon -->
-                   <svg id="hamburger-icon" class="h-10 w-10 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-          </div>
-        </div>
-      </div>
+                   <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-sm font-medium transition duration-300">CONTACT</a>
+               </div>
+               <div>
+                   <a href="tel:+6560254678" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
+               </div>
+               <div class="md:hidden">
+                   <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+                       <!-- Hamburger icon -->
+                       <svg id="hamburger-icon" class="h-10 w-10 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                       </svg>
+                   </button>
+               </div>
+           </div>
+       </div>
     </nav>
-
+    
     <!-- Mobile Off-Canvas Menu Overlay -->
     <div id="mobile-menu-overlay" class="mobile-menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
-
+    
     <!-- Mobile Menu Dropdown Panel -->
     <div id="mobile-menu-panel" class="mobile-menu-panel fixed top-0 left-0 right-0 w-full bg-white z-50 md:hidden shadow-2xl flex flex-col">
-      <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
-        <a href="index.html"><img src="images/logo_new-removebg-preview.png" alt="SGSA Construction" class="w-[230px]"></a>
-        <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
-          <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-      </div>
-      <div class="flex-1 overflow-y-auto py-4">
-        <nav class="px-4 space-y-1">
-          <a href="index.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Home
-          </a>
-          <a href="about.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">About
-          </a>
-        </nav>
-        <div class="my-4 mx-6 border-t border-gray-200"></div>
-        <div class="px-4">
-          <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Services</p>
-          <div class="mb-2">
-            <button id="mobile-handyman-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
-                    <span class="flex items-center gap-3">
- 
-                        Handyman Services
-              </span>
-              <svg id="mobile-handyman-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        <!-- Header with Logo & Close -->
+        <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
+            <a href="index.html">
+                <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction" class="w-[230px]">
+            </a>
+            <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
+                <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
             </button>
-            <div id="mobile-handyman-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
-              <a href="aircon.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Air Con Service</a>
-              <a href="plumbing.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plumbing</a>
-              <a href="electrical.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
-            </div>
-          </div>
-          <div class="mb-2">
-            <button id="mobile-renovation-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
-                    <span class="flex items-center gap-3">
- 
-                        Renovation Services
-              </span>
-              <svg id="mobile-renovation-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div id="mobile-renovation-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
-              <a href="plastering.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plastering Works</a>
-              <a href="plumbing.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plumbing</a>
-              <a href="electrical.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
-              <a href="painting.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Painting</a>
-              <a href="tile-laying.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Tile Laying</a>
-              <a href="renovation-works.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Renovation Works</a>
-              <a href="ceiling-wall-partitions.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Ceiling & Partitions</a>
-              <a href="carpentry.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Carpentry Works</a>
-              <a href="waterproofing.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Waterproofing</a>
-              <a href="hacking-demolition.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Hacking & Demolition</a>
-            </div>
-          </div>
         </div>
-        <div class="my-4 mx-6 border-t border-gray-200"></div>
-        <!-- Our Projects Accordion -->
-        <div class="px-4">
-          <div class="mb-2">
-            <button id="mobile-projects-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition" aria-expanded="false">
-                  <span class="flex items-center gap-3">
- 
-                    Our Projects
-              </span>
-              <svg id="mobile-projects-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div id="mobile-projects-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
-              <a href="projects-handyman.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Handyman</a>
-              <a href="projects-residential.html" class="block px-4 py-3 text-base text-cyan-700 bg-cyan-50 font-medium rounded-lg">Residential</a>
-              <a href="projects-commercial.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
+        
+        <!-- Menu Content -->
+        <div class="flex-1 overflow-y-auto py-4">
+            <!-- Primary Links -->
+            <nav class="px-4 space-y-1">
+                <a href="index.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Home
+                </a>
+                <a href="about.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">About
+                </a>
+            </nav>
+            
+            <!-- Divider -->
+            <div class="my-4 mx-6 border-t border-gray-200"></div>
+            
+            <!-- Services Section -->
+            <div class="px-4">
+                <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Services</p>
+                
+                <!-- Handyman Accordion -->
+                <div class="mb-2">
+                    <button id="mobile-handyman-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
+                        <span class="flex items-center gap-3">
+     
+                            Handyman Services
+                        </span>
+                        <svg id="mobile-handyman-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div id="mobile-handyman-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+                        <a href="aircon.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Air Con Service</a>
+                        <a href="plumbing.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plumbing</a>
+                        <a href="electrical.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
+                    </div>
+                </div>
+                
+                <!-- Renovation Accordion -->
+                <div class="mb-2">
+                    <button id="mobile-renovation-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
+                        <span class="flex items-center gap-3">
+     
+                            Renovation Services
+                        </span>
+                        <svg id="mobile-renovation-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div id="mobile-renovation-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+                      <a href="plastering.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plastering Works</a>
+                      <a href="plumbing.html" class="block px-4 py-3 text-base text-cyan-700 bg-cyan-50 font-medium rounded-lg">Plumbing</a>
+                        <a href="electrical.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
+                        <a href="painting.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Painting</a>
+                        
+                        <a href="tile-laying.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Tile Laying</a>
+                        <a href="renovation-works.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Renovation Works</a>
+                        <a href="ceiling-wall-partitions.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Ceiling & Partitions</a>
+                        <a href="carpentry.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Carpentry Works</a>
+                        <a href="waterproofing.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Waterproofing</a>
+                        <a href="hacking-demolition.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Hacking & Demolition</a>
+                    </div>
+                </div>
             </div>
-          </div>
+            
+            <!-- Divider -->
+            <div class="my-4 mx-6 border-t border-gray-200"></div>
+            
+            <!-- Secondary Links -->
+            <nav class="px-4 space-y-1">
+                <!-- Our Projects Accordion -->
+                <div class="mb-2">
+                  <button id="mobile-projects-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition" aria-expanded="false">
+                      <span class="flex items-center gap-3">
+     
+                        Our Projects
+                    </span>
+                    <svg id="mobile-projects-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  </button>
+                  <div id="mobile-projects-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+                    <a href="projects-handyman.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Handyman</a>
+                    <a href="projects-residential.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Residential</a>
+                    <a href="projects-commercial.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
+                  </div>
+                </div>
+                <a href="contacts.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Contact
+                </a>
+            </nav>
         </div>
-        <div class="my-4 mx-6 border-t border-gray-200"></div>
-        <nav class="px-4 space-y-1">
-          <a href="contacts.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Contact
-          </a>
-        </nav>
-      </div>
+        
+       
+    </div>
     </div>
 
     <!-- Hero Section -->

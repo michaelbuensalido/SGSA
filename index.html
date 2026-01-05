@@ -515,12 +515,294 @@ button:focus {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-3px); }
 }
+
+/* ============================================
+   SERVICES MARQUEE BAR
+   Corporate-grade capability index
+   ============================================ */
+
+/* Marquee Container */
+.services-marquee {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  height: 36px;
+  background-color: #0f1c2a;
+  border-bottom: 1px solid #1e293b;
+  overflow: hidden;
+}
+
+/* Arrow Controls */
+.marquee-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #0f172a 70%, transparent);
+  z-index: 10;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.marquee-control:hover {
+  opacity: 0.8;
+}
+
+.marquee-control-left {
+  left: 0;
+}
+
+.marquee-control-right {
+  right: 0;
+  background: linear-gradient(to left, #0f172a 70%, transparent);
+}
+
+.marquee-control svg {
+  width: 16px;
+  height: 16px;
+  stroke: #94a3b8;
+  stroke-width: 1.5;
+}
+
+/* Marquee Track */
+.marquee-track {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  animation: marquee-scroll 60s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Service Item */
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: font-weight 0.15s ease;
+}
+
+.marquee-item:hover {
+  font-weight: 500;
+}
+
+.marquee-item:hover .marquee-text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.marquee-icon {
+  width: 14px;
+  height: 14px;
+  stroke: #64748b;
+  stroke-width: 1.5;
+  fill: none;
+  flex-shrink: 0;
+}
+
+.marquee-text {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+/* Offset navbar to account for marquee */
+.has-marquee {
+  margin-top: 36px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .services-marquee {
+    height: 32px;
+  }
+  
+  .marquee-item {
+    padding: 0 20px;
+  }
+  
+  .marquee-text {
+    font-size: 10px;
+  }
+  
+  .marquee-icon {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .marquee-control {
+    width: 32px;
+  }
+  
+  .has-marquee {
+    margin-top: 32px;
+  }
+}
 </style>
 
 </head>
 <body class="font-archivo">
-  <div class="relative ">
-<nav id="navbar" class="fixed z-20 top-0 left-0 right-0 z-10 pb-[18px] pt-[18px]">
+  <div class="relative">
+
+<!-- ============================================
+     SERVICES MARQUEE BAR
+     Corporate-grade capability index
+     ============================================ -->
+<div id="services-marquee" class="services-marquee">
+  
+  <!-- Left Arrow Control -->
+  <button class="marquee-control marquee-control-left" id="marquee-prev" aria-label="Scroll left">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+    </svg>
+  </button>
+  
+  <!-- Marquee Track -->
+  <div class="marquee-track" id="marquee-track">
+    
+    <!-- Service Items (duplicated for seamless loop) -->
+    <!-- Set 1 -->
+    <a href="electrical.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      <span class="marquee-text">Electrical Works</span>
+    </a>
+    
+    <a href="plumbing.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      <span class="marquee-text">Plumbing Services</span>
+    </a>
+    
+    <a href="painting.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+      <span class="marquee-text">Painting & Finishing</span>
+    </a>
+    
+    <a href="tile-laying.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/></svg>
+      <span class="marquee-text">Tile & Surface Works</span>
+    </a>
+    
+    <a href="renovation-works.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+      <span class="marquee-text">Renovation</span>
+    </a>
+    
+    <a href="waterproofing.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9"/></svg>
+      <span class="marquee-text">Waterproofing</span>
+    </a>
+    
+    <a href="hacking-demolition.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      <span class="marquee-text">Demolition & Reinstatement</span>
+    </a>
+    
+    <a href="carpentry.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+      <span class="marquee-text">Carpentry Works</span>
+    </a>
+    
+    <a href="aircon.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      <span class="marquee-text">Air Con Services</span>
+    </a>
+    
+    <a href="ceiling-wall-partitions.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+      <span class="marquee-text">Ceiling & Partitions</span>
+    </a>
+    
+    <a href="plastering.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      <span class="marquee-text">Plastering Works</span>
+    </a>
+    
+    <!-- Set 2 (Duplicate for seamless loop) -->
+    <a href="electrical.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      <span class="marquee-text">Electrical Works</span>
+    </a>
+    
+    <a href="plumbing.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      <span class="marquee-text">Plumbing Services</span>
+    </a>
+    
+    <a href="painting.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+      <span class="marquee-text">Painting & Finishing</span>
+    </a>
+    
+    <a href="tile-laying.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/></svg>
+      <span class="marquee-text">Tile & Surface Works</span>
+    </a>
+    
+    <a href="renovation-works.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+      <span class="marquee-text">Renovation</span>
+    </a>
+    
+    <a href="waterproofing.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9"/></svg>
+      <span class="marquee-text">Waterproofing</span>
+    </a>
+    
+    <a href="hacking-demolition.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+      <span class="marquee-text">Demolition & Reinstatement</span>
+    </a>
+    
+    <a href="carpentry.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+      <span class="marquee-text">Carpentry Works</span>
+    </a>
+    
+    <a href="aircon.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+      <span class="marquee-text">Air Con Services</span>
+    </a>
+    
+    <a href="ceiling-wall-partitions.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+      <span class="marquee-text">Ceiling & Partitions</span>
+    </a>
+    
+    <a href="plastering.html" class="marquee-item">
+      <svg class="marquee-icon" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+      <span class="marquee-text">Plastering Works</span>
+    </a>
+    
+  </div>
+  
+  <!-- Right Arrow Control -->
+  <button class="marquee-control marquee-control-right" id="marquee-next" aria-label="Scroll right">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+    </svg>
+  </button>
+  
+</div>
+
+<nav id="navbar" class="fixed z-20 top-[36px] md:top-[36px] left-0 right-0 z-10 pb-[10px] pt-[10px]">
    <div class="max-w-7xl mx-auto">
        <div class="flex justify-between items-center h-20 px-4">
            <div class="flex-shrink-0">
@@ -528,55 +810,55 @@ button:focus {
                    <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="">
                </a>
            </div>
-           <div class="hidden md:flex space-x-10 font-archivo items-center">
-               <a href="index.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">HOME</a>
-               <a href="about.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">ABOUT US</a>
+           <div class="hidden md:flex space-x-6 font-archivo items-center">
+               <a href="index.html" class="nav-link text-slate-900 hover:text-sky-400 text-sm font-medium transition duration-300">HOME</a>
+               <a href="about.html" class="nav-link text-slate-900 hover:text-sky-400 text-sm  font-medium transition duration-300">ABOUT US</a>
                <div class="relative dropdown-wrapper group">
-                   <button class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1">OUR SERVICES
+                   <button class="nav-link text-slate-900 hover:text-sky-400 text-sm font-medium transition duration-300 flex items-center gap-1">OUR SERVICES
                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                        </svg>
                    </button>
-                   <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                   <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                        <div class="menu-item relative group/handyman">
                            <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between border-b border-gray-100">
                                <div class="flex items-center gap-3">
-                                   <span class="font-semibold text-gray-800">Handyman Services</span>
+                                   <span class="font-light text-sm text-gray-800">Handyman Services</span>
                                </div>
                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                </svg>
                            </div>
-                           <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
+                           <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white  shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
                                <div class="py-2">
                             
-                                   <a href="aircon.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
-                                   <a href="plumbing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                                   <a href="electrical.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                   <a href="aircon.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
+                                   <a href="plumbing.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                   <a href="electrical.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
                                </div>
                            </div>
                        </div>
                        <div class="menu-item relative group/renovation">
                            <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between">
                                <div class="flex items-center gap-3">
-                                   <span class="font-semibold text-gray-800">Renovation Services</span>
+                                   <span class="font-light text-sm text-gray-800">Renovation Services</span>
                                </div>
                                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                </svg>
                            </div>
-                           <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
+                           <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white  shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
                                <div class="py-2">
-                                <a href="plastering.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
-                                <a href="plumbing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                                   <a href="electrical.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
-                                   <a href="painting.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
-                                   <a href="tile-laying.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
-                                   <a href="renovation-works.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
-                                   <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
-                                   <a href="carpentry.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
-                                   <a href="waterproofing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
-                                   <a href="hacking-demolition.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
+                                <a href="plastering.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Plastering Works</a>
+                                <a href="plumbing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600  text-sm transition duration-200 font-light">Plumbing</a>
+                                   <a href="electrical.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600  text-sm transition duration-200 font-light">Electrical Works</a>
+                                   <a href="painting.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Painting</a>
+                                   <a href="tile-laying.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Tile Laying</a>
+                                   <a href="renovation-works.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Renovation Works</a>
+                                   <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Ceiling & Wall Partitions</a>
+                                   <a href="carpentry.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Carpentry Works</a>
+                                   <a href="waterproofing.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Waterproofing</a>
+                                   <a href="hacking-demolition.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 text-sm transition duration-200 font-light">Reinstatement, Hacking & Demolition</a>
                                </div>
                            </div>
                        </div>
@@ -584,22 +866,22 @@ button:focus {
                </div>
                <!-- OUR PROJECTS dropdown -->
             <div class="relative group" data-projects-dropdown>
-              <button type="button" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
+              <button type="button" class="nav-link text-slate-900 hover:text-sky-400 text-sm font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
                 OUR PROJECTS
                 <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
               </button>
-              <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" data-projects-dropdown-panel>
+              <div class="absolute left-0 mt-2 w-56 bg-white  shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" data-projects-dropdown-panel>
                 <div class="py-2">
-                  <a href="projects-handyman.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
-                  <a href="projects-residential.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
-                  <a href="projects-commercial.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
+                  <a href="projects-handyman.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
+                  <a href="projects-residential.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
+                  <a href="projects-commercial.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
                 </div>
               </div>
             </div>
-               <a href="contacts.html" class="nav-link text-sky-500 hover:text-sky-400 text-md font-medium transition duration-300">CONTACT</a>
+               <a href="contacts.html" class="nav-link text-slate-900 hover:text-sky-400 text-sm font-medium transition duration-300">CONTACT</a>
            </div>
            <div>
-               <a href="tel:+6585864098" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
+               <a href="tel:+6585864098" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 +65 8658 64098</a>
            </div> 
            <div class="md:hidden">
                <button id="mobile-menu-btn" class="text-slate-900 hover:text-sky-400 focus:outline-none transition-colors duration-300" aria-label="Toggle mobile menu" aria-expanded="false">
@@ -755,10 +1037,10 @@ button:focus {
   </a>
 
   <!-- Hero Section -->
-  <section class="relative min-h-screen bg-slate-50 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 pb-16 overflow-hidden">
+  <section class="relative min-h-screen bg-slate-50 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-40 pb-16 overflow-hidden">
     
     <!-- Decorative Images -->
-    <img src="images/heropagephoto.png" alt="" class="opacity-10 sm:opacity-70 absolute top-20 right-10 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" />
+    <img src="images/heropagephoto.png" alt="" class="opacity-10 sm:opacity-70 absolute top-24 right-10 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" />
     <img src="images/heropagephoto_2.png" alt="" class="opacity-10 sm:opacity-70 absolute bottom-0 left-0 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" />
     
     <!-- Content -->
@@ -987,84 +1269,90 @@ button:focus {
           </div>
   </section>
 
-   <!-- Why Choose Us Section -->
-   <section class="py-16 sm:py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+<!-- ============================================
+        WHY CHOOSE US - Bold & Assertive
+        ============================================ -->
+        <section class="py-20 sm:py-28 bg-slate-900 relative overflow-hidden">
+    
+          <!-- Blueprint Grid Background -->
+          <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(#0891b2 1px, transparent 1px), linear-gradient(90deg, #0891b2 1px, transparent 1px); background-size: 40px 40px;"></div>
+          
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+            
+            <!-- Section Header - BOLD -->
+            <div class="section-header-bold mb-16">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
+                <div>
+                  <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-px bg-cyan-500"></div>
+                    <p class="text-xs tracking-[0.3em] uppercase text-cyan-400 font-bold">Why Choose SGSA</p>
+                  </div>
+                  <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                    Clean Work.<br>Clear Pricing.<br><span class="text-cyan-400">Zero Compromises.</span>
+                  </h2>
+                </div>
+               
+              </div>
+              
+              <!-- Blueprint divider -->
+              <div class="flex items-center gap-3 mt-10">
+                <div class="flex-1 h-px bg-slate-700"></div>
+                <div class="w-2 h-2 border border-cyan-500 rotate-45"></div>
+                <div class="flex-1 h-px bg-slate-700"></div>
+              </div>
+            </div>
       
-      <!-- Section Header (SGSA Signature Layout) -->
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <p class="text-xs tracking-[0.2em] uppercase text-slate-500 font-medium mb-3">Why Clients Trust Us</p>
-        <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mb-4">Clean Work. Clear Pricing.</h2>
-        <div class="w-12 h-px bg-slate-300 mx-auto mt-6"></div>
-        </div>
-
-      <!-- Values Grid (trust-focused, no decorative cards) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-        
-         <!-- Value 1: Licensed Trades -->
-         <div class="scroll-animate scroll-animate-delay-1 text-center py-6">
-           <div class="flex justify-center mb-6">
-             <div class="w-16 h-16 rounded-lg flex items-center justify-center">
-               <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-               </svg>
-             </div>
-           </div>
-           <h3 class="text-lg font-semibold text-slate-900 mb-3">Licensed Trades</h3>
-           <p class="text-sm text-slate-600 leading-relaxed">
-             All electrical and plumbing works are carried out by licensed professionals with proper certifications.
-           </p>
-         </div>
-
-         <!-- Value 2: Transparent Pricing -->
-         <div class="scroll-animate scroll-animate-delay-2 text-center py-6">
-           <div class="flex justify-center mb-6">
-             <div class="w-16 h-16 rounded-lg flex items-center justify-center">
-               <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
-               </svg>
-             </div>
-           </div>
-           <h3 class="text-lg font-semibold text-slate-900 mb-3">Transparent Pricing</h3>
-           <p class="text-sm text-slate-600 leading-relaxed">
-             Clear quotations with no hidden charges. You know exactly what you're paying for before work begins.
-           </p>
-         </div>
-
-         <!-- Value 3: Clean Workmanship -->
-         <div class="scroll-animate scroll-animate-delay-3 text-center py-6">
-           <div class="flex justify-center mb-6">
-             <div class="w-16 h-16  rounded-lg flex items-center justify-center">
-               <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75"></path>
-               </svg>
-             </div>
-           </div>
-           <h3 class="text-lg font-semibold text-slate-900 mb-3">Clean Workmanship</h3>
-           <p class="text-sm text-slate-600 leading-relaxed">
-             Every project is handled with care. We clean up after ourselves and respect your space throughout.
-           </p>
-         </div>
-
-         <!-- Value 4: Clear Communication -->
-         <div class="scroll-animate scroll-animate-delay-4 text-center py-6">
-           <div class="flex justify-center mb-6">
-             <div class="w-16 h-16  rounded-lg flex items-center justify-center">
-               <svg class="w-8 h-8 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-               </svg>
-             </div>
-           </div>
-           <h3 class="text-lg font-semibold text-slate-900 mb-3">Clear Communication</h3>
-           <p class="text-sm text-slate-600 leading-relaxed">
-             We keep you informed at every stage. No surprises, just straightforward updates on progress.
-           </p>
-         </div>
-     
-      </div>
-    </div>
-  </section>
+            <!-- Values Grid - Bold Cards with Vertical Accent -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              
+               <!-- Value 1: Licensed Trades -->
+               <div class="scroll-animate scroll-animate-delay-1 bg-slate-800/50 border border-slate-700 p-8 hover:border-cyan-500 transition-all duration-300">
+                 <div class="value-marker">
+                   <span class="text-xs tracking-[0.2em] uppercase text-cyan-400 font-bold">01</span>
+                 </div>
+                 <h3 class="text-xl font-bold text-white mt-4 mb-3">Licensed Trades</h3>
+                 <p class="text-sm text-slate-400 leading-relaxed">
+                   All electrical and plumbing works carried out by <span class="text-white font-semibold">certified professionals</span> with proper licenses.
+                 </p>
+               </div>
+      
+               <!-- Value 2: Transparent Pricing -->
+               <div class="scroll-animate scroll-animate-delay-2 bg-slate-800/50 border border-slate-700 p-8 hover:border-cyan-500 transition-all duration-300">
+                 <div class="value-marker">
+                   <span class="text-xs tracking-[0.2em] uppercase text-cyan-400 font-bold">02</span>
+                 </div>
+                 <h3 class="text-xl font-bold text-white mt-4 mb-3">Transparent Pricing</h3>
+                 <p class="text-sm text-slate-400 leading-relaxed">
+                   Clear quotations with <span class="text-white font-semibold">no hidden charges</span>. Know exactly what you're paying for before work begins.
+                 </p>
+               </div>
+      
+               <!-- Value 3: Clean Workmanship -->
+               <div class="scroll-animate scroll-animate-delay-3 bg-slate-800/50 border border-slate-700 p-8 hover:border-cyan-500 transition-all duration-300">
+                 <div class="value-marker">
+                   <span class="text-xs tracking-[0.2em] uppercase text-cyan-400 font-bold">03</span>
+                 </div>
+                 <h3 class="text-xl font-bold text-white mt-4 mb-3">Clean Workmanship</h3>
+                 <p class="text-sm text-slate-400 leading-relaxed">
+                   Every project handled with care. We <span class="text-white font-semibold">clean up after ourselves</span> and respect your space.
+                 </p>
+               </div>
+      
+               <!-- Value 4: Clear Communication -->
+               <div class="scroll-animate scroll-animate-delay-4 bg-slate-800/50 border border-slate-700 p-8 hover:border-cyan-500 transition-all duration-300">
+                 <div class="value-marker">
+                   <span class="text-xs tracking-[0.2em] uppercase text-cyan-400 font-bold">04</span>
+                 </div>
+                 <h3 class="text-xl font-bold text-white mt-4 mb-3">Clear Communication</h3>
+                 <p class="text-sm text-slate-400 leading-relaxed">
+                   <span class="text-white font-semibold">No surprises.</span> We keep you informed at every stage with straightforward updates.
+                 </p>
+               </div>
+           
+            </div>
+          </div>
+        </section>
+      
 
  
   <!-- Projects Section -->
@@ -1084,7 +1372,7 @@ button:focus {
             <!-- First div: Republic Polytechnic Hotel -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
-                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/light-installation.jpg" alt="Republic Polytechnic Hotel">
+                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/light-installation.jpg" alt="Republic Polytechnic Hotel">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-xl sm:text-2xl font-bold">Light Installation</h3>
@@ -1097,7 +1385,7 @@ button:focus {
             <!-- Second div: Marina Bay Residence -->
             <div class="w-full h-[200px] sm:h-[250px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="plastering.html">
-                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Marina Bay Residence">
+                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Marina Bay Residence">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-lg sm:text-xl font-bold">Plumbing</h3>
@@ -1110,7 +1398,7 @@ button:focus {
             <!-- Third div: Sentosa Resort -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="painting.html">
-                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort">
+                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/12.png" alt="Sentosa Resort">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-lg sm:text-xl font-bold">Landed Property Painting</h3>
@@ -1123,7 +1411,7 @@ button:focus {
             <!-- Fourth div: Orchard Plaza -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="painting.html">
-                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/9.jpeg" alt="Orchard Plaza">
+                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/9.jpeg" alt="Orchard Plaza">
                   <div class="project-overlay">
                     <div class="project-title">
                       <h3 class="text-white text-lg sm:text-xl font-bold">Wall Painting</h3>
@@ -1136,7 +1424,7 @@ button:focus {
             <!-- Fifth div: Clarke Quay Tower -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
-                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/10.jpeg" alt="Clarke Quay Tower">
+                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/10.jpeg" alt="Clarke Quay Tower">
                   <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-lg sm:text-xl font-bold">Light Installation</h3>
@@ -1150,7 +1438,7 @@ button:focus {
         <!-- Desktop/Tablet: Original grid layout -->
         <div class="hidden md:grid md:grid-cols-6 md:grid-rows-3 gap-4 md:h-[600px] lg:h-[800px]">
             <!-- First div: Republic Polytechnic Hotel -->
-            <div class="col-span-4 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
+            <div class="col-span-4 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
                   <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/light-installation.jpg" alt="Republic Polytechnic Hotel">
                 <div class="project-overlay">
@@ -1163,7 +1451,7 @@ button:focus {
             </div>
             
             <!-- Second div: Marina Bay Residence -->
-            <div class="col-span-2 row-span-1 rounded-lg shadow-lg project-card overflow-hidden">
+            <div class="col-span-2 row-span-1 rounded-2xl shadow-lg project-card overflow-hidden">
                 <a href="plastering.html">
                   <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Marina Bay Residence">
                 <div class="project-overlay">
@@ -1176,7 +1464,7 @@ button:focus {
             </div>
             
             <!-- Third div: Sentosa Resort -->
-            <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
+            <div class="col-span-2 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
                 <a href="painting.html">
                   <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort">
                 <div class="project-overlay">
@@ -1189,7 +1477,7 @@ button:focus {
             </div>
             
             <!-- Fourth div: Orchard Plaza -->
-            <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
+              <div class="col-span-2 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
                 <a href="painting.html">
                   <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/carpentry/feature-walls-tv-consoles.png" alt="Orchard Plaza">
                 <div class="project-overlay">
@@ -1202,7 +1490,7 @@ button:focus {
             </div>
             
             <!-- Fifth div: Clarke Quay Tower -->
-            <div class="col-span-2 row-span-2 rounded-lg shadow-lg project-card overflow-hidden">
+            <div class="col-span-2 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
                   <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/commercial/school/IMG20251223154650.jpg" alt="Clarke Quay Tower">
                 <div class="project-overlay">
@@ -1227,7 +1515,8 @@ button:focus {
     <!-- Customer Testimonials Section -->
   <section class="py-16 sm:py-20 relative bg-slate-900">
     <!-- Background overlay only (no external image) -->
-    <div class="absolute inset-0 bg-slate-900"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
     
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
       
@@ -1478,7 +1767,7 @@ button:focus {
         
         <!-- Right Column: Image -->
         <div class="about-animate about-animate-delay-2">
-          <img class="w-full h-64 sm:h-80 lg:h-96 object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="SGSA Construction Team at Work" loading="lazy">
+          <img class="w-full rounded-2xl h-64 sm:h-80 lg:h-96 object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="SGSA Construction Team at Work" loading="lazy">
     </div>
         
   </div>
@@ -1516,7 +1805,7 @@ button:focus {
 
 
   <!-- Call-To-Action Section -->
-  <section class="py-16 sm:py-20 bg-cyan-600">
+  <section class="py-16 sm:py-20 bg-red-600">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
       
       <!-- CTA Header (approachable, not aggressive) -->
@@ -2869,9 +3158,110 @@ window.addEventListener('scroll', function() {
       });
     });
 
-   
+    /* ============================================
+       SERVICES MARQUEE BAR - Controls & Interaction
+       ============================================ */
+    (function initMarquee() {
+      const marquee = document.getElementById('services-marquee');
+      const track = document.getElementById('marquee-track');
+      const prevBtn = document.getElementById('marquee-prev');
+      const nextBtn = document.getElementById('marquee-next');
+      
+      if (!marquee || !track) return;
+      
+      let scrollAmount = 0;
+      const scrollStep = 200; // Pixels to scroll per click
+      let isAnimating = true;
+      let touchStartX = 0;
+      let touchCurrentX = 0;
+      let isDragging = false;
+      
+      // Get the width of one set of items (half the track)
+      const getItemSetWidth = () => track.scrollWidth / 2;
+      
+      // Manual scroll left
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          scrollAmount -= scrollStep;
+          if (scrollAmount < 0) {
+            scrollAmount = getItemSetWidth() + scrollAmount;
+          }
+          applyScroll();
+        });
+      }
+      
+      // Manual scroll right
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          scrollAmount += scrollStep;
+          if (scrollAmount >= getItemSetWidth()) {
+            scrollAmount = scrollAmount - getItemSetWidth();
+          }
+          applyScroll();
+        });
+      }
+      
+      // Apply manual scroll position
+      function applyScroll() {
+        track.style.animation = 'none';
+        track.style.transform = `translateX(-${scrollAmount}px)`;
+        
+        // Resume animation after brief pause
+        clearTimeout(window.marqueeResumeTimeout);
+        window.marqueeResumeTimeout = setTimeout(() => {
+          if (isAnimating) {
+            track.style.animation = '';
+            track.style.transform = '';
+          }
+        }, 3000);
+      }
+      
+      // Touch/drag support for mobile
+      track.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchCurrentX = touchStartX;
+        isDragging = true;
+        track.style.animation = 'none';
+      }, { passive: true });
+      
+      track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        touchCurrentX = e.touches[0].clientX;
+        const diff = touchStartX - touchCurrentX;
+        scrollAmount += diff * 0.5;
+        
+        // Keep within bounds
+        const maxScroll = getItemSetWidth();
+        if (scrollAmount < 0) scrollAmount = maxScroll + scrollAmount;
+        if (scrollAmount >= maxScroll) scrollAmount = scrollAmount - maxScroll;
+        
+        track.style.transform = `translateX(-${scrollAmount}px)`;
+        touchStartX = touchCurrentX;
+      }, { passive: true });
+      
+      track.addEventListener('touchend', () => {
+        isDragging = false;
+        // Resume animation after brief pause
+        clearTimeout(window.marqueeResumeTimeout);
+        window.marqueeResumeTimeout = setTimeout(() => {
+          if (isAnimating) {
+            track.style.animation = '';
+            track.style.transform = '';
+          }
+        }, 2000);
+      }, { passive: true });
+      
+      // Pause on hover (handled by CSS, but track state)
+      marquee.addEventListener('mouseenter', () => {
+        isAnimating = false;
+      });
+      
+      marquee.addEventListener('mouseleave', () => {
+        isAnimating = true;
+      });
+    })();
+
   </script>
   <script src="assets/site.js"></script>
 </body>
-</html></html>
 </html>
