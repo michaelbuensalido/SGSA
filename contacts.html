@@ -405,7 +405,7 @@ body.menu-open {
                             </svg>
                             <div>
                                 <h3 class="font-semibold text-gray-800 text-lg mb-1">Email</h3>
-                                <p class="text-gray-600">sgsaconstruction@gmail.com<br>contact@sgsaconstruction.com</p>
+                                <p class="text-gray-600">info.sgsaconstruction@gmail.com<br>contact@sgsaconstruction.com</p>
                             </div>
                         </div>
 
@@ -534,7 +534,7 @@ body.menu-open {
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
                             <div>
-                                <p class="text-gray-400 text-sm">sgsaconstruction@gmail.com</p>
+                                <p class="text-gray-400 text-sm">info.sgsaconstruction@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -591,98 +591,187 @@ body.menu-open {
   </div>
     <!-- JavaScript -->
     <script>
-      // EmailJS Send Function
-      function sendMail(event) {
-        event.preventDefault();
-        
-        const form = document.getElementById('contact-form');
-        const formMessage = document.getElementById('form-message');
-        const submitBtn = form.querySelector('button');
-        const originalText = submitBtn.textContent;
-        
-        // Get form values
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const subject = document.getElementById('subject').value.trim();
-        const message = document.getElementById('message').value.trim();
-        
-        // Basic validation
-        if (!name || !email || !subject || !message) {
-          formMessage.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
-          formMessage.classList.add('bg-red-100', 'border-red-400', 'text-red-700', 'border', 'p-4', 'rounded-md');
-          formMessage.textContent = 'Please fill in all required fields.';
-          return;
-        }
-        
-        // Show loading state
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
-        
-        // Hide previous messages
-        formMessage.classList.add('hidden');
-        
-        // Email parameters for EmailJS
-        const templateParams = {
-          from_name: name,
-          from_email: email,
-          phone: phone || 'Not provided',
-          subject: subject,
-          message: message,
-          to_email: 'sgsaconstruction@gmail.com'
-        };
-        
-        // Send email using EmailJS
-        // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS IDs
-        emailjs.send('service_f88b1cj', 'template_x6cpg37', templateParams)
-          .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            
-            // Show success message
-            formMessage.classList.remove('hidden', 'bg-red-100', 'border-red-400', 'text-red-700');
-            formMessage.classList.add('bg-green-100', 'border-green-400', 'text-green-700', 'border', 'p-4', 'rounded-md', 'animate-slideDown');
-            formMessage.innerHTML = `
-              <div class="flex items-center gap-3">
-                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span>Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.</span>
-              </div>
-            `;
-            
-            // Reset form
-            form.reset();
-            
-            // Reset button
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-            
-            // Scroll to message
-            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          })
-          .catch(function(error) {
-            console.log('FAILED...', error);
-            
-            // Show error message
-            formMessage.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
-            formMessage.classList.add('bg-red-100', 'border-red-400', 'text-red-700', 'border', 'p-4', 'rounded-md');
-            formMessage.innerHTML = `
-              <div class="flex items-center gap-3">
-                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-                <span>Sorry, there was an error sending your message. Please try again or contact us directly at +6560254678.</span>
-              </div>
-            `;
-            
-            // Reset button
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-          });
-      }
+      // EmailJS Send Function with Spam Protection
+function sendMail(event) {
+  event.preventDefault();
+  
+  const form = document.getElementById('contact-form');
+  const formMessage = document.getElementById('form-message');
+  const submitBtn = form.querySelector('button');
+  const originalText = submitBtn.textContent;
+  
+  // Get form values
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const subject = document.getElementById('subject').value.trim();
+  const message = document.getElementById('message').value.trim();
+  
+  // SPAM PROTECTION 1: Honeypot Check
+  const honeypot = document.getElementById('website').value;
+  if (honeypot) {
+    console.log('Bot detected via honeypot');
+    return; // Silently reject
+  }
+  
+  // SPAM PROTECTION 2: Time-based check (form filled too quickly)
+  const formLoadTime = parseInt(document.getElementById('form-timestamp').value);
+  const currentTime = Date.now();
+  const timeSpent = (currentTime - formLoadTime) / 1000; // in seconds
+  
+  if (timeSpent < 3) {
+    formMessage.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
+    formMessage.classList.add('bg-red-100', 'border-red-400', 'text-red-700', 'border', 'p-4', 'rounded-md');
+    formMessage.textContent = 'Please take your time filling out the form.';
+    return;
+  }
+  
+  // SPAM PROTECTION 3: Content validation
+  const spamKeywords = ['viagra', 'casino', 'lottery', 'crypto', 'bitcoin', 'investment opportunity'];
+  const messageText = (name + email + subject + message).toLowerCase();
+  const hasSpam = spamKeywords.some(keyword => messageText.includes(keyword));
+  
+  if (hasSpam) {
+    formMessage.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
+    formMessage.classList.add('bg-red-100', 'border-red-400', 'text-red-700', 'border', 'p-4', 'rounded-md');
+    formMessage.textContent = 'Your message contains suspicious content. Please revise and try again.';
+    return;
+  }
+  
+  // SPAM PROTECTION 4: Rate limiting
+  const lastSubmitTime = localStorage.getItem('lastSubmitTime');
+  if (lastSubmitTime) {
+    const timeSinceLastSubmit = (currentTime - parseInt(lastSubmitTime)) / 1000;
+    if (timeSinceLastSubmit < 60) { // 60 seconds cooldown
+      formMessage.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
+      formMessage.classList.add('bg-red-100', 'border-red-400', 'text-red-700', 'border', 'p-4', 'rounded-md');
+      formMessage.textContent = 'Please wait a moment before submitting again.';
+      return;
+    }
+  }
+  
+  // Basic validation
+  if (!name || !email || !subject || !message) {
+    formMessage.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
+    formMessage.classList.add('bg-red-100', 'border-red-400', 'text-red-700', 'border', 'p-4', 'rounded-md');
+    formMessage.textContent = 'Please fill in all required fields.';
+    return;
+  }
+  
+  // Email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    formMessage.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
+    formMessage.classList.add('bg-red-100', 'border-red-400', 'text-red-700', 'border', 'p-4', 'rounded-md');
+    formMessage.textContent = 'Please enter a valid email address.';
+    return;
+  }
+  
+  // SPAM PROTECTION 5: Message length check
+  if (message.length < 10) {
+    formMessage.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
+    formMessage.classList.add('bg-red-100', 'border-red-400', 'text-red-700', 'border', 'p-4', 'rounded-md');
+    formMessage.textContent = 'Please provide a more detailed message (at least 10 characters).';
+    return;
+  }
+  
+  if (message.length > 5000) {
+    formMessage.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
+    formMessage.classList.add('bg-red-100', 'border-red-400', 'text-red-700', 'border', 'p-4', 'rounded-md');
+    formMessage.textContent = 'Message is too long. Please keep it under 5000 characters.';
+    return;
+  }
+  
+  // SPAM PROTECTION 6: URL count check
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const urlCount = (message.match(urlRegex) || []).length;
+  if (urlCount > 2) {
+    formMessage.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
+    formMessage.classList.add('bg-red-100', 'border-red-400', 'text-red-700', 'border', 'p-4', 'rounded-md');
+    formMessage.textContent = 'Please limit the number of links in your message.';
+    return;
+  }
+  
+  // Show loading state
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+  submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+  
+  // Hide previous messages
+  formMessage.classList.add('hidden');
+  
+  // Email parameters for EmailJS
+  const templateParams = {
+    from_name: name,
+    from_email: email,
+    phone: phone || 'Not provided',
+    subject: subject,
+    message: message,
+    to_email: 'info.sgsaconstruction@gmail.com'
+  };
+  
+  // Send email using EmailJS
+  emailjs.send('service_f88b1cj', 'template_x6cpg37', templateParams)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+      
+      // Store submission time for rate limiting
+      localStorage.setItem('lastSubmitTime', currentTime.toString());
+      
+      // Show success message
+      formMessage.classList.remove('hidden', 'bg-red-100', 'border-red-400', 'text-red-700');
+      formMessage.classList.add('bg-green-100', 'border-green-400', 'text-green-700', 'border', 'p-4', 'rounded-md', 'animate-slideDown');
+      formMessage.innerHTML = `
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <span>Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.</span>
+        </div>
+      `;
+      
+      // Reset form
+      form.reset();
+      // Reset timestamp
+      document.getElementById('form-timestamp').value = Date.now();
+      
+      // Reset button
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+      
+      // Scroll to message
+      formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    })
+    .catch(function(error) {
+      console.log('FAILED...', error);
+      
+      // Show error message
+      formMessage.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
+      formMessage.classList.add('bg-red-100', 'border-red-400', 'text-red-700', 'border', 'p-4', 'rounded-md');
+      formMessage.innerHTML = `
+        <div class="flex items-center gap-3">
+          <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+          <span>Sorry, there was an error sending your message. Please try again or contact us directly at +6560254678.</span>
+        </div>
+      `;
+      
+      // Reset button
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+    });
+}
+
+// Initialize form timestamp when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  const timestampInput = document.getElementById('form-timestamp');
+  if (timestampInput) {
+    timestampInput.value = Date.now();
+  }
+});
 
       (() => {
   "use strict";
@@ -969,7 +1058,7 @@ body.menu-open {
       },
       contact: {
         phone: ["+6560254678", "+6591758912"],
-        email: ["sgsaconstruction@gmail.com", "contact@sgsa.com"],
+        email: ["info.sgsaconstruction@gmail.com", "contact@sgsa.com"],
         address: "Jalan Besar Plaza #02-36, Singapore 208511"
       },
       services: [

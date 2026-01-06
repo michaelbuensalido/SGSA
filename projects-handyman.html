@@ -50,8 +50,8 @@ body.menu-open {
   </style>
 </head>
 <body style="
-background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/light-installation.jpg');
-background-size: cover;
+background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/handyman/2149454773.jpg');
+background-size: 100% 170%;
 background-position: center bottom;
 background-attachment: fixed;
 background-repeat: no-repeat;
@@ -438,7 +438,7 @@ position: relative;
           <div class="flex flex-col items-center justify-center md:items-start">
             <div class="flex items-start gap-3">
               <svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-              <div><p class="text-gray-400 text-sm">sgsaconstruction@gmail.com</p><p class="text-gray-400 text-sm">contact@sgsa.com</p></div>
+              <div><p class="text-gray-400 text-sm">info.sgsaconstruction@gmail.com</p><p class="text-gray-400 text-sm">contact@sgsa.com</p></div>
             </div>
           </div>
         </div>
@@ -510,11 +510,11 @@ position: relative;
       const message = messageRaw.toLowerCase().trim();
       if (message.includes('open') || message.includes('close') || message.includes('hours')) return "Our office hours are:\n• Monday-Friday: 9:00 AM - 6:00 PM\n• Saturday: 9:00 AM - 2:00 PM\n• Sunday & Public Holidays: Closed";
       if (message.includes('phone') || message.includes('contact') || message.includes('call')) return "You can reach us at:\n• Main: +6560254678\n• Site Manager: +6591758912";
-      if (message.includes('email')) return "You can email us at:\n• sgsaconstruction@gmail.com\n• contact@sgsa.com";
+      if (message.includes('email')) return "You can email us at:\n• info.sgsaconstruction@gmail.com\n• contact@sgsa.com";
       if (message.includes('address') || message.includes('location') || message.includes('where')) return "Our address is:\nJalan Besar Plaza #02-36, Singapore 208511";
       if (message.includes('service') || message.includes('offer')) return "We offer handyman, renovation, carpentry, waterproofing, tiling, plumbing, and electrical works. Share your scope and we will guide you further.";
-      if (message.includes('project') || message.includes('quote')) return "For quotes on similar projects, please share photos/floor plans and contact us at:\n📞 +6560254678\n📧 sgsaconstruction@gmail.com";
-      return "Thank you for your inquiry! For specific project questions, please reach us at:\n📞 +6560254678\n📧 sgsaconstruction@gmail.com";
+      if (message.includes('project') || message.includes('quote')) return "For quotes on similar projects, please share photos/floor plans and contact us at:\n📞 +6560254678\n📧 info.sgsaconstruction@gmail.com";
+      return "Thank you for your inquiry! For specific project questions, please reach us at:\n📞 +6560254678\n📧 info.sgsaconstruction@gmail.com";
     }
     if (chatToggle && chatWindow) chatToggle.addEventListener('click', () => { chatWindow.classList.toggle('hidden'); });
     if (chatClose) chatClose.addEventListener('click', () => chatWindow.classList.add('hidden'));
