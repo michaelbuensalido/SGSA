@@ -1176,12 +1176,14 @@ body.menu-open {
       <button
         id="chat-toggle"
         class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full p-4 shadow-lg hover:scale-110"
+        aria-label="Open chat widget"
       >
         <svg
           class="w-8 h-8"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
+          aria-hidden="true"
         >
           <path
             stroke-linecap="round"
@@ -1200,14 +1202,15 @@ body.menu-open {
         >
           <div>
             <h3 class="font-semibold">SGSA Support</h3>
-            <p class="text-sm text-cyan-100">We're here to help</p>
+            <p class="text-sm text-white opacity-90">We're here to help</p>
           </div>
-          <button id="chat-close" class="text-white hover:text-sky-200">
+          <button id="chat-close" class="text-white hover:text-sky-200" aria-label="Close chat widget">
             <svg
               class="w-5 h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path
                 stroke-linecap="round"
