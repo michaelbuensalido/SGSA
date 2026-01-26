@@ -7,9 +7,13 @@
   <title>SGSA Construction | Electrical Works</title>
   <meta name="description" content="Protect your property with compliant wiring, reliable power distribution, and neat finishes.">
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Performance: Preconnect to font domains for faster loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
@@ -396,8 +400,9 @@ body.menu-open {
   </a>
 
   <!-- Hero Section -->
-  <section class="relative pt-28 pb-24 bg-gray-900 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center"><img src="images/services images/electrical-works-hero.jpg" alt="Electrical works service for residential and commercial properties" class="w-full h-full object-cover"></div>
+  <header>
+    <section class="relative pt-28 pb-24 bg-gray-900 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center"><img src="images/services images/electrical-works-hero.jpg" alt="Electrical works service for residential and commercial properties" class="w-full h-full object-cover" width="1200" height="600" loading="eager" fetchpriority="high"></div>
     <div class="absolute inset-0 hero-overlay"></div>
     <div class="relative z-10 max-w-6xl mx-auto px-4">
       <div class="flex flex-col lg:flex-row items-center gap-10">
@@ -433,8 +438,10 @@ body.menu-open {
       </div>
     </div>
   </section>
+  </header>
 
   <!-- Service Overview -->
+  <main>
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex flex-col lg:flex-row gap-10 items-center">
@@ -447,7 +454,7 @@ body.menu-open {
         </div>
         <div class="flex-1">
           <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-100">
-            <img src="images/services images/electrical-works-overview.jpg" alt="Professional electrical works service overview" class="w-full h-full object-cover" loading="lazy">
+            <img src="images/services images/electrical-works-overview.jpg" alt="Professional electrical works service overview" class="w-full h-full object-cover" loading="lazy" width="600" height="400">
           </div>
         </div>
       </div>
@@ -489,7 +496,7 @@ body.menu-open {
         <!-- Card 1: Electrical Installation & Rewiring -->
         <div class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
           <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
-            <img src="images/electrical/power-point-installation.jpg" alt="Residential electrical rewiring and installation service" loading="lazy">
+            <img src="images/electrical/power-point-installation.jpg" alt="Residential electrical rewiring and installation service" loading="lazy" width="400" height="300">
 
           </div>
           <div class="p-6 flex flex-col flex-grow">
@@ -521,7 +528,7 @@ body.menu-open {
         <!-- Card 2: DB & Electrical System Upgrade -->
         <div class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
           <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
-            <img src="images/electrical/db-panel-upgrade.jpg" alt="Residential DB panel and electrical system upgrade" loading="lazy">
+            <img src="images/electrical/db-panel-upgrade.jpg" alt="Residential DB panel and electrical system upgrade" loading="lazy" width="400" height="300">
 
           </div>
           <div class="p-6 flex flex-col flex-grow">
@@ -553,7 +560,7 @@ body.menu-open {
         <!-- Card 3: Lighting & Electrical Repair -->
         <div class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
           <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
-            <img src="images/electrical/2152007080.jpg" alt="Residential lighting installation and electrical repair" loading="lazy">
+            <img src="images/electrical/2152007080.jpg" alt="Residential lighting installation and electrical repair" loading="lazy" width="400" height="300">
 
           </div>
           <div class="p-6 flex flex-col flex-grow">
@@ -590,7 +597,7 @@ body.menu-open {
         <!-- Card 1: Commercial Electrical Setup -->
         <div class="bg-white shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
           <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
-            <img src="images/electrical/commercial-electrical.png" alt="Commercial office and shop electrical setup" loading="lazy">
+            <img src="images/electrical/commercial-electrical.png" alt="Commercial office and shop electrical setup" loading="lazy" width="400" height="300">
 
           </div>
           <div class="p-6 flex flex-col flex-grow">
@@ -622,7 +629,7 @@ body.menu-open {
         <!-- Card 2: Commercial DB & Power Systems -->
         <div class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
           <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
-            <img src="images/electrical/15201.jpg" alt="Commercial distribution board installation and upgrading" loading="lazy">
+            <img src="images/electrical/15201.jpg" alt="Commercial distribution board installation and upgrading" loading="lazy" width="400" height="300">
 
           </div>
           <div class="p-6 flex flex-col flex-grow">
@@ -654,7 +661,7 @@ body.menu-open {
         <!-- Card 3: Commercial Lighting & Data Systems -->
         <div class="bg-white  shadow-lg overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
           <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
-            <img src="images/electrical/lighting-system.jpg" alt="Commercial lighting and data system installation" loading="lazy">
+            <img src="images/electrical/lighting-system.jpg" alt="Commercial lighting and data system installation" loading="lazy" width="400" height="300">
 
           </div>
           <div class="p-6 flex flex-col flex-grow">
@@ -771,8 +778,9 @@ body.menu-open {
       </div>
     </div>
   </section>
+  </main>
 
-<footer class="bottom-0 bg-gray-900 text-white border-t-4 border-t-cyan-600">
+  <footer class="bottom-0 bg-gray-900 text-white border-t-4 border-t-cyan-600">
     <div class="border-b border-gray-700">
         <div class="max-w-7xl mx-auto px-4 py-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -878,7 +886,7 @@ body.menu-open {
   const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   const isCoarsePointer = () =>
-    window.matchMedia &&``
+    window.matchMedia &&
     window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
   /* ---------------------------------------------
@@ -1510,7 +1518,8 @@ const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     })();
 </script>
 
-<script src="assets/site.js">
+<script src="assets/site.js" defer></script>
+<script>
     /* ============================================
        SCROLL ANIMATION OBSERVER
        Triggers fade-up and stagger animations

@@ -6,17 +6,14 @@
   <title>SGSA Construction - Reliable Handyman & Renovation Services in Singapore</title>
   <meta name="description" content="SGSA Construction provides reliable handyman and renovation services in Singapore. Licensed trades, transparent pricing, and clean workmanship for homes and businesses. Get a free quote today.">
   
-  <!-- Preconnect to external domains for faster resource loading -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Performance: Preconnect to font domains for faster loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-  
-  <!-- Preload critical fonts with font-display: swap for better LCP -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-  
-  <!-- Tailwind CDN - must load synchronously to process classes, but optimized with dns-prefetch -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   
   <style>
      /* Load additional fonts asynchronously with font-display: swap */
@@ -1155,6 +1152,7 @@ button:focus {
   <section class="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-40 pb-16 overflow-hidden" aria-label="Hero section">
     
     <!-- Decorative Images -->
+    <!-- Decorative images - aria-hidden for screen readers, empty alt is correct for decorative content -->
     <img src="images/heropagephoto.png" alt="" class="opacity-10 sm:opacity-70 absolute top-24 right-10 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" width="350" height="350" aria-hidden="true">
     <img src="images/heropagephoto_2.png" alt="" class="opacity-10 sm:opacity-70 absolute bottom-0 left-0 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" width="350" height="350" aria-hidden="true">
     
@@ -2248,7 +2246,7 @@ button:focus {
   const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   const isCoarsePointer = () =>
-    window.matchMedia &&``
+    window.matchMedia &&
     window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
   /* ---------------------------------------------

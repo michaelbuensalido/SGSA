@@ -9,6 +9,9 @@
       content="Professional hacking, demolition, and reinstatement services for renovation projects."
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Performance: Preconnect to font domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -176,7 +179,7 @@ body.menu-open {
            <div class="flex justify-between items-center h-20 px-4">
                <div class="flex-shrink-0">
                    <a href="index.html" class="flex items-center">
-                       <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="">
+                       <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" width="230" height="auto">
                    </a>
                </div>
                <div class="hidden md:flex space-x-4 font-archivo items-center">
@@ -1264,7 +1267,7 @@ body.menu-open {
         const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
       
         const isCoarsePointer = () =>
-          window.matchMedia &&``
+          window.matchMedia &&
           window.matchMedia("(hover: none) and (pointer: coarse)").matches;
       
         /* ---------------------------------------------
@@ -2127,7 +2130,8 @@ body.menu-open {
       }, { passive: true });
     })();
     </script>
-  <script src="assets/site.js">
+  <script src="assets/site.js" defer></script>
+  <script>
     /* ============================================
        SCROLL ANIMATION OBSERVER
        Triggers fade-up and stagger animations
