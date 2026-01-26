@@ -5,11 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SGSA Construction - Reliable Handyman & Renovation Services in Singapore</title>
   <meta name="description" content="SGSA Construction provides reliable handyman and renovation services in Singapore. Licensed trades, transparent pricing, and clean workmanship for homes and businesses. Get a free quote today.">
-  <script src="https://cdn.tailwindcss.com"></script>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
+  
+  <!-- Preconnect to external domains for faster resource loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  
+  <!-- Preload critical fonts with font-display: swap for better LCP -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  
+  <!-- Tailwind CDN - must load synchronously to process classes, but optimized with dns-prefetch -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
   <style>
+     /* Load additional fonts asynchronously with font-display: swap */
      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
         
         .heading-font {
@@ -23,6 +33,30 @@
         
     .font-archivo {
       font-family: 'Archivo', sans-serif;
+    }
+
+    /* Screen reader only class for accessibility */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+    
+    .sr-only:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: inherit;
+      margin: inherit;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
     }
 
     /* ============================================
@@ -737,6 +771,8 @@ button:focus {
 
 </head>
 <body class="font-archivo">
+  <!-- Skip to main content link for screen readers and keyboard navigation -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-600 focus:text-white focus:rounded-md">Skip to main content</a>
   <div class="relative">
 
 <!-- ============================================
@@ -746,7 +782,7 @@ button:focus {
 <div id="services-marquee" class="services-marquee">
   
   <!-- Left Arrow Control -->
-  <button class="marquee-control marquee-control-left" id="marquee-prev" aria-label="Scroll left">
+  <button type="button" class="marquee-control marquee-control-left" id="marquee-prev" aria-label="Scroll services marquee to the left">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
     </svg>
@@ -871,7 +907,7 @@ button:focus {
   </div>
   
   <!-- Right Arrow Control -->
-  <button class="marquee-control marquee-control-right" id="marquee-next" aria-label="Scroll right">
+  <button type="button" class="marquee-control marquee-control-right" id="marquee-next" aria-label="Scroll services marquee to the right">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
     </svg>
@@ -884,14 +920,14 @@ button:focus {
        <div class="flex justify-between items-center h-20 px-4">
            <div class="flex-shrink-0">
                <a href="index.html" class="flex items-center">
-                   <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="">
+                   <img class="w-[280px]" src="images/default-removebg-preview.png" alt="SGSA Construction Logo" width="280" height="auto" fetchpriority="high">
                </a>
            </div>
            <div class="hidden md:flex space-x-6 font-archivo items-center">
                <a href="index.html" class="nav-link text-slate-900 hover:text-sky-400 text-xs    font-medium transition duration-300">HOME</a>
                <a href="about.html" class="nav-link text-slate-900 hover:text-sky-400 text-xs  font-medium transition duration-300">ABOUT US</a>
                <div class="relative dropdown-wrapper group">
-                   <button class="nav-link text-slate-900 hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1">OUR SERVICES
+                   <button type="button" class="nav-link text-slate-900 hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">OUR SERVICES
                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                        </svg>
@@ -943,7 +979,7 @@ button:focus {
                </div>
                <!-- OUR PROJECTS dropdown -->
             <div class="relative group" data-projects-dropdown>
-              <button type="button" class="nav-link text-slate-900 hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
+              <button type="button" class="nav-link text-slate-900 hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" aria-label="Our Projects menu" data-projects-dropdown-button>
                 OUR PROJECTS
                 <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
               </button>
@@ -959,10 +995,10 @@ button:focus {
                
            </div>
            <div>
-            <a href="tel:+6585864098" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-sm transition duration-300 flex items-center gap-2">📞 +65 8658 64098</a>
+            <a href="tel:+6585864098" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-sm transition duration-300 flex items-center gap-2" aria-label="Call SGSA Construction at +65 8658 64098">📞 +65 8658 64098</a>
         </div> 
            <div class="md:hidden">
-               <button id="mobile-menu-btn" class="text-slate-900 hover:text-sky-400 focus:outline-none transition-colors duration-300" aria-label="Toggle mobile menu" aria-expanded="false">
+               <button type="button" id="mobile-menu-btn" class="text-slate-900 hover:text-sky-400 focus:outline-none transition-colors duration-300" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu-panel">
                    <!-- Hamburger icon -->
                    <svg id="hamburger-icon" class="h-10 w-10 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -983,7 +1019,7 @@ button:focus {
         <a href="index.html">
             <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction" class="w-[230px]">
         </a>
-        <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
+        <button type="button" id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition" aria-label="Close mobile menu">
             <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
@@ -1011,7 +1047,7 @@ button:focus {
             
             <!-- Handyman Accordion -->
             <div class="mb-2">
-                <button id="mobile-handyman-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
+                <button type="button" id="mobile-handyman-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition" aria-expanded="false" aria-controls="mobile-handyman-menu">
                     <span class="flex items-center gap-3">
 
                         Handyman Services
@@ -1027,7 +1063,7 @@ button:focus {
             
             <!-- Renovation Accordion -->
             <div class="mb-2">
-                <button id="mobile-renovation-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
+                <button type="button" id="mobile-renovation-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition" aria-expanded="false" aria-controls="mobile-renovation-menu">
                     <span class="flex items-center gap-3">
                         Renovation Services
                     </span>
@@ -1056,7 +1092,7 @@ button:focus {
         <nav class="px-4 space-y-1">
             <!-- Our Projects Accordion -->
             <div class="mb-2">
-              <button id="mobile-projects-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition" aria-expanded="false">
+              <button type="button" id="mobile-projects-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition" aria-expanded="false" aria-controls="mobile-projects-menu">
                 <span class="flex items-center gap-3">
                   Our Projects
                 </span>
@@ -1115,11 +1151,12 @@ button:focus {
   </a>
 
   <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-40 pb-16 overflow-hidden">
+  <main id="main-content">
+  <section class="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-40 pb-16 overflow-hidden" aria-label="Hero section">
     
     <!-- Decorative Images -->
-    <img src="images/heropagephoto.png" alt="" class="opacity-10 sm:opacity-70 absolute top-24 right-10 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" />
-    <img src="images/heropagephoto_2.png" alt="" class="opacity-10 sm:opacity-70 absolute bottom-0 left-0 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" />
+    <img src="images/heropagephoto.png" alt="" class="opacity-10 sm:opacity-70 absolute top-24 right-10 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" width="350" height="350" aria-hidden="true">
+    <img src="images/heropagephoto_2.png" alt="" class="opacity-10 sm:opacity-70 absolute bottom-0 left-0 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" width="350" height="350" aria-hidden="true">
     
     <!-- Content -->
     <div class="relative z-10 max-w-4xl mx-auto text-center">
@@ -1143,10 +1180,10 @@ button:focus {
 
     <!-- CTA Buttons -->
       <div class="hero-buttons flex flex-col sm:flex-row gap-3 justify-center items-center mb-10">
-        <a href="contacts.html" class="hover-lift btn-animate hero-button-primary bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-7 py-3.5 rounded-md shadow-lg text-base">
+        <a href="contacts.html" class="hover-lift btn-animate hero-button-primary bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-7 py-3.5 rounded-md shadow-lg text-base" aria-label="Request a free quote for construction services">
           Request a Free Quote
         </a>
-        <a href="tel:+6585864098" class="hover-lift btn-animate hero-button-secondary border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white font-semibold px-7 py-3.5 rounded-md text-base">
+        <a href="tel:+6585864098" class="hover-lift btn-animate hero-button-secondary border-2 border-cyan-500 text-cyan-600 hover:bg-cyan-500 hover:text-white font-semibold px-7 py-3.5 rounded-md text-base" aria-label="Call SGSA Construction at +65 8586 4098">
           📞 Call or WhatsApp
       </a>
     </div>
@@ -1157,16 +1194,16 @@ button:focus {
       <!-- Trust Elements (cleaner layout) -->
       <div class="hero-trust flex flex-wrap gap-6 justify-center items-center">
         <div class="trust-badge">
-          <img class="w-32  h-auto object-contain" src="images/homepage images/Google-Review-Logo-removebg-preview.png" alt="Google Reviews" loading="lazy">
+          <img class="w-32  h-auto object-contain" src="images/homepage images/Google-Review-Logo-removebg-preview.png" alt="Google Reviews" loading="lazy" width="128" height="auto">
       </div>
         <div class="trust-badge">
-          <img class="w-32 h-auto object-contain" src="images/homepage images/BCA.png" alt="BCA Registered" loading="lazy">
+          <img class="w-32 h-auto object-contain" src="images/homepage images/BCA.png" alt="BCA Registered" loading="lazy" width="128" height="auto">
       </div>
         <div class="trust-badge">
-          <img class="w-24 h-auto object-contain" src="images/homepage images/4years.png" alt="4+ Years Experience" loading="lazy">
+          <img class="w-24 h-auto object-contain" src="images/homepage images/4years.png" alt="4+ Years Experience" loading="lazy" width="96" height="auto">
       </div>
         <div class="trust-badge">
-          <img class="w-32 h-auto object-contain" src="images/homepage images/license.png" alt="Licensed & Insured" loading="lazy">
+          <img class="w-32 h-auto object-contain" src="images/homepage images/license.png" alt="Licensed & Insured" loading="lazy" width="128" height="auto">
     </div>
   </div>
 </div>
@@ -1179,7 +1216,10 @@ button:focus {
       <img 
         class="h-[600px] hidden sm:block transition-all duration-700 transform hover:scale-105 hover:rotate-1  animate-arrow" 
         src="images/homepage images/hand-wearing-safety-glove-holds-riveter-isolated-white-background-working-tools_662430-723-Photoroom.png" 
-        alt=""
+        alt="Professional construction worker with safety equipment" 
+        width="600" 
+        height="600" 
+        loading="lazy"
       >
       
       <div class="w-[650px]  ">
@@ -1224,9 +1264,9 @@ button:focus {
         <a href="aircon.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/aircon_service/new-installation.jpg" alt="Air Conditioning Services" loading="lazy">
+            <img class="w-full service-card-image h-full object-cover" src="images/aircon_service/new-installation.jpg" alt="Air Conditioning Services" loading="lazy" width="400" height="256">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
-            <h2  class=" absolute text-[20px] font-semibold tracking-[5px] text-white">AIRCON SERVICE</h2>
+            <h3 class="absolute text-[20px] font-semibold tracking-[5px] text-white">AIRCON SERVICE</h3>
           </div>
           
         </a>
@@ -1235,9 +1275,9 @@ button:focus {
         <a href="plumbing.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/plumbing services/installation-replacement.jpg" alt="Plumbing Services" loading="lazy">
+            <img class="w-full service-card-image h-full object-cover" src="images/plumbing services/installation-replacement.jpg" alt="Plumbing Services" loading="lazy" width="400" height="256">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
-            <h2  class=" absolute text-[20px] font-semibold tracking-[5px] text-white">PLUMBING</h2>
+            <h3 class="absolute text-[20px] font-semibold tracking-[5px] text-white">PLUMBING</h3>
           </div>
          
         </a>
@@ -1246,9 +1286,9 @@ button:focus {
         <a href="electrical.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/light-installation.jpg" alt="Electrical Works" loading="lazy">
+            <img class="w-full service-card-image h-full object-cover" src="images/light-installation.jpg" alt="Electrical Works" loading="lazy" width="400" height="256">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
-            <h2  class=" absolute text-[20px] font-semibold tracking-[5px] text-white">ELECTRICAL WORKS</h2>
+            <h3 class="absolute text-[20px] font-semibold tracking-[5px] text-white">ELECTRICAL WORKS</h3>
           </div>
 
         </a>
@@ -1257,9 +1297,9 @@ button:focus {
         <a href="painting.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/painting/room-interior-painting.jpg" alt="Painting" loading="lazy">
+            <img class="w-full service-card-image h-full object-cover" src="images/painting/room-interior-painting.jpg" alt="Painting" loading="lazy" width="400" height="256">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
-            <h2  class=" absolute text-[20px] font-semibold tracking-[5px] text-white">PAINTING</h2>
+            <h3 class="absolute text-[20px] font-semibold tracking-[5px] text-white">PAINTING</h3>
           </div>
          
         </a>
@@ -1270,9 +1310,9 @@ button:focus {
         <a href="renovation-works.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/renovation/condo-room-renovation.jpg" alt="Renovation Works" loading="lazy">
+            <img class="w-full service-card-image h-full object-cover" src="images/renovation/condo-room-renovation.jpg" alt="Renovation Works" loading="lazy" width="400" height="256">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
-            <h2  class=" absolute text-[20px] font-semibold tracking-[5px] text-white">RENOVATION WORKS</h2>
+            <h3 class="absolute text-[20px] font-semibold tracking-[5px] text-white">RENOVATION WORKS</h3>
           </div>
          
         </a>
@@ -1281,9 +1321,9 @@ button:focus {
         <a href="ceiling-wall-partitions.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy.jpg" alt="Ceiling and Wall Partitions" loading="lazy">
+            <img class="w-full service-card-image h-full object-cover" src="images/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy.jpg" alt="Ceiling and Wall Partitions" loading="lazy" width="400" height="256">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
-            <h2  class=" absolute text-center text-[20px] font-semibold tracking-[5px] text-white">CEILING & WALL PARTITIONS</h2>
+            <h3 class="absolute text-center text-[20px] font-semibold tracking-[5px] text-white">CEILING & WALL PARTITIONS</h3>
           </div>
          
         </a>
@@ -1293,9 +1333,9 @@ button:focus {
          <a href="tile-laying.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/tile services/tile-replacement.png" alt="Tile Laying" loading="lazy">
+            <img class="w-full service-card-image h-full object-cover" src="images/tile services/tile-replacement.png" alt="Tile Laying" loading="lazy" width="400" height="256">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
-            <h2  class=" absolute text-[20px] font-semibold tracking-[5px] text-white">TILE LAYING</h2>
+            <h3 class="absolute text-[20px] font-semibold tracking-[5px] text-white">TILE LAYING</h3>
           </div>
        
         </a>
@@ -1304,9 +1344,9 @@ button:focus {
         <a href="carpentry.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/carpentry/feature-walls-tv-consoles.png" alt="Carpentry Works" loading="lazy">
+            <img class="w-full service-card-image h-full object-cover" src="images/carpentry/feature-walls-tv-consoles.png" alt="Carpentry Works" loading="lazy" width="400" height="256">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
-            <h2  class=" absolute text-[20px] font-semibold tracking-[5px] text-white">CARPENTRY</h2>
+            <h3 class="absolute text-[20px] font-semibold tracking-[5px] text-white">CARPENTRY</h3>
           </div>
          
         </a>
@@ -1315,9 +1355,9 @@ button:focus {
         <a href="waterproofing.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/waterproofing/hand-painted-gray-flooring-with-paint-rollers-waterproof-reinforcing-netrepairing-waterproofin_483511-1334.jpg" alt="Waterproofing" loading="lazy">
+            <img class="w-full service-card-image h-full object-cover" src="images/waterproofing/hand-painted-gray-flooring-with-paint-rollers-waterproof-reinforcing-netrepairing-waterproofin_483511-1334.jpg" alt="Waterproofing" loading="lazy" width="400" height="256">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
-            <h2  class=" absolute text-[20px] font-semibold tracking-[5px] text-white">WATERPROOFING</h2>
+            <h3 class="absolute text-[20px] font-semibold tracking-[5px] text-white">WATERPROOFING</h3>
           </div>
          
         </a>
@@ -1326,9 +1366,9 @@ button:focus {
         <a href="hacking-demolition.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/hacking/supermarket-shop-chernobyl-exclusion-zone-with-ruins-abandoned-pripyat-city-zone-radioactivity-ghost-town.jpg" alt="Hacking and Demolition" loading="lazy">
+            <img class="w-full service-card-image h-full object-cover" src="images/hacking/supermarket-shop-chernobyl-exclusion-zone-with-ruins-abandoned-pripyat-city-zone-radioactivity-ghost-town.jpg" alt="Hacking and Demolition" loading="lazy" width="400" height="256">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
-            <h2  class=" absolute text-[20px] font-semibold tracking-[5px] text-white">HACKING & DEMOLITION</h2>
+            <h3 class="absolute text-[20px] font-semibold tracking-[5px] text-white">HACKING & DEMOLITION</h3>
           </div>
          
         </a>
@@ -1337,9 +1377,9 @@ button:focus {
         <a href="plastering.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/services images/plastering-works-overview.jpg" alt="Plastering Works" loading="lazy">
+            <img class="w-full service-card-image h-full object-cover" src="images/services images/plastering-works-overview.jpg" alt="Plastering Works" loading="lazy" width="400" height="256">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
-            <h2  class=" absolute text-[20px] font-semibold tracking-[5px] text-white">PLASTERING</h2>
+            <h3 class="absolute text-[20px] font-semibold tracking-[5px] text-white">PLASTERING</h3>
           </div>
          
         </a>
@@ -2040,7 +2080,7 @@ button:focus {
                 </div>
 
                 <!-- Directions Button -->
-                <a href="https://www.google.com/maps/place/Jalan+Besar+Plaza/@1.3087498,103.8554413,17z/data=!3m2!4b1!5s0x31da19b7d302ddb1:0xc553616783af60d6!4m6!3m5!1s0x31da19e1d186e02d:0x2242714927df7e83!8m2!3d1.3087498!4d103.8580162!16s%2Fg%2F11g3hfdb5q?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" target="_blank" class="block w-full bg-sky-500 hover:bg-sky-600 text-white text-center font-semibold py-3 rounded-lg transition duration-300 mb-4">
+                <a href="https://www.google.com/maps/place/Jalan+Besar+Plaza/@1.3087498,103.8554413,17z/data=!3m2!4b1!5s0x31da19b7d302ddb1:0xc553616783af60d6!4m6!3m5!1s0x31da19e1d186e02d:0x2242714927df7e83!8m2!3d1.3087498!4d103.8580162!16s%2Fg%2F11g3hfdb5q?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" target="_blank" rel="noopener noreferrer" class="block w-full bg-sky-500 hover:bg-sky-600 text-white text-center font-semibold py-3 rounded-lg transition duration-300 mb-4" aria-label="Get directions to SGSA Construction office at Jalan Besar Plaza">
                     Get Directions
                 </a>
 
@@ -2199,6 +2239,7 @@ button:focus {
     </div>
   </div>
 
+  <!-- Inline script - wrapped to defer execution and improve page load performance -->
   <script>
     (() => {
   "use strict";
@@ -3363,6 +3404,7 @@ window.addEventListener('scroll', function() {
     })();
 
   </script>
-  <script src="assets/site.js"></script>
+  <!-- Defer non-critical JavaScript to improve initial page load -->
+  <script src="assets/site.js" defer></script>
 </body>
 </html>

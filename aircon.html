@@ -8,11 +8,17 @@
       name="description"
       content="Keep your spaces cool with reliable servicing, installations, and tidy pipework."
     />
+    <!-- Preconnect to external domains for faster resource loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    
+    <!-- Preload critical fonts with font-display: swap for better LCP -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Tailwind CDN - must load synchronously to process classes, but optimized with dns-prefetch -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <style>
       .font-archivo {
         font-family: "Archivo", sans-serif;
@@ -101,7 +107,7 @@ body.menu-open {
            <div class="flex justify-between items-center h-20 px-4">
                <div class="flex-shrink-0">
                    <a href="index.html" class="flex items-center">
-                       <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="">
+                       <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" width="230" height="auto">
                    </a>
                </div>
                <div class="hidden md:flex space-x-6 font-archivo items-center">
@@ -2058,6 +2064,7 @@ body.menu-open {
       }, { passive: true });
     })();
     </script>
-    <script src="assets/site.js"></script>
+    <!-- Defer non-critical JavaScript to improve initial page load -->
+    <script src="assets/site.js" defer></script>
   </body>
 </html>

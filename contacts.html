@@ -5,18 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | SGSA Construction - Get in Touch for Your Home Repair & Renovation Needs</title>
     <meta name="description" content="Contact SGSA Construction for reliable handyman and renovation services in Singapore. Call, email, or visit us at Jalan Besar Plaza. Free quotes available.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Preconnect to external domains for faster resource loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Preload critical fonts with font-display: swap for better LCP -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Tailwind CDN - must load synchronously to process classes, but optimized with dns-prefetch -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- EmailJS - defer to improve page load -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
     <script type="text/javascript">
+    // Initialize EmailJS after library loads
     (function(){
-        emailjs.init({
-            publicKey: "VBU1jdWiJJzySbP_e",
-        });
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init({
+                publicKey: "VBU1jdWiJJzySbP_e",
+            });
+        } else {
+            window.addEventListener('load', function() {
+                if (typeof emailjs !== 'undefined') {
+                    emailjs.init({
+                        publicKey: "VBU1jdWiJJzySbP_e",
+                    });
+                }
+            });
+        }
     })();
     </script>
     <style>
@@ -125,7 +144,7 @@ body.menu-open {
            <div class="flex justify-between items-center h-20 px-4">
                <div class="flex-shrink-0">
                    <a href="index.html" class="flex items-center">
-                       <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="">
+                       <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" width="230" height="auto">
                    </a>
                </div>
                <div class="hidden md:flex space-x-6 font-archivo items-center">
