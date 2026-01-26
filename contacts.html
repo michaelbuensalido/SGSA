@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | SGSA Construction - Get in Touch for Your Home Repair & Renovation Needs</title>
     <meta name="description" content="Contact SGSA Construction for reliable handyman and renovation services in Singapore. Call, email, or visit us at Jalan Besar Plaza. Free quotes available.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Performance: Preconnect to font domains for faster loading -->
+    <!-- Performance: Resource Hints -->
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    
+    <!-- Performance: Load Tailwind CSS synchronously (critical for styling - prevents FOUC) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Performance: Preload critical font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"></noscript>
     
     <!-- EmailJS - defer to improve page load -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
@@ -501,7 +506,7 @@ body.menu-open {
                             height="100%" 
                             style="border:0;" 
                             allowfullscreen="" 
-                            loading="eager" 
+                            loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade"
                             title="SGSA Construction location map - Jalan Besar Plaza Singapore"
                             class="rounded-2xl">

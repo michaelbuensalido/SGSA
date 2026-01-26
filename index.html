@@ -6,17 +6,25 @@
   <title>SGSA Construction - Reliable Handyman & Renovation Services in Singapore</title>
   <meta name="description" content="SGSA Construction provides reliable handyman and renovation services in Singapore. Licensed trades, transparent pricing, and clean workmanship for homes and businesses. Get a free quote today.">
   
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Performance: Preconnect to font domains for faster loading -->
+  <!-- Performance: Resource Hints - DNS Prefetch and Preconnect -->
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  
+  <!-- Performance: Preload critical font -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"></noscript>
+  
+  <!-- Performance: Preload critical logo image (LCP candidate) -->
+  <link rel="preload" as="image" href="images/default-removebg-preview.png" fetchpriority="high">
+  
+  <!-- Performance: Load Tailwind CSS synchronously (critical for styling - prevents FOUC) -->
+  <script src="https://cdn.tailwindcss.com"></script>
   
   <style>
-     /* Load additional fonts asynchronously with font-display: swap */
+     /* Performance: Load additional fonts with font-display: swap (already included in URL) */
      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
         
         .heading-font {
@@ -1014,7 +1022,7 @@ button:focus {
     <!-- Header with Logo & Close -->
     <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
         <a href="index.html">
-            <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction" class="w-[230px]">
+            <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction" class="w-[230px]" width="230" height="auto" fetchpriority="high" loading="eager">
         </a>
         <button type="button" id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition" aria-label="Close mobile menu">
             <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1484,7 +1492,7 @@ button:focus {
             <!-- First div: Republic Polytechnic Hotel -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
-                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/light-installation.jpg" alt="Republic Polytechnic Hotel">
+                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/light-installation.jpg" alt="Republic Polytechnic Hotel" width="400" height="300">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h2 class="text-white text-xl sm:text-2xl font-bold">Light Installation</h2>
@@ -2068,7 +2076,7 @@ button:focus {
                         height="100%" 
                         style="border:0;" 
                         allowfullscreen="" 
-                        loading="eager" 
+                        loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade"
                         class="rounded-lg"
                         title="SGSA Construction location map - Jalan Besar Plaza Singapore">
@@ -2121,7 +2129,7 @@ button:focus {
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     <!-- Logo -->
                     <div class="lg:col-span-2 md:col-span-1 items-center flex md:items-start justify-center :col-span-1">
-                        <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" class="h-20 mb-3">
+                        <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" class="h-20 mb-3" width="200" height="80" loading="lazy">
                         
                     </div>
 
