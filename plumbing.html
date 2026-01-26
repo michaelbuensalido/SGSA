@@ -6,10 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SGSA Construction | Plumbing Services</title>
   <meta name="description" content="Resolve leaks, clogs, and fixture issues fast with licensed plumbers who keep your home tidy and safe.">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Preconnect to external domains for faster resource loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  
+  <!-- Preload critical fonts with font-display: swap for better LCP -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  
+  <!-- Tailwind CDN - must load synchronously to process classes, but optimized with dns-prefetch -->
+  <script src="https://cdn.tailwindcss.com"></script>
   
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
@@ -168,7 +175,7 @@ body.menu-open {
            <div class="flex justify-between items-center h-20 px-4">
                <div class="flex-shrink-0">
                    <a href="index.html" class="flex items-center">
-                       <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="">
+                       <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" width="230" height="auto">
                    </a>
                </div>
                <div class="hidden md:flex space-x-6 font-archivo items-center">
@@ -1934,33 +1941,34 @@ body.menu-open {
       }
     });
   })();
+
+
+  /* ============================================
+  SCROLL ANIMATION OBSERVER
+  Triggers fade-up and stagger animations
+  ============================================ */
+(function initScrollAnimations() {
+ const animatedElements = document.querySelectorAll('.fade-up, .stagger-children');
+ 
+ if (!animatedElements.length) return;
+
+ const observer = new IntersectionObserver((entries) => {
+   entries.forEach(entry => {
+     if (entry.isIntersecting) {
+       entry.target.classList.add('visible');
+       observer.unobserve(entry.target); // Animate once only
+     }
+   });
+ }, {
+   threshold: 0.1,
+   rootMargin: '0px 0px -50px 0px'
+ });
+
+ animatedElements.forEach(el => observer.observe(el));
+})();
+
 </script>
-
-<script src="assets/site.js">
-    /* ============================================
-       SCROLL ANIMATION OBSERVER
-       Triggers fade-up and stagger animations
-       ============================================ */
-    (function initScrollAnimations() {
-      const animatedElements = document.querySelectorAll('.fade-up, .stagger-children');
-      
-      if (!animatedElements.length) return;
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Animate once only
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      animatedElements.forEach(el => observer.observe(el));
-    })();
-
-    </script>
+<!-- Defer non-critical JavaScript to improve initial page load -->
+<script src="assets/site.js" defer></script>
 </body>
 </html>
