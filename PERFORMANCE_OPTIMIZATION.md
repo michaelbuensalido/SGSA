@@ -13,6 +13,17 @@
 
 **Expected Savings:** ~13,014 KiB on repeat visits
 
+### 1.5. Critical Performance Fixes (NEW)
+**Status:** ✅ Complete
+**Files:** `index.html`
+
+- ✅ Added inline critical CSS (above-the-fold only, <14KB)
+- ✅ Added `decoding="async"` to all below-fold images
+- ✅ Added `decoding="sync"` to LCP images (logo)
+- ✅ Reserved space for dynamic content (maps, chat widget, testimonials)
+- ✅ Added versioning to JavaScript assets (`?v=1.0.0`)
+- ✅ Added lazy loading observer for non-critical sections
+
 ### 2. Optimize Resource Loading
 **Status:** ✅ Complete
 **Files:** `index.html`, `contacts.html`, `about.html`
