@@ -8,17 +8,14 @@
       name="description"
       content="Keep your spaces cool with reliable servicing, installations, and tidy pipework."
     />
-    <!-- Preconnect to external domains for faster resource loading -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Performance: Preconnect to font domains for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-    
-    <!-- Preload critical fonts with font-display: swap for better LCP -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-    
-    <!-- Tailwind CDN - must load synchronously to process classes, but optimized with dns-prefetch -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       .font-archivo {
         font-family: "Archivo", sans-serif;
@@ -335,16 +332,21 @@ body.menu-open {
   </a>
 
     <!-- Hero Section -->
-    <section
-      class="relative pt-28 pb-24 bg-gray-900 text-white overflow-hidden"
-    >
-      <div class="absolute inset-0">
-        <img
-          src="images/services images/aircon-service-installation-hero.jpg"
-          alt="Air conditioning service and installation for residential and commercial properties"
-          class="w-full h-full object-cover"
-        />
-      </div>
+    <header>
+      <section
+        class="relative pt-28 pb-24 bg-gray-900 text-white overflow-hidden"
+      >
+        <div class="absolute inset-0">
+          <img
+            src="images/services images/aircon-service-installation-hero.jpg"
+            alt="Air conditioning service and installation for residential and commercial properties"
+            class="w-full h-full object-cover"
+            width="1200"
+            height="600"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
       <div class="absolute inset-0 hero-overlay"></div>
       <div class="relative z-10 max-w-6xl mx-auto px-4">
         <div class="flex flex-col lg:flex-row items-center gap-10">
@@ -427,9 +429,11 @@ body.menu-open {
         </div>
       </div>
     </section>
+    </header>
 
   <!-- Service Overview -->
-<section class="py-16 bg-white">
+  <main>
+  <section class="py-16 bg-white">
   <div class="max-w-6xl mx-auto px-4">
     <div class="flex flex-col lg:flex-row gap-10 items-center">
       
@@ -448,6 +452,8 @@ body.menu-open {
         <div class="rounded-md overflow-hidden shadow-2xl border border-slate-100">
           <img
             src="images/services images/aircon-service-installation-overview.jpg"
+            width="600"
+            height="400"
             alt="Professional air conditioning service and installation overview"
             class="w-full h-full object-cover"
             loading="lazy"
@@ -471,7 +477,7 @@ body.menu-open {
             <div
               class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
             >
-              <img src="images/aircon_service/general-servicing.jpg" alt="General air conditioning servicing service" loading="lazy">
+              <img src="images/aircon_service/general-servicing.jpg" alt="General air conditioning servicing service" loading="lazy" width="400" height="300">
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="text-xl font-bold text-slate-900 mb-4">
@@ -600,7 +606,7 @@ body.menu-open {
             <div
               class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
             >
-              <img src="images/aircon_service/chemical-wash.jpg" alt="Air conditioning chemical wash service" loading="lazy">
+              <img src="images/aircon_service/chemical-wash.jpg" alt="Air conditioning chemical wash service" loading="lazy" width="400" height="300">
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="text-xl font-bold text-slate-900 mb-4">
@@ -727,7 +733,7 @@ body.menu-open {
             <div
               class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
             >
-              <img src="images/aircon_service/new-installation.jpg" alt="New air conditioning system installation service" loading="lazy">
+              <img src="images/aircon_service/new-installation.jpg" alt="New air conditioning system installation service" loading="lazy" width="400" height="300">
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="text-xl font-bold text-slate-900 mb-4">
@@ -1201,7 +1207,7 @@ body.menu-open {
         const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
       
         const isCoarsePointer = () =>
-          window.matchMedia &&``
+          window.matchMedia &&
           window.matchMedia("(hover: none) and (pointer: coarse)").matches;
       
         /* ---------------------------------------------

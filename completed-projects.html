@@ -5,17 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SGSA Construction - Completed Projects Gallery</title>
   <meta name="description" content="Explore SGSA Construction’s completed projects with interactive before-and-after views showcasing professional workmanship.">
-  <!-- Preconnect to external domains for faster resource loading -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Performance: Preconnect to font domains for faster loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-  
-  <!-- Preload critical fonts with font-display: swap for better LCP -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-  
-  <!-- Tailwind CDN - must load synchronously to process classes, but optimized with dns-prefetch -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
         
@@ -865,7 +862,7 @@ body.menu-open {
   const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   const isCoarsePointer = () =>
-    window.matchMedia &&``
+    window.matchMedia &&
     window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
   /* ---------------------------------------------
@@ -1662,7 +1659,8 @@ body.menu-open {
     }
   </script>
   <!-- Defer non-critical JavaScript to improve initial page load -->
-  <script src="assets/site.js" defer></script></script>
+  <script src="assets/site.js" defer></script>
+  <script>
 </body>
 </html>
 

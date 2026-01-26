@@ -16,23 +16,47 @@
 
   const qs = (sel, root = document) => root.querySelector(sel);
   const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  
+  // Make initProjectsDropdown available globally for fallback initialization
+  let initProjectsDropdownFn = null;
 
   const isCoarsePointer = () =>
-    window.matchMedia &&``
+    window.matchMedia &&
     window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
   /* ---------------------------------------------
    * Navbar: Our Projects dropdown (desktop hover, mobile click, keyboard)
    * --------------------------------------------- */
+  let dropdownInitAttempts = 0;
   function initProjectsDropdown() {
     const wrapper = qs("[data-projects-dropdown]");
-    if (!wrapper) return;
+    if (!wrapper) {
+      // Retry once after a short delay if element not found (for slow-loading pages)
+      if (dropdownInitAttempts < 1 && document.readyState !== 'complete') {
+        dropdownInitAttempts++;
+        setTimeout(initProjectsDropdown, 50);
+      }
+      return;
+    }
 
     const button = qs("[data-projects-dropdown-button]", wrapper);
     const panel = qs("[data-projects-dropdown-panel]", wrapper);
-    if (!button || !panel) return;
+    if (!button || !panel) {
+      // Retry once if button or panel not found
+      if (dropdownInitAttempts < 1 && document.readyState !== 'complete') {
+        dropdownInitAttempts++;
+        setTimeout(initProjectsDropdown, 50);
+      }
+      return;
+    }
+    
+      // Reset attempts counter on success
+      dropdownInitAttempts = 0;
 
     let open = false;
+    
+    // Store function reference globally for fallback access
+    initProjectsDropdownFn = initProjectsDropdown;
 
     const setOpen = (next) => {
       open = Boolean(next);
@@ -51,11 +75,22 @@
       }
     };
 
-    // Toggle on click (important for touch devices).
-    button.addEventListener("click", (e) => {
+    // Toggle on click and touch (important for touch devices).
+    const handleToggle = (e) => {
       e.preventDefault();
+      e.stopPropagation();
       setOpen(!open);
-    });
+    };
+    
+    // Support both click and touchstart for better mobile compatibility
+    button.addEventListener("click", handleToggle);
+    button.addEventListener("touchstart", (e) => {
+      // Only handle if it's a direct touch (not a click that followed)
+      if (e.cancelable) {
+        e.preventDefault();
+      }
+      handleToggle(e);
+    }, { passive: false });
 
     // Keyboard support
     wrapper.addEventListener("keydown", (e) => {
@@ -69,11 +104,13 @@
       }
     });
 
-    // Close when clicking outside.
-    document.addEventListener("click", (e) => {
+    // Close when clicking/touching outside.
+    const handleOutsideClick = (e) => {
       if (!open) return;
       if (!wrapper.contains(e.target)) setOpen(false);
-    });
+    };
+    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener("touchstart", handleOutsideClick);
 
     // Close when focus leaves the dropdown.
     wrapper.addEventListener("focusout", () => {
@@ -82,26 +119,58 @@
       }, 0);
     });
   }
+  
+  // Expose function globally for fallback initialization
+  window.initProjectsDropdown = initProjectsDropdown;
 
-  /* ---------------------------------------------
+ /* ---------------------------------------------
    * Mobile off-canvas: Our Projects accordion
    * --------------------------------------------- */
-  function initMobileProjectsAccordion() {
-    const btn = qs("#mobile-projects-btn");
-    const menu = qs("#mobile-projects-menu");
-    const arrow = qs("#mobile-projects-arrow");
-    if (!btn || !menu) return;
+ let mobileAccordionInitAttempts = 0;
+ function initMobileProjectsAccordion() {
+   const btn = qs("#mobile-projects-btn");
+   const menu = qs("#mobile-projects-menu");
+   const arrow = qs("#mobile-projects-arrow");
+   
+   if (!btn || !menu) {
+     // Retry up to 5 times if elements not found
+     if (mobileAccordionInitAttempts < 5) {
+       mobileAccordionInitAttempts++;
+       setTimeout(initMobileProjectsAccordion, 100);
+     }
+     return;
+   }
 
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const isHidden = menu.classList.contains("hidden");
-      menu.classList.toggle("hidden");
-      if (arrow) arrow.classList.toggle("rotate-180", isHidden);
-      btn.setAttribute("aria-expanded", isHidden ? "true" : "false");
-    });
-  }
+   // Reset attempts counter on success
+   mobileAccordionInitAttempts = 0;
+   
+   // Mark as initialized to prevent duplicate event listeners
+   if (btn.hasAttribute('data-accordion-initialized')) {
+     return;
+   }
+   btn.setAttribute('data-accordion-initialized', 'true');
 
+   const handleToggle = (e) => {
+     e.preventDefault();
+     e.stopPropagation();
+     const isHidden = menu.classList.contains("hidden");
+     menu.classList.toggle("hidden");
+     if (arrow) arrow.classList.toggle("rotate-180", isHidden);
+     btn.setAttribute("aria-expanded", isHidden ? "true" : "false");
+   };
+
+   // Support both click and touchstart for better mobile compatibility
+   btn.addEventListener("click", handleToggle);
+   btn.addEventListener("touchstart", (e) => {
+     if (e.cancelable) {
+       e.preventDefault();
+     }
+     handleToggle(e);
+   }, { passive: false });
+ }
+ 
+ // Expose function globally for fallback initialization
+ window.initMobileProjectsAccordion = initMobileProjectsAccordion;
   /* ---------------------------------------------
    * Project pages: Fade in images on load
    * --------------------------------------------- */
@@ -114,8 +183,30 @@
         img.classList.remove("opacity-0");
         img.classList.add("opacity-100");
       };
-      if (img.complete) onLoad();
-      else img.addEventListener("load", onLoad, { once: true });
+      
+      // Check if image is already loaded (including cached images)
+      if (img.complete && img.naturalHeight !== 0) {
+        // Image is already loaded, show it immediately
+        onLoad();
+      } else if (img.complete && img.naturalHeight === 0) {
+        // Image failed to load, show it anyway (might be broken image icon)
+        onLoad();
+      } else {
+        // Wait for image to load
+        img.addEventListener("load", onLoad, { once: true });
+        img.addEventListener("error", () => {
+          // Even on error, show the image
+          img.classList.remove("opacity-0");
+          img.classList.add("opacity-100");
+        }, { once: true });
+        
+        // Fallback: if image doesn't trigger load event within 2 seconds, show it anyway
+        setTimeout(() => {
+          if (img.classList.contains("opacity-0")) {
+            onLoad();
+          }
+        }, 2000);
+      }
     });
   }
 
@@ -272,13 +363,32 @@
     backdrop.addEventListener("click", close);
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
+  // Initialize functions
+  let initialized = false;
+  function init() {
+    if (initialized) return; // Prevent double initialization
+    initialized = true;
     initProjectsDropdown();
     initMobileProjectsAccordion();
     initProjectImageFadeIn();
     initOverlayTap();
     initLightbox();
-  });
+  }
+
+  // Initialize based on DOM ready state
+  // This handles all cases: regular scripts, deferred scripts, and async scripts
+  if (document.readyState === 'loading') {
+    // DOM is still loading, wait for DOMContentLoaded
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    // DOM is already parsed (interactive) or complete
+    // Run immediately using setTimeout to ensure it runs after current stack
+    setTimeout(init, 0);
+  }
+  
+  // Also listen for DOMContentLoaded as a backup (safe even if already fired)
+  // This ensures initialization happens even if timing is off
+  document.addEventListener("DOMContentLoaded", init);
 })();
 
  // Company Information Database

@@ -6,17 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SGSA Construction | Plumbing Services</title>
   <meta name="description" content="Resolve leaks, clogs, and fixture issues fast with licensed plumbers who keep your home tidy and safe.">
-  <!-- Preconnect to external domains for faster resource loading -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Performance: Preconnect to font domains for faster loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-  
-  <!-- Preload critical fonts with font-display: swap for better LCP -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-  
-  <!-- Tailwind CDN - must load synchronously to process classes, but optimized with dns-prefetch -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
@@ -400,8 +397,9 @@ body.menu-open {
   <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
   <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-600 rounded-full"></div>
   </a>
-  <section class="relative pt-28 pb-24 bg-gray-900 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center" > <img src="images/plumbing services/plumbing.jpg" alt="Premium plumbing services for residential and commercial properties"></div>
+  <header>
+    <section class="relative pt-28 pb-24 bg-gray-900 text-white overflow-hidden">
+      <div class="absolute inset-0 bg-cover bg-center"><img src="images/plumbing services/plumbing.jpg" alt="Premium plumbing services for residential and commercial properties" width="1200" height="600" loading="eager" fetchpriority="high"></div>
     <div class="absolute inset-0 hero-overlay"></div>
     <div class="relative z-10 max-w-6xl mx-auto px-4">
       <div class="flex flex-col lg:flex-row items-center gap-10">
@@ -437,8 +435,10 @@ body.menu-open {
       </div>
     </div>
   </section>
+  </header>
   <!-- Premium Plumbing Services overview -->
-<section class="py-16 bg-white">
+  <main>
+  <section class="py-16 bg-white">
   <div class="max-w-6xl mx-auto px-4">
     <div class="flex flex-col lg:flex-row gap-10 items-center">
       <div class="flex-1 space-y-4">
@@ -450,7 +450,7 @@ body.menu-open {
       </div>
       <div class="flex-1">
         <div class="rounded-xl overflow-hidden shadow-2xl border border-slate-100">
-          <img src="images/services images/premium-plumbing-services-overview.jpg" alt="Professional plumbing services overview for homeowners" class="w-full h-full object-cover" loading="lazy">
+          <img src="images/services images/premium-plumbing-services-overview.jpg" alt="Professional plumbing services overview for homeowners" class="w-full h-full object-cover" loading="lazy" width="600" height="400">
         </div>
       </div>
     </div>
@@ -491,7 +491,7 @@ body.menu-open {
         <div class="bg-white shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
           <!-- Image -->
           <div class="w-full h-52 overflow-hidden">
-            <img src="images/plumbing services/clearing-clogs-chokes.webp" alt="Clearing of clogs and chokes plumbing service" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy">
+            <img src="images/plumbing services/clearing-clogs-chokes.webp" alt="Clearing of clogs and chokes plumbing service" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy" width="400" height="300">
           </div>
           
           <!-- Content -->
@@ -567,7 +567,7 @@ body.menu-open {
         <div class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
           <!-- Image -->
           <div class="w-full h-52 overflow-hidden">
-            <img src="images/plumbing services/leakage-repair.webp" alt="Leakage repair plumbing service" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy">
+            <img src="images/plumbing services/leakage-repair.webp" alt="Leakage repair plumbing service" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy" width="400" height="300">
           </div>
           
           <!-- Content -->
@@ -643,7 +643,7 @@ body.menu-open {
         <div class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
           <!-- Image -->
           <div class="w-full h-52 overflow-hidden">
-            <img src="images/plumbing services/installation-replacement.jpg" alt="Plumbing fixture installation and replacement service" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy">
+            <img src="images/plumbing services/installation-replacement.jpg" alt="Plumbing fixture installation and replacement service" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" loading="lazy" width="400" height="300">
           </div>
           
           <!-- Content -->
@@ -725,7 +725,7 @@ body.menu-open {
           <!-- Card 1: Commercial Plumbing Setup -->
           <div class="bg-white shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
             <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
-              <img src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Commercial plumbing setup for offices and shops" class="w-full h-full object-cover" loading="lazy">
+              <img src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Commercial plumbing setup for offices and shops" class="w-full h-full object-cover" loading="lazy" width="400" height="300">
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">Commercial Plumbing Setup</h3>
@@ -756,7 +756,7 @@ body.menu-open {
           <!-- Card 2: Drainage System Works -->
           <div class="bg-white shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
             <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
-              <img src="images/plumbing services/commercial/working-with-pipes_266732-6114.jpg" alt="Commercial drainage system works" class="w-full h-full object-cover" loading="lazy">
+              <img src="images/plumbing services/commercial/working-with-pipes_266732-6114.jpg" alt="Commercial drainage system works" class="w-full h-full object-cover" loading="lazy" width="400" height="300">
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">Drainage System Works</h3>
@@ -787,7 +787,7 @@ body.menu-open {
           <!-- Card 3: PUB Compliance & Renovation -->
           <div class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl">
             <div class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center relative">
-              <img src="images/plumbing services/commercial/35.jpg" alt="PUB compliance and commercial plumbing renovation" class="w-full h-full object-cover" loading="lazy">
+              <img src="images/plumbing services/commercial/35.jpg" alt="PUB compliance and commercial plumbing renovation" class="w-full h-full object-cover" loading="lazy" width="400" height="300">
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">PUB Compliance & Renovation</h3>
@@ -903,10 +903,9 @@ body.menu-open {
       </div>
     </div>
   </section>
+  </main>
 
- 
-  
-<footer class=" bottom-0 bg-gray-900 text-white border-t-4 border-t-cyan-600">
+  <footer class="bottom-0 bg-gray-900 text-white border-t-4 border-t-cyan-600">
     <div class="border-b border-gray-700">
         <div class="max-w-7xl mx-auto px-4 py-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -1012,7 +1011,7 @@ body.menu-open {
   const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
   const isCoarsePointer = () =>
-    window.matchMedia &&``
+    window.matchMedia &&
     window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
   /* ---------------------------------------------

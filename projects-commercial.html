@@ -5,25 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Projects – Commercial Construction | SGSA Construction</title>
   <meta name="description" content="View SGSA Construction's commercial project portfolio. Office fit-outs, retail renovations, and industrial construction delivered on time and on budget.">
-  <!-- Preconnect to external domains for faster resource loading -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
-  
-  <!-- Preload critical fonts with font-display: swap for better LCP -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
-  
-  <!-- Load additional fonts asynchronously -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
-  
-  <!-- Tailwind CDN - must load synchronously to process classes, but optimized with dns-prefetch -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Gallery CSS - defer non-critical styles -->
-  <link rel="preload" href="assets/gallery.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="assets/gallery.css"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/gallery.css">
   <style>
     .font-archivo { font-family: 'Archivo', sans-serif; }
     .nav-link { position: relative; display: inline-block; }
@@ -65,7 +52,7 @@ position: relative;" class="font-archivo">
            <div class="flex justify-between items-center h-20 px-4">
                <div class="flex-shrink-0">
                    <a href="index.html" class="flex items-center">
-                       <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" width="230" height="auto">
+                       <img class="w-[230px]" src="images/logo_new-removebg-preview.png" alt="">
                    </a>
                </div>
                <div class="hidden md:flex space-x-10 font-archivo items-center">
@@ -330,7 +317,7 @@ position: relative;" class="font-archivo">
     <div class="absolute inset-0 bg-black/80 opacity-0 transition-opacity duration-200" data-lightbox-backdrop></div>
     <div class="relative z-10 max-w-4xl w-full mx-4 opacity-0 scale-95 transition-all duration-200" data-lightbox-dialog>
       <button type="button" class="absolute -top-12 right-0 text-white hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg p-2" aria-label="Close lightbox" data-lightbox-close><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
-      <img class="w-full rounded-lg shadow-2xl" src="" alt="Project image" data-lightbox-img>
+      <img class="w-full rounded-lg shadow-2xl" src="" alt="" data-lightbox-img>
       <p class="mt-3 text-center text-white text-lg font-medium" data-lightbox-caption></p>
     </div>
   </div>
@@ -385,11 +372,9 @@ position: relative;" class="font-archivo">
     <div class="bg-gray-950"><div class="max-w-7xl mx-auto px-4 py-5"><div class="flex flex-col md:flex-row justify-between items-center gap-3"><p class="text-gray-400 text-sm">&copy; 2024 SGSA Construction. All rights reserved.</p><p class="text-gray-400 text-sm">SGSA Construction by <span class="text-cyan-400 font-medium">Michael</span></p></div></div></div>
   </footer>
 
-  <!-- Defer non-critical JavaScript to improve initial page load -->
-  <script src="assets/site.js" defer></script>
+  <script src="assets/site.js"></script>
   <script>
     const mobileMenuBtn=document.getElementById('mobile-menu-btn'),mobileMenuPanel=document.getElementById('mobile-menu-panel'),mobileMenuOverlay=document.getElementById('mobile-menu-overlay'),mobileMenuClose=document.getElementById('mobile-menu-close');function openMobileMenu(){mobileMenuPanel.classList.add('active');mobileMenuOverlay.classList.add('active');document.body.classList.add('menu-open')}function closeMobileMenu(){mobileMenuPanel.classList.remove('active');mobileMenuOverlay.classList.remove('active');document.body.classList.remove('menu-open')}if(mobileMenuBtn)mobileMenuBtn.addEventListener('click',openMobileMenu);if(mobileMenuClose)mobileMenuClose.addEventListener('click',closeMobileMenu);if(mobileMenuOverlay)mobileMenuOverlay.addEventListener('click',closeMobileMenu);const mobileMenuLinks=mobileMenuPanel?.querySelectorAll('a:not([href="#"])');mobileMenuLinks?.forEach(link=>{link.addEventListener('click',()=>{setTimeout(closeMobileMenu,150)})});const mobileHandymanBtn=document.getElementById('mobile-handyman-btn'),mobileHandymanMenu=document.getElementById('mobile-handyman-menu'),mobileHandymanArrow=document.getElementById('mobile-handyman-arrow');if(mobileHandymanBtn&&mobileHandymanMenu&&mobileHandymanArrow){mobileHandymanBtn.addEventListener('click',()=>{mobileHandymanMenu.classList.toggle('hidden');mobileHandymanArrow.classList.toggle('rotate-180')})}const mobileRenovationBtn=document.getElementById('mobile-renovation-btn'),mobileRenovationMenu=document.getElementById('mobile-renovation-menu'),mobileRenovationArrow=document.getElementById('mobile-renovation-arrow');if(mobileRenovationBtn&&mobileRenovationMenu&&mobileRenovationArrow){mobileRenovationBtn.addEventListener('click',()=>{mobileRenovationMenu.classList.toggle('hidden');mobileRenovationArrow.classList.toggle('rotate-180')})}const navbar=document.getElementById('navbar'),navLinks=navbar?.querySelectorAll('.nav-link'),mobileMenuButton=document.getElementById('mobile-menu-btn');if(navbar&&navLinks){window.addEventListener('scroll',()=>{if(window.scrollY>50){navbar.classList.add('bg-white','shadow-lg');navbar.classList.remove('bg-transparent');navLinks.forEach(link=>{link.classList.remove('text-white','hover:text-sky-400');link.classList.add('text-sky-600','hover:text-sky-500')});if(mobileMenuButton){mobileMenuButton.classList.remove('text-white','hover:text-sky-400');mobileMenuButton.classList.add('text-gray-800','hover:text-sky-600')}}else{navbar.classList.remove('bg-white','shadow-lg');navbar.classList.add('bg-transparent');navLinks.forEach(link=>{link.classList.remove('text-sky-600','hover:text-sky-500');link.classList.add('text-white','hover:text-sky-400')});if(mobileMenuButton){mobileMenuButton.classList.remove('text-gray-800','hover:text-sky-600');mobileMenuButton.classList.add('text-white','hover:text-sky-400')}}})}const chatToggle=document.getElementById('chat-toggle'),chatClose=document.getElementById('chat-close'),chatWindow=document.getElementById('chat-window'),chatForm=document.getElementById('chat-form'),chatInput=document.getElementById('chat-input'),chatMessages=document.getElementById('chat-messages');function generateResponse(r){const m=r.toLowerCase().trim();if(m.includes('open')||m.includes('close')||m.includes('hours'))return"Our office hours are:\n• Monday-Friday: 9:00 AM - 6:00 PM\n• Saturday: 9:00 AM - 2:00 PM\n• Sunday & Public Holidays: Closed";if(m.includes('phone')||m.includes('contact')||m.includes('call'))return"You can reach us at:\n• Main: +6560254678\n• Site Manager: +6591758912";if(m.includes('email'))return"You can email us at:\n• info.sgsaconstruction@gmail.com\n• contact@sgsa.com";if(m.includes('address')||m.includes('location')||m.includes('where'))return"Our address is:\nJalan Besar Plaza #02-36, Singapore 208511";if(m.includes('service')||m.includes('offer'))return"We offer handyman, renovation, carpentry, waterproofing, tiling, plumbing, and electrical works.";if(m.includes('project')||m.includes('quote'))return"For quotes, share photos/floor plans and contact us at:\n📞 +6560254678\n📧 info.sgsaconstruction@gmail.com";return"Thank you! For specific questions:\n📞 +6560254678\n📧 info.sgsaconstruction@gmail.com"}if(chatToggle&&chatWindow)chatToggle.addEventListener('click',()=>{chatWindow.classList.toggle('hidden')});if(chatClose)chatClose.addEventListener('click',()=>chatWindow.classList.add('hidden'));if(chatForm){chatForm.addEventListener('submit',e=>{e.preventDefault();const msg=chatInput.value.trim();if(!msg)return;const u=document.createElement('div');u.className='flex justify-end';u.innerHTML="<div class=\"bg-gray-300 text-gray-900 rounded-lg p-3 max-w-xs\"><p class=\"text-sm\">"+msg+"</p></div>";chatMessages.appendChild(u);chatInput.value='';setTimeout(()=>{const reply=generateResponse(msg);const r=document.createElement('div');r.className='flex items-end space-x-2';r.innerHTML="<div class=\"bg-sky-600 text-white rounded-lg p-3 max-w-xs\"><p class=\"text-sm whitespace-pre-line\">"+reply+"</p></div>";chatMessages.appendChild(r);chatMessages.scrollTop=chatMessages.scrollHeight},400);chatMessages.scrollTop=chatMessages.scrollHeight})}
   </script>
 </body>
 </html>
-
