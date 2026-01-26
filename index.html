@@ -20,6 +20,32 @@
   <!-- Performance: Preload critical logo image (LCP candidate) -->
   <link rel="preload" as="image" href="images/default-removebg-preview.png" fetchpriority="high">
   
+  <!-- Performance: Critical CSS inline (above-the-fold only) -->
+  <style>
+    /* Critical CSS - Above-the-fold styles only (kept under 14KB) */
+    body{margin:0;font-family:'Archivo',sans-serif;line-height:1.6;color:#1e293b}
+    html{scroll-behavior:smooth}
+    .font-archivo{font-family:'Archivo',sans-serif}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+    /* Navbar critical styles */
+    nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background-color 0.3s}
+    .nav-link{transition:color 0.3s}
+    /* Hero section critical styles */
+    .hero-headline{font-weight:600;line-height:1.2}
+    .hero-subheading{font-weight:500}
+    /* Button critical styles */
+    .btn-animate{transition:transform 0.2s,background-color 0.3s}
+    .hover-lift:hover{transform:translateY(-2px)}
+    /* Reserve space for dynamic content to prevent CLS */
+    #chat-widget{min-height:60px;position:fixed;bottom:24px;right:24px;z-index:50}
+    .map-container{position:relative;width:100%;padding-bottom:56.25%;height:0;background:#e5e7eb}
+    .map-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    /* Reserve space for testimonial carousel */
+    .testimonial-container{min-height:300px}
+    /* Prevent layout shift during font load */
+    @font-face{font-family:'Archivo';font-display:swap}
+  </style>
+  
   <!-- Performance: Load Tailwind CSS synchronously (critical for styling - prevents FOUC) -->
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -925,7 +951,7 @@ button:focus {
        <div class="flex justify-between items-center h-20 px-4">
            <div class="flex-shrink-0">
                <a href="index.html" class="flex items-center">
-                   <img class="w-[280px]" src="images/default-removebg-preview.png" alt="SGSA Construction Logo" width="280" height="auto" fetchpriority="high">
+                   <img class="w-[280px]" src="images/default-removebg-preview.png" alt="SGSA Construction Logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync">
                </a>
            </div>
            <div class="hidden md:flex space-x-6 font-archivo items-center">
@@ -1022,7 +1048,7 @@ button:focus {
     <!-- Header with Logo & Close -->
     <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
         <a href="index.html">
-            <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction" class="w-[230px]" width="230" height="auto" fetchpriority="high" loading="eager">
+            <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction" class="w-[230px]" width="230" height="70" fetchpriority="high" loading="eager" decoding="sync">
         </a>
         <button type="button" id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition" aria-label="Close mobile menu">
             <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1161,8 +1187,8 @@ button:focus {
     
     <!-- Decorative Images -->
     <!-- Decorative images - aria-hidden for screen readers, empty alt is correct for decorative content -->
-    <img src="images/heropagephoto.png" alt="" class="opacity-10 sm:opacity-70 absolute top-24 right-10 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" width="350" height="350" aria-hidden="true">
-    <img src="images/heropagephoto_2.png" alt="" class="opacity-10 sm:opacity-70 absolute bottom-0 left-0 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" width="350" height="350" aria-hidden="true">
+    <img src="images/heropagephoto.png" alt="" class="opacity-10 sm:opacity-70 absolute top-24 right-10 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" width="350" height="350" decoding="async" aria-hidden="true">
+    <img src="images/heropagephoto_2.png" alt="" class="opacity-10 sm:opacity-70 absolute bottom-0 left-0 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" width="350" height="350" decoding="async" aria-hidden="true">
     
     <!-- Content -->
     <div class="relative z-10 max-w-4xl mx-auto text-center">
@@ -1200,16 +1226,16 @@ button:focus {
       <!-- Trust Elements (cleaner layout) -->
       <div class="hero-trust flex flex-wrap gap-6 justify-center items-center">
         <div class="trust-badge">
-          <img class="w-32  h-auto object-contain" src="images/homepage images/Google-Review-Logo-removebg-preview.png" alt="Google Reviews" loading="lazy" width="128" height="auto">
+          <img class="w-32  h-auto object-contain" src="images/homepage images/Google-Review-Logo-removebg-preview.png" alt="Google Reviews" loading="lazy" width="128" height="128" decoding="async">
       </div>
         <div class="trust-badge">
-          <img class="w-32 h-auto object-contain" src="images/homepage images/BCA.png" alt="BCA Registered" loading="lazy" width="128" height="auto">
+          <img class="w-32 h-auto object-contain" src="images/homepage images/BCA.png" alt="BCA Registered" loading="lazy" width="128" height="128" decoding="async">
       </div>
         <div class="trust-badge">
-          <img class="w-24 h-auto object-contain" src="images/homepage images/4years.png" alt="4+ Years Experience" loading="lazy" width="96" height="auto">
+          <img class="w-24 h-auto object-contain" src="images/homepage images/4years.png" alt="4+ Years Experience" loading="lazy" width="96" height="96" decoding="async">
       </div>
         <div class="trust-badge">
-          <img class="w-32 h-auto object-contain" src="images/homepage images/license.png" alt="Licensed & Insured" loading="lazy" width="128" height="auto">
+          <img class="w-32 h-auto object-contain" src="images/homepage images/license.png" alt="Licensed & Insured" loading="lazy" width="128" height="128" decoding="async">
     </div>
   </div>
 </div>
@@ -1267,7 +1293,7 @@ button:focus {
         <a href="aircon.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/aircon_service/new-installation.jpg" alt="Air Conditioning Services" loading="lazy" width="400" height="256">
+            <img class="w-full service-card-image h-full object-cover" src="images/aircon_service/new-installation.jpg" alt="Air Conditioning Services" loading="lazy" width="400" height="256" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
             <h2 class="absolute text-[20px] font-semibold tracking-[5px] text-white">AIRCON SERVICE</h2>
           </div>
@@ -1278,7 +1304,7 @@ button:focus {
         <a href="plumbing.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/plumbing services/installation-replacement.jpg" alt="Plumbing Services" loading="lazy" width="400" height="256">
+            <img class="w-full service-card-image h-full object-cover" src="images/plumbing services/installation-replacement.jpg" alt="Plumbing Services" loading="lazy" width="400" height="256" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
             <h2 class="absolute text-[20px] font-semibold tracking-[5px] text-white">PLUMBING</h2>
           </div>
@@ -1289,7 +1315,7 @@ button:focus {
         <a href="electrical.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/light-installation.jpg" alt="Electrical Works" loading="lazy" width="400" height="256">
+            <img class="w-full service-card-image h-full object-cover" src="images/light-installation.jpg" alt="Electrical Works" loading="lazy" width="400" height="256" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
             <h2 class="absolute text-[20px] font-semibold tracking-[5px] text-white">ELECTRICAL WORKS</h2>
           </div>
@@ -1300,7 +1326,7 @@ button:focus {
         <a href="painting.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/painting/room-interior-painting.jpg" alt="Painting" loading="lazy" width="400" height="256">
+            <img class="w-full service-card-image h-full object-cover" src="images/painting/room-interior-painting.jpg" alt="Painting" loading="lazy" width="400" height="256" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
             <h2 class="absolute text-[20px] font-semibold tracking-[5px] text-white">PAINTING</h2>
           </div>
@@ -1313,7 +1339,7 @@ button:focus {
         <a href="renovation-works.html" class="group bg-white overflow-hidden flex flex-col" aria-label="View renovation works services">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/renovation/condo-room-renovation.jpg" alt="Renovation Works" loading="lazy" width="400" height="256">
+            <img class="w-full service-card-image h-full object-cover" src="images/renovation/condo-room-renovation.jpg" alt="Renovation Works" loading="lazy" width="400" height="256" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
             <h2 class="absolute text-[20px] font-semibold tracking-[5px] text-white">RENOVATION WORKS</h2>
           </div>
@@ -1324,7 +1350,7 @@ button:focus {
         <a href="ceiling-wall-partitions.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy.jpg" alt="Ceiling and Wall Partitions" loading="lazy" width="400" height="256">
+            <img class="w-full service-card-image h-full object-cover" src="images/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy.jpg" alt="Ceiling and Wall Partitions" loading="lazy" width="400" height="256" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
             <h2 class="absolute text-center text-[20px] font-semibold tracking-[5px] text-white">CEILING & WALL PARTITIONS</h2>
           </div>
@@ -1336,7 +1362,7 @@ button:focus {
          <a href="tile-laying.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/tile services/tile-replacement.png" alt="Tile Laying" loading="lazy" width="400" height="256">
+            <img class="w-full service-card-image h-full object-cover" src="images/tile services/tile-replacement.png" alt="Tile Laying" loading="lazy" width="400" height="256" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
             <h2 class="absolute text-[20px] font-semibold tracking-[5px] text-white">TILE LAYING</h2>
           </div>
@@ -1347,7 +1373,7 @@ button:focus {
         <a href="carpentry.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/carpentry/feature-walls-tv-consoles.png" alt="Carpentry Works" loading="lazy" width="400" height="256">
+            <img class="w-full service-card-image h-full object-cover" src="images/carpentry/feature-walls-tv-consoles.png" alt="Carpentry Works" loading="lazy" width="400" height="256" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
             <h2 class="absolute text-[20px] font-semibold tracking-[5px] text-white">CARPENTRY</h2>
           </div>
@@ -1369,7 +1395,7 @@ button:focus {
         <a href="hacking-demolition.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/hacking/supermarket-shop-chernobyl-exclusion-zone-with-ruins-abandoned-pripyat-city-zone-radioactivity-ghost-town.jpg" alt="Hacking and Demolition" loading="lazy" width="400" height="256">
+            <img class="w-full service-card-image h-full object-cover" src="images/hacking/supermarket-shop-chernobyl-exclusion-zone-with-ruins-abandoned-pripyat-city-zone-radioactivity-ghost-town.jpg" alt="Hacking and Demolition" loading="lazy" width="400" height="256" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
             <h2 class="absolute text-[20px] font-semibold tracking-[5px] text-white">HACKING & DEMOLITION</h2>
           </div>
@@ -1380,7 +1406,7 @@ button:focus {
         <a href="plastering.html" class="group bg-white overflow-hidden flex flex-col">
           <div class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
             <div class="service-card-overlay"></div>
-            <img class="w-full service-card-image h-full object-cover" src="images/services images/plastering-works-overview.jpg" alt="Plastering Works" loading="lazy" width="400" height="256">
+            <img class="w-full service-card-image h-full object-cover" src="images/services images/plastering-works-overview.jpg" alt="Plastering Works" loading="lazy" width="400" height="256" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
             <h2 class="absolute text-[20px] font-semibold tracking-[5px] text-white">PLASTERING</h2>
           </div>
@@ -1492,7 +1518,7 @@ button:focus {
             <!-- First div: Republic Polytechnic Hotel -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
-                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/light-installation.jpg" alt="Republic Polytechnic Hotel" width="400" height="300">
+                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/light-installation.jpg" alt="Republic Polytechnic Hotel" width="400" height="300" decoding="async">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h2 class="text-white text-xl sm:text-2xl font-bold">Light Installation</h2>
@@ -1505,7 +1531,7 @@ button:focus {
             <!-- Second div: Marina Bay Residence -->
             <div class="w-full h-[200px] sm:h-[250px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="plumbing.html">
-                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Marina Bay Residence">
+                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Marina Bay Residence" width="400" height="250" decoding="async">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-lg sm:text-xl font-bold">Plumbing</h3>
@@ -1518,7 +1544,7 @@ button:focus {
             <!-- Third div: Sentosa Resort -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="painting.html">
-                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/12.png" alt="Sentosa Resort">
+                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/12.png" alt="Sentosa Resort" width="400" height="300" decoding="async">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-lg sm:text-xl font-bold">Landed Property Painting</h3>
@@ -1531,7 +1557,7 @@ button:focus {
             <!-- Fourth div: Orchard Plaza -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="painting.html">
-                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/9.jpeg" alt="Orchard Plaza">
+                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/9.jpeg" alt="Orchard Plaza" width="400" height="300" decoding="async">
                   <div class="project-overlay">
                     <div class="project-title">
                       <h3 class="text-white text-lg sm:text-xl font-bold">Wall Painting</h3>
@@ -1544,7 +1570,7 @@ button:focus {
             <!-- Fifth div: Clarke Quay Tower -->
             <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
-                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/10.jpeg" alt="Clarke Quay Tower">
+                  <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/10.jpeg" alt="Clarke Quay Tower" width="400" height="300" decoding="async">
                   <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-lg sm:text-xl font-bold">Light Installation</h3>
@@ -1560,7 +1586,7 @@ button:focus {
             <!-- First div: Republic Polytechnic Hotel -->
             <div class="col-span-4 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
                 <a href="electrical.html">
-                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/light-installation.jpg" alt="Republic Polytechnic Hotel">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/light-installation.jpg" alt="Republic Polytechnic Hotel" width="400" height="300" decoding="async">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-2xl font-bold">Light Installation</h3>
@@ -1573,7 +1599,7 @@ button:focus {
             <!-- Second div: Marina Bay Residence -->
             <div class="col-span-2 row-span-1 rounded-2xl shadow-lg project-card overflow-hidden">
                 <a href="plumbing.html">
-                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Marina Bay Residence">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Marina Bay Residence" width="400" height="250" decoding="async">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-xl font-bold">Plumbing</h3>
@@ -1586,7 +1612,7 @@ button:focus {
             <!-- Third div: Sentosa Resort -->
             <div class="col-span-2 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
                 <a href="painting.html">
-                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort" width="400" height="300" decoding="async">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-xl font-bold">Wall Painting</h3>
@@ -1599,7 +1625,7 @@ button:focus {
             <!-- Fourth div: Orchard Plaza -->
               <div class="col-span-2 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
                 <a href="carpentry.html">
-                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/carpentry/feature-walls-tv-consoles.png" alt="Orchard Plaza">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/carpentry/feature-walls-tv-consoles.png" alt="Orchard Plaza" width="400" height="300" decoding="async">
                 <div class="project-overlay">
                     <div class="project-title">
                       <h3 class="text-white text-xl font-bold">Carpentry</h3>
@@ -1612,7 +1638,7 @@ button:focus {
             <!-- Fifth div: Clarke Quay Tower -->
             <div class="col-span-2 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
                 <a href="renovation-works.html" aria-label="View renovation works portfolio">
-                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/commercial/school/IMG20251223154650.jpg" alt="Clarke Quay Tower">
+                  <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/commercial/school/IMG20251223154650.jpg" alt="Clarke Quay Tower" width="400" height="300" decoding="async">
                 <div class="project-overlay">
                     <div class="project-title">
                         <h3 class="text-white text-xl font-bold">Renovation</h3>
@@ -1887,7 +1913,7 @@ button:focus {
         
         <!-- Right Column: Image -->
         <div>
-          <img class="w-full rounded-md h-64 sm:h-80 lg:h-96 object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="SGSA Construction Team at Work" loading="lazy">
+          <img class="w-full rounded-md h-64 sm:h-80 lg:h-96 object-cover" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="SGSA Construction Team at Work" loading="lazy" width="800" height="600" decoding="async">
     </div>
         
   </div>
@@ -2068,8 +2094,8 @@ button:focus {
             <div class="p-6">
   
                 
-                <!-- Map Container -->
-                <div class="relative h-[400px] bg-gray-200 rounded-lg overflow-hidden mb-4">
+                <!-- Map Container - Reserved space prevents CLS -->
+                <div class="map-container rounded-lg overflow-hidden mb-4">
                     <iframe 
                         src="https://www.google.com/maps?q=Jalan%20Besar%20Plaza%20Singapore&output=embed" 
                         width="100%" 
@@ -2129,7 +2155,7 @@ button:focus {
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     <!-- Logo -->
                     <div class="lg:col-span-2 md:col-span-1 items-center flex md:items-start justify-center :col-span-1">
-                        <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" class="h-20 mb-3" width="200" height="80" loading="lazy">
+                        <img src="images/logo_new-removebg-preview.png" alt="SGSA Construction Logo" class="h-20 mb-3" width="200" height="80" loading="lazy" decoding="async">
                         
                     </div>
 
@@ -3410,6 +3436,28 @@ window.addEventListener('scroll', function() {
 
   </script>
   <!-- Defer non-critical JavaScript to improve initial page load -->
-  <script src="assets/site.js" defer></script>
+  <script src="assets/site.js?v=1.0.0" defer></script>
+  
+  <!-- Performance: Lazy load non-critical sections -->
+  <script>
+    // Lazy load sections not immediately visible
+    (function() {
+      if ('IntersectionObserver' in window) {
+        const lazySections = document.querySelectorAll('.lazy-section');
+        if (lazySections.length > 0) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('loaded');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { rootMargin: '50px' });
+          
+          lazySections.forEach(section => observer.observe(section));
+        }
+      }
+    })();
+  </script>
 </body>
 </html>
