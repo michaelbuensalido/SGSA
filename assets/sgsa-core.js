@@ -1,12 +1,12 @@
 /**
- * SGSA Core UI (vanilla JS)
+ * Reliable Engineering and Construction Core UI (vanilla JS)
  * Centralized shared logic for all pages
  * 
  * Components:
  * - Navbar scroll effect
  * - Mobile menu panel (open/close/toggle)
  * - Mobile accordions (handyman, renovation, projects)
- * - SGSA Scroll Reveal system
+ * - Scroll Reveal system
  * - Page transitions
  */
 
@@ -257,7 +257,7 @@
   }
 
   /* ---------------------------------------------
-   * SGSA Scroll Reveal System
+   * Company Scroll Reveal System
    * Handles .sgsa-reveal, .scroll-animate, and .about-animate classes
    * --------------------------------------------- */
   function initScrollReveal() {
@@ -270,7 +270,7 @@
       const windowHeight = window.innerHeight;
       const triggerPoint = windowHeight * 0.85;
 
-      // Handle SGSA reveal classes (adds .visible class)
+      // Handle reveal classes (adds .visible class)
       revealElements.forEach((el) => {
         const rect = el.getBoundingClientRect();
         if (rect.top < triggerPoint) {
@@ -309,7 +309,7 @@
 
   /* ---------------------------------------------
    * Page Transitions (Enhanced)
-   * Calm, professional, SGSA-signature transitions
+   * Calm, professional, company-signature transitions
    * --------------------------------------------- */
   function initPageTransitions() {
     const prefersReducedMotion =

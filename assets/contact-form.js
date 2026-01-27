@@ -1,5 +1,5 @@
 /**
- * SGSA Contact Form (vanilla JS)
+ * Reliable Engineering and Construction Contact Form (vanilla JS)
  * EmailJS integration for contact form submission
  * Used on: contacts.html
  */

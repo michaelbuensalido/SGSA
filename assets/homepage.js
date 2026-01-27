@@ -1,5 +1,5 @@
 /**
- * SGSA Homepage Features (vanilla JS)
+ * Reliable Engineering and Construction Homepage Features (vanilla JS)
  * Page-specific logic for index.html only
  * 
  * Components:
