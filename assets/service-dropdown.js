@@ -1,5 +1,5 @@
 /**
- * SGSA Service Type Dropdown (vanilla JS)
+ * Reliable Engineering and Construction Service Type Dropdown (vanilla JS)
  * For pages with Residential/Commercial service selection
  * Used on: electrical.html, plumbing.html
  */

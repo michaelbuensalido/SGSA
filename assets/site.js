@@ -1,5 +1,5 @@
 /**
- * SGSA Site UI (vanilla JS)
+ * Reliable Engineering and Construction Site UI (vanilla JS)
  * - Accessible "Our Projects" dropdown (desktop hover + keyboard + click)
  * - Mobile "Our Projects" accordion in the off-canvas menu
  * - Project pages: category filtering + lightbox modal + mobile tap-to-preview overlay
@@ -393,7 +393,7 @@
 
  // Company Information Database
  const companyInfo = {
-  name: "SGSA Construction",
+  name: "Reliable Engineering and Construction",
   officeHours: {
     monday: "9:00 AM - 6:00 PM",
     tuesday: "9:00 AM - 6:00 PM",
@@ -410,14 +410,19 @@
     address: "Jalan Besar Plaza #02-36, Singapore 208511"
   },
   services: [
-    "Residential Development",
-    "Commercial & Retail",
-    "Infrastructure & Civil Works",
-    "Specialized Construction",
-    "Design-Build",
-    "Project Management"
+    "Carpentry",
+    "Electrical",
+    "Plumbing",
+    "Painting",
+    "Hacking Demolition",
+    "Tile Laying",
+    "Renovation Works",
+    "Waterproofing",
+    "Aircon Services and Installation",
+    "Ceiling and Wall Partitions",
+    "Reinstatement Works"
   ],
-  about: "SGSA Construction is a leading construction company in Singapore with over 50 years of experience. We specialize in delivering exceptional construction projects with a commitment to safety, quality, and innovation.",
+  about: "Reliable Engineering and Construction is a leading construction company in Singapore with over 50 years of experience. We specialize in delivering exceptional construction projects with a commitment to safety, quality, and innovation.",
   experience: "50+ years",
   projectsCompleted: "500+",
   clientSatisfaction: "98%"
@@ -797,7 +802,7 @@ function generateResponse(userMessage) {
   }
   
   // Default response (fallback to human follow-up)
-  return `Thank you for your inquiry! I'm an AI assistant here to help with basic information about SGSA Construction. For specific project details or inquiries, please contact us directly:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+  return `Thank you for your inquiry! I'm an AI assistant here to help with basic information about Reliable Engineering and Construction. For specific project details or inquiries, please contact us directly:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
 }
 
 
