@@ -18,7 +18,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"></noscript>
   
   <!-- Performance: Preload critical logo image (LCP candidate) -->
-  <link rel="preload" as="image" href="images/default-removebg-preview.png" fetchpriority="high">
+  <link rel="preload" as="image" href="images/company-logo.png" fetchpriority="high">
   
   <!-- Performance: Critical CSS inline (above-the-fold only) -->
   <style>
@@ -947,11 +947,12 @@ button:focus {
 </div>
 
 <nav id="navbar" class="fixed z-20 top-[36px] md:top-[36px] left-0 right-0 z-10 pb-[5px] pt-[5px]">
-   <div class="max-w-7xl mx-auto">
-       <div class="flex justify-between items-center h-20 px-4">
+   <!-- Responsive container: base 7xl, wider on 2xl; padding scales by breakpoint -->
+   <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-6 2xl:px-12">
+       <div class="flex justify-between items-center h-[100px]">
            <div class="flex-shrink-0">
                <a href="index.html" class="flex items-center">
-                   <img class="w-[280px]" src="images/default-removebg-preview.png" alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync">
+                   <img class="w-[160px] h-[130px]" src="images/company-logo.png" alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync">
                </a>
            </div>
            <div class="hidden md:flex space-x-6 font-archivo items-center">
@@ -1048,7 +1049,7 @@ button:focus {
     <!-- Header with Logo & Close -->
     <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
         <a href="index.html">
-            <img src="images/logo_new-removebg-preview.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230" height="70" fetchpriority="high" loading="eager" decoding="sync">
+            <img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230" height="70" fetchpriority="high" loading="eager" decoding="sync">
         </a>
         <button type="button" id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition" aria-label="Close mobile menu">
             <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1181,16 +1182,18 @@ button:focus {
   <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-600 rounded-full"></div>
   </a>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (full-width; inner content centered with responsive container) -->
   <main id="main-content">
-  <section class="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-40 pb-16 overflow-hidden" aria-label="Hero section">
+  <section class="relative min-h-screen flex items-center justify-center pt-40 pb-16 overflow-hidden" aria-label="Hero section">
+    <!-- Inner wrapper: responsive container + padding for readability -->
+    <div class="w-full max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12">
     
     <!-- Decorative Images -->
     <!-- Decorative images - aria-hidden for screen readers, empty alt is correct for decorative content -->
     <img src="images/heropagephoto.png" alt="" class="opacity-10 sm:opacity-70 absolute top-24 right-10 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" width="350" height="350" decoding="async" aria-hidden="true">
     <img src="images/heropagephoto_2.png" alt="" class="opacity-10 sm:opacity-70 absolute bottom-0 left-0 w-[350px] h-[350px] object-cover pointer-events-none z-0" loading="lazy" width="350" height="350" decoding="async" aria-hidden="true">
     
-    <!-- Content -->
+    <!-- Content (centered; text blocks below use max-w for line length) -->
     <div class="relative z-10 max-w-4xl mx-auto text-center">
       
       <!-- Section Label -->
@@ -1205,7 +1208,7 @@ button:focus {
       <!-- Location Tag -->
       <p class="hero-subheading text-lg sm:text-xl font-medium text-cyan-700 mb-6">in Singapore</p>
 
-      <!-- Subheading (warmer, more approachable) -->
+      <!-- Subheading (warmer, more approachable; max-w-2xl for line length) -->
       <p class="hero-subheading text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto mb-8">
         Careful repairs and clean renovations for homes and workplaces. Licensed trades, transparent pricing, and respect for your space.
       </p>
@@ -1239,11 +1242,13 @@ button:focus {
     </div>
   </div>
 </div>
+    </div>
   </section>
 
 
-  <!-- Services Overview description Section -->
-  <section class="w-full  overflow-hidden">
+  <!-- Services Overview description Section (full-width; inner content responsive) -->
+  <section class="w-full overflow-hidden">
+    <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12">
     <div class="w-full flex pt-20 bg-white justify-center items-center left-0 right-0 gap-20">
       <img 
         class="h-[600px] hidden sm:block transition-all duration-700 transform hover:scale-105 hover:rotate-1  animate-arrow" 
@@ -1254,7 +1259,8 @@ button:focus {
         loading="lazy"
       >
       
-      <div class="w-[650px]  ">
+      <!-- Text block constrained for readability -->
+      <div class="w-[650px] max-w-full max-w-3xl">
         <h2 class="text-[22px] tracking-[6px] mb-8 font-semibold text-gray-900">
           BUILT WITH CARE.<br>
           
@@ -1280,11 +1286,12 @@ button:focus {
         
       </div>
     </div>
+    </div>
 </section>
 
-  <!-- Services Section -->
+  <!-- Services Section (grid expands with container) -->
   <section class="relative bg-slate-50" aria-labelledby="services-heading">
-    <div class="max-w mx-auto">
+    <div class="max-w mx-auto ">
       <h2 id="services-heading" class="sr-only">Our Services</h2>
       <!-- Services Grid (all services) -->
       <div class="stagger-children grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
@@ -1397,7 +1404,7 @@ button:focus {
             <div class="service-card-overlay"></div>
             <img class="w-full service-card-image h-full object-cover" src="images/hacking/supermarket-shop-chernobyl-exclusion-zone-with-ruins-abandoned-pripyat-city-zone-radioactivity-ghost-town.jpg" alt="Hacking and Demolition" loading="lazy" width="400" height="256" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
-            <h2 class="absolute text-[20px] font-semibold tracking-[5px] text-white">HACKING & DEMOLITION</h2>
+            <h2 class="absolute text-[20px] font-semibold tracking-[5px] text-center text-white">HACKING & DEMOLITION</h2>
           </div>
          
         </a>
@@ -1423,8 +1430,8 @@ button:focus {
         ============================================ -->
         <section class="py-20 sm:py-28 bg-slate-900 relative overflow-hidden">
     <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(#0891b2 1px, transparent 1px), linear-gradient(90deg, #0891b2 1px, transparent 1px); background-size: 40px 40px;"></div>
-          
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+          <!-- Responsive container: wider on 2xl, padding scales -->
+          <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative z-10">
             
             <!-- Section Header - BOLD -->
             <div class="fade-up section-header-bold mb-16">
@@ -1502,9 +1509,9 @@ button:focus {
       
 
  
-  <!-- Projects Section -->
+  <!-- Projects Section (grid expands with container) -->
   <section class="py-16 sm:py-20 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12">
       
       <!-- Section Header (Company Signature Layout) -->
       <div class="text-center mb-8 sm:mb-12">
@@ -1663,8 +1670,8 @@ button:focus {
     <!-- Background overlay only (no external image) -->
     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');"></div>
     <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+    <!-- Responsive container: testimonials section -->
+    <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 relative z-10">
       
       <!-- Section Header -->
       <div class="fade-up text-center mb-12">
@@ -1872,15 +1879,15 @@ button:focus {
     </div>
   </section>
 
-  <!-- About Preview Section -->
+  <!-- About Preview Section (text column constrained for readability) -->
   <section class="py-16 sm:py-20 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12">
       
       <!-- Two Column Layout -->
       <div class="stagger-children grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         
-        <!-- Left Column: Content -->
-        <div>
+        <!-- Left Column: Content (max-w-prose for text readability) -->
+        <div class="max-w-prose">
           
           <!-- Section Label -->
           <p class="text-xs tracking-[0.2em] uppercase text-slate-500 font-medium mb-4">About Us</p>
@@ -1950,11 +1957,11 @@ button:focus {
 
 
 
-  <!-- Call-To-Action Section -->
+  <!-- Call-To-Action Section (full-width; inner content centered) -->
   <section class="py-16 sm:py-20 bg-red-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
+    <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 text-center">
       
-      <!-- CTA Header (approachable, not aggressive) -->
+      <!-- CTA Header (approachable, not aggressive; text constrained) -->
       <p class="text-xs tracking-[0.2em] uppercase text-white font-medium mb-3 opacity-90">Ready to Start?</p>
       <h2 class="text-2xl sm:text-3xl font-semibold text-white mb-4">Let's Discuss Your Project</h2>
       <p class="text-base text-white mb-8 max-w-xl mx-auto leading-relaxed opacity-95">
@@ -1988,9 +1995,9 @@ button:focus {
 
      <!-- Contact Section -->
      <section class="py-16 sm:py-20 bg-white border-t border-slate-200">
-       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+       <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12">
          
-        <!-- Section Header -->
+        <!-- Section Header (text constrained) -->
          <div class="text-center max-w-2xl mx-auto mb-12">
            <p class="text-xs tracking-[0.2em] uppercase text-slate-500 font-medium mb-3">Get In Touch</p>
            <h2 class="text-2xl sm:text-3xl font-semibold text-slate-900 mb-4">Contact Us</h2>
@@ -2149,13 +2156,13 @@ button:focus {
         <!-- First Row - Navigation Links -->
         
 
-        <!-- Second Row - Company Info (4 Divs) -->
+        <!-- Second Row - Company Info (responsive container) -->
         <div class="border-b border-gray-700">
-            <div class="max-w-7xl mx-auto px-4 py-10">
+            <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 py-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     <!-- Logo -->
                     <div class="lg:col-span-2 md:col-span-1 items-center flex md:items-start justify-center :col-span-1">
-                        <img src="images/logo_new-removebg-preview.png " alt="Reliable Engineering and Construction Logo" class="h-20 mb-3" width="200" height="80" loading="lazy" decoding="async">
+                        <img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3" width="300" height="80" loading="lazy" decoding="async">
                         
                     </div>
 
@@ -2213,9 +2220,9 @@ button:focus {
             </div>
         </div>
 
-        <!-- Third Row - Copyright & Credits -->
+        <!-- Third Row - Copyright & Credits (same container logic) -->
         <div class="bg-gray-950">
-            <div class="max-w-7xl mx-auto px-4 py-5">
+            <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 py-5">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-3">
                     <p class="text-gray-400 text-sm">&copy; 2024 Reliable Engineering and Construction. All rights reserved.</p>
                     <p class="text-gray-400 text-sm">Reliable Engineering and Construction by <span class="text-cyan-400 font-medium">Michael</span></p>
