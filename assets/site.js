@@ -405,7 +405,7 @@
     publicHolidays: "Closed"
   },
   contact: {
-    phone: ["+6560254678", "+6591758912"],
+    phone: ["+6585864098"],
     email: ["sgsaconstruction@gmail.com", "contact@sgsa.com"],
     address: "Jalan Besar Plaza #02-36, Singapore 208511"
   },
@@ -534,9 +534,9 @@ function generateResponse(userMessage) {
   // Contact/Phone questions
   if (message.includes('phone') || message.includes('contact') || message.includes('call') || message.includes('number')) {
     if (message.includes('site manager')) {
-      return `Our Site Manager's contact: ${companyInfo.contact.phone[1]}. You can reach them for project-specific inquiries.`;
-    }
-    return `You can reach us at:\n• Main: ${companyInfo.contact.phone[0]}\n• Site Manager: ${companyInfo.contact.phone[1]}`;
+    return `Contact us at: ${companyInfo.contact.phone[0]}.`;
+  }
+  return `You can reach us at:\n• ${companyInfo.contact.phone[0]}`;
   }
   
   // Email questions
