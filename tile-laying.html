@@ -285,7 +285,7 @@ body.menu-open {
                    <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">CONTACT</a>
                </div>
                <div>
-                   <a href="tel:+6560254678" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
+                   <a href="tel:+6585864098" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
                </div>
                <div class="md:hidden">
                    <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
@@ -403,7 +403,7 @@ body.menu-open {
     </div>
     </div>
     <a
-      href="https://wa.me/6586955055?text=Hi%20Reliable%20Engineering%20and%20Construction%20%7C%20I%20need%20tile%20laying%20services"
+      href="https://wa.me/6585864098?text=Hi%20Reliable%20Engineering%20and%20Construction%20%7C%20I%20need%20tile%20laying%20services"
       target="_blank"
       class="fixed bottom-20 right-6 z-40 group"
       >
@@ -469,7 +469,7 @@ body.menu-open {
                 >Get a Free Quote</a
               >
               <a
-                href="tel:+6586955055"
+                href="tel:+6585864098"
                 class="border border-white/70 hover:bg-white hover:text-gray-900 text-white font-semibold px-7 py-3 rounded-lg transition flex items-center gap-2"
                 >📞 Call Now</a
               >
@@ -1185,8 +1185,7 @@ body.menu-open {
                   ></path>
                 </svg>
                 <div>
-                  <p class="text-gray-400 text-sm">Tel : +6560254678</p>
-                  <p class="text-gray-400 text-sm">Site Manager: +6591758912</p>
+                  <p class="text-gray-400 text-sm">Tel : +65 85864098</p>
                 </div>
               </div>
             </div>
@@ -1615,7 +1614,7 @@ body.menu-open {
           publicHolidays: "Closed"
         },
         contact: {
-          phone: ["+6560254678", "+6591758912"],
+          phone: ["+6585864098"],
           email: ["info.sgsaconstruction@gmail.com", "contact@sgsa.com"],
           address: "Jalan Besar Plaza #02-36, Singapore 208511"
         },
@@ -1744,9 +1743,9 @@ body.menu-open {
         // Contact/Phone questions
         if (message.includes('phone') || message.includes('contact') || message.includes('call') || message.includes('number')) {
           if (message.includes('site manager')) {
-            return `Our Site Manager's contact: ${companyInfo.contact.phone[1]}. You can reach them for project-specific inquiries.`;
+            return `Our Site Manager's contact: ${companyInfo.contact.phone[0]}. You can reach them for project-specific inquiries.`;
           }
-          return `You can reach us at:\n• Main: ${companyInfo.contact.phone[0]}\n• Site Manager: ${companyInfo.contact.phone[1]}`;
+          return `You can reach us at:\n• Main: ${companyInfo.contact.phone[0]}\n• `;
         }
         
         // Email questions
