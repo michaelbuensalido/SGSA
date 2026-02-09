@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Reliable Engineering and Construction - Get in Touch for Your Home Repair & Renovation Needs</title>
+     <link  rel="icon" type="image/x-icon" href="images/company-logo.png">
     <meta name="description" content="Contact Reliable Engineering and Construction for reliable handyman and renovation services in Singapore. Call, email, or visit us at Jalan Besar Plaza. Free quotes available.">
     <!-- Performance: Resource Hints -->
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
@@ -628,24 +629,7 @@ function sendMail(event) {
   const subject = document.getElementById('subject').value.trim();
   const message = document.getElementById('message').value.trim();
   
-  // SPAM PROTECTION 1: Honeypot Check
-  const honeypot = document.getElementById('website').value;
-  if (honeypot) {
-    console.log('Bot detected via honeypot');
-    return; // Silently reject
-  }
-  
-  // SPAM PROTECTION 2: Time-based check (form filled too quickly)
-  const formLoadTime = parseInt(document.getElementById('form-timestamp').value);
-  const currentTime = Date.now();
-  const timeSpent = (currentTime - formLoadTime) / 1000; // in seconds
-  
-  if (timeSpent < 3) {
-    formMessage.classList.remove('hidden', 'bg-green-100', 'border-green-400', 'text-green-700');
-    formMessage.classList.add('bg-red-100', 'border-red-400', 'text-red-700', 'border', 'p-4', 'rounded-md');
-    formMessage.textContent = 'Please take your time filling out the form.';
-    return;
-  }
+ 
   
   // SPAM PROTECTION 3: Content validation
   const spamKeywords = ['viagra', 'casino', 'lottery', 'crypto', 'bitcoin', 'investment opportunity'];

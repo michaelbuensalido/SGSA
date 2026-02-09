@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Story | Reliable Engineering and Construction - From HDB Repairs to Dream Renovations</title>
+     <link  rel="icon" type="image/x-icon" href="images/company-logo.png">
     <meta name="description" content="Meet the team behind Reliable Engineering and Construction. From humble beginnings in Jalan Besar to becoming Singapore's trusted handyman service. Our story, our people, our promise.">
     <!-- Performance: Resource Hints -->
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
@@ -1604,6 +1605,34 @@ body.menu-open {
             window.initMobileProjectsAccordion();
           }
         }, 200);
+
+        // Fallback: Initialize mobile projects accordion directly if site.js doesn't work
+        setTimeout(() => {
+          const mobileProjectsBtn = document.getElementById('mobile-projects-btn');
+          const mobileProjectsMenu = document.getElementById('mobile-projects-menu');
+          const mobileProjectsArrow = document.getElementById('mobile-projects-arrow');
+
+          if (mobileProjectsBtn && mobileProjectsMenu && mobileProjectsArrow && !mobileProjectsBtn.hasAttribute('data-accordion-initialized')) {
+            mobileProjectsBtn.setAttribute('data-accordion-initialized', 'true');
+
+            const handleToggle = (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              const isHidden = mobileProjectsMenu.classList.contains('hidden');
+              mobileProjectsMenu.classList.toggle('hidden');
+              mobileProjectsArrow.classList.toggle('rotate-180', isHidden);
+              mobileProjectsBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+            };
+
+            mobileProjectsBtn.addEventListener('click', handleToggle);
+            mobileProjectsBtn.addEventListener('touchstart', (e) => {
+              if (e.cancelable) {
+                e.preventDefault();
+              }
+              handleToggle(e);
+            }, { passive: false });
+          }
+        }, 100);
       })();
     </script>
   <!-- Vercel Speed Insights -->
