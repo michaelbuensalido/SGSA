@@ -26,6 +26,15 @@
   <!-- Performance: Preload critical logo image (LCP candidate) -->
   <link rel="preload" as="image" href="images/company-logo.png" fetchpriority="high">
 
+  <!-- Performance: Preload additional fonts (non-blocking) -->
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap">
+  </noscript>
+
   <!-- Performance: Critical CSS inline (above-the-fold only) -->
   <style>
     /* Critical CSS - Above-the-fold styles only (kept under 14KB) */
@@ -127,17 +136,10 @@
     }
   </style>
 
-  <!-- Performance: Load Tailwind CSS synchronously (critical for styling - prevents FOUC) -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Performance: Load Tailwind CSS with defer to prevent render blocking -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
 
   <style>
-    /* Performance: Load additional fonts with font-display: swap (already included in URL) */
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
-
-    .heading-font {
-      font-family: 'Archivo', serif;
-    }
-
     .body-font {
       font-family: 'Inter', sans-serif;
     }
@@ -172,8 +174,8 @@
     }
 
     /* ============================================
-       ANIMATION SYSTEM (Clean & Professional)
-       ============================================ */
+  ANIMATION SYSTEM (Clean & Professional)
+  ============================================ */
 
     /* 1️⃣ SECTION FADE + SLIDE - Main Animation */
     .fade-up {
@@ -543,8 +545,8 @@
     }
 
     /* ============================================
-   PROFESSIONAL ANIMATIONS SYSTEM
-   ============================================ */
+  PROFESSIONAL ANIMATIONS SYSTEM
+  ============================================ */
 
     /* Respect user preferences for reduced motion */
     @media (prefers-reduced-motion: reduce) {
@@ -560,8 +562,8 @@
     }
 
     /* ============================================
-   ABOUT SECTION ANIMATIONS
-   ============================================ */
+  ABOUT SECTION ANIMATIONS
+  ============================================ */
 
     /* Fade-in + upward movement animation */
     @keyframes fadeInUp {
@@ -607,8 +609,8 @@
     }
 
     /* ============================================
-   SERVICE / VALUE CARDS ANIMATIONS
-   ============================================ */
+  SERVICE / VALUE CARDS ANIMATIONS
+  ============================================ */
 
     /* Value cards hover effect - subtle elevation */
     .card-hover {
@@ -654,8 +656,8 @@
     }
 
     /* ============================================
-   BUTTONS & CTAs ANIMATIONS
-   ============================================ */
+  BUTTONS & CTAs ANIMATIONS
+  ============================================ */
 
     /* Base button transition */
     .btn-animate,
@@ -696,8 +698,8 @@
     }
 
     /* ============================================
-   IMAGE ANIMATIONS
-   ============================================ */
+  IMAGE ANIMATIONS
+  ============================================ */
 
     /* Project card images - gentle hover */
     .project-card img {
@@ -722,8 +724,8 @@
     }
 
     /* ============================================
-   NAVIGATION ANIMATIONS
-   ============================================ */
+  NAVIGATION ANIMATIONS
+  ============================================ */
 
     /* Smooth underline animation - already exists, refine it */
     .nav-link::after {
@@ -741,8 +743,8 @@
     }
 
     /* ============================================
-   SCROLL-TRIGGERED ANIMATIONS
-   ============================================ */
+  SCROLL-TRIGGERED ANIMATIONS
+  ============================================ */
 
     /* Elements that animate on scroll (gentler, renovation-appropriate) */
     .scroll-animate {
@@ -775,8 +777,8 @@
     }
 
     /* ============================================
-   REFINED EXISTING ANIMATIONS
-   ============================================ */
+  REFINED EXISTING ANIMATIONS
+  ============================================ */
 
     /* Keep existing trust-badge animation (preserved from original) */
     /* Note: trust-badge animation is defined above in original code */
@@ -854,9 +856,9 @@
     }
 
     /* ============================================
-   SERVICES MARQUEE BAR
-   Corporate-grade capability index
-   ============================================ */
+  SERVICES MARQUEE BAR
+  Corporate-grade capability index
+  ============================================ */
 
     /* Marquee Container */
     .services-marquee {
@@ -1564,10 +1566,10 @@
         <!-- Decorative images - aria-hidden for screen readers, empty alt is correct for decorative content -->
         <img src="images/heropagephoto.png" alt=""
           class="opacity-10 sm:opacity-70 absolute top-24 right-10 w-[350px] h-[350px] object-cover pointer-events-none z-0"
-          loading="lazy" width="350" height="350" decoding="async" aria-hidden="true">
+          loading="eager" fetchpriority="high" width="350" height="350" decoding="async" aria-hidden="true">
         <img src="images/heropagephoto_2.png" alt=""
           class="opacity-10 sm:opacity-70 absolute bottom-0 left-0 w-[350px] h-[350px] object-cover pointer-events-none z-0"
-          loading="lazy" width="350" height="350" decoding="async" aria-hidden="true">
+          loading="eager" fetchpriority="high" width="350" height="350" decoding="async" aria-hidden="true">
 
         <!-- Content (centered; text blocks below use max-w for line length) -->
         <div class="relative z-10 max-w-4xl mx-auto text-center">
