@@ -35,7 +35,11 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap">
   </noscript>
 
-  <!-- Performance: Critical CSS inline (above-the-fold only) -->
+ 
+
+  <!-- Performance: Load Tailwind CSS with defer to prevent render blocking -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     /* Critical CSS - Above-the-fold styles only (kept under 14KB) */
     body {
@@ -134,12 +138,6 @@
       font-family: 'Archivo';
       font-display: swap
     }
-  </style>
-
-  <!-- Performance: Load Tailwind CSS with defer to prevent render blocking -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
-
-  <style>
     .body-font {
       font-family: 'Inter', sans-serif;
     }
@@ -1005,12 +1003,7 @@
 </head>
 
 <body class="font-archivo">
-  <!-- Skip to main content link for screen readers and keyboard navigation -->
-  <a href="#main-content"
-    class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-600 focus:text-white focus:rounded-md">Skip
-    to main content</a>
-  <div class="relative">
-
+  
     <!-- ============================================
      SERVICES MARQUEE BAR
      Corporate-grade capability index
@@ -3754,14 +3747,7 @@
 
         animatedElements.forEach(el => observer.observe(el));
       })();
-
-    </script>
-    <!-- Defer non-critical JavaScript to improve initial page load -->
-    <script src="assets/site.js?v=1.0.0" defer></script>
-
-    <!-- Performance: Lazy load non-critical sections -->
-    <script>
-      // Lazy load sections not immediately visible
+ // Lazy load sections not immediately visible
       (function () {
         if ('IntersectionObserver' in window) {
           const lazySections = document.querySelectorAll('.lazy-section');
@@ -3780,6 +3766,10 @@
         }
       })();
     </script>
+    <!-- Defer non-critical JavaScript to improve initial page load -->
+    <script src="assets/site.js?v=1.0.0" defer></script>
+
+    
     <!-- Vercel Speed Insights -->
     <script>
       window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
