@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Projects – Commercial Construction | Reliable Engineering and Construction</title>
-   <link  rel="icon" type="image/x-icon" href="images/company-logo.png">
-  <meta name="description" content="View Reliable Engineering and Construction's commercial project portfolio. Office fit-outs, retail renovations, and industrial construction delivered on time and on budget.">
+  <link rel="icon" type="image/x-icon" href="images/company-logo.png">
+  <meta name="description"
+    content="View Reliable Engineering and Construction's commercial project portfolio. Office fit-outs, retail renovations, and industrial construction delivered on time and on budget.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,30 +15,68 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/gallery.css">
   <style>
-    .font-archivo { font-family: 'Archivo', sans-serif; }
-    .nav-link { position: relative; display: inline-block; }
-    .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 50%; background-color: #38bdf8; transition: all 0.3s ease; transform: translateX(-50%); }
-    .nav-link:hover::after { width: 100%; }
-    nav { transition: background-color 0.3s ease, box-shadow 0.3s ease; }
-    .mobile-menu-overlay { opacity: 0; visibility: hidden; transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    .mobile-menu-overlay.active { opacity: 1; visibility: visible; }
-    .mobile-menu-panel {
-  transform: translateY(-100%) scale(0.95);
-  opacity: 0;
-  transform-origin: top center; transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
-              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  max-height: calc(100vh - 80px);
-  overflow-y: auto; }
-    .mobile-menu-panel.active {
-  transform: translateY(0) scale(1);
-  opacity: 1; }
-    body.menu-open { overflow: hidden; }
+    .font-archivo {
+      font-family: 'Archivo', sans-serif;
+    }
 
-    
+    .nav-link {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 50%;
+      background-color: #38bdf8;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    nav {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .mobile-menu-overlay {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mobile-menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-menu-panel {
+      transform: translateY(-100%) scale(0.95);
+      opacity: 0;
+      transform-origin: top center;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+        opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+    }
+
+    .mobile-menu-panel.active {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
   </style>
 </head>
-<body
-style="
+
+<body style="
 background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/commercial/1723.jpg');
 background-size: 100% 180%;
 background-position: center bottom;
@@ -49,309 +89,500 @@ position: relative;" class="font-archivo">
   <!-- Navbar -->
   <div class="relative ">
     <nav id="navbar" class="fixed z-20 top-0 left-0 right-0 z-10 pb-[5px] pt-[5px]">
-       <div class="max-w-6xl mx-auto">
-           <div class="flex justify-between items-center h-[100px] px-4">
-               <div class="flex-shrink-0">
-                   <a href="index.html" class="flex items-center">
-                       <img class="w-[160px] h-[130px]" src="images/company-logo.png" alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync">
-                   </a>
-               </div>
-               <div class="hidden md:flex space-x-10 font-archivo items-center">
-                   <a href="index.html" class="nav-link text-white hover:text-sky-400 text-xs  font-medium transition duration-300">HOME</a>
-                   <a href="about.html" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">ABOUT US</a>
-                   <div class="relative dropdown-wrapper group">
-                       <button class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1">OUR SERVICES
-                           <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                           </svg>
-                       </button>
-                       <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                           <div class="menu-item relative group/handyman">
-                               <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between border-b border-gray-100">
-                                   <div class="flex items-center gap-3">
-                                       <span class="font-light text-xs text-gray-800">Handyman Services</span>
-                                   </div>
-                                   <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                   </svg>
-                               </div>
-                               <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white  shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
-                                   <div class="py-2">
-                                
-                                       <a href="aircon.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
-                                       <a href="plumbing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                                       <a href="electrical.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="menu-item relative group/renovation">
-                               <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between">
-                                   <div class="flex items-center gap-3">
-                                       <span class="font-light text-xs text-gray-800">Renovation Services</span>
-                                   </div>
-                                   <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                                   </svg>
-                               </div>
-                               <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
-                                   <div class="py-2">
-                                    <a href="plastering.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>  
-                                    <a href="plumbing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                                       <a href="electrical.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
-                                       <a href="painting.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
-                                       <a href="tile-laying.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
-                                       <a href="renovation-works.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
-                                       <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
-                                       <a href="carpentry.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
-                                       <a href="waterproofing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
-                                       <a href="hacking-demolition.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-                   <!-- OUR PROJECTS dropdown -->
-                <div class="relative group" data-projects-dropdown>
-                  <button type="button" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
-                    OUR PROJECTS
-                    <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                  </button>
-                  <div class="absolute left-0 mt-2 w-56 bg-white  shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" data-projects-dropdown-panel>
+      <div class="max-w-6xl mx-auto">
+        <div class="flex justify-between items-center h-[100px] px-4">
+          <div class="flex-shrink-0">
+            <a href="index.html" class="flex items-center">
+              <img class="w-[160px] h-[130px]" src="images/company-logo.png"
+                alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high"
+                loading="eager" decoding="sync">
+            </a>
+          </div>
+          <div class="hidden md:flex space-x-10 font-archivo items-center">
+            <a href="index.html"
+              class="nav-link text-white hover:text-sky-400 text-xs  font-medium transition duration-300">HOME</a>
+            <a href="about.html"
+              class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">ABOUT US</a>
+            <div class="relative dropdown-wrapper group">
+              <button
+                class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1">OUR
+                SERVICES
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div
+                class="dropdown-menu absolute left-0 mt-2 w-64 bg-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div class="menu-item relative group/handyman">
+                  <div
+                    class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between border-b border-gray-100">
+                    <div class="flex items-center gap-3">
+                      <span class="font-light text-xs text-gray-800">Handyman Services</span>
+                    </div>
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                  <div
+                    class="submenu absolute left-full top-0 ml-1 w-64 bg-white  shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
                     <div class="py-2">
-                      <a href="projects-handyman.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
-                      <a href="projects-residential.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
-                      <a href="projects-commercial.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
+
+                      <a href="aircon.html"
+                        class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air
+                        Con Service & Installation</a>
+                      <a href="plumbing.html"
+                        class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                      <a href="electrical.html"
+                        class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical
+                        Works</a>
                     </div>
                   </div>
                 </div>
-                   <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">CONTACT</a>
-               </div>
-               <div>
-                   <a href="tel:+6585864098" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
-               </div>
-               <div class="md:hidden">
-                   <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
-                       <!-- Hamburger icon -->
-                       <svg id="hamburger-icon" class="h-10 w-10 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                       </svg>
-                   </button>
-               </div>
-           </div>
-       </div>
+                <div class="menu-item relative group/renovation">
+                  <div
+                    class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                      <span class="font-light text-xs text-gray-800">Renovation Services</span>
+                    </div>
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                  <div
+                    class="submenu absolute left-full top-0 ml-1 w-64 bg-white shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
+                    <div class="py-2">
+                      <a href="plastering.html"
+                        class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering
+                        Works</a>
+                      <a href="plumbing.html"
+                        class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                      <a href="electrical.html"
+                        class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical
+                        Works</a>
+                      <a href="painting.html"
+                        class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
+                      <a href="tile-laying.html"
+                        class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile
+                        Laying</a>
+                      <a href="renovation-works.html"
+                        class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation
+                        Works</a>
+                      <a href="ceiling-wall-partitions.html"
+                        class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling
+                        & Wall Partitions</a>
+                      <a href="carpentry.html"
+                        class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry
+                        Works</a>
+                      <a href="waterproofing.html"
+                        class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
+                      <a href="hacking-demolition.html"
+                        class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement,
+                        Hacking & Demolition</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- OUR PROJECTS dropdown -->
+            <div class="relative group" data-projects-dropdown>
+              <button type="button"
+                class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1"
+                aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
+                OUR PROJECTS
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div
+                class="absolute left-0 mt-2 w-56 bg-white  shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50"
+                role="menu" data-projects-dropdown-panel>
+                <div class="py-2">
+                  <a href="projects-handyman.html"
+                    class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium"
+                    role="menuitem">Handyman</a>
+                  <a href="projects-residential.html"
+                    class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium"
+                    role="menuitem">Residential</a>
+                  <a href="projects-commercial.html"
+                    class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium"
+                    role="menuitem">Commercial</a>
+                </div>
+              </div>
+            </div>
+            <a href="contacts.html"
+              class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">CONTACT</a>
+          </div>
+          <div>
+            <a href="tel:+6585864098"
+              class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞
+              Call Now</a>
+          </div>
+          <div class="md:hidden">
+            <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none"
+              aria-label="Toggle mobile menu" aria-expanded="false">
+              <!-- Hamburger icon -->
+              <svg id="hamburger-icon" class="h-10 w-10 transition-all duration-300" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </nav>
-    
+
     <!-- Mobile Off-Canvas Menu Overlay -->
     <div id="mobile-menu-overlay" class="mobile-menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
-    
+
     <!-- Mobile Menu Dropdown Panel -->
-    <div id="mobile-menu-panel" class="mobile-menu-panel fixed top-0 left-0 right-0 w-full bg-white z-50 md:hidden shadow-2xl flex flex-col">
-        <!-- Header with Logo & Close -->
-        <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
-            <a href="index.html">
-                <img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230" height="70" fetchpriority="high" loading="eager" decoding="sync">
-            </a>
-            <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
-                <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-        
-        <!-- Menu Content -->
-        <div class="flex-1 overflow-y-auto py-4">
-            <!-- Primary Links -->
-            <nav class="px-4 space-y-1">
-                <a href="index.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Home
-                </a>
-                <a href="about.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">About
-                </a>
-            </nav>
-            
-            <!-- Divider -->
-            <div class="my-4 mx-6 border-t border-gray-200"></div>
-            
-            <!-- Services Section -->
-            <div class="px-4">
-                <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Services</p>
-                
-                <!-- Handyman Accordion -->
-                <div class="mb-2">
-                    <button id="mobile-handyman-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
-                        <span class="flex items-center gap-3">
-     
-                            Handyman Services
-                        </span>
-                        <svg id="mobile-handyman-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div id="mobile-handyman-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
-                        <a href="aircon.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Air Con Service</a>
-                        <a href="plumbing.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plumbing</a>
-                        <a href="electrical.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
-                    </div>
-                </div>
-                
-                <!-- Renovation Accordion -->
-                <div class="mb-2">
-                    <button id="mobile-renovation-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
-                        <span class="flex items-center gap-3">
-     
-                            Renovation Services
-                        </span>
-                        <svg id="mobile-renovation-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div id="mobile-renovation-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
-                      <a href="plastering.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plastering Works</a>
-                      <a href="plumbing.html" class="block px-4 py-3 text-base text-cyan-700 bg-cyan-50 font-medium rounded-lg">Plumbing</a>
-                        <a href="electrical.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
-                        <a href="painting.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Painting</a>
-                        
-                        <a href="tile-laying.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Tile Laying</a>
-                        <a href="renovation-works.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Renovation Works</a>
-                        <a href="ceiling-wall-partitions.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Ceiling & Partitions</a>
-                        <a href="carpentry.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Carpentry Works</a>
-                        <a href="waterproofing.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Waterproofing</a>
-                        <a href="hacking-demolition.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Hacking & Demolition</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Divider -->
-            <div class="my-4 mx-6 border-t border-gray-200"></div>
-            
-            <!-- Secondary Links -->
-            <nav class="px-4 space-y-1">
-                <!-- Our Projects Accordion -->
-                <div class="mb-2">
-                  <button id="mobile-projects-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition" aria-expanded="false">
-                      <span class="flex items-center gap-3">
-     
-                        Our Projects
-                    </span>
-                    <svg id="mobile-projects-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                  </button>
-                  <div id="mobile-projects-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
-                    <a href="projects-handyman.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Handyman</a>
-                    <a href="projects-residential.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Residential</a>
-                    <a href="projects-commercial.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
-                  </div>
-                </div>
-                <a href="contacts.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Contact
-                </a>
-            </nav>
-        </div>
-        
-       
-    </div>
-    </div>
-
-     <!-- Hero Section -->
-     <section class="relative sm:pb-20 mt-[290px] overflow-hidden">
-      
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <p class="uppercase tracking-[0.3em] text-sm sm:text-base text-cyan-400 font-semibold mb-4 text-center">Our Projects</p>
-        <h1 class="text-4xl sm:text-5xl font-bold text-white text-center leading-tight">Commercial <span class="text-cyan-400">Projects</span></h1>
-
+    <div id="mobile-menu-panel"
+      class="mobile-menu-panel fixed top-0 left-0 right-0 w-full bg-white z-50 md:hidden shadow-2xl flex flex-col">
+      <!-- Header with Logo & Close -->
+      <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
+        <a href="index.html">
+          <img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230"
+            height="70" fetchpriority="high" loading="eager" decoding="sync">
+        </a>
+        <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
+          <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
       </div>
-    </section>
+
+      <!-- Menu Content -->
+      <div class="flex-1 overflow-y-auto py-4">
+        <!-- Primary Links -->
+        <nav class="px-4 space-y-1">
+          <a href="index.html"
+            class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Home
+          </a>
+          <a href="about.html"
+            class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">About
+          </a>
+        </nav>
+
+        <!-- Divider -->
+        <div class="my-4 mx-6 border-t border-gray-200"></div>
+
+        <!-- Services Section -->
+        <div class="px-4">
+          <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Services</p>
+
+          <!-- Handyman Accordion -->
+          <div class="mb-2">
+            <button id="mobile-handyman-btn"
+              class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
+              <span class="flex items-center gap-3">
+
+                Handyman Services
+              </span>
+              <svg id="mobile-handyman-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobile-handyman-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+              <a href="aircon.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Air
+                Con Service</a>
+              <a href="plumbing.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plumbing</a>
+              <a href="electrical.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical
+                Works</a>
+            </div>
+          </div>
+
+          <!-- Renovation Accordion -->
+          <div class="mb-2">
+            <button id="mobile-renovation-btn"
+              class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
+              <span class="flex items-center gap-3">
+
+                Renovation Services
+              </span>
+              <svg id="mobile-renovation-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobile-renovation-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+              <a href="plastering.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plastering
+                Works</a>
+              <a href="plumbing.html"
+                class="block px-4 py-3 text-base text-cyan-700 bg-cyan-50 font-medium rounded-lg">Plumbing</a>
+              <a href="electrical.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical
+                Works</a>
+              <a href="painting.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Painting</a>
+
+              <a href="tile-laying.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Tile
+                Laying</a>
+              <a href="renovation-works.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Renovation
+                Works</a>
+              <a href="ceiling-wall-partitions.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Ceiling
+                & Partitions</a>
+              <a href="carpentry.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Carpentry
+                Works</a>
+              <a href="waterproofing.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Waterproofing</a>
+              <a href="hacking-demolition.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Hacking
+                & Demolition</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="my-4 mx-6 border-t border-gray-200"></div>
+
+        <!-- Secondary Links -->
+        <nav class="px-4 space-y-1">
+          <!-- Our Projects Accordion -->
+          <div class="mb-2">
+            <button id="mobile-projects-btn"
+              class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition"
+              aria-expanded="false">
+              <span class="flex items-center gap-3">
+
+                Our Projects
+              </span>
+              <svg id="mobile-projects-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobile-projects-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+              <a href="projects-handyman.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Handyman</a>
+              <a href="projects-residential.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Residential</a>
+              <a href="projects-commercial.html"
+                class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
+            </div>
+          </div>
+          <a href="contacts.html"
+            class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Contact
+          </a>
+        </nav>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative sm:pb-20 mt-[290px] overflow-hidden">
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <p class="uppercase tracking-[0.3em] text-sm sm:text-base text-cyan-400 font-semibold mb-4 text-center">Our
+        Projects</p>
+      <h1 class="text-4xl sm:text-5xl font-bold text-white text-center leading-tight">Commercial <span
+          class="text-cyan-400">Projects</span></h1>
+
+    </div>
+  </section>
   <main class="bg-white">
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-10 sm:py-14" aria-labelledby="commercial-projects-heading">
-     
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-10 sm:py-14"
+      aria-labelledby="commercial-projects-heading">
+
 
       <!-- Aligned grid -->
       <div class="mt-8 grid grid-cols-1 pb-10 sm:grid-cols-2 lg:grid-cols-3 gap-6" data-project-grid>
         <figure data-project-item>
-          <a href="images/commercial/Pei-chun/IMG20251223170018.jpg" class="gallery-image-wrapper block" data-lightbox-trigger data-label="Commercial Renovation" data-alt="Commercial space renovation">
-            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy" decoding="async" src="images/commercial/school/IMG20251223154650.jpg" alt="Commercial space renovation">
-            <div class="gallery-overlay" aria-hidden="true"><div class="gallery-overlay-content"><p class="gallery-service-type">Renovation</p><p class="gallery-description">Full commercial space renovation with modern fit-out and compliance.</p></div></div>
+          <a href="images/commercial/Pei-chun/IMG20251223170018.jpg" class="gallery-image-wrapper block"
+            data-lightbox-trigger data-label="Commercial Renovation" data-alt="Commercial space renovation">
+            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy"
+              decoding="async" src="images/commercial/school/IMG20251223154650.jpg" alt="Commercial space renovation">
+            <div class="gallery-overlay" aria-hidden="true">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Renovation</p>
+                <p class="gallery-description">Full commercial space renovation with modern fit-out and compliance.</p>
+              </div>
+            </div>
           </a>
-          <figcaption class="sr-only">Renovation — Full commercial space renovation with modern fit-out and compliance.</figcaption>
+          <figcaption class="sr-only">Renovation — Full commercial space renovation with modern fit-out and compliance.
+          </figcaption>
         </figure>
-        
+
         <figure data-project-item>
-          <a href="images/commercial/school/IMG20251223154650.jpg" class="gallery-image-wrapper block" data-lightbox-trigger data-label="Finished Project" data-alt="Completed commercial project">
-            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy" decoding="async" src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Completed commercial project">
-              <div class="gallery-overlay" aria-hidden="true"><div class="gallery-overlay-content"><p class="gallery-service-type">Plumbing</p><p class="gallery-description">Commercial plumbing installation and repair.</p></div></div>
+          <a href="images/commercial/school/IMG20251223154650.jpg" class="gallery-image-wrapper block"
+            data-lightbox-trigger data-label="Finished Project" data-alt="Completed commercial project">
+            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy"
+              decoding="async" src="images/commercial/Pei-chun/IMG20251223170018.jpg"
+              alt="Completed commercial project">
+            <div class="gallery-overlay" aria-hidden="true">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Plumbing</p>
+                <p class="gallery-description">Commercial plumbing installation and repair.</p>
+              </div>
+            </div>
           </a>
           <figcaption class="sr-only">Plumbing — Commercial plumbing installation and repair.</figcaption>
         </figure>
         <figure data-project-item>
-          <a href="images/commercial/Pei-chun/IMG20251223170026.jpg" class="gallery-image-wrapper block" data-lightbox-trigger data-label="Finished Project" data-alt="Completed commercial project">
-            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy" decoding="async" src="images/commercial/Pei-chun/IMG20251223170026.jpg" alt="Completed commercial project">
-              <div class="gallery-overlay" aria-hidden="true"><div class="gallery-overlay-content"><p class="gallery-service-type">Plumbing</p><p class="gallery-description">Commercial plumbing installation and repair.</p></div></div>
+          <a href="images/commercial/Pei-chun/IMG20251223170026.jpg" class="gallery-image-wrapper block"
+            data-lightbox-trigger data-label="Finished Project" data-alt="Completed commercial project">
+            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy"
+              decoding="async" src="images/commercial/Pei-chun/IMG20251223170026.jpg"
+              alt="Completed commercial project">
+            <div class="gallery-overlay" aria-hidden="true">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Plumbing</p>
+                <p class="gallery-description">Commercial plumbing installation and repair.</p>
+              </div>
+            </div>
           </a>
-          <figcaption class="sr-only">Plumbing — Commercial plumbing installation and repair. Finished Project</figcaption>
+          <figcaption class="sr-only">Plumbing — Commercial plumbing installation and repair. Finished Project
+          </figcaption>
         </figure>
         <figure data-project-item>
-          <a href="images/commercial/Pei-chun/IMG20251223165307.jpg" class="gallery-image-wrapper block" data-lightbox-trigger data-label="Finished Project" data-alt="Completed commercial project">
-            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy" decoding="async" src="images/commercial/Pei-chun/IMG20251223165100.jpg" alt="Completed commercial project">
-              <div class="gallery-overlay" aria-hidden="true"><div class="gallery-overlay-content"><p class="gallery-service-type">Painting</p><p class="gallery-description">Commercial painting installation and repair.</p></div></div>
+          <a href="images/commercial/Pei-chun/IMG20251223165307.jpg" class="gallery-image-wrapper block"
+            data-lightbox-trigger data-label="Finished Project" data-alt="Completed commercial project">
+            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy"
+              decoding="async" src="images/commercial/Pei-chun/IMG20251223165100.jpg"
+              alt="Completed commercial project">
+            <div class="gallery-overlay" aria-hidden="true">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Painting</p>
+                <p class="gallery-description">Commercial painting installation and repair.</p>
+              </div>
+            </div>
           </a>
-          <figcaption class="sr-only">Ceiling painting and plumbing — Commercial ceiling painting and plumbing installation and repair.</figcaption>
+          <figcaption class="sr-only">Ceiling painting and plumbing — Commercial ceiling painting and plumbing
+            installation and repair.</figcaption>
         </figure>
         <figure data-project-item>
-          <a href="images/commercial/Pei-chun/IMG20251223165807.jpg" class="gallery-image-wrapper block" data-lightbox-trigger data-label="Finished Project" data-alt="Completed commercial project">
-            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy" decoding="async" src="images/commercial/Pei-chun/IMG20251223165807.jpg" alt="Completed commercial project">
-              <div class="gallery-overlay" aria-hidden="true"><div class="gallery-overlay-content"><p class="gallery-service-type">Plumbing</p><p class="gallery-description">Commercial plumbing installation and repair.</p></div></div>
+          <a href="images/commercial/Pei-chun/IMG20251223165807.jpg" class="gallery-image-wrapper block"
+            data-lightbox-trigger data-label="Finished Project" data-alt="Completed commercial project">
+            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy"
+              decoding="async" src="images/commercial/Pei-chun/IMG20251223165807.jpg"
+              alt="Completed commercial project">
+            <div class="gallery-overlay" aria-hidden="true">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Plumbing</p>
+                <p class="gallery-description">Commercial plumbing installation and repair.</p>
+              </div>
+            </div>
           </a>
           <figcaption class="sr-only">Painting — Commercial painting installation and repair.</figcaption>
         </figure>
         <figure data-project-item>
-          <a href="images/commercial/school/toiletroom.jpg" class="gallery-image-wrapper block" data-lightbox-trigger data-label="Electrical" data-alt="Electrical">
-            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy" decoding="async" src="images/commercial/school/toiletroom.jpg" alt="Electrical">
-            <div class="gallery-overlay" aria-hidden="true"><div class="gallery-overlay-content"><p class="gallery-service-type">Plumbing</p><p class="gallery-description">Toilet room renovation for the school.</p></div></div>
+          <a href="images/commercial/school/toiletroom.jpg" class="gallery-image-wrapper block" data-lightbox-trigger
+            data-label="Electrical" data-alt="Electrical">
+            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy"
+              decoding="async" src="images/commercial/school/toiletroom.jpg" alt="Electrical">
+            <div class="gallery-overlay" aria-hidden="true">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Plumbing</p>
+                <p class="gallery-description">Toilet room renovation for the school.</p>
+              </div>
+            </div>
           </a>
           <figcaption class="sr-only">Plumbing — Plumbing installation for the school.</figcaption>
         </figure>
 
         <figure data-project-item>
-          <a href="images/commercial/school/toilet-bidet-tissuebox.jpg" class="gallery-image-wrapper block" data-lightbox-trigger data-label="Electrical" data-alt="Electrical">
-            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy" decoding="async" src="images/commercial/school/toilet-bidet-tissuebox.jpg" alt="Electrical">
-            <div class="gallery-overlay" aria-hidden="true"><div class="gallery-overlay-content"><p class="gallery-service-type">Plumbing</p><p class="gallery-description">Toilet, bidet, and tissue box installation for the school.</p></div></div>
+          <a href="images/commercial/school/toilet-bidet-tissuebox.jpg" class="gallery-image-wrapper block"
+            data-lightbox-trigger data-label="Electrical" data-alt="Electrical">
+            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy"
+              decoding="async" src="images/commercial/school/toilet-bidet-tissuebox.jpg" alt="Electrical">
+            <div class="gallery-overlay" aria-hidden="true">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Plumbing</p>
+                <p class="gallery-description">Toilet, bidet, and tissue box installation for the school.</p>
+              </div>
+            </div>
           </a>
           <figcaption class="sr-only">Plumbing — Toilet, bidet, and tissue box installation for the school.</figcaption>
         </figure>
 
         <figure data-project-item>
-          <a href="images/commercial/school/sink-mirror.jpg" class="gallery-image-wrapper block" data-lightbox-trigger data-label="Electrical" data-alt="Electrical">
-            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy" decoding="async" src="images/commercial/school/sink-mirror.jpg" alt="Electrical">
-            <div class="gallery-overlay" aria-hidden="true"><div class="gallery-overlay-content"><p class="gallery-service-type">Plumbing</p><p class="gallery-description">Sink and mirror installation for the school.</p></div></div>
+          <a href="images/commercial/school/sink-mirror.jpg" class="gallery-image-wrapper block" data-lightbox-trigger
+            data-label="Electrical" data-alt="Electrical">
+            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy"
+              decoding="async" src="images/commercial/school/sink-mirror.jpg" alt="Electrical">
+            <div class="gallery-overlay" aria-hidden="true">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Plumbing</p>
+                <p class="gallery-description">Sink and mirror installation for the school.</p>
+              </div>
+            </div>
           </a>
           <figcaption class="sr-only">Plumbing — Sink and mirror installation for the school.</figcaption>
         </figure>
 
         <figure data-project-item>
-          <a href="images/commercial/school/plumbing2.jpg" class="gallery-image-wrapper block" data-lightbox-trigger data-label="Electrical" data-alt="Electrical">
-            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy" decoding="async" src="images/commercial/school/plumbing2.jpg" alt="Electrical">
-            <div class="gallery-overlay" aria-hidden="true"><div class="gallery-overlay-content"><p class="gallery-service-type">Plumbing</p><p class="gallery-description">Electrical installation for the school.</p></div></div>
+          <a href="images/commercial/school/plumbing2.jpg" class="gallery-image-wrapper block" data-lightbox-trigger
+            data-label="Electrical" data-alt="Electrical">
+            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy"
+              decoding="async" src="images/commercial/school/plumbing2.jpg" alt="Electrical">
+            <div class="gallery-overlay" aria-hidden="true">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Plumbing</p>
+                <p class="gallery-description">Electrical installation for the school.</p>
+              </div>
+            </div>
           </a>
           <figcaption class="sr-only">Plumbing — Plumbing installation for the school.</figcaption>
         </figure>
-      
+
         <figure data-project-item>
-          <a href="images/commercial/school/fireemergencybutton.jpg" class="gallery-image-wrapper block" data-lightbox-trigger data-label="Electrical" data-alt="Electrical">
-            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy" decoding="async" src="images/commercial/school/fireemergencybutton.jpg" alt="Electrical">
-            <div class="gallery-overlay" aria-hidden="true"><div class="gallery-overlay-content"><p class="gallery-service-type">Electrical</p><p class="gallery-description">Electrical installation for the school.</p></div></div>
+          <a href="images/commercial/school/fireemergencybutton.jpg" class="gallery-image-wrapper block"
+            data-lightbox-trigger data-label="Electrical" data-alt="Electrical">
+            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy"
+              decoding="async" src="images/commercial/school/fireemergencybutton.jpg" alt="Electrical">
+            <div class="gallery-overlay" aria-hidden="true">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Electrical</p>
+                <p class="gallery-description">Electrical installation for the school.</p>
+              </div>
+            </div>
           </a>
           <figcaption class="sr-only">Electrical — Fire emergency button installation for the school.</figcaption>
         </figure>
-      
+
         <figure data-project-item>
-          <a href="images/commercial/school/ceiling&plumbing.jpg" class="gallery-image-wrapper block" data-lightbox-trigger data-label="Electrical" data-alt="Electrical">
-            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy" decoding="async" src="images/commercial/school/ceiling&plumbing.jpg" alt="Electrical">
-            <div class="gallery-overlay" aria-hidden="true"><div class="gallery-overlay-content"><p class="gallery-service-type">Ceiling and plumbing</p><p class="gallery-description">Ceiling and plumbing installation for the school.</p></div></div>
+          <a href="images/commercial/school/ceiling&plumbing.jpg" class="gallery-image-wrapper block"
+            data-lightbox-trigger data-label="Electrical" data-alt="Electrical">
+            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy"
+              decoding="async" src="images/commercial/school/ceiling&plumbing.jpg" alt="Electrical">
+            <div class="gallery-overlay" aria-hidden="true">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Ceiling and plumbing</p>
+                <p class="gallery-description">Ceiling and plumbing installation for the school.</p>
+              </div>
+            </div>
           </a>
           <figcaption class="sr-only"> Ceiling and plumbing — Ceiling plumbing installation for the school.</figcaption>
         </figure>
-      
+
         <figure data-project-item>
-          <a href="images/commercial/school/exhaust-glass.jpg" class="gallery-image-wrapper block" data-lightbox-trigger data-label="Electrical" data-alt="Electrical">
-            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy" decoding="async" src="images/commercial/school/exhaust-glass.jpg" alt="Electrical">
-            <div class="gallery-overlay" aria-hidden="true"><div class="gallery-overlay-content"><p class="gallery-service-type">Exhaust glass</p><p class="gallery-description">Exhaust glass installation for the school.</p></div></div>
+          <a href="images/commercial/school/exhaust-glass.jpg" class="gallery-image-wrapper block" data-lightbox-trigger
+            data-label="Electrical" data-alt="Electrical">
+            <img class="gallery-image opacity-0 transition-opacity duration-700" data-project-img loading="lazy"
+              decoding="async" src="images/commercial/school/exhaust-glass.jpg" alt="Electrical">
+            <div class="gallery-overlay" aria-hidden="true">
+              <div class="gallery-overlay-content">
+                <p class="gallery-service-type">Exhaust glass</p>
+                <p class="gallery-description">Exhaust glass installation for the school.</p>
+              </div>
+            </div>
           </a>
-          <figcaption class="sr-only">Exhaust fan and glass — Exhaust fan and glass installation for the school.</figcaption>
+          <figcaption class="sr-only">Exhaust fan and glass — Exhaust fan and glass installation for the school.
+          </figcaption>
         </figure>
-      
+
       </div>
     </section>
   </main>
@@ -359,92 +590,194 @@ position: relative;" class="font-archivo">
   <!-- =============================================
            SECTION 5: CTA (Minimal, Engineered)
            ============================================= -->
-           <section class="py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
-            <div class="max-w-7xl mx-auto px-6 lg:px-12">
-              <div class="grid grid-cols-12 gap-8 items-center sgsa-reveal">
-                
-                <div class="col-span-12 lg:col-span-8">
-                  <p class="text-xs tracking-[0.25em] uppercase text-sky-400 mb-4">Get Started</p>
-                  <h2 class="text-3xl lg:text-4xl font-semibold text-white tracking-tight leading-tight">
-                    Ready to upgrade your space?
-                  </h2>
-                  <p class="text-gray-400 mt-4">Share your requirements and we'll provide a detailed scope and quotation.</p>
-                </div>
-                
-                <div class="col-span-12 lg:col-span-4 lg:text-right">
-                  <a href="contacts.html" class="inline-flex items-center gap-3 px-8 py-4 border-2 border-white text-white font-semibold transition-all duration-300 hover:bg-white hover:text-gray-900">
-                    <span>Request a Quote</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                  </a>
-                </div>
-                
-              </div>
-            </div>
-          </section>
-  <div class="hidden fixed inset-0 z-50 flex items-center justify-center" role="dialog" aria-modal="true" aria-hidden="true" data-lightbox>
+  <section class="py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-12 gap-8 items-center sgsa-reveal">
+
+        <div class="col-span-12 lg:col-span-8">
+          <p class="text-xs tracking-[0.25em] uppercase text-sky-400 mb-4">Get Started</p>
+          <h2 class="text-3xl lg:text-4xl font-semibold text-white tracking-tight leading-tight">
+            Ready to upgrade your space?
+          </h2>
+          <p class="text-gray-400 mt-4">Share your requirements and we'll provide a detailed scope and quotation.</p>
+        </div>
+
+        <div class="col-span-12 lg:col-span-4 lg:text-right">
+          <a href="contacts.html"
+            class="inline-flex items-center gap-3 px-8 py-4 border-2 border-white text-white font-semibold transition-all duration-300 hover:bg-white hover:text-gray-900">
+            <span>Request a Quote</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <div class="hidden fixed inset-0 z-50 flex items-center justify-center" role="dialog" aria-modal="true"
+    aria-hidden="true" data-lightbox>
     <div class="absolute inset-0 bg-black/80 opacity-0 transition-opacity duration-200" data-lightbox-backdrop></div>
-    <div class="relative z-10 max-w-4xl w-full mx-4 opacity-0 scale-95 transition-all duration-200" data-lightbox-dialog>
-      <button type="button" class="absolute -top-12 right-0 text-white hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg p-2" aria-label="Close lightbox" data-lightbox-close><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    <div class="relative z-10 max-w-4xl w-full mx-4 opacity-0 scale-95 transition-all duration-200"
+      data-lightbox-dialog>
+      <button type="button"
+        class="absolute -top-12 right-0 text-white hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 rounded-lg p-2"
+        aria-label="Close lightbox" data-lightbox-close><svg class="w-8 h-8" fill="none" stroke="currentColor"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg></button>
       <img class="w-full rounded-lg shadow-2xl" src="" alt="" data-lightbox-img>
       <p class="mt-3 text-center text-white text-lg font-medium" data-lightbox-caption></p>
     </div>
   </div>
 
-  <a href="https://wa.me/6585864098?text=Hi%20Reliable%20Engineering%20and%20Construction%20%7C%20I%20need%20handyman%20services" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   class="fixed bottom-20 right-6 z-40 group">
-  
-  <!-- Outer ring with construction color theme -->
-  <div class="absolute -inset-4 bg-gradient-to-r from-orange-500/20 to-emerald-500/20 rounded-full animate-ping opacity-20"></div>
-  
-  <!-- Main button with construction-themed colors and animations -->
-  <div class="relative bg-gradient-to-br from-emerald-500 via-green-500 to-emerald-600 text-white rounded-full p-4 mb-5 shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center w-16 h-16 hover:scale-110 animate-construction-pulse hover:animate-construction-shake group-hover:animate-jackhammer">
-    
-    <!-- Construction gear icon effect -->
-    <div class="absolute inset-0 border-2 border-white/30 rounded-full animate-spin-slow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-    
-    <!-- WhatsApp Icon -->
-    <svg fill="#ffffff" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" class="relative z-10 w-8 h-8">
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-      <g id="SVGRepo_iconCarrier"> 
-        <title>whatsapp</title> 
-        <path d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z"></path> 
-      </g>
-    </svg>
-    
-    <!-- Construction hard hat mini icon on hover -->
-    <div class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center opacity-0 transform scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 delay-150">
-      ⚒
+  <a href="https://wa.me/6585864098?text=Hi%20Reliable%20Engineering%20and%20Construction%20%7C%20I%20need%20handyman%20services"
+    target="_blank" rel="noopener noreferrer" class="fixed bottom-20 right-6 z-40 group">
+
+    <!-- Outer ring with construction color theme -->
+    <div
+      class="absolute -inset-4 bg-gradient-to-r from-orange-500/20 to-emerald-500/20 rounded-full animate-ping opacity-20">
     </div>
+
+    <!-- Main button with construction-themed colors and animations -->
+    <div
+      class="relative bg-gradient-to-br from-emerald-500 via-green-500 to-emerald-600 text-white rounded-full p-4 mb-5 shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center w-16 h-16 hover:scale-110 animate-construction-pulse hover:animate-construction-shake group-hover:animate-jackhammer">
+
+      <!-- Construction gear icon effect -->
+      <div
+        class="absolute inset-0 border-2 border-white/30 rounded-full animate-spin-slow opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      </div>
+
+      <!-- WhatsApp Icon -->
+      <svg fill="#ffffff" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        class="relative z-10 w-8 h-8">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <title>whatsapp</title>
+          <path
+            d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z">
+          </path>
+        </g>
+      </svg>
+
+      <!-- Construction hard hat mini icon on hover -->
+      <div
+        class="absolute -top-2 -right-2 bg-orange-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center opacity-0 transform scale-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 delay-150">
+        ⚒
+      </div>
     </div>
-  
- 
-  <!-- Subtle notification dot -->
-  <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
-  <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-600 rounded-full"></div>
+
+
+    <!-- Subtle notification dot -->
+    <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
+    <div class="absolute -top-1 -right-1 w-3 h-3 bg-red-600 rounded-full"></div>
   </a>
 
   <div id="chat-widget" class="fixed bottom-6 right-6 z-50">
-    <button id="chat-toggle" class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full p-4 shadow-lg transition duration-300 transform hover:scale-110" aria-label="Open chat widget"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg></button>
-    <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 h-96 bg-white rounded-lg shadow-2xl flex flex-col overflow-hidden border border-gray-200">
-      <div class="bg-cyan-500 text-white p-4 flex justify-between items-center"><div><h3 class="font-semibold">Reliable Support</h3><p class="text-sm text-white opacity-90">We're here to help</p></div><button id="chat-close" class="text-white hover:text-sky-200 transition" aria-label="Close chat widget"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div>
-      <div id="chat-messages" class="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-4"><div class="flex items-end space-x-2"><div class="bg-blue-600 text-white rounded-lg p-3 mr-5 max-w-xs"><p class="text-sm">Hello! How can we assist you with your commercial project today?</p></div></div></div>
-      <div class="border-t border-gray-200 p-4 bg-white"><form id="chat-form" class="flex space-x-2"><input type="text" id="chat-input" placeholder="Type your message..." class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm"><button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg px-4 py-2 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg></button></form></div>
+    <button id="chat-toggle"
+      class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full p-4 shadow-lg transition duration-300 transform hover:scale-110"
+      aria-label="Open chat widget"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+        </path>
+      </svg></button>
+    <div id="chat-window"
+      class="hidden absolute bottom-20 right-0 w-80 h-96 bg-white rounded-lg shadow-2xl flex flex-col overflow-hidden border border-gray-200">
+      <div class="bg-cyan-500 text-white p-4 flex justify-between items-center">
+        <div>
+          <h3 class="font-semibold">Reliable Support</h3>
+          <p class="text-sm text-white opacity-90">We're here to help</p>
+        </div><button id="chat-close" class="text-white hover:text-sky-200 transition"
+          aria-label="Close chat widget"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg></button>
+      </div>
+      <div id="chat-messages" class="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-4">
+        <div class="flex items-end space-x-2">
+          <div class="bg-blue-600 text-white rounded-lg p-3 mr-5 max-w-xs">
+            <p class="text-sm">Hello! How can we assist you with your commercial project today?</p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 p-4 bg-white">
+        <form id="chat-form" class="flex space-x-2"><input type="text" id="chat-input"
+            placeholder="Type your message..."
+            class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm"><button
+            type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg px-4 py-2 transition"><svg
+              class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg></button></form>
+      </div>
     </div>
   </div>
 
   <footer class="bottom-0 bg-gray-900 text-white border-t-4 border-t-cyan-600">
-    <div class="border-b border-gray-700"><div class="max-w-7xl mx-auto px-4 py-10"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"><div class="lg:col-span-2 items-center flex md:items-start justify-center"><img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3" width="300" height="80" loading="lazy" decoding="async"></div><div class="flex flex-col items-center justify-center md:items-start"><div class="flex items-start gap-3"><svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg><div><p class="text-gray-400 text-sm">Jalan Besar Plaza #02-36</p><p class="text-gray-400 text-sm">Singapore 208511</p></div></div></div><div class="flex flex-col items-center justify-center md:items-start"><div class="flex items-start gap-3"><svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><div><p class="text-gray-400 text-sm">Tel : +65 85864098</p><p class="text-gray-400 text-sm">Site Manager: +65 85864098</p></div></div></div><div class="flex flex-col items-center justify-center md:items-start"><div class="flex items-start gap-3"><svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg><div><p class="text-gray-600">reliableeng.c@gmail.com</p></div></div></div></div></div></div>
-    <div class="bg-gray-950"><div class="max-w-7xl mx-auto px-4 py-5"><div class="flex flex-col md:flex-row justify-between items-center gap-3"><p class="text-gray-400 text-sm">&copy; 2024 Reliable Engineering and Construction. All rights reserved.</p><p class="text-gray-400 text-sm">Reliable Engineering and Construction by <span class="text-cyan-400 font-medium">Michael</span></p></div></div></div>
+    <div class="border-b border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 py-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div class="lg:col-span-2 items-center flex md:items-start justify-center"><img src="images/company-logo.png"
+              alt="Reliable Engineering and Construction Logo" class="h-32 mb-3" width="300" height="80" loading="lazy"
+              decoding="async"></div>
+          <div class="flex flex-col items-center justify-center md:items-start">
+            <div class="flex items-start gap-3"><svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <div>
+                <p class="text-gray-400 text-sm">Jalan Besar Plaza #02-36</p>
+                <p class="text-gray-400 text-sm">Singapore 208511</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col items-center justify-center md:items-start">
+            <div class="flex items-start gap-3"><svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                </path>
+              </svg>
+              <div>
+                <p class="text-gray-400 text-sm">Tel : +65 85864098</p>
+                <p class="text-gray-400 text-sm">Site Manager: +65 85864098</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col items-center justify-center md:items-start">
+            <div class="flex items-start gap-3"><svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                </path>
+              </svg>
+              <div>
+                <p class="text-gray-600">reliableeng.c@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-950">
+      <div class="max-w-7xl mx-auto px-4 py-5">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-3">
+          <p class="text-gray-400 text-sm">&copy; 2024 Reliable Engineering and Construction. All rights reserved.</p>
+          <p class="text-gray-400 text-sm">Reliable Engineering and Construction by <span
+              class="text-cyan-400 font-medium">Michael</span></p>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script src="assets/site.js"></script>
   <script>
-    const mobileMenuBtn=document.getElementById('mobile-menu-btn'),mobileMenuPanel=document.getElementById('mobile-menu-panel'),mobileMenuOverlay=document.getElementById('mobile-menu-overlay'),mobileMenuClose=document.getElementById('mobile-menu-close');function openMobileMenu(){mobileMenuPanel.classList.add('active');mobileMenuOverlay.classList.add('active');document.body.classList.add('menu-open')}function closeMobileMenu(){mobileMenuPanel.classList.remove('active');mobileMenuOverlay.classList.remove('active');document.body.classList.remove('menu-open')}if(mobileMenuBtn)mobileMenuBtn.addEventListener('click',openMobileMenu);if(mobileMenuClose)mobileMenuClose.addEventListener('click',closeMobileMenu);if(mobileMenuOverlay)mobileMenuOverlay.addEventListener('click',closeMobileMenu);const mobileMenuLinks=mobileMenuPanel?.querySelectorAll('a:not([href="#"])');mobileMenuLinks?.forEach(link=>{link.addEventListener('click',()=>{setTimeout(closeMobileMenu,150)})});const mobileHandymanBtn=document.getElementById('mobile-handyman-btn'),mobileHandymanMenu=document.getElementById('mobile-handyman-menu'),mobileHandymanArrow=document.getElementById('mobile-handyman-arrow');if(mobileHandymanBtn&&mobileHandymanMenu&&mobileHandymanArrow){mobileHandymanBtn.addEventListener('click',()=>{mobileHandymanMenu.classList.toggle('hidden');mobileHandymanArrow.classList.toggle('rotate-180')})}const mobileRenovationBtn=document.getElementById('mobile-renovation-btn'),mobileRenovationMenu=document.getElementById('mobile-renovation-menu'),mobileRenovationArrow=document.getElementById('mobile-renovation-arrow');if(mobileRenovationBtn&&mobileRenovationMenu&&mobileRenovationArrow){mobileRenovationBtn.addEventListener('click',()=>{mobileRenovationMenu.classList.toggle('hidden');mobileRenovationArrow.classList.toggle('rotate-180')})}const navbar=document.getElementById('navbar'),navLinks=navbar?.querySelectorAll('.nav-link'),mobileMenuButton=document.getElementById('mobile-menu-btn');if(navbar&&navLinks){window.addEventListener('scroll',()=>{if(window.scrollY>50){navbar.classList.add('bg-white','shadow-lg');navbar.classList.remove('bg-transparent');navLinks.forEach(link=>{link.classList.remove('text-white','hover:text-sky-400');link.classList.add('text-sky-600','hover:text-sky-500')});if(mobileMenuButton){mobileMenuButton.classList.remove('text-white','hover:text-sky-400');mobileMenuButton.classList.add('text-gray-800','hover:text-sky-600')}}else{navbar.classList.remove('bg-white','shadow-lg');navbar.classList.add('bg-transparent');navLinks.forEach(link=>{link.classList.remove('text-sky-600','hover:text-sky-500');link.classList.add('text-white','hover:text-sky-400')});if(mobileMenuButton){mobileMenuButton.classList.remove('text-gray-800','hover:text-sky-600');mobileMenuButton.classList.add('text-white','hover:text-sky-400')}}})}const chatToggle=document.getElementById('chat-toggle'),chatClose=document.getElementById('chat-close'),chatWindow=document.getElementById('chat-window'),chatForm=document.getElementById('chat-form'),chatInput=document.getElementById('chat-input'),chatMessages=document.getElementById('chat-messages');function generateResponse(r){const m=r.toLowerCase().trim();if(m.includes('open')||m.includes('close')||m.includes('hours'))return"Our office hours are:\n• Monday-Friday: 9:00 AM - 6:00 PM\n• Saturday: 9:00 AM - 2:00 PM\n• Sunday & Public Holidays: Closed";if(m.includes('phone')||m.includes('contact')||m.includes('call'))return"You can reach us at:\n• Main: +65 85864098\n• Site Manager: +65 85864098";if(m.includes('email'))return"You can email us at:\n• info.sgsaconstruction@gmail.com\n• contact@sgsa.com";if(m.includes('address')||m.includes('location')||m.includes('where'))return"Our address is:\nJalan Besar Plaza #02-36, Singapore 208511";if(m.includes('service')||m.includes('offer'))return"We offer handyman, renovation, carpentry, waterproofing, tiling, plumbing, and electrical works.";if(m.includes('project')||m.includes('quote'))return"For quotes, share photos/floor plans and contact us at:\n📞 +65 85864098\n📧 info.sgsaconstruction@gmail.com";return"Thank you! For specific questions:\n📞 +65 85864098\n📧 info.sgsaconstruction@gmail.com"}if(chatToggle&&chatWindow)chatToggle.addEventListener('click',()=>{chatWindow.classList.toggle('hidden')});if(chatClose)chatClose.addEventListener('click',()=>chatWindow.classList.add('hidden'));if(chatForm){chatForm.addEventListener('submit',e=>{e.preventDefault();const msg=chatInput.value.trim();if(!msg)return;const u=document.createElement('div');u.className='flex justify-end';u.innerHTML="<div class=\"bg-gray-300 text-gray-900 rounded-lg p-3 max-w-xs\"><p class=\"text-sm\">"+msg+"</p></div>";chatMessages.appendChild(u);chatInput.value='';setTimeout(()=>{const reply=generateResponse(msg);const r=document.createElement('div');r.className='flex items-end space-x-2';r.innerHTML="<div class=\"bg-sky-600 text-white rounded-lg p-3 max-w-xs\"><p class=\"text-sm whitespace-pre-line\">"+reply+"</p></div>";chatMessages.appendChild(r);chatMessages.scrollTop=chatMessages.scrollHeight},400);chatMessages.scrollTop=chatMessages.scrollHeight})}
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn'), mobileMenuPanel = document.getElementById('mobile-menu-panel'), mobileMenuOverlay = document.getElementById('mobile-menu-overlay'), mobileMenuClose = document.getElementById('mobile-menu-close'); function openMobileMenu() { mobileMenuPanel.classList.add('active'); mobileMenuOverlay.classList.add('active'); document.body.classList.add('menu-open') } function closeMobileMenu() { mobileMenuPanel.classList.remove('active'); mobileMenuOverlay.classList.remove('active'); document.body.classList.remove('menu-open') } if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu); if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu); if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMobileMenu); const mobileMenuLinks = mobileMenuPanel?.querySelectorAll('a:not([href="#"])'); mobileMenuLinks?.forEach(link => { link.addEventListener('click', () => { setTimeout(closeMobileMenu, 150) }) }); const mobileHandymanBtn = document.getElementById('mobile-handyman-btn'), mobileHandymanMenu = document.getElementById('mobile-handyman-menu'), mobileHandymanArrow = document.getElementById('mobile-handyman-arrow'); if (mobileHandymanBtn && mobileHandymanMenu && mobileHandymanArrow) { mobileHandymanBtn.addEventListener('click', () => { mobileHandymanMenu.classList.toggle('hidden'); mobileHandymanArrow.classList.toggle('rotate-180') }) } const mobileRenovationBtn = document.getElementById('mobile-renovation-btn'), mobileRenovationMenu = document.getElementById('mobile-renovation-menu'), mobileRenovationArrow = document.getElementById('mobile-renovation-arrow'); if (mobileRenovationBtn && mobileRenovationMenu && mobileRenovationArrow) { mobileRenovationBtn.addEventListener('click', () => { mobileRenovationMenu.classList.toggle('hidden'); mobileRenovationArrow.classList.toggle('rotate-180') }) } const navbar = document.getElementById('navbar'), navLinks = navbar?.querySelectorAll('.nav-link'), mobileMenuButton = document.getElementById('mobile-menu-btn'); if (navbar && navLinks) { window.addEventListener('scroll', () => { if (window.scrollY > 50) { navbar.classList.add('bg-white', 'shadow-lg'); navbar.classList.remove('bg-transparent'); navLinks.forEach(link => { link.classList.remove('text-white', 'hover:text-sky-400'); link.classList.add('text-sky-600', 'hover:text-sky-500') }); if (mobileMenuButton) { mobileMenuButton.classList.remove('text-white', 'hover:text-sky-400'); mobileMenuButton.classList.add('text-gray-800', 'hover:text-sky-600') } } else { navbar.classList.remove('bg-white', 'shadow-lg'); navbar.classList.add('bg-transparent'); navLinks.forEach(link => { link.classList.remove('text-sky-600', 'hover:text-sky-500'); link.classList.add('text-white', 'hover:text-sky-400') }); if (mobileMenuButton) { mobileMenuButton.classList.remove('text-gray-800', 'hover:text-sky-600'); mobileMenuButton.classList.add('text-white', 'hover:text-sky-400') } } }) } const chatToggle = document.getElementById('chat-toggle'), chatClose = document.getElementById('chat-close'), chatWindow = document.getElementById('chat-window'), chatForm = document.getElementById('chat-form'), chatInput = document.getElementById('chat-input'), chatMessages = document.getElementById('chat-messages'); function generateResponse(r) { const m = r.toLowerCase().trim(); if (m.includes('open') || m.includes('close') || m.includes('hours')) return "Our office hours are:\n• Monday-Friday: 9:00 AM - 6:00 PM\n• Saturday: 9:00 AM - 2:00 PM\n• Sunday & Public Holidays: Closed"; if (m.includes('phone') || m.includes('contact') || m.includes('call')) return "You can reach us at:\n• Main: +65 85864098\n• Site Manager: +65 85864098"; if (m.includes('email')) return "You can email us at:\n• info.sgsaconstruction@gmail.com\n• contact@sgsa.com"; if (m.includes('address') || m.includes('location') || m.includes('where')) return "Our address is:\nJalan Besar Plaza #02-36, Singapore 208511"; if (m.includes('service') || m.includes('offer')) return "We offer handyman, renovation, carpentry, waterproofing, tiling, plumbing, and electrical works."; if (m.includes('project') || m.includes('quote')) return "For quotes, share photos/floor plans and contact us at:\n📞 +65 85864098\n📧 info.sgsaconstruction@gmail.com"; return "Thank you! For specific questions:\n📞 +65 85864098\n📧 info.sgsaconstruction@gmail.com" } if (chatToggle && chatWindow) chatToggle.addEventListener('click', () => { chatWindow.classList.toggle('hidden') }); if (chatClose) chatClose.addEventListener('click', () => chatWindow.classList.add('hidden')); if (chatForm) { chatForm.addEventListener('submit', e => { e.preventDefault(); const msg = chatInput.value.trim(); if (!msg) return; const u = document.createElement('div'); u.className = 'flex justify-end'; u.innerHTML = "<div class=\"bg-gray-300 text-gray-900 rounded-lg p-3 max-w-xs\"><p class=\"text-sm\">" + msg + "</p></div>"; chatMessages.appendChild(u); chatInput.value = ''; setTimeout(() => { const reply = generateResponse(msg); const r = document.createElement('div'); r.className = 'flex items-end space-x-2'; r.innerHTML = "<div class=\"bg-sky-600 text-white rounded-lg p-3 max-w-xs\"><p class=\"text-sm whitespace-pre-line\">" + reply + "</p></div>"; chatMessages.appendChild(r); chatMessages.scrollTop = chatMessages.scrollHeight }, 400); chatMessages.scrollTop = chatMessages.scrollHeight }) }
   </script>
   <!-- Vercel Speed Insights -->
   <script>
@@ -452,4 +785,5 @@ position: relative;" class="font-archivo">
   </script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
+
 </html>
