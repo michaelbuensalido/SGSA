@@ -22,18 +22,8 @@
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
   </noscript>
-
   <!-- Performance: Preload critical logo image (LCP candidate) -->
   <link rel="preload" as="image" href="images/company-logo.png" fetchpriority="high">
-
-  <!-- Performance: Preload additional fonts (non-blocking) -->
-  <link rel="preload"
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
-    as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap">
-  </noscript>
 
   <!-- Performance: Critical CSS inline (above-the-fold only) -->
   <style>
@@ -136,11 +126,12 @@
     }
   </style>
 
-  <!-- Performance: Load Tailwind CSS with defer to prevent render blocking -->
-  <script src="https://cdn.tailwindcss.com" defer></script>
+  <!-- Performance: Load Tailwind CSS synchronously (critical for styling - prevents FOUC) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    /* Font families defined - fonts loaded via preload links in head */
+    /* Performance: Load additional fonts with font-display: swap (already included in URL) */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
     .heading-font {
       font-family: 'Archivo', serif;
@@ -971,8 +962,7 @@
       font-weight: 400;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #cbd5e1;
-      /* Improved contrast: slate-300 instead of slate-400 */
+      color: #94a3b8;
     }
 
     /* Offset navbar to account for marquee */
@@ -1413,8 +1403,7 @@
           <!-- Handyman Accordion -->
           <div class="mb-2">
             <button id="mobile-handyman-btn"
-              class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition"
-              aria-expanded="false" aria-label="Toggle handyman services menu">
+              class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
               <span class="flex items-center gap-3">
 
                 Handyman Services
@@ -1491,7 +1480,7 @@
         <div class="mb-2">
           <button id="mobile-projects-btn"
             class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition"
-            aria-expanded="false" aria-label="Toggle our projects menu">
+            aria-expanded="false">
             <span class="flex items-center gap-3">
 
               Our Projects
@@ -1696,9 +1685,8 @@
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
               <img class="w-full service-card-image h-full object-cover"
-                src="images/aircon_service/new-installation.jpg"
-                alt="Professional air conditioning installation and repair services" loading="lazy" width="400"
-                height="256" decoding="async">
+                src="images/aircon_service/new-installation.jpg" alt="Air Conditioning Services" loading="lazy"
+                width="400" height="256" decoding="async">
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1713,9 +1701,8 @@
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
               <img class="w-full service-card-image h-full object-cover"
-                src="images/plumbing services/installation-replacement.jpg"
-                alt="Professional plumbing installation and repair services" loading="lazy" width="400" height="256"
-                decoding="async">
+                src="images/plumbing services/installation-replacement.jpg" alt="Plumbing Services" loading="lazy"
+                width="400" height="256" decoding="async">
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1730,8 +1717,7 @@
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
               <img class="w-full service-card-image h-full object-cover" src="images/light-installation.jpg"
-                alt="Licensed electrical installation and repair services" loading="lazy" width="400" height="256"
-                decoding="async">
+                alt="Electrical Works" loading="lazy" width="400" height="256" decoding="async">
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1746,8 +1732,7 @@
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
               <img class="w-full service-card-image h-full object-cover"
-                src="images/painting/room-interior-painting.jpg"
-                alt="Professional interior and exterior painting services" loading="lazy" width="400" height="256"
+                src="images/painting/room-interior-painting.jpg" alt="Painting" loading="lazy" width="400" height="256"
                 decoding="async">
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
@@ -1766,9 +1751,8 @@
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
               <img class="w-full service-card-image h-full object-cover"
-                src="images/renovation/condo-room-renovation.jpg"
-                alt="Complete residential and commercial renovation services" loading="lazy" width="400" height="256"
-                decoding="async">
+                src="images/renovation/condo-room-renovation.jpg" alt="Renovation Works" loading="lazy" width="400"
+                height="256" decoding="async">
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1784,8 +1768,7 @@
               <div class="service-card-overlay"></div>
               <img class="w-full service-card-image h-full object-cover"
                 src="images/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy.png"
-                alt="Ceiling and wall partition installation services" loading="lazy" width="400" height="256"
-                decoding="async">
+                alt="Ceiling and Wall Partitions" loading="lazy" width="400" height="256" decoding="async">
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
