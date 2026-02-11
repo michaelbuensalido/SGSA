@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reliable Engineering and Construction | Tile Laying Services</title>
+     <link rel="icon" type="image/png" sizes="48x48" href="images/company-logo.png">
+    <meta
+      name="description"
+      content="Professional tile laying services for floors, walls, and bathrooms. Expert installation with quality materials."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Performance: Preconnect to font domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+      .font-archivo {
+        font-family: "Archivo", sans-serif;
+      }
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card-hover:hover {
+        transform: translateY(-8px);
+      }
+      .nav-link {
+        position: relative;
+        display: inline-block;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 50%;
+        background-color: #38bdf8;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      nav {
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      .hero-overlay {
+        background: linear-gradient(120deg, rgba(0, 0, 0, 0.55));
+      }
+      .faq-card {
+        transition: all 0.3s ease;
+      }
+      .faq-card:hover {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transform: translateY(-4px);
+      }
+   
+/* Off-canvas mobile menu */
+.mobile-menu-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-menu-panel {
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu-panel.active {
+  transform: translateX(0);
+}
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Company Signature Layout System - Section Reveal */
+.sgsa-reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.sgsa-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+  /* Mobile menu dropdown */
+  .mobile-menu-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-menu-panel {
+  transform: translateY(-100%) scale(0.95);
+  opacity: 0;
+  transform-origin: top center;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+.mobile-menu-panel.active {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Company Signature Layout System - Section Reveal */
+.sgsa-reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.sgsa-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    /* ============================================
+       ANIMATION SYSTEM (Clean & Professional)
+       ============================================ */
+
+    /* 1️⃣ SECTION FADE + SLIDE - Main Animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 700ms ease-out, transform 700ms ease-out;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 2️⃣ STAGGERED CHILDREN - For grids & lists */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 700ms ease-out, transform 700ms ease-out;
+    }
+
+    .stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(2) { transition-delay: 120ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(3) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(4) { transition-delay: 360ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(5) { transition-delay: 480ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(6) { transition-delay: 600ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(7) { transition-delay: 720ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(8) { transition-delay: 840ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(9) { transition-delay: 960ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(10) { transition-delay: 1080ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(11) { transition-delay: 1200ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(12) { transition-delay: 1320ms; opacity: 1; transform: translateY(0); }
+
+    /* 3️⃣ HOVER MOTION - Subtle but noticeable */
+    .hover-lift {
+      transition: transform 200ms ease-out;
+    }
+    .hover-lift:hover {
+      transform: translateY(-2px);
+    }
+
+    .hover-slide {
+      transition: transform 200ms ease-out;
+    }
+    .hover-slide:hover {
+      transform: translateX(2px);
+    }
+
+    /* Mobile: Slightly faster */
+    @media (max-width: 768px) {
+      .fade-up,
+      .stagger-children > * {
+        transition-duration: 600ms;
+      }
+
+      .stagger-children.visible > *:nth-child(n+6) {
+        transition-delay: 600ms;
+      }
+    }
+
+    /* Reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up,
+      .stagger-children > * {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+</style>
+
+</head>
+<body class="font-archivo">
+  <div class="relative ">
+    <nav id="navbar" class="fixed z-20 top-0 left-0 right-0 z-10 pb-[5px] pt-[5px]">
+       <div class="max-w-6xl mx-auto">
+           <div class="flex justify-between items-center h-[100px] px-4">
+               <div class="flex-shrink-0">
+                   <a href="index.html" class="flex items-center">
+                       <img class="w-[160px] h-[130px]" src="images/company-logo.png" alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync">
+                   </a>
+               </div>
+               <div class="hidden md:flex space-x-4 font-archivo items-center">
+                   <a href="index.html" class="nav-link text-white hover:text-sky-400 text-xs  font-medium transition duration-300">HOME</a>
+                   <a href="about.html" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">ABOUT US</a>
+                   <div class="relative dropdown-wrapper group">
+                       <button class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1">OUR SERVICES
+                           <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                           </svg>
+                       </button>
+                       <div class="dropdown-menu absolute left-0 mt-2 w-64 bg-white shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                           <div class="menu-item relative group/handyman">
+                               <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between border-b border-gray-100">
+                                   <div class="flex items-center gap-3">
+                                       <span class="font-light text-xs text-gray-800">Handyman Services</span>
+                                   </div>
+                                   <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                   </svg>
+                               </div>
+                               <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white  shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
+                                   <div class="py-2">
+                                
+                                       <a href="aircon-service-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
+                                       <a href="plumbing-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                       <a href="electrical-works-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="menu-item relative group/renovation">
+                               <div class="px-6 py-4 hover:bg-sky-50 transition duration-200 cursor-pointer flex items-center justify-between">
+                                   <div class="flex items-center gap-3">
+                                       <span class="font-light text-xs text-gray-800">Renovation Services</span>
+                                   </div>
+                                   <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                   </svg>
+                               </div>
+                               <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
+                                <div class="py-2">
+                                  <a href="plastering-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
+                                  <a href="plumbing-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                   <a href="electrical-works-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                   <a href="painting-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
+                                   <a href="tile-laying-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
+                                   <a href="renovation-works-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
+                                   <a href="ceiling-wall-partitions-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
+                                   <a href="carpentry-works-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
+                                   <a href="waterproofing-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
+                                   <a href="reinstatement-hacking-demolition-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
+                               </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <!-- OUR PROJECTS dropdown -->
+                <div class="relative group" data-projects-dropdown>
+                  <button type="button" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false" data-projects-dropdown-button>
+                    OUR PROJECTS
+                    <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                  </button>
+                  <div class="absolute left-0 mt-2 w-56 bg-white  shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" data-projects-dropdown-panel>
+                    <div class="py-2">
+                      <a href="handyman-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
+                      <a href="residential-renovation-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
+                      <a href="commercial-renovation-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
+                    </div>
+                  </div>
+                </div>
+                   <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">CONTACT</a>
+               </div>
+               <div>
+                   <a href="tel:+6585864098" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
+               </div>
+               <div class="md:hidden">
+                   <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
+                       <!-- Hamburger icon -->
+                       <svg id="hamburger-icon" class="h-10 w-10 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                       </svg>
+                   </button>
+               </div>
+           </div>
+       </div>
+    </nav>
+    
+    <!-- Mobile Off-Canvas Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+    
+    <!-- Mobile Menu Dropdown Panel -->
+    <div id="mobile-menu-panel" class="mobile-menu-panel fixed top-0 left-0 right-0 w-full bg-white z-50 md:hidden shadow-2xl flex flex-col">
+        <!-- Header with Logo & Close -->
+        <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
+            <a href="index.html">
+                <img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230" height="70" fetchpriority="high" loading="eager" decoding="sync">
+            </a>
+            <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
+                <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Menu Content -->
+        <div class="flex-1 overflow-y-auto py-4">
+            <!-- Primary Links -->
+            <nav class="px-4 space-y-1">
+                <a href="index.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Home
+                </a>
+                <a href="about.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">About
+                </a>
+            </nav>
+            
+            <!-- Divider -->
+            <div class="my-4 mx-6 border-t border-gray-200"></div>
+            
+            <!-- Services Section -->
+            <div class="px-4">
+                <p class="px-4 text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Services</p>
+                
+                <!-- Handyman Accordion -->
+                <div class="mb-2">
+                    <button id="mobile-handyman-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
+                        <span class="flex items-center gap-3">
+     
+                            Handyman Services
+                        </span>
+                        <svg id="mobile-handyman-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div id="mobile-handyman-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+                        <a href="aircon-service-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Air Con Service</a>
+                        <a href="plumbing-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plumbing</a>
+                        <a href="electrical-works-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
+                    </div>
+                </div>
+                
+                <!-- Renovation Accordion -->
+                <div class="mb-2">
+                    <button id="mobile-renovation-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition">
+                        <span class="flex items-center gap-3">
+     
+                            Renovation Services
+                        </span>
+                        <svg id="mobile-renovation-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div id="mobile-renovation-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+                      <a href="plastering-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plastering Works</a>
+                      <a href="plumbing-services-singapore.html" class="block px-4 py-3 text-base text-cyan-700 bg-cyan-50 font-medium rounded-lg">Plumbing</a>
+                        <a href="electrical-works-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
+                        <a href="painting-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Painting</a>
+                        
+                        <a href="tile-laying-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Tile Laying</a>
+                        <a href="renovation-works-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Renovation Works</a>
+                        <a href="ceiling-wall-partitions-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Ceiling & Partitions</a>
+                        <a href="carpentry-works-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Carpentry Works</a>
+                        <a href="waterproofing-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Waterproofing</a>
+                        <a href="reinstatement-hacking-demolition-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Hacking & Demolition</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Divider -->
+            <div class="my-4 mx-6 border-t border-gray-200"></div>
+            
+            <!-- Secondary Links -->
+            <nav class="px-4 space-y-1">
+                <!-- Our Projects Accordion -->
+                <div class="mb-2">
+                  <button id="mobile-projects-btn" class="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50 rounded-xl transition" aria-expanded="false">
+                      <span class="flex items-center gap-3">
+     
+                        Our Projects
+                    </span>
+                    <svg id="mobile-projects-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  </button>
+                  <div id="mobile-projects-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
+                    <a href="handyman-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Handyman</a>
+                    <a href="residential-renovation-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Residential</a>
+                    <a href="commercial-renovation-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
+                  </div>
+                </div>
+                <a href="contacts.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Contact
+                </a>
+            </nav>
+        </div>
+        
+       
+    </div>
+    </div>
+    <a
+      href="https://wa.me/6585864098?text=Hi%20Reliable%20Engineering%20and%20Construction%20%7C%20I%20need%20tile%20laying%20services"
+      target="_blank"
+      class="fixed bottom-20 right-6 z-40 group"
+      >
+      <div class="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 mb-5 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center w-16 h-16 hover:scale-110">
+        <svg fill="#ffffff" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>whatsapp</title> <path d="M26.576 5.363c-2.69-2.69-6.406-4.354-10.511-4.354-8.209 0-14.865 6.655-14.865 14.865 0 2.732 0.737 5.291 2.022 7.491l-0.038-0.070-2.109 7.702 7.879-2.067c2.051 1.139 4.498 1.809 7.102 1.809h0.006c8.209-0.003 14.862-6.659 14.862-14.868 0-4.103-1.662-7.817-4.349-10.507l0 0zM16.062 28.228h-0.005c-0 0-0.001 0-0.001 0-2.319 0-4.489-0.64-6.342-1.753l0.056 0.031-0.451-0.267-4.675 1.227 1.247-4.559-0.294-0.467c-1.185-1.862-1.889-4.131-1.889-6.565 0-6.822 5.531-12.353 12.353-12.353s12.353 5.531 12.353 12.353c0 6.822-5.53 12.353-12.353 12.353h-0zM22.838 18.977c-0.371-0.186-2.197-1.083-2.537-1.208-0.341-0.124-0.589-0.185-0.837 0.187-0.246 0.371-0.958 1.207-1.175 1.455-0.216 0.249-0.434 0.279-0.805 0.094-1.15-0.466-2.138-1.087-2.997-1.852l0.010 0.009c-0.799-0.74-1.484-1.587-2.037-2.521l-0.028-0.052c-0.216-0.371-0.023-0.572 0.162-0.757 0.167-0.166 0.372-0.434 0.557-0.65 0.146-0.179 0.271-0.384 0.366-0.604l0.006-0.017c0.043-0.087 0.068-0.188 0.068-0.296 0-0.131-0.037-0.253-0.101-0.357l0.002 0.003c-0.094-0.186-0.836-2.014-1.145-2.758-0.302-0.724-0.609-0.625-0.836-0.637-0.216-0.010-0.464-0.012-0.712-0.012-0.395 0.010-0.746 0.188-0.988 0.463l-0.001 0.002c-0.802 0.761-1.3 1.834-1.3 3.023 0 0.026 0 0.053 0.001 0.079l-0-0.004c0.131 1.467 0.681 2.784 1.527 3.857l-0.012-0.015c1.604 2.379 3.742 4.282 6.251 5.564l0.094 0.043c0.548 0.248 1.25 0.513 1.968 0.74l0.149 0.041c0.442 0.14 0.951 0.221 1.479 0.221 0.303 0 0.601-0.027 0.889-0.078l-0.031 0.004c1.069-0.223 1.956-0.868 2.497-1.749l0.009-0.017c0.165-0.366 0.261-0.793 0.261-1.242 0-0.185-0.016-0.366-0.047-0.542l0.003 0.019c-0.092-0.155-0.34-0.247-0.712-0.434z"></path> </g></svg>
+      </div>
+      <div
+        class="absolute bottom-20 right-0 bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap text-sm font-medium"
+      >
+        Chat on WhatsApp
+      </div></a
+    >
+
+    <!-- Hero Section -->
+    <section
+      class="relative pt-28 pb-24 bg-gray-900 text-white overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-cover bg-center">
+        <img
+          src="images/services images/tile-laying-hero.jpg"
+          alt="Tile laying service for residential and commercial properties"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="absolute inset-0 hero-overlay"></div>
+      <div class="relative z-10 max-w-6xl mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center gap-10">
+          <div class="flex-1 space-y-6">
+            <p class="uppercase tracking-[0.25em] text-sm text-cyan-200">
+              Professional Tile Laying
+            </p>
+            <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
+              Professional Tile Laying Services
+            </h1>
+            <p class="text-lg text-cyan-50/90">
+              Expert installation for floors, walls, and bathrooms with quality
+              materials
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div
+                class="bg-white/10 border border-white/20 rounded-xl px-4 py-3"
+              >
+                <p class="text-sm text-cyan-100">Precision</p>
+                <p class="font-semibold text-white">Level & aligned</p>
+              </div>
+              <div
+                class="bg-white/10 border border-white/20 rounded-xl px-4 py-3"
+              >
+                <p class="text-sm text-cyan-100">Materials</p>
+                <p class="font-semibold text-white">Quality grout</p>
+              </div>
+              <div
+                class="bg-white/10 border border-white/20 rounded-xl px-4 py-3"
+              >
+                <p class="text-sm text-cyan-100">Finish</p>
+                <p class="font-semibold text-white">Clean edges</p>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3 pt-4">
+              <a
+                href="contacts.html"
+                class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-7 py-3 rounded-lg shadow-lg transition"
+                >Get a Free Quote</a
+              >
+              <a
+                href="tel:+6585864098"
+                class="border border-white/70 hover:bg-white hover:text-gray-900 text-white font-semibold px-7 py-3 rounded-lg transition flex items-center gap-2"
+                >📞 Call Now</a
+              >
+            </div>
+          </div>
+          <div
+            class="flex-1 bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/15 shadow-xl space-y-4"
+          >
+            <h3 class="text-xl font-semibold">Why homeowners trust us</h3>
+            <ul class="space-y-3 text-sm text-cyan-50/90">
+              <li class="flex gap-2">
+                <span class="text-cyan-300">•</span
+                ><span>Proper surface preparation for lasting adhesion</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="text-cyan-300">•</span
+                ><span>Precise cutting and alignment for clean finish</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="text-cyan-300">•</span
+                ><span>Quality grouting and sealing for durability</span>
+              </li>
+            </ul>
+            <div class="flex items-center gap-3 pt-2">
+              <div
+                class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-2xl"
+              >
+                ✓
+              </div>
+              <div>
+                <p class="font-semibold">Licensed & Insured</p>
+                <p class="text-sm text-cyan-50/80">
+                  Clean workmanship with protection and tidy handovers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col lg:flex-row gap-10 items-center">
+          <div class="flex-1 space-y-4">
+            
+            <h2 class="text-3xl font-bold text-slate-900 leading-tight">
+              Tile Laying for discerning homeowners
+            </h2>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Transform your space with <span class="font-semibold text-slate-900">floor tiles</span>, <span class="font-semibold text-slate-900">wall tiles</span>, and <span class="font-semibold text-slate-900">bathroom tiling</span> by experienced installers. We provide <span class="font-semibold text-slate-900">living room, kitchen, and bedroom floor installation</span>, <span class="font-semibold text-slate-900">kitchen backsplash, bathroom walls, and feature walls</span>, with precise alignment and superior workmanship. Our team ensures proper waterproofing for wet areas, clean grout lines, and seamless finishes that enhance both aesthetics and longevity. All work is backed by <span class="font-semibold text-slate-900">transparent pricing</span>, <span class="font-semibold text-slate-900">on-time delivery</span>, and a <span class="font-semibold text-slate-900">workmanship warranty</span> you can trust.
+            </p>
+          </div>
+          <div class="flex-1">
+            <div
+              class="rounded-xl overflow-hidden shadow-2xl border border-slate-100"
+            >
+              <img
+                src="images/services images/tile-laying-overview.jpg"
+                alt="Professional tile laying service overview"
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Cards with Pricing -->
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Card 1: Tile Installation -->
+          <div
+            class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl"
+          >
+            <div
+              class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
+            >
+             <img src="images/tile services/tile-installation.png" alt="Tile installation service" loading="lazy">
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
+                Tile Installation
+              </h3>
+              <div class="mb-5 flex-grow">
+                <h4
+                  class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3"
+                >
+                  Common Services:
+                </h4>
+                <ul class="space-y-2.5">
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Floor tile installation</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Wall tile installation</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Kitchen backsplash</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Bathroom tiling</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Balcony tiling</span
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto"
+              >
+                <h4
+                  class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2"
+                >
+                  <svg
+                    class="w-4 h-4 text-slate-900"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path></svg
+                  >Pricing
+                </h4>
+                <div class="space-y-3">
+                  <div
+                    class="flex justify-between items-center pb-2.5 border-b border-slate-200"
+                  >
+                    <span class="text-slate-700 text-[15px]">Per sq ft:</span
+                    ><span class="text-lg font-bold text-red-600">S$5</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center pb-2.5 border-b border-slate-200"
+                  >
+                    <span class="text-slate-700 text-[15px]">Bathroom:</span
+                    ><span class="text-lg font-bold text-red-600">S$800</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-700 text-[15px]">Kitchen:</span
+                    ><span class="text-lg font-bold text-red-600">S$600</span>
+                  </div>
+                </div>
+                <p class="text-xs text-slate-500 italic mt-4">
+                  *Prices may vary by tile type
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Tile Replacement -->
+          <div
+            class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl"
+          >
+            <div
+              class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
+            >
+            <img src="images/tile services/tile-replacement.png" alt="Tile replacement service" loading="lazy">
+
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
+                Tile Replacement
+              </h3>
+              <div class="mb-5 flex-grow">
+                <h4
+                  class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3"
+                >
+                  Common Services:
+                </h4>
+                <ul class="space-y-2.5">
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Cracked tile replacement</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Loose tile repair</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Partial retiling</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Tile matching</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Old tile removal</span
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto"
+              >
+                <h4
+                  class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2"
+                >
+                  <svg
+                    class="w-4 h-4 text-slate-900"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path></svg
+                  >Pricing
+                </h4>
+                <div class="space-y-3">
+                  <div
+                    class="flex justify-between items-center pb-2.5 border-b border-slate-200"
+                  >
+                    <span class="text-slate-700 text-[15px]">Per tile:</span
+                    ><span class="text-lg font-bold text-red-600">S$50</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center pb-2.5 border-b border-slate-200"
+                  >
+                    <span class="text-slate-700 text-[15px]">Small area:</span
+                    ><span class="text-lg font-bold text-red-600">S$200</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-700 text-[15px]">Full retile:</span
+                    ><span class="text-lg font-bold text-red-600">S$600</span>
+                  </div>
+                </div>
+                <p class="text-xs text-slate-500 italic mt-4">
+                  *Prices may vary by area
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Grouting & Sealing -->
+          <div
+            class="bg-white shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl"
+          >
+            <div
+              class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
+            >
+              <img src="images/tile services/grouting-sealing.png" alt="Grouting and sealing tile service" loading="lazy">
+
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
+                Grouting & Sealing
+              </h3>
+              <div class="mb-5 flex-grow">
+                <h4
+                  class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3"
+                >
+                  Common Services:
+                </h4>
+                <ul class="space-y-2.5">
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Re-grouting</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Grout cleaning</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Epoxy grouting</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Silicone sealing</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <svg
+                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      /></svg
+                    ><span class="text-slate-700 text-[15px] leading-relaxed"
+                      >Waterproof sealing</span
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto"
+              >
+                <h4
+                  class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2"
+                >
+                  <svg
+                    class="w-4 h-4 text-slate-900"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path></svg
+                  >Pricing
+                </h4>
+                <div class="space-y-3">
+                  <div
+                    class="flex justify-between items-center pb-2.5 border-b border-slate-200"
+                  >
+                    <span class="text-slate-700 text-[15px]">Re-grouting:</span
+                    ><span class="text-lg font-bold text-red-600">S$150</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center pb-2.5 border-b border-slate-200"
+                  >
+                    <span class="text-slate-700 text-[15px]">Epoxy grout:</span
+                    ><span class="text-lg font-bold text-red-600">S$300</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-slate-700 text-[15px]"
+                      >Full bathroom:</span
+                    ><span class="text-lg font-bold text-red-600">S$400</span>
+                  </div>
+                </div>
+                <p class="text-xs text-slate-500 italic mt-4">
+                  *Prices may vary by area
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    
+    <!-- FAQ -->
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-10">
+          <p class="uppercase text-sm text-red-600 tracking-[0.2em]">FAQs</p>
+          <h2 class="text-3xl font-bold text-slate-900">
+            Questions we often get
+          </h2>
+          <p class="text-slate-600">
+            If you don't see your question, reach out and we'll help right away.
+          </p>
+        </div>
+        <div class="">
+          <div class="bg-white border border-slate-200 rounded-xl p-4 faq-card">
+            <p class="font-semibold text-slate-900 mb-2">
+              Do you supply tiles?
+            </p>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              We can recommend suppliers, but homeowners typically purchase
+              their own tiles for exact preferences.
+            </p>
+          </div>
+          <div
+            class="bg-white my-2 border border-slate-100 rounded-xl p-4 faq-card"
+          >
+            <p class="font-semibold text-slate-900 mb-2">
+              How long does tiling take?
+            </p>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              A bathroom typically takes 2–3 days. Larger areas may take longer
+              depending on complexity.
+            </p>
+          </div>
+          <div
+            class="bg-white mb-2 border border-slate-100 rounded-xl p-4 faq-card"
+          >
+            <p class="font-semibold text-slate-900 mb-2">
+              Can you match existing tiles?
+            </p>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              We do our best to match discontinued tiles. Bringing a sample
+              helps us find the closest match.
+            </p>
+          </div>
+          <div class="bg-white border border-slate-100 rounded-xl p-4 faq-card">
+            <p class="font-semibold text-slate-900 mb-2">
+              Is waterproofing included?
+            </p>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Waterproofing is quoted separately for wet areas. We recommend it
+              for bathrooms and balconies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         CTA (Company Signature - Reusable)
+         ============================================= -->
+    <section class="py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-12 gap-8 items-center sgsa-reveal">
+          
+          <div class="col-span-12 lg:col-span-8">
+            <p class="text-xs tracking-[0.25em] uppercase text-sky-400 mb-4">Ready to Build?</p>
+            <h2 class="text-3xl lg:text-4xl font-semibold text-white tracking-tight leading-tight">
+              Let's discuss your project.
+            </h2>
+          </div>
+          
+          <div class="col-span-12 lg:col-span-4 lg:text-right">
+            <a href="contacts.html" class="inline-flex items-center gap-3 px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold transition-all duration-300 shadow-lg hover:shadow-xl">
+              <span>Contact Us</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="bottom-0 bg-gray-900 text-white border-t-4 border-t-cyan-600"
+    >
+      <div class="border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 py-10">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div
+              class="lg:col-span-2 items-center flex md:items-start justify-center"
+            >
+              <img
+                src="images/company-logo.png"
+                alt="Reliable Engineering and Construction Logo"
+                class="h-[100px] mb-3"
+              />
+            </div>
+            <div
+              class="flex flex-col items-center justify-center md:items-start"
+            >
+              <div class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                </svg>
+                <div>
+                  <p class="text-gray-400 text-sm">Jalan Besar Plaza #02-36</p>
+                  <p class="text-gray-400 text-sm">Singapore 208511</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center md:items-start"
+            >
+              <div class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  ></path>
+                </svg>
+                <div>
+                  <p class="text-gray-400 text-sm">Tel : +65 85864098</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex flex-col items-center justify-center md:items-start"
+            >
+              <div class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                <div>
+                 <p class="text-gray-600">reliableeng.c@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 py-5">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-3"
+          >
+            <p class="text-gray-400 text-sm">
+              &copy; 2024 Reliable Engineering and Construction. All rights reserved.
+            </p>
+            <p class="text-gray-400 text-sm">
+              Reliable Engineering and Construction by
+              <span class="text-cyan-400 font-medium">Michael</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-50">
+      <button
+        id="chat-toggle"
+        class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full p-4 shadow-lg transition duration-300 transform hover:scale-110 flex items-center justify-center"
+        aria-label="Open chat widget"
+      >
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+          ></path>
+        </svg>
+      </button>
+      <div
+        id="chat-window"
+        class="hidden absolute bottom-20 right-0 w-80 h-96 bg-white rounded-lg shadow-2xl flex flex-col overflow-hidden border border-gray-200"
+      >
+        <div
+          class="bg-cyan-500 text-white p-4 flex justify-between items-center"
+        >
+          <div>
+            <h3 class="font-semibold">Reliable Support</h3>
+            <p class="text-sm text-white opacity-90">We're here to help</p>
+          </div>
+          <button
+            id="chat-close"
+            class="text-white hover:text-sky-200 transition"
+            aria-label="Close chat widget"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          id="chat-messages"
+          class="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-4"
+        >
+          <div class="flex items-end space-x-2">
+            <div class="bg-blue-600 text-white rounded-lg p-3 mr-5 max-w-xs">
+              <p class="text-sm">
+                Hello! How can we assist you with your project today?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-200 p-4 bg-white">
+          <form id="chat-form" class="flex space-x-2">
+            <input
+              type="text"
+              id="chat-input"
+              placeholder="Type your message..."
+              class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm"
+            /><button
+              type="submit"
+              class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg px-4 py-2 transition"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                ></path>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (() => {
+        "use strict";
+      
+        const qs = (sel, root = document) => root.querySelector(sel);
+        const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+      
+        const isCoarsePointer = () =>
+          window.matchMedia &&
+          window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+      
+        /* ---------------------------------------------
+         * Navbar: Our Projects dropdown (desktop hover, mobile click, keyboard)
+         * --------------------------------------------- */
+        function initProjectsDropdown() {
+          const wrapper = qs("[data-projects-dropdown]");
+          if (!wrapper) return;
+      
+          const button = qs("[data-projects-dropdown-button]", wrapper);
+          const panel = qs("[data-projects-dropdown-panel]", wrapper);
+          if (!button || !panel) return;
+      
+          let open = false;
+      
+          const setOpen = (next) => {
+            open = Boolean(next);
+            button.setAttribute("aria-expanded", open ? "true" : "false");
+      
+            // JS-driven open state for mobile/touch + keyboard.
+            // Desktop hover still works via Tailwind group-hover/group-focus-within.
+            if (open) {
+              panel.style.opacity = "1";
+              panel.style.visibility = "visible";
+              panel.style.pointerEvents = "auto";
+            } else {
+              panel.style.opacity = "";
+              panel.style.visibility = "";
+              panel.style.pointerEvents = "";
+            }
+          };
+      
+          // Toggle on click (important for touch devices).
+          button.addEventListener("click", (e) => {
+            e.preventDefault();
+            setOpen(!open);
+          });
+      
+          // Keyboard support
+          wrapper.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+              setOpen(false);
+              button.focus();
+            }
+            if ((e.key === "Enter" || e.key === " ") && document.activeElement === button) {
+              e.preventDefault();
+              setOpen(!open);
+            }
+          });
+      
+          // Close when clicking outside.
+          document.addEventListener("click", (e) => {
+            if (!open) return;
+            if (!wrapper.contains(e.target)) setOpen(false);
+          });
+      
+          // Close when focus leaves the dropdown.
+          wrapper.addEventListener("focusout", () => {
+            window.setTimeout(() => {
+              if (!wrapper.contains(document.activeElement)) setOpen(false);
+            }, 0);
+          });
+        }
+      
+        /* ---------------------------------------------
+         * Mobile off-canvas: Our Projects accordion
+         * --------------------------------------------- */
+        function initMobileProjectsAccordion() {
+          const btn = qs("#mobile-projects-btn");
+          const menu = qs("#mobile-projects-menu");
+          const arrow = qs("#mobile-projects-arrow");
+          if (!btn || !menu) return;
+      
+          btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const isHidden = menu.classList.contains("hidden");
+            menu.classList.toggle("hidden");
+            if (arrow) arrow.classList.toggle("rotate-180", isHidden);
+            btn.setAttribute("aria-expanded", isHidden ? "true" : "false");
+          });
+        }
+      
+        /* ---------------------------------------------
+         * Project pages: Fade in images on load
+         * --------------------------------------------- */
+        function initProjectImageFadeIn() {
+          const grid = qs("[data-project-grid]");
+          if (!grid) return;
+      
+          qsa("img[data-project-img]", grid).forEach((img) => {
+            const onLoad = () => {
+              img.classList.remove("opacity-0");
+              img.classList.add("opacity-100");
+            };
+            if (img.complete) onLoad();
+            else img.addEventListener("load", onLoad, { once: true });
+          });
+        }
+      
+        /* ---------------------------------------------
+         * Project pages: Mobile tap-to-preview overlay (keep existing behavior)
+         * --------------------------------------------- */
+        function initOverlayTap() {
+          const wrappers = qsa(".gallery-image-wrapper");
+          if (!wrappers.length) return;
+      
+          // Only enhance tap behavior on coarse pointer devices.
+          if (!isCoarsePointer()) return;
+      
+          const closeAll = () => {
+            wrappers.forEach((w) => w.classList.remove("overlay-active"));
+          };
+      
+          wrappers.forEach((wrapper) => {
+            wrapper.addEventListener(
+              "touchstart",
+              (e) => {
+                // First tap shows overlay; second tap can proceed to lightbox click.
+                const isOpen = wrapper.classList.contains("overlay-active");
+                if (!isOpen) {
+                  e.preventDefault();
+                  closeAll();
+                  wrapper.classList.add("overlay-active");
+                }
+              },
+              { passive: false }
+            );
+          });
+      
+          // Close overlay when tapping outside any image
+          document.addEventListener(
+            "touchstart",
+            (e) => {
+              if (wrappers.some((w) => w.contains(e.target))) return;
+              closeAll();
+            },
+            { passive: true }
+          );
+        }
+      
+        /* ---------------------------------------------
+         * Project pages: Lightbox modal (accessible)
+         * --------------------------------------------- */
+        function initLightbox() {
+          const modal = qs("[data-lightbox]");
+          if (!modal) return;
+      
+          const backdrop = qs("[data-lightbox-backdrop]", modal);
+          const dialog = qs("[data-lightbox-dialog]", modal);
+          const img = qs("[data-lightbox-img]", modal);
+          const caption = qs("[data-lightbox-caption]", modal);
+          const closeBtn = qs("[data-lightbox-close]", modal);
+          const triggers = qsa("[data-lightbox-trigger]");
+      
+          if (!backdrop || !dialog || !img || !closeBtn) return;
+      
+          let lastActive = null;
+      
+          const focusableSelector =
+            'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+      
+          const getFocusables = () => qsa(focusableSelector, dialog).filter((el) => el.offsetParent !== null);
+      
+          const trapFocus = (e) => {
+            if (e.key !== "Tab") return;
+            const focusables = getFocusables();
+            if (!focusables.length) return;
+      
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+      
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          };
+      
+          const open = ({ src, alt, label }) => {
+            lastActive = document.activeElement;
+      
+            img.src = src;
+            img.alt = alt || "";
+            if (caption) caption.textContent = label || alt || "";
+      
+            modal.classList.remove("hidden");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.classList.add("lightbox-no-scroll");
+      
+            // Animate in
+            requestAnimationFrame(() => {
+              backdrop.classList.remove("opacity-0");
+              backdrop.classList.add("opacity-100");
+              dialog.classList.remove("opacity-0", "scale-95");
+              dialog.classList.add("opacity-100", "scale-100");
+            });
+      
+            closeBtn.focus();
+            document.addEventListener("keydown", onKeydown);
+            dialog.addEventListener("keydown", trapFocus);
+          };
+      
+          const close = () => {
+            // Animate out
+            backdrop.classList.add("opacity-0");
+            backdrop.classList.remove("opacity-100");
+            dialog.classList.add("opacity-0", "scale-95");
+            dialog.classList.remove("opacity-100", "scale-100");
+      
+            modal.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("lightbox-no-scroll");
+      
+            window.setTimeout(() => {
+              modal.classList.add("hidden");
+              img.src = "";
+            }, 180);
+      
+            document.removeEventListener("keydown", onKeydown);
+            dialog.removeEventListener("keydown", trapFocus);
+      
+            if (lastActive && typeof lastActive.focus === "function") lastActive.focus();
+          };
+      
+          const onKeydown = (e) => {
+            if (e.key === "Escape") close();
+          };
+      
+          // Open handlers
+          triggers.forEach((a) => {
+            a.addEventListener("click", (e) => {
+              // On touch devices, first tap is reserved for showing the overlay.
+              if (isCoarsePointer() && !a.classList.contains("overlay-active")) {
+                e.preventDefault();
+                return;
+              }
+      
+              e.preventDefault();
+              const src = a.getAttribute("href") || a.getAttribute("data-full") || "";
+              const alt = a.getAttribute("data-alt") || qs("img", a)?.getAttribute("alt") || "";
+              const label = a.getAttribute("data-label") || "";
+              if (!src) return;
+              open({ src, alt, label });
+            });
+          });
+      
+          // Close handlers
+          closeBtn.addEventListener("click", close);
+          backdrop.addEventListener("click", close);
+        }
+      
+        document.addEventListener("DOMContentLoaded", () => {
+          initProjectsDropdown();
+          initMobileProjectsAccordion();
+          initProjectImageFadeIn();
+          initOverlayTap();
+          initLightbox();
+        });
+      })();
+      
+      // Company Information Database
+      const companyInfo = {
+        name: "Reliable Engineering and Construction",
+        officeHours: {
+          monday: "9:00 AM - 6:00 PM",
+          tuesday: "9:00 AM - 6:00 PM",
+          wednesday: "9:00 AM - 6:00 PM",
+          thursday: "9:00 AM - 6:00 PM",
+          friday: "9:00 AM - 6:00 PM",
+          saturday: "9:00 AM - 2:00 PM",
+          sunday: "Closed",
+          publicHolidays: "Closed"
+        },
+        contact: {
+          phone: ["+6585864098"],
+          email: ["reliableeng.c@gmail.com"],
+          address: "Jalan Besar Plaza #02-36, Singapore 208511"
+        },
+        services: [
+          "Carpentry",
+          "Electrical",
+          "Plumbing",
+          "Painting",
+          "Hacking Demolition",
+          "Tile Laying",
+          "Renovation Works",
+          "Waterproofing",
+          "Aircon Services and Installation",
+          "Ceiling and Wall Partitions",
+          "Reinstatement Works"
+        ],
+        about: "Reliable Engineering and Construction is a leading construction company in Singapore with over 50 years of experience. We specialize in delivering exceptional construction projects with a commitment to safety, quality, and innovation.",
+        experience: "24+ years",
+        projectsCompleted: "500+",
+        clientSatisfaction: "98%"
+      };
+  
+      // =============================================
+      // FAQ KNOWLEDGE BASE (Approved Content)
+      // =============================================
+      const faqKnowledge = {
+        generalRenovation: {
+          inspection: "Yes, we offer a free site inspection and a no-obligation quotation.",
+          compliance: "Yes, all our renovation works comply with HDB, BCA and PUB regulations where applicable.",
+          projectTypes: "Yes, we undertake residential, commercial and industrial renovation projects.",
+          services: "We provide complete renovation services including civil, carpentry, electrical, plumbing, painting and reinstatement works.",
+          duration: "Project duration depends on scope and size; we will provide a clear timeline after site inspection.",
+          designSupport: "Yes, we provide layout planning and design support based on your requirements.",
+          partialRenovation: "Yes, we handle partial renovations such as kitchen, bathroom or selected areas.",
+          warranty: "Yes, we provide workmanship warranty subject to agreed terms and conditions.",
+          permits: "Yes, we assist with all necessary permits and submissions required for renovation works.",
+          stayDuringRenovation: "It depends on the renovation scope; our team will advise after site assessment.",
+          pricing: "Yes, our quotations are clear, detailed and transparent with no hidden charges.",
+          budget: "Yes, we can propose suitable options and materials to match your budget.",
+          hacking: "Yes, we provide hacking, demolition and reinstatement services.",
+          workerSafety: "Yes, all our workers are trained, insured and follow site safety regulations.",
+          startProcess: "Simply leave your contact details or request a site inspection and our team will assist you.",
+          licensed: "Yes, all plumbing and electrical works are carried out by licensed professionals.",
+          startImmediately: "Start dates depend on project scope and approvals; we will confirm after site inspection.",
+          materialSelection: "Yes, we guide you on material selection based on budget and design needs.",
+          changesDuringRenovation: "Yes, changes are possible subject to feasibility, cost and timeline adjustment.",
+          paymentStructure: "Payments are made in stages according to project progress.",
+          protectFurniture: "Yes, we take proper protection measures during renovation.",
+          occupiedUnits: "Yes, we can plan works to minimise disruption where possible.",
+          reinstatement: "Yes, we provide full reinstatement and handover-ready solutions.",
+          nightWeekendWork: "Yes, subject to approval, we can arrange after-hours works for commercial projects.",
+          defects: "We will attend to defects within the warranty period.",
+          projectSupervision: "Yes, a dedicated supervisor will manage and monitor site progress."
+        },
+        electrical: {
+          services: "We provide wiring, rewiring, lighting, sockets, power points, fault repair, and troubleshooting for residential and commercial works. LED and smart system installation available. All works are performed by licensed electricians only.",
+          licensed: "Yes, all electrical works are performed by licensed electricians only.",
+          wiring: "Yes, we handle new wiring, rewiring, and electrical installations.",
+          lighting: "Yes, we install indoor/outdoor lights, sockets, and power points.",
+          faultRepair: "Yes, we provide electrical troubleshooting and repairs.",
+          certified: "Yes, all works are done by licensed electricians with safety compliance.",
+          smartSystems: "Yes, we can install LED, automation, and smart home electrical systems.",
+          duration: "Depends on project size; typically 1-7 days for residential areas."
+        },
+        plumbing: {
+          services: "We handle residential and commercial plumbing including leak repair, burst pipe repair, blockage clearance, fixture installation (taps, sinks, toilets, showers), water heater installation, and pipe replacement.",
+          residentialCommercial: "Yes, we cater to homes, offices, and commercial spaces.",
+          leaks: "Yes, we provide pipe repairs, leak detection, and replacement.",
+          fixtures: "Yes, we install sinks, taps, showers, toilets, and water heaters.",
+          blockages: "Yes, we clear blocked drains and maintain plumbing systems.",
+          emergency: "We offer fast-response services for urgent plumbing issues.",
+          pipeReplacement: "Yes, we replace old or damaged pipes for long-term safety."
+        },
+        waterproofing: {
+          services: "We provide waterproofing for bathrooms, kitchens, balconies, and rooftops. Services include leak repair and waterproofing using liquid membrane, cementitious, and bitumen systems. Old surface preparation is included. Typical duration is 1-3 days.",
+          areas: "Yes, we provide waterproofing for all wet areas including bathrooms, kitchens, balconies, and rooftops.",
+          types: "Liquid membrane, cementitious coating, bituminous membranes, and epoxy coatings.",
+          duration: "Typically 1-3 days, depending on area size and complexity.",
+          leakRepair: "Yes, we identify leaks and provide effective waterproofing repairs.",
+          oldSurfaces: "Yes, we prepare and treat old surfaces before waterproofing.",
+          included: "Yes, waterproofing is part of wet-area renovation services."
+        },
+        painting: {
+          services: "We provide professional painting services for residential and commercial properties, including interior and exterior painting, feature walls, and touch-up works.",
+          paintType: "We use high-quality, low-VOC paints from trusted brands.",
+          colorConsultation: "Yes, we provide colour consultation based on your space and lighting.",
+          occupiedUnits: "Yes, we can carry out repainting with minimal disturbance.",
+          duration: "Typically, 3-7 days, depending on area size and scope.",
+          surfacePreparation: "Yes, surface cleaning, patching and sanding are included.",
+          partialPainting: "Yes, partial painting works are available.",
+          antiMould: "Yes, we offer anti-mould and moisture-resistant paint options.",
+          protection: "Yes, we provide proper masking and protection before painting."
+        },
+        tiling: {
+          services: "We provide tile laying and surface works including tile installation, replacement, grouting, and sealing for floors and walls.",
+          supply: "We provide both tile supply and installation services.",
+          areas: "Bathrooms, kitchens, living areas, balconies and outdoor areas.",
+          replacement: "Yes, we provide tile replacement and repair services.",
+          waterproofingBefore: "Yes, waterproofing is done prior to tiling for wet areas.",
+          duration: "Usually 3-5 days, depending on tile type and area size.",
+          layoutAdvice: "Yes, we assist with tile size, pattern and layout planning.",
+          removeOldTiles: "Yes, hacking and disposal of old tiles can be arranged.",
+          tileTypes: "Ceramic, porcelain, homogeneous, marble and feature tiles."
+        }
+      };
+  
+      // Smart Response Generator
+      function generateResponse(userMessage) {
+        const message = userMessage.toLowerCase().trim();
+        
+        // Hours/timing questions
+        if (message.includes('open') || message.includes('close') || message.includes('hours') || message.includes('time')) {
+          if (message.includes('monday')) {
+            return `We're open on Monday from ${companyInfo.officeHours.monday}. How else can we help?`;
+          } else if (message.includes('saturday')) {
+            return `We're open on Saturday from ${companyInfo.officeHours.saturday}. How else can we help?`;
+          } else if (message.includes('sunday')) {
+            return `We're ${companyInfo.officeHours.sunday.toLowerCase()} on Sunday. For urgent matters, please call our emergency line.`;
+          } else if (message.includes('weekend')) {
+            return `Weekend hours: Saturday ${companyInfo.officeHours.saturday}, Sunday ${companyInfo.officeHours.sunday}. How can we assist?`;
+          } else {
+            return `Our office hours are:\n• Monday-Friday: ${companyInfo.officeHours.monday}\n• Saturday: ${companyInfo.officeHours.saturday}\n• Sunday & Public Holidays: ${companyInfo.officeHours.sunday}`;
+          }
+        }
+        
+        // Contact/Phone questions
+        if (message.includes('phone') || message.includes('contact') || message.includes('call') || message.includes('number')) {
+          if (message.includes('site manager')) {
+            return `Our Site Manager's contact: ${companyInfo.contact.phone[0]}. You can reach them for project-specific inquiries.`;
+          }
+          return `You can reach us at:\n• Main: ${companyInfo.contact.phone[0]}\n• `;
+        }
+        
+        // Email questions
+        if (message.includes('email') || message.includes('mail')) {
+          return `You can email us at:\n• ${companyInfo.contact.email[0]}\n• ${companyInfo.contact.email[1]}`;
+        }
+        
+        // Address questions
+        if (message.includes('address') || message.includes('location') || message.includes('where')) {
+          return `Our address is:\n${companyInfo.contact.address}`;
+        }
+        
+        // =============================================
+        // FAQ INTENT MATCHING (New Content)
+        // =============================================
+        
+        // General Renovation Questions - Free Inspection
+        if (message.includes('inspection') || (message.includes('free') && (message.includes('site') || message.includes('visit') || message.includes('quote') || message.includes('quotation')))) {
+          return `Yes, we offer a free site inspection and a no-obligation quotation. For details, please contact us:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+        }
+        
+        if (message.includes('compliance') || message.includes('hdb') || message.includes('bca') || message.includes('pub') || message.includes('regulation') || message.includes('permit')) {
+          if (message.includes('permit')) {
+            return faqKnowledge.generalRenovation.permits + ` For specific permit requirements, please contact us for assistance.`;
+          }
+          return faqKnowledge.generalRenovation.compliance;
+        }
+        
+        if (message.includes('project type') || message.includes('residential') || message.includes('commercial') || message.includes('industrial')) {
+          return faqKnowledge.generalRenovation.projectTypes;
+        }
+        
+        if (message.includes('duration') || message.includes('how long') || message.includes('timeline') || message.includes('time frame')) {
+          return faqKnowledge.generalRenovation.duration;
+        }
+        
+        if (message.includes('design') || message.includes('layout') || message.includes('planning')) {
+          return faqKnowledge.generalRenovation.designSupport;
+        }
+        
+        if (message.includes('partial') || message.includes('kitchen only') || message.includes('bathroom only') || (message.includes('selected') && message.includes('area'))) {
+          return faqKnowledge.generalRenovation.partialRenovation;
+        }
+        
+        if (message.includes('warranty') || message.includes('guarantee')) {
+          return faqKnowledge.generalRenovation.warranty;
+        }
+        
+        if (message.includes('stay') || message.includes('live') || (message.includes('during') && message.includes('renovation'))) {
+          return faqKnowledge.generalRenovation.stayDuringRenovation;
+        }
+        
+        if (message.includes('pricing') || message.includes('price') || message.includes('cost') || message.includes('hidden') || message.includes('transparent')) {
+          return faqKnowledge.generalRenovation.pricing;
+        }
+        
+        if (message.includes('budget') || message.includes('affordable') || message.includes('cheap')) {
+          return faqKnowledge.generalRenovation.budget;
+        }
+        
+        if (message.includes('hacking') || message.includes('demolition') || message.includes('demolish')) {
+          return faqKnowledge.generalRenovation.hacking;
+        }
+        
+        if (message.includes('worker') && (message.includes('safety') || message.includes('insured') || message.includes('trained'))) {
+          return faqKnowledge.generalRenovation.workerSafety;
+        }
+        
+        // General Renovation - Additional Questions
+        if (message.includes('start') && (message.includes('process') || message.includes('renovation') || message.includes('how'))) {
+          return faqKnowledge.generalRenovation.startProcess;
+        }
+        
+        if (message.includes('licensed') && (message.includes('plumber') || message.includes('electrician'))) {
+          return faqKnowledge.generalRenovation.licensed;
+        }
+        
+        if (message.includes('start') && (message.includes('immediately') || message.includes('now') || message.includes('when'))) {
+          return faqKnowledge.generalRenovation.startImmediately;
+        }
+        
+        if (message.includes('material') && (message.includes('selection') || message.includes('choose') || message.includes('help'))) {
+          return faqKnowledge.generalRenovation.materialSelection;
+        }
+        
+        if (message.includes('change') && (message.includes('during') || message.includes('renovation'))) {
+          return faqKnowledge.generalRenovation.changesDuringRenovation;
+        }
+        
+        if (message.includes('payment') || (message.includes('pay') && message.includes('structure'))) {
+          return faqKnowledge.generalRenovation.paymentStructure;
+        }
+        
+        if (message.includes('protect') || (message.includes('furniture') || message.includes('flooring'))) {
+          return faqKnowledge.generalRenovation.protectFurniture;
+        }
+        
+        if (message.includes('occupied') || (message.includes('live') && message.includes('during'))) {
+          return faqKnowledge.generalRenovation.occupiedUnits;
+        }
+        
+        if (message.includes('reinstatement')) {
+          return faqKnowledge.generalRenovation.reinstatement;
+        }
+        
+        if (message.includes('night') || message.includes('weekend') || message.includes('after hours')) {
+          return faqKnowledge.generalRenovation.nightWeekendWork;
+        }
+        
+        if (message.includes('defect') || (message.includes('problem') && message.includes('after'))) {
+          return faqKnowledge.generalRenovation.defects;
+        }
+        
+        if (message.includes('supervisor') || message.includes('supervision') || message.includes('monitor')) {
+          return faqKnowledge.generalRenovation.projectSupervision;
+        }
+        
+        // Electrical Works Questions
+        if (message.includes('electrical') || message.includes('electric') || message.includes('wiring') || message.includes('rewiring') || message.includes('lighting') || message.includes('socket') || message.includes('power point') || message.includes('db') || message.includes('circuit') || message.includes('fault') || message.includes('led') || message.includes('smart system') || message.includes('outlet')) {
+          if (message.includes('licensed') || message.includes('electrician') || message.includes('certified')) {
+            return faqKnowledge.electrical.certified + `\n\n${faqKnowledge.electrical.services}`;
+          }
+          if (message.includes('wiring') || message.includes('rewiring') || message.includes('installation')) {
+            return faqKnowledge.electrical.wiring;
+          }
+          if (message.includes('lighting') || message.includes('light') || message.includes('outlet')) {
+            return faqKnowledge.electrical.lighting;
+          }
+          if (message.includes('fault') || message.includes('short circuit') || message.includes('troubleshoot')) {
+            return faqKnowledge.electrical.faultRepair;
+          }
+          if (message.includes('smart') || message.includes('led') || message.includes('energy') || message.includes('automation')) {
+            return faqKnowledge.electrical.smartSystems;
+          }
+          if (message.includes('how long') || message.includes('duration') || message.includes('take')) {
+            return faqKnowledge.electrical.duration;
+          }
+          return faqKnowledge.electrical.services;
+        }
+        
+        // Plumbing Works Questions
+        if (message.includes('plumbing') || message.includes('plumber') || message.includes('leak') || message.includes('burst') || message.includes('pipe') || message.includes('blockage') || message.includes('clog') || message.includes('tap') || message.includes('sink') || message.includes('toilet') || message.includes('shower') || message.includes('water heater') || message.includes('fixture') || message.includes('drain') || message.includes('sewage')) {
+          if (message.includes('residential') || message.includes('commercial') || message.includes('both')) {
+            return faqKnowledge.plumbing.residentialCommercial;
+          }
+          if (message.includes('leak') || message.includes('burst')) {
+            return faqKnowledge.plumbing.leaks;
+          }
+          if (message.includes('fixture') || message.includes('tap') || message.includes('toilet') || message.includes('sink') || message.includes('shower')) {
+            return faqKnowledge.plumbing.fixtures;
+          }
+          if (message.includes('clog') || message.includes('blockage') || message.includes('drain') || message.includes('sewage')) {
+            return faqKnowledge.plumbing.blockages;
+          }
+          if (message.includes('emergency') || message.includes('urgent') || message.includes('quick')) {
+            return faqKnowledge.plumbing.emergency;
+          }
+          if (message.includes('replace') && message.includes('pipe')) {
+            return faqKnowledge.plumbing.pipeReplacement;
+          }
+          return faqKnowledge.plumbing.services;
+        }
+        
+        // Waterproofing Questions
+        if (message.includes('waterproof') || message.includes('waterproofing') || message.includes('membrane') || message.includes('cementitious') || message.includes('bitumen') || message.includes('epoxy')) {
+          if (message.includes('bathroom') || message.includes('balcony') || message.includes('kitchen') || message.includes('rooftop')) {
+            return faqKnowledge.waterproofing.areas;
+          }
+          if (message.includes('type') || message.includes('what kind') || message.includes('membrane') || message.includes('cementitious') || message.includes('bitumen') || message.includes('epoxy')) {
+            return faqKnowledge.waterproofing.types;
+          }
+          if (message.includes('how long') || message.includes('duration') || message.includes('take')) {
+            return faqKnowledge.waterproofing.duration;
+          }
+          if (message.includes('leak') || message.includes('repair')) {
+            return faqKnowledge.waterproofing.leakRepair;
+          }
+          if (message.includes('old') || message.includes('existing') || message.includes('surface')) {
+            return faqKnowledge.waterproofing.oldSurfaces;
+          }
+          if (message.includes('included') || message.includes('part of') || message.includes('renovate')) {
+            return faqKnowledge.waterproofing.included;
+          }
+          return faqKnowledge.waterproofing.services;
+        }
+        
+        // Painting Questions
+        if (message.includes('paint') || message.includes('painting') || message.includes('painter')) {
+          if (message.includes('type') || message.includes('what paint') || message.includes('brand') || message.includes('voc')) {
+            return faqKnowledge.painting.paintType;
+          }
+          if (message.includes('color') || message.includes('colour') || message.includes('recommend')) {
+            return faqKnowledge.painting.colorConsultation;
+          }
+          if (message.includes('occupied') || message.includes('live') || message.includes('during')) {
+            return faqKnowledge.painting.occupiedUnits;
+          }
+          if (message.includes('how long') || message.includes('duration') || message.includes('take')) {
+            return faqKnowledge.painting.duration;
+          }
+          if (message.includes('preparation') || message.includes('surface') || message.includes('sanding') || message.includes('patching')) {
+            return faqKnowledge.painting.surfacePreparation;
+          }
+          if (message.includes('partial') || message.includes('one room') || message.includes('feature wall')) {
+            return faqKnowledge.painting.partialPainting;
+          }
+          if (message.includes('mould') || message.includes('mold') || message.includes('moisture') || message.includes('waterproof')) {
+            return faqKnowledge.painting.antiMould;
+          }
+          if (message.includes('protect') || message.includes('furniture') || message.includes('floor')) {
+            return faqKnowledge.painting.protection;
+          }
+          return faqKnowledge.painting.services;
+        }
+        
+        // Tiling Questions
+        if (message.includes('tile') || message.includes('tiling') || message.includes('grout') || message.includes('sealing')) {
+          if (message.includes('supply') || message.includes('provide tile') || message.includes('only installation')) {
+            return faqKnowledge.tiling.supply;
+          }
+          if (message.includes('area') || message.includes('where') || message.includes('bathroom') || message.includes('kitchen') || message.includes('balcony')) {
+            return faqKnowledge.tiling.areas;
+          }
+          if (message.includes('replace') || message.includes('damaged') || message.includes('cracked') || message.includes('repair')) {
+            return faqKnowledge.tiling.replacement;
+          }
+          if (message.includes('waterproof') && message.includes('before')) {
+            return faqKnowledge.tiling.waterproofingBefore;
+          }
+          if (message.includes('how long') || message.includes('duration') || message.includes('take')) {
+            return faqKnowledge.tiling.duration;
+          }
+          if (message.includes('layout') || message.includes('pattern') || message.includes('advice') || message.includes('design')) {
+            return faqKnowledge.tiling.layoutAdvice;
+          }
+          if (message.includes('remove') || message.includes('old tile') || message.includes('hack')) {
+            return faqKnowledge.tiling.removeOldTiles;
+          }
+          if (message.includes('type') || message.includes('what tile') || message.includes('ceramic') || message.includes('porcelain') || message.includes('marble')) {
+            return faqKnowledge.tiling.tileTypes;
+          }
+          return faqKnowledge.tiling.services;
+        }
+        
+        // Services questions
+        if (message.includes('service') || message.includes('what do you') || message.includes('offer') || message.includes('do you do')) {
+          return `We offer:\n• ${companyInfo.services.join('\n• ')}\n\nLearn more on our Services page!`;
+        }
+        
+        // About company
+        if (message.includes('about') || message.includes('who are you') || message.includes('company') || message.includes('experience')) {
+          return `${companyInfo.about}\n\nOur Stats:\n• Experience: ${companyInfo.experience}\n• Projects: ${companyInfo.projectsCompleted} completed\n• Client Satisfaction: ${companyInfo.clientSatisfaction}`;
+        }
+        
+        // Pricing questions
+        if (message.includes('pricing') || message.includes('price') || message.includes('cost') || message.includes('hidden') || message.includes('transparent')) {
+          return `Our tile laying services pricing:\n• Per sq ft: S$5+\n• Bathroom tiling: S$600-S$800\n• Floor tiling: S$150-S$300\n• Wall tiling: S$400+\n\nPricing depends on tile type, area size, and complexity. Final costs may vary based on materials and site conditions. Arrange a free quote:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+        }
+        
+        // Project inquiry
+        if (message.includes('project') || message.includes('quote') || message.includes('estimate') || message.includes('bid')) {
+          return `For project inquiries and quotes, please contact our team:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}\n\nOur team will be happy to discuss your construction needs!`;
+        }
+        
+        // Safety questions
+        if (message.includes('safety') || message.includes('safe')) {
+          return `Safety is our top priority! We maintain the highest safety standards and have a zero-accident culture. All projects follow strict safety protocols and compliance regulations. For safety inquiries, please contact us directly.`;
+        }
+        
+        // Default response (fallback to human follow-up)
+        return `Thank you for your inquiry! I'm an AI assistant here to help with basic information about Reliable Engineering and Construction. For specific project details or inquiries, please contact us directly:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+      }
+  
+      
+      const chatToggle = document.getElementById('chat-toggle');
+      const chatClose = document.getElementById('chat-close');
+      const chatWindow = document.getElementById('chat-window');
+      const chatForm = document.getElementById('chat-form');
+      const chatInput = document.getElementById('chat-input');
+      const chatMessages = document.getElementById('chat-messages');
+  
+      chatToggle.addEventListener('click', () => {
+        chatWindow.classList.toggle('hidden');
+      });
+  
+      chatClose.addEventListener('click', () => {
+        chatWindow.classList.add('hidden');
+      });
+  
+      chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const message = chatInput.value.trim();
+        if (message) {
+          
+          const userMsg = document.createElement('div');
+          userMsg.className = 'flex justify-end';
+          userMsg.innerHTML = `<div class="bg-gray-300 text-gray-900 rounded-lg p-3 max-w-xs"><p class="text-sm">${message}</p></div>`;
+          chatMessages.appendChild(userMsg);
+          chatInput.value = '';
+  
+         
+          setTimeout(() => {
+            const response = generateResponse(message);
+            const replyMsg = document.createElement('div');
+            replyMsg.className = 'flex items-end space-x-2';
+            replyMsg.innerHTML = `<div class="bg-sky-600 text-white rounded-lg p-3 max-w-xs"><p class="text-sm whitespace-pre-line">${response}</p></div>`;
+            chatMessages.appendChild(replyMsg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+          }, 500);
+  
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+      });
+      // Off-canvas mobile menu
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+      const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
+      
+      function openMobileMenu() {
+          mobileMenuPanel.classList.add('active');
+          mobileMenuOverlay.classList.add('active');
+          document.body.classList.add('menu-open');
+      }
+      
+      function closeMobileMenu() {
+          mobileMenuPanel.classList.remove('active');
+          mobileMenuOverlay.classList.remove('active');
+          document.body.classList.remove('menu-open');
+      }
+      
+      if (mobileMenuBtn) {
+          mobileMenuBtn.addEventListener('click', openMobileMenu);
+      }
+      
+      if (mobileMenuClose) {
+          mobileMenuClose.addEventListener('click', closeMobileMenu);
+      }
+      
+      if (mobileMenuOverlay) {
+          mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+      }
+      
+      // Close menu on link click
+      const mobileMenuLinks = mobileMenuPanel?.querySelectorAll('a:not([href="#"])');
+      mobileMenuLinks?.forEach(link => {
+          link.addEventListener('click', () => {
+              setTimeout(closeMobileMenu, 150);
+          });
+      });
+      
+      // Mobile handyman accordion
+      const mobileHandymanBtn = document.getElementById('mobile-handyman-btn');
+      const mobileHandymanMenu = document.getElementById('mobile-handyman-menu');
+      const mobileHandymanArrow = document.getElementById('mobile-handyman-arrow');
+      
+      if (mobileHandymanBtn && mobileHandymanMenu && mobileHandymanArrow) {
+          mobileHandymanBtn.addEventListener('click', () => {
+              mobileHandymanMenu.classList.toggle('hidden');
+              mobileHandymanArrow.classList.toggle('rotate-180');
+          });
+      }
+      
+      // Mobile renovation accordion
+      const mobileRenovationBtn = document.getElementById('mobile-renovation-btn');
+      const mobileRenovationMenu = document.getElementById('mobile-renovation-menu');
+      const mobileRenovationArrow = document.getElementById('mobile-renovation-arrow');
+      
+      if (mobileRenovationBtn && mobileRenovationMenu && mobileRenovationArrow) {
+          mobileRenovationBtn.addEventListener('click', () => {
+              mobileRenovationMenu.classList.toggle('hidden');
+              mobileRenovationArrow.classList.toggle('rotate-180');
+          });
+      }
+      // Navbar scroll effect for service pages
+      const navbar = document.getElementById("navbar");
+      const navLinks = navbar?.querySelectorAll(".nav-link");
+      const mobileMenuButton = document.getElementById("mobile-menu-btn");
+      
+      if (navbar && navLinks) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            // Scrolled state - white background with dark text
+            navbar.classList.add("bg-white", "shadow-lg");
+            navbar.classList.remove("bg-transparent");
+            
+            // Change nav links to dark text
+            navLinks.forEach((link) => {
+              link.classList.remove("text-white", "hover:text-sky-400");
+              link.classList.add("text-sky-600", "hover:text-sky-500");
+            });
+            
+            // Change mobile button to dark
+            if (mobileMenuButton) {
+              mobileMenuButton.classList.remove("text-white", "hover:text-sky-400");
+              mobileMenuButton.classList.add("text-gray-800", "hover:text-sky-600");
+            }
+          } else {
+            // Top of page state - transparent background with white text
+            navbar.classList.remove("bg-white", "shadow-lg");
+            navbar.classList.add("bg-transparent");
+            
+            // Change nav links back to white text
+            navLinks.forEach((link) => {
+              link.classList.remove("text-sky-600", "hover:text-sky-500");
+              link.classList.add("text-white", "hover:text-sky-400");
+            });
+            
+            // Change mobile button back to white
+            if (mobileMenuButton) {
+              mobileMenuButton.classList.remove("text-gray-800", "hover:text-sky-600");
+              mobileMenuButton.classList.add("text-white", "hover:text-sky-400");
+            }
+          }
+        });
+      }
+
+    /* =============================================
+       Company Signature Layout — Scroll Reveal System
+       ============================================= */
+    (function() {
+      const revealElements = document.querySelectorAll('.sgsa-reveal, .sgsa-reveal-children, .sgsa-line, .sgsa-vline');
+      
+      if (!revealElements.length) return;
+      
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        const triggerPoint = windowHeight * 0.85;
+        
+        revealElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < triggerPoint) {
+            el.classList.add('visible');
+          }
+        });
+      };
+      
+      // Initial check
+      revealOnScroll();
+      
+      // Throttled scroll listener
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            revealOnScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+
+  <!-- Defer non-critical JavaScript to improve initial page load -->
+
+    /* ============================================
+       SCROLL ANIMATION OBSERVER
+       Triggers fade-up and stagger animations
+       ============================================ */
+    (function initScrollAnimations() {
+      const animatedElements = document.querySelectorAll('.fade-up, .stagger-children');
+      
+      if (!animatedElements.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Animate once only
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      animatedElements.forEach(el => observer.observe(el));
+    })();
+
+    </script>
+  <!-- Vercel Speed Insights -->
+  <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>

@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reliable Engineering and Construction | Carpentry Works</title>
-    <link rel="icon" type="image/png" sizes="48x48" href="images/company-logo.png">
+    <title>Reliable Engineering and Construction | Renovation Works</title>
+     <link rel="icon" type="image/png" sizes="48x48" href="images/company-logo.png">
     <meta
       name="description"
-      content="Custom carpentry solutions for wardrobes, cabinets, feature walls, and built-in furniture."
+      content="Complete renovation services for HDB, condo, and commercial spaces in Singapore."
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Performance: Preconnect to font domains for faster loading -->
@@ -26,7 +26,7 @@
       }
       .card-hover:hover {
         transform: translateY(-8px);
-      } 
+      }
       .nav-link {
         position: relative;
         display: inline-block;
@@ -58,7 +58,7 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         transform: translateY(-4px);
       }
-      
+    
 /* Mobile menu dropdown */
 .mobile-menu-overlay {
   opacity: 0;
@@ -97,7 +97,78 @@ body.menu-open {
   transform: translateY(0);
 }
 
-   
+    /* ============================================
+       ANIMATION SYSTEM (Clean & Professional)
+       ============================================ */
+
+    /* 1️⃣ SECTION FADE + SLIDE - Main Animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 700ms ease-out, transform 700ms ease-out;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 2️⃣ STAGGERED CHILDREN - For grids & lists */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 700ms ease-out, transform 700ms ease-out;
+    }
+
+    .stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(2) { transition-delay: 120ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(3) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(4) { transition-delay: 360ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(5) { transition-delay: 480ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(6) { transition-delay: 600ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(7) { transition-delay: 720ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(8) { transition-delay: 840ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(9) { transition-delay: 960ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(10) { transition-delay: 1080ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(11) { transition-delay: 1200ms; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(12) { transition-delay: 1320ms; opacity: 1; transform: translateY(0); }
+
+    /* 3️⃣ HOVER MOTION - Subtle but noticeable */
+    .hover-lift {
+      transition: transform 200ms ease-out;
+    }
+    .hover-lift:hover {
+      transform: translateY(-2px);
+    }
+
+    .hover-slide {
+      transition: transform 200ms ease-out;
+    }
+    .hover-slide:hover {
+      transform: translateX(2px);
+    }
+
+    /* Mobile: Slightly faster */
+    @media (max-width: 768px) {
+      .fade-up,
+      .stagger-children > * {
+        transition-duration: 600ms;
+      }
+
+      .stagger-children.visible > *:nth-child(n+6) {
+        transition-delay: 600ms;
+      }
+    }
+
+    /* Reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up,
+      .stagger-children > * {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
 
 </style>
 
@@ -134,9 +205,9 @@ body.menu-open {
                                <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white  shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
                                    <div class="py-2">
                                 
-                                       <a href="aircon.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
-                                       <a href="plumbing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                                       <a href="electrical.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                       <a href="aircon-service-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
+                                       <a href="plumbing-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                       <a href="electrical-works-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
                                    </div>
                                </div>
                            </div>
@@ -151,16 +222,16 @@ body.menu-open {
                                </div>
                                <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
                                    <div class="py-2">
-                                    <a href="plastering.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
-                                    <a href="plumbing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                                       <a href="electrical.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
-                                       <a href="painting.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
-                                       <a href="tile-laying.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
-                                       <a href="renovation-works.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
-                                       <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
-                                       <a href="carpentry.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
-                                       <a href="waterproofing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
-                                       <a href="hacking-demolition.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
+                                      <a href="plastering-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>  
+                                    <a href="plumbing-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                       <a href="electrical-works-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                       <a href="painting-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
+                                       <a href="tile-laying-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
+                                       <a href="renovation-works-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
+                                       <a href="ceiling-wall-partitions-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
+                                       <a href="carpentry-works-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
+                                       <a href="waterproofing-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
+                                       <a href="reinstatement-hacking-demolition-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
                                    </div>
                                </div>
                            </div>
@@ -173,17 +244,17 @@ body.menu-open {
                     <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                   </button>
                   <div class="absolute left-0 mt-2 w-56 bg-white  shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" data-projects-dropdown-panel>
-                    <div class="py-2">
-                      <a href="projects-handyman.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
-                      <a href="projects-residential.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
-                      <a href="projects-commercial.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
+                    <div class="py-2">  
+                      <a href="handyman-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
+                      <a href="residential-renovation-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
+                      <a href="commercial-renovation-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
                     </div>
                   </div>
                 </div>
-                   <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">CONTACT</a>
+                    <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">CONTACT</a>
                </div>
                <div>
-                   <a href="tel:+6585864098" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-4 py-1 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
+                   <a href="tel:+6585864098" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
                </div>
                <div class="md:hidden">
                    <button id="mobile-menu-btn" class="text-white hover:text-sky-400 focus:outline-none" aria-label="Toggle mobile menu" aria-expanded="false">
@@ -216,7 +287,7 @@ body.menu-open {
         
         <!-- Menu Content -->
         <div class="flex-1 overflow-y-auto py-4">
-            <!-- Primary Links -->    
+            <!-- Primary Links -->
             <nav class="px-4 space-y-1">
                 <a href="index.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Home
                 </a>
@@ -241,9 +312,9 @@ body.menu-open {
                         <svg id="mobile-handyman-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div id="mobile-handyman-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
-                        <a href="aircon.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Air Con Service</a>
-                        <a href="plumbing.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plumbing</a>
-                        <a href="electrical.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
+                        <a href="aircon-service-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Air Con Service</a>
+                        <a href="plumbing-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plumbing</a>
+                        <a href="electrical-works-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
                     </div>
                 </div>
                 
@@ -257,17 +328,17 @@ body.menu-open {
                         <svg id="mobile-renovation-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div id="mobile-renovation-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
-                      <a href="plastering.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plastering Works</a>
-                      <a href="plumbing.html" class="block px-4 py-3 text-base text-cyan-700 bg-cyan-50 font-medium rounded-lg">Plumbing</a>
-                        <a href="electrical.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
-                        <a href="painting.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Painting</a>
+                      <a href="plastering-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plastering Works</a>
+                      <a href="plumbing-services-singapore.html" class="block px-4 py-3 text-base text-cyan-700 bg-cyan-50 font-medium rounded-lg">Plumbing</a>
+                        <a href="electrical-works-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
+                        <a href="painting-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Painting</a>
                         
-                        <a href="tile-laying.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Tile Laying</a>
-                        <a href="renovation-works.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Renovation Works</a>
-                        <a href="ceiling-wall-partitions.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Ceiling & Partitions</a>
-                        <a href="carpentry.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Carpentry Works</a>
-                        <a href="waterproofing.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Waterproofing</a>
-                        <a href="hacking-demolition.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Hacking & Demolition</a>
+                        <a href="tile-laying-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Tile Laying</a>
+                        <a href="renovation-works-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Renovation Works</a>
+                        <a href="ceiling-wall-partitions-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Ceiling & Partitions</a>
+                        <a href="carpentry-works-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Carpentry Works</a>
+                        <a href="waterproofing-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Waterproofing</a>
+                        <a href="reinstatement-hacking-demolition-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Hacking & Demolition</a>
                     </div>
                 </div>
             </div>
@@ -287,9 +358,9 @@ body.menu-open {
                     <svg id="mobile-projects-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                   </button>
                   <div id="mobile-projects-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
-                    <a href="projects-handyman.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Handyman</a>
-                    <a href="projects-residential.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Residential</a>
-                    <a href="projects-commercial.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
+                    <a href="handyman-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Handyman</a>
+                    <a href="residential-renovation-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Residential</a>
+                    <a href="commercial-renovation-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
                   </div>
                 </div>
                 <a href="contacts.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Contact
@@ -342,8 +413,8 @@ body.menu-open {
     >
       <div class="absolute inset-0">
         <img
-          src="images/services images/carpentry-works-hero.jpg"
-          alt="Carpentry works service for residential and commercial properties"
+          src="images/services images/renovation-works-hero.jpg"
+          alt="Renovation works service for residential and commercial properties"
           class="w-full h-full object-cover"
         />
       </div>
@@ -352,32 +423,32 @@ body.menu-open {
         <div class="flex flex-col lg:flex-row items-center gap-10">
           <div class="flex-1 space-y-6">
             <p class="uppercase tracking-[0.25em] text-sm text-cyan-200">
-              Custom Carpentry Works
+              Complete Renovation Works
             </p>
             <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
-              Custom Carpentry Works
+              Complete Renovation Works
             </h1>
             <p class="text-lg text-cyan-50/90">
-              Built-in furniture and custom woodwork to maximize your space
+              Transform your space with full renovation services
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div
                 class="bg-white/10 border border-white/20 rounded-xl px-4 py-3"
               >
-                <p class="text-sm text-cyan-100">Wardrobes</p>
-                <p class="font-semibold text-white">Custom built</p>
+                <p class="text-sm text-cyan-100">HDB</p>
+                <p class="font-semibold text-white">Full renovation</p>
               </div>
               <div
                 class="bg-white/10 border border-white/20 rounded-xl px-4 py-3"
               >
-                <p class="text-sm text-cyan-100">Cabinets</p>
-                <p class="font-semibold text-white">Kitchen & more</p>
+                <p class="text-sm text-cyan-100">Condo</p>
+                <p class="font-semibold text-white">Premium finish</p>
               </div>
               <div
                 class="bg-white/10 border border-white/20 rounded-xl px-4 py-3"
               >
-                <p class="text-sm text-cyan-100">Feature walls</p>
-                <p class="font-semibold text-white">TV consoles</p>
+                <p class="text-sm text-cyan-100">Commercial</p>
+                <p class="font-semibold text-white">Office & retail</p>
               </div>
             </div>
             <div class="flex flex-col sm:flex-row gap-3 pt-4">
@@ -400,15 +471,15 @@ body.menu-open {
             <ul class="space-y-3 text-sm text-cyan-50/90">
               <li class="flex gap-2">
                 <span class="text-cyan-300">•</span
-                ><span>Custom designs tailored to your space</span>
+                ><span>End-to-end project management</span>
               </li>
               <li class="flex gap-2">
                 <span class="text-cyan-300">•</span
-                ><span>Quality materials and hardware</span>
+                ><span>Transparent pricing and timeline</span>
               </li>
               <li class="flex gap-2">
                 <span class="text-cyan-300">•</span
-                ><span>Clean installation with tidy handover</span>
+                ><span>Quality materials and workmanship</span>
               </li>
             </ul>
             <div class="flex items-center gap-3 pt-2">
@@ -418,9 +489,9 @@ body.menu-open {
                 ✓
               </div>
               <div>
-                <p class="font-semibold">Experienced Craftsmen</p>
+                <p class="font-semibold">Licensed & Insured</p>
                 <p class="text-sm text-cyan-50/80">
-                  Quality woodwork with attention to detail.
+                  HDB and BCA registered contractor.
                 </p>
               </div>
             </div>
@@ -434,12 +505,13 @@ body.menu-open {
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex flex-col lg:flex-row gap-10 items-center">
           <div class="flex-1 space-y-4">
-           
+          
+            
             <h2 class="text-3xl font-bold text-slate-900 leading-tight">
-              Carpentry Works for discerning homeowners
+              Renovation Works for discerning homeowners
             </h2>
             <p class="text-gray-600 text-lg leading-relaxed">
-              Transform your space with <span class="font-semibold text-slate-900">custom wardrobes</span>, <span class="font-semibold text-slate-900">kitchen cabinets</span>, and <span class="font-semibold text-slate-900">feature walls</span> by experienced craftsmen. We provide <span class="font-semibold text-slate-900">custom design</span> built to your specifications and space requirements, using <span class="font-semibold text-slate-900">premium plywood, laminates, and hardware</span> for lasting quality. Our skilled craftsmen ensure precise measurements, clean finishes, and seamless integration with your existing interiors. All work is backed by <span class="font-semibold text-slate-900">transparent pricing</span>, <span class="font-semibold text-slate-900">on-time delivery</span>, and a <span class="font-semibold text-slate-900">workmanship warranty</span> you can trust.
+              Transform your space with <span class="font-semibold text-slate-900">full renovations</span>, <span class="font-semibold text-slate-900">partial upgrades</span>, and <span class="font-semibold text-slate-900">commercial fit-outs</span> by experienced specialists. We provide <span class="font-semibold text-slate-900">dedicated project management</span> with a coordinator from start to finish, <span class="font-semibold text-slate-900">regular inspections and progress updates</span> for quality assurance, and comprehensive renovation services covering electrical, plumbing, tiling, painting, carpentry, and more. Our structured processes ensure consistency, transparency, and efficiency throughout every stage of the project. All work is backed by <span class="font-semibold text-slate-900">transparent pricing</span>, <span class="font-semibold text-slate-900">on-time delivery</span>, and a <span class="font-semibold text-slate-900">workmanship warranty</span> you can trust.
             </p>
           </div>
           <div class="flex-1">
@@ -447,8 +519,8 @@ body.menu-open {
               class="rounded-xl overflow-hidden shadow-2xl border border-slate-100"
             >
               <img
-                src="images/services images/carpentry-works-overview.jpg"
-                alt="Professional carpentry works service overview"
+                src="images/services images/renovation-works-overview.jpg"
+                alt="Professional renovation works service overview"
                 loading="lazy"
                 class="w-full h-full object-cover"
               />
@@ -458,412 +530,10 @@ body.menu-open {
       </div>
     </section>
 
-    <!-- Service Cards with Pricing -->
-    <section class="py-16 bg-white">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Card 1: Wardrobes -->
-          <div
-            class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full hover:shadow-xl transition-all"
-          >
-            <div
-              class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
-            >
-              <img src="images/carpentry/custom-wardrobes.png" alt="Custom wardrobes carpentry service" loading="lazy" />
-            </div>
-            <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-bold text-slate-900 mb-4">
-                Custom Wardrobes
-              </h3>
-              <div class="mb-5 flex-grow">
-                <h4
-                  class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3"
-                >
-                  Common Services:
-                </h4>
-                <ul class="space-y-2.5">
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px]"
-                      >Built-in wardrobes</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px]"
-                      >Walk-in closets</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px]"
-                      >Sliding door systems</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px]"
-                      >Internal organizers</span
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div
-                class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto"
-              >
-                <h4
-                  class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2"
-                >
-                  <svg
-                    class="w-4 h-4 text-slate-900"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    /></svg
-                  >Pricing
-                </h4>
-                <div class="space-y-3">
-                  <div
-                    class="flex justify-between items-center pb-2.5 border-b border-slate-200"
-                  >
-                    <span class="text-slate-700 text-[15px]">Per ft run:</span
-                    ><span class="text-lg font-bold text-red-600">S$450</span>
-                  </div>
-                  <div
-                    class="flex justify-between items-center pb-2.5 border-b border-slate-200"
-                  >
-                    <span class="text-slate-700 text-[15px]">Standard:</span
-                    ><span class="text-lg font-bold text-red-600"
-                      >S$1,500+</span
-                    >
-                  </div>
-                  <div class="flex justify-between items-center">
-                    <span class="text-slate-700 text-[15px]">Walk-in:</span
-                    ><span class="text-lg font-bold text-red-600"
-                      >S$4,000+</span
-                    >
-                  </div>
-                </div>
-                <p class="text-xs text-slate-500 italic mt-4">
-                  *Prices may vary by size & design
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2: Kitchen Cabinets -->
-          <div
-            class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full hover:shadow-xl transition-all"
-          >
-            <div
-              class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
-            >
-              <img src="images/carpentry/kitchen-cabinets.png" alt="Kitchen cabinets carpentry service" loading="lazy" />
-            </div>
-            <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-bold text-slate-900 mb-4">
-                Kitchen Cabinets
-              </h3>
-              <div class="mb-5 flex-grow">
-                <h4
-                  class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3"
-                >
-                  Common Services:
-                </h4>
-                <ul class="space-y-2.5">
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px]"
-                      >Base & wall cabinets</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px]"
-                      >Countertop integration</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px]"
-                      >Pull-out drawers</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px]"
-                      >Soft-close mechanisms</span
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div
-                class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto"
-              >
-                <h4
-                  class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2"
-                >
-                  <svg
-                    class="w-4 h-4 text-slate-900"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    /></svg
-                  >Pricing
-                </h4>
-                <div class="space-y-3">
-                  <div
-                    class="flex justify-between items-center pb-2.5 border-b border-slate-200"
-                  >
-                    <span class="text-slate-700 text-[15px]">Per ft run:</span
-                    ><span class="text-lg font-bold text-red-600">S$550</span>
-                  </div>
-                  <div
-                    class="flex justify-between items-center pb-2.5 border-b border-slate-200"
-                  >
-                    <span class="text-slate-700 text-[15px]">Standard:</span
-                    ><span class="text-lg font-bold text-red-600"
-                      >S$4,000+</span
-                    >
-                  </div>
-                  <div class="flex justify-between items-center">
-                    <span class="text-slate-700 text-[15px]">Full kitchen:</span
-                    ><span class="text-lg font-bold text-red-600"
-                      >S$12,000+</span
-                    >
-                  </div>
-                </div>
-                <p class="text-xs text-slate-500 italic mt-4">
-                  *Prices may vary by size & design
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3: Feature Walls -->
-          <div
-            class="bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full hover:shadow-xl transition-all"
-          >
-            <div
-              class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
-            >
-              <img src="images/carpentry/feature-walls-tv-consoles.png" alt="Feature walls and TV consoles carpentry service" loading="lazy" />
-            </div>
-            <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-bold text-slate-900 mb-4">
-                Feature Walls & TV Consoles
-              </h3>
-              <div class="mb-5 flex-grow">
-                <h4
-                  class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-3"
-                >
-                  Common Services:
-                </h4>
-                <ul class="space-y-2.5">
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px]"
-                      >TV feature walls</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px]"
-                      >Entertainment units</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px]"
-                      >Display shelving</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px]"
-                      >Cable management</span
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div
-                class="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-auto"
-              >
-                <h4
-                  class="text-sm font-semibold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2"
-                >
-                  <svg
-                    class="w-4 h-4 text-slate-900"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    /></svg
-                  >Pricing
-                </h4>
-                <div class="space-y-3">
-                  <div
-                    class="flex justify-between items-center pb-2.5 border-b border-slate-200"
-                  >
-                    <span class="text-slate-700 text-[15px]">TV console:</span
-                    ><span class="text-lg font-bold text-red-600"
-                      >S$1,200+</span
-                    >
-                  </div>
-                  <div
-                    class="flex justify-between items-center pb-2.5 border-b border-slate-200"
-                  >
-                    <span class="text-slate-700 text-[15px]">Feature wall:</span
-                    ><span class="text-lg font-bold text-red-600"
-                      >S$2,500+</span
-                    >
-                  </div>
-                  <div class="flex justify-between items-center">
-                    <span class="text-slate-700 text-[15px]">Full unit:</span
-                    ><span class="text-lg font-bold text-red-600"
-                      >S$4,000+</span
-                    >
-                  </div>
-                </div>
-                <p class="text-xs text-slate-500 italic mt-4">
-                  *Prices may vary by size & design
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     
 
-    
-
+   
     <!-- FAQ -->
     <section class="py-16 bg-white">
       <div class="max-w-6xl mx-auto px-4">
@@ -879,40 +549,38 @@ body.menu-open {
         <div>
           <div class="bg-white border border-slate-200 rounded-xl p-4 faq-card">
             <p class="font-semibold text-slate-900 mb-2">
-              How long does custom carpentry take?
+              How long does a full renovation take?
             </p>
             <p class="text-slate-600 text-sm leading-relaxed">
-              Typically 2-4 weeks depending on complexity. We provide a timeline
-              upfront.
+              Typically 8-12 weeks for HDB, longer for condo and commercial.
             </p>
           </div>
           <div
             class="bg-white my-2 border border-slate-100 rounded-xl p-4 faq-card"
           >
             <p class="font-semibold text-slate-900 mb-2">
-              What materials do you use?
+              Do you handle permits?
             </p>
             <p class="text-slate-600 text-sm leading-relaxed">
-              Premium plywood, high-quality laminates, and branded hardware for
-              durability.
+              Yes, we handle HDB and BCA permit applications.
             </p>
           </div>
           <div
             class="bg-white mb-2 border border-slate-100 rounded-xl p-4 faq-card"
           >
             <p class="font-semibold text-slate-900 mb-2">
-              Do you provide design consultation?
+              Is there a warranty?
             </p>
             <p class="text-slate-600 text-sm leading-relaxed">
-              Yes, we help with design, measurements, and material selection.
+              Yes, all renovation work comes with workmanship warranty.
             </p>
           </div>
           <div class="bg-white border border-slate-100 rounded-xl p-4 faq-card">
             <p class="font-semibold text-slate-900 mb-2">
-              Is there a warranty?
+              Can I stay during renovation?
             </p>
             <p class="text-slate-600 text-sm leading-relaxed">
-              Yes, we provide workmanship warranty on all carpentry work.
+              We recommend staying elsewhere during major works for safety.
             </p>
           </div>
         </div>
@@ -1081,7 +749,7 @@ body.menu-open {
           class="bg-cyan-500 text-white p-4 flex justify-between items-center"
         >
           <div>
-            <h3 class="font-semibold">Reliable Support</h3>
+            <h3 class="font-semibold">Reliable Engineering and Construction Support</h3>
             <p class="text-sm text-white opacity-90">We're here to help</p>
           </div>
           <button id="chat-close" class="text-white hover:text-sky-200" aria-label="Close chat widget">
@@ -1430,19 +1098,19 @@ body.menu-open {
         email: ["reliableeng.c@gmail.com"],
         address: "Jalan Besar Plaza #02-36, Singapore 208511"
       },
-        services: [
-          "Carpentry",
-          "Electrical",
-          "Plumbing",
-          "Painting",
-          "Hacking Demolition",
-          "Tile Laying",
-          "Renovation Works",
-          "Waterproofing",
-          "Aircon Services and Installation",
-          "Ceiling and Wall Partitions",
-          "Reinstatement Works"
-        ],
+      services: [
+        "Carpentry",
+        "Electrical",
+        "Plumbing",
+        "Painting",
+        "Hacking Demolition",
+        "Tile Laying",
+        "Renovation Works",
+        "Waterproofing",
+        "Aircon Services and Installation",
+        "Ceiling and Wall Partitions",
+        "Reinstatement Works"
+      ],
       about: "Reliable Engineering and Construction is a leading construction company in Singapore with over 50 years of experience. We specialize in delivering exceptional construction projects with a commitment to safety, quality, and innovation.",
       experience: "24+ years",
       projectsCompleted: "500+",
@@ -1814,7 +1482,7 @@ body.menu-open {
       
       // Pricing questions
       if (message.includes('pricing') || message.includes('price') || message.includes('cost') || message.includes('hidden') || message.includes('transparent')) {
-        return `Our carpentry services pricing:\n• Custom wardrobe: S$450-S$550\n• Kitchen cabinet: S$1,500-S$4,000+\n• Feature wall/built-in: S$4,000-S$12,000+\n\nPricing depends on design complexity, materials, and specifications. Contact us for free design consultation:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+        return `Our renovation services pricing:\n• Hacking/demolition: S$3-S$6/sq ft or S$800+ per bathroom\n• Ceiling/partition: S$4-S$8/sq ft or S$800+ per room\n• Complete whole unit renovation: S$3,000+\n\nFull renovations include hacking, electrical, plumbing, tiling, painting, carpentry, and more. Pricing is project-based depending on scope, materials, and site conditions. Schedule free site inspection:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
       }
       
       // Project inquiry
@@ -1882,7 +1550,7 @@ body.menu-open {
         mobileMenuOverlay.classList.add('active');
         document.body.classList.add('menu-open');
     
-       
+      
     }
     
     function closeMobileMenu() {
@@ -1890,7 +1558,6 @@ body.menu-open {
         mobileMenuOverlay.classList.remove('active');
         document.body.classList.remove('menu-open');
     
-       
     }
     
     if (mobileMenuBtn) {
