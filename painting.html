@@ -1561,7 +1561,7 @@ body.menu-open {
         },
         contact: {
           phone: ["+6585864098"],
-          email: ["info.sgsaconstruction@gmail.com", "contact@sgsa.com"],
+          email: ["reliableeng.c@gmail.com"],
           address: "Jalan Besar Plaza #02-36, Singapore 208511"
         },
         services: [
@@ -1578,7 +1578,7 @@ body.menu-open {
           "Reinstatement Works"
         ],
         about: "Reliable Engineering and Construction is a leading construction company in Singapore with over 50 years of experience. We specialize in delivering exceptional construction projects with a commitment to safety, quality, and innovation.",
-        experience: "50+ years",
+        experience: "24+ years",
         projectsCompleted: "500+",
         clientSatisfaction: "98%"
       };
@@ -1745,7 +1745,7 @@ body.menu-open {
         }
         
         if (message.includes('pricing') || message.includes('price') || message.includes('cost') || message.includes('hidden') || message.includes('transparent')) {
-          return faqKnowledge.generalRenovation.pricing;
+          return `Our painting services pricing:\n• Per room: S$250\n• Per ceiling: S$150\n• Bathroom: S$180\n• HDB whole unit interior: S$1,200\n• Condo whole unit interior: S$2,000\n• Office painting: S$3,000+\n\nPrices may vary by room size and unit size. We offer free site assessment and transparent quotation. Contact us:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
         }
         
         if (message.includes('budget') || message.includes('affordable') || message.includes('cheap')) {

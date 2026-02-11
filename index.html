@@ -133,11 +133,20 @@
       min-height: 300px
     }
 
-    /* Prevent layout shift during font load */
-    @font-face {
-      font-family: 'Archivo';
-      font-display: swap
+    /* ============================================
+  PERFORMANCE OPTIMIZATION - Below-the-fold sections
+  ============================================ */
+    
+    /* Lazy-render off-screen content to reduce initial render time */
+    .services-section,
+    .projects-section,
+    .testimonials-section,
+    .contact-section {
+      content-visibility: auto;
+      contain-intrinsic-size: 0 1000px;
     }
+
+    /* Prevent layout shift during font load */
     .body-font {
       font-family: 'Inter', sans-serif;
     }
@@ -2915,7 +2924,7 @@
         },
         contact: {
           phone: ["+6585864098"],
-          email: ["info.sgsaconstruction@gmail.com", "contact@sgsa.com"],
+          email: ["reliableeng.c@gmail.com" ],
           address: "Jalan Besar Plaza #02-36, Singapore 208511"
         },
         services: [
@@ -2932,7 +2941,7 @@
           "Reinstatement Works"
         ],
         about: "Reliable Engineering and Construction is a leading construction company in Singapore with over 50 years of experience. We specialize in delivering exceptional construction projects with a commitment to safety, quality, and innovation.",
-        experience: "50+ years",
+        experience: "24+ years",
         projectsCompleted: "500+",
         clientSatisfaction: "98%"
       };
@@ -3099,7 +3108,32 @@
         }
 
         if (message.includes('pricing') || message.includes('price') || message.includes('cost') || message.includes('hidden') || message.includes('transparent')) {
-          return faqKnowledge.generalRenovation.pricing;
+          // Check for specific service pricing
+          if (message.includes('aircon') || message.includes('air con') || message.includes('air conditioning')) {
+            return `Our air conditioning services pricing:\n• General Servicing: S$40/unit (S$70 for 2 units, S$30/unit for 3+)\n• Chemical Wash: S$80/unit\n• Gas top-up: S$60\n• Overhaul: S$150\n\nNote: Final costs may vary depending on unit type and site conditions. Would you like to arrange a free quotation?`;
+          } else if (message.includes('plumbing')) {
+            return `Our plumbing services pricing:\n• Tap/minor leak repair: S$80\n• Flush tank repair: S$120\n• Pipe replacement: S$150\n• Fixture installation: S$80-S$250\n• Water heater installation: S$250\n\nCommercial plumbing: S$1,500+ (basic setup), S$200-S$500 per fixture. Final cost depends on materials and scope of work. Contact us for free site inspection:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+          } else if (message.includes('electrical')) {
+            return `Our electrical services pricing:\n• Socket installation: S$80-S$120\n• LED downlight: S$80-S$150\n• Basic light installation: S$50-S$100\n• Electrical troubleshooting: S$80-S$150\n• Repair works (per hour): S$60-S$100\n• RCBO installation: S$120-S$200\n• Complete rewiring: S$400-S$800/room\n• DB replacement: S$800-S$1,500\n\nCommercial: S$150-S$300 per power point. For accurate quote, contact us:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+          } else if (message.includes('painting')) {
+            return `Our painting services pricing:\n• Per room: S$250\n• Per ceiling: S$150\n• Bathroom: S$180\n• HDB whole unit interior: S$1,200\n• Condo whole unit interior: S$2,000\n• Office painting: S$3,000+\n\nPrices may vary by room size and unit size. We offer free site assessment and transparent quotation. Contact us:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+          } else if (message.includes('tile') || message.includes('tiling')) {
+            return `Our tile laying services pricing:\n• Per sq ft: S$5+\n• Bathroom tiling: S$600-S$800\n• Floor tiling: S$150-S$300\n• Wall tiling: S$400+\n\nPricing depends on tile type, area size, and complexity. Final costs may vary based on materials and site conditions. Arrange a free quote:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+          } else if (message.includes('waterproof') || message.includes('water proof')) {
+            return `Our waterproofing services pricing:\n• Standard bathroom: S$1,200\n• Full bathroom: S$2,500\n• Premium waterproofing: S$3,000\n• Balcony coating: S$800-S$1,500\n• Rooftop membrane: S$2,500-S$6,000\n\nPrices may vary by size and method. Final cost depends on site conditions and surface preparation. Get a free quotation:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+          } else if (message.includes('carpentry')) {
+            return `Our carpentry services pricing:\n• Custom wardrobe: S$450-S$550\n• Kitchen cabinet: S$1,500-S$4,000+\n• Feature wall/built-in: S$4,000-S$12,000+\n\nPricing depends on design complexity, materials, and specifications. Contact us for free design consultation:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+          } else if (message.includes('renovation')) {
+            return `Our renovation services pricing:\n• Hacking/demolition: S$3-S$6/sq ft or S$800+ per bathroom\n• Ceiling/partition: S$4-S$8/sq ft or S$800+ per room\n• Complete whole unit renovation: S$3,000+\n\nFull renovations include hacking, electrical, plumbing, tiling, painting, carpentry, and more. Pricing is project-based depending on scope, materials, and site conditions. Schedule free site inspection:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+          } else if (message.includes('hack') || message.includes('demolish') || message.includes('demolition')) {
+            return `Our hacking & demolition services pricing:\n• Per sq ft: S$3-S$6\n• Bathroom hacking: S$800+\n• Full unit demolition: S$3,000+\n\nPrices include disposal of debris. Final costs vary based on area size and materials. Contact us for accurate quote:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+          } else if (message.includes('ceiling') || message.includes('partition') || message.includes('wall')) {
+            return `Our ceiling & partition services pricing:\n• Per sq ft: S$4-S$8\n• L-box installation: S$12/ft\n• Full room ceiling: S$800+\n• Partition wall: S$1,500-S$4,000+\n\nPrices may vary by design complexity. Contact for detailed quotation:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+          } else if (message.includes('plaster')) {
+            return `Our plastering services pricing:\n• Per sq ft: S$80-S$200\n• Bathroom plastering: S$150-S$400\n• Feature wall: S$200-S$600\n\nPrices depend on area and finish type. Final costs may vary by site conditions. Get a free quote:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+          } else {
+            return faqKnowledge.generalRenovation.pricing;
+          }
         }
 
         if (message.includes('budget') || message.includes('affordable') || message.includes('cheap')) {

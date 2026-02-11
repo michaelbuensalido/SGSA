@@ -1427,7 +1427,7 @@ body.menu-open {
         },
         contact: {
           phone: ["+6585864098"],
-          email: ["info.sgsaconstruction@gmail.com", "contact@sgsa.com"],
+          email: ["reliableeng.c@gmail.com"],
           address: "Jalan Besar Plaza #02-36, Singapore 208511"
         },
         services: [
@@ -1444,7 +1444,7 @@ body.menu-open {
           "Reinstatement Works"
         ],
         about: "Reliable Engineering and Construction is a leading construction company in Singapore with over 50 years of experience. We specialize in delivering exceptional construction projects with a commitment to safety, quality, and innovation.",
-        experience: "50+ years",
+        experience: "24+ years",
         projectsCompleted: "500+",
         clientSatisfaction: "98%"
       };
@@ -1810,6 +1810,11 @@ body.menu-open {
         // About company
         if (message.includes('about') || message.includes('who are you') || message.includes('company') || message.includes('experience')) {
           return `${companyInfo.about}\n\nOur Stats:\n• Experience: ${companyInfo.experience}\n• Projects: ${companyInfo.projectsCompleted} completed\n• Client Satisfaction: ${companyInfo.clientSatisfaction}`;
+        }
+        
+        // Pricing questions
+        if (message.includes('pricing') || message.includes('price') || message.includes('cost') || message.includes('hidden') || message.includes('transparent')) {
+          return `Our air conditioning services pricing:\n• General Servicing: S$40/unit (S$70 for 2 units, S$30/unit for 3+)\n• Chemical Wash: S$80/unit\n• Gas top-up: S$60\n• Overhaul: S$150\n\nNote: Final costs may vary depending on unit type and site conditions. Would you like to arrange a free quotation?\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
         }
         
         // Project inquiry
