@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reliable Engineering and Construction | Painting Services</title>
-     <link rel="icon" type="image/png" sizes="48x48" href="images/company-logo.png">
+    <title>Reliable Engineering and Construction | Ceiling & Wall Partitions</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="images/company-logo.png">
     <meta
       name="description"
-      content="Transform your space with professional painting services. Clean lines, quality paints, and lasting finishes."
+      content="Transform your space with false ceilings, partition walls, and feature walls."
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Performance: Preconnect to font domains for faster loading -->
@@ -17,29 +17,15 @@
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap");
-      .heading-font {
-        font-family: "Archivo", serif;
-      }
-      .body-font {
-        font-family: "Inter", sans-serif;
+      .font-archivo {
+        font-family: "Archivo", sans-serif;
       }
       .card-hover {
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .card-hover:hover {
         transform: translateY(-8px);
-      }
-      .icon-container {
-        transition: all 0.4s ease;
-      }
-      .card-hover:hover .icon-container {
-        transform: scale(1.1);
-      }
-      .font-archivo {
-        font-family: "Archivo", sans-serif;
       }
       .nav-link {
         position: relative;
@@ -64,9 +50,6 @@
       }
       .hero-overlay {
         background: linear-gradient(120deg, rgba(0, 0, 0, 0.55));
-      }
-      .section-pill {
-        letter-spacing: 0.06em;
       }
       .faq-card {
         transition: all 0.3s ease;
@@ -113,80 +96,6 @@ body.menu-open {
   opacity: 1;
   transform: translateY(0);
 }
-
-    /* ============================================
-       ANIMATION SYSTEM (Clean & Professional)
-       ============================================ */
-
-    /* 1️⃣ SECTION FADE + SLIDE - Main Animation */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 700ms ease-out, transform 700ms ease-out;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* 2️⃣ STAGGERED CHILDREN - For grids & lists */
-    .stagger-children > * {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 700ms ease-out, transform 700ms ease-out;
-    }
-
-    .stagger-children.visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
-    .stagger-children.visible > *:nth-child(2) { transition-delay: 120ms; opacity: 1; transform: translateY(0); }
-    .stagger-children.visible > *:nth-child(3) { transition-delay: 240ms; opacity: 1; transform: translateY(0); }
-    .stagger-children.visible > *:nth-child(4) { transition-delay: 360ms; opacity: 1; transform: translateY(0); }
-    .stagger-children.visible > *:nth-child(5) { transition-delay: 480ms; opacity: 1; transform: translateY(0); }
-    .stagger-children.visible > *:nth-child(6) { transition-delay: 600ms; opacity: 1; transform: translateY(0); }
-    .stagger-children.visible > *:nth-child(7) { transition-delay: 720ms; opacity: 1; transform: translateY(0); }
-    .stagger-children.visible > *:nth-child(8) { transition-delay: 840ms; opacity: 1; transform: translateY(0); }
-    .stagger-children.visible > *:nth-child(9) { transition-delay: 960ms; opacity: 1; transform: translateY(0); }
-    .stagger-children.visible > *:nth-child(10) { transition-delay: 1080ms; opacity: 1; transform: translateY(0); }
-    .stagger-children.visible > *:nth-child(11) { transition-delay: 1200ms; opacity: 1; transform: translateY(0); }
-    .stagger-children.visible > *:nth-child(12) { transition-delay: 1320ms; opacity: 1; transform: translateY(0); }
-
-    /* 3️⃣ HOVER MOTION - Subtle but noticeable */
-    .hover-lift {
-      transition: transform 200ms ease-out;
-    }
-    .hover-lift:hover {
-      transform: translateY(-2px);
-    }
-
-    .hover-slide {
-      transition: transform 200ms ease-out;
-    }
-    .hover-slide:hover {
-      transform: translateX(2px);
-    }
-
-    /* Mobile: Slightly faster */
-    @media (max-width: 768px) {
-      .fade-up,
-      .stagger-children > * {
-        transition-duration: 600ms;
-      }
-
-      .stagger-children.visible > *:nth-child(n+6) {
-        transition-delay: 600ms;
-      }
-    }
-
-    /* Reduced motion preference */
-    @media (prefers-reduced-motion: reduce) {
-      .fade-up,
-      .stagger-children > * {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
-    }
-
 </style>
 
 </head>
@@ -200,7 +109,7 @@ body.menu-open {
                        <img class="w-[160px] h-[130px]" src="images/company-logo.png" alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync">
                    </a>
                </div>
-               <div class="hidden md:flex space-x-4 font-archivo items-center">
+               <div class="hidden md:flex space-x-6 font-archivo items-center">
                    <a href="index.html" class="nav-link text-white hover:text-sky-400 text-xs  font-medium transition duration-300">HOME</a>
                    <a href="about.html" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">ABOUT US</a>
                    <div class="relative dropdown-wrapper group">
@@ -222,9 +131,9 @@ body.menu-open {
                                <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white  shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
                                    <div class="py-2">
                                 
-                                       <a href="aircon.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
-                                       <a href="plumbing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                                       <a href="electrical.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                       <a href="aircon-service-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
+                                       <a href="plumbing-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                       <a href="electrical-works-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
                                    </div>
                                </div>
                            </div>
@@ -239,15 +148,16 @@ body.menu-open {
                                </div>
                                <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white shadow-2xl opacity-0 invisible group-hover/renovation:opacity-100 group-hover/renovation:visible transition-all duration-200 z-50">
                                    <div class="py-2">
-                                    <a href="plastering.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
-                                    <a href="plumbing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
-                                       <a href="electrical.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
-                                       <a href="tile-laying.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
-                                       <a href="renovation-works.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
-                                       <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
-                                       <a href="carpentry.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
-                                       <a href="waterproofing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
-                                       <a href="hacking-demolition.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
+                                    <a href="plastering-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
+                                    <a href="plumbing-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
+                                       <a href="electrical-works-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
+                                       <a href="painting-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
+                                       <a href="tile-laying-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
+                                       <a href="renovation-works-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
+                                       <a href="ceiling-wall-partitions-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
+                                       <a href="carpentry-works-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
+                                       <a href="waterproofing-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
+                                       <a href="reinstatement-hacking-demolition-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
                                    </div>
                                </div>
                            </div>
@@ -261,13 +171,13 @@ body.menu-open {
                   </button>
                   <div class="absolute left-0 mt-2 w-56 bg-white  shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300 z-50" role="menu" data-projects-dropdown-panel>
                     <div class="py-2">
-                      <a href="projects-handyman.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
-                      <a href="projects-residential.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
-                      <a href="projects-commercial.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
+                      <a href="handyman-services-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Handyman</a>
+                      <a href="residential-renovation-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Residential</a>
+                      <a href="commercial-renovation-singapore.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium" role="menuitem">Commercial</a>
                     </div>
                   </div>
                 </div>
-                    <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">CONTACT</a>
+                   <a href="contacts.html" class="nav-link text-white hover:text-sky-400 text-xs font-medium transition duration-300">CONTACT</a>
                </div>
                <div>
                    <a href="tel:+6585864098" class="bg-red-600 sm:block hidden hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition duration-300 flex items-center gap-2">📞 Call Now</a>
@@ -328,9 +238,9 @@ body.menu-open {
                         <svg id="mobile-handyman-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div id="mobile-handyman-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
-                        <a href="aircon.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Air Con Service</a>
-                        <a href="plumbing.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plumbing</a>
-                        <a href="electrical.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
+                        <a href="aircon-service-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Air Con Service</a>
+                        <a href="plumbing-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plumbing</a>
+                        <a href="electrical-works-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
                     </div>
                 </div>
                 
@@ -344,17 +254,17 @@ body.menu-open {
                         <svg id="mobile-renovation-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div id="mobile-renovation-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
-                      <a href="plastering.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plastering Works</a>
-                      <a href="plumbing.html" class="block px-4 py-3 text-base text-cyan-700 bg-cyan-50 font-medium rounded-lg">Plumbing</a>
-                        <a href="electrical.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
-                        <a href="painting.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Painting</a>
+                      <a href="plastering-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Plastering Works</a>
+                      <a href="plumbing-services-singapore.html" class="block px-4 py-3 text-base text-cyan-700 bg-cyan-50 font-medium rounded-lg">Plumbing</a>
+                        <a href="electrical-works-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Electrical Works</a>
+                        <a href="painting-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Painting</a>
                         
-                        <a href="tile-laying.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Tile Laying</a>
-                        <a href="renovation-works.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Renovation Works</a>
-                        <a href="ceiling-wall-partitions.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Ceiling & Partitions</a>
-                        <a href="carpentry.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Carpentry Works</a>
-                        <a href="waterproofing.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Waterproofing</a>
-                        <a href="hacking-demolition.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Hacking & Demolition</a>
+                        <a href="tile-laying-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Tile Laying</a>
+                        <a href="renovation-works-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Renovation Works</a>
+                        <a href="ceiling-wall-partitions-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Ceiling & Partitions</a>
+                        <a href="carpentry-works-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Carpentry Works</a>
+                        <a href="waterproofing-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Waterproofing</a>
+                        <a href="reinstatement-hacking-demolition-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Hacking & Demolition</a>
                     </div>
                 </div>
             </div>
@@ -374,9 +284,9 @@ body.menu-open {
                     <svg id="mobile-projects-arrow" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                   </button>
                   <div id="mobile-projects-menu" class="hidden pl-6 mt-1 space-y-1 border-l-2 border-cyan-400 ml-6">
-                    <a href="projects-handyman.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Handyman</a>
-                    <a href="projects-residential.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Residential</a>
-                    <a href="projects-commercial.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
+                    <a href="handyman-services-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Handyman</a>
+                    <a href="residential-renovation-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Residential</a>
+                    <a href="commercial-renovation-singapore.html" class="block px-4 py-3 text-base text-gray-600 hover:text-cyan-600 hover:bg-gray-50 rounded-lg transition">Commercial</a>
                   </div>
                 </div>
                 <a href="contacts.html" class="block px-4 py-4 text-base font-medium text-gray-800 hover:bg-cyan-50 hover:text-cyan-600 transition-all duration-200">Contact
@@ -427,47 +337,44 @@ body.menu-open {
     <section
       class="relative pt-28 pb-24 bg-gray-900 text-white overflow-hidden"
     >
-      <div class="absolute inset-0 bg-cover bg-center">
+      <div class="absolute inset-0">
         <img
-          src="images/services images/professional-painting-services-hero.jpg"
-          alt="Professional painting services for residential and commercial properties"
+          src="images/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy.png"
+          alt="Ceiling and wall partitions service for residential and commercial properties"
           class="w-full h-full object-cover"
         />
-      </div>
+      </div>  
       <div class="absolute inset-0 hero-overlay"></div>
       <div class="relative z-10 max-w-6xl mx-auto px-4">
         <div class="flex flex-col lg:flex-row items-center gap-10">
           <div class="flex-1 space-y-6">
-            <p
-              class="uppercase tracking-[0.25em] text-sm text-cyan-200 section-pill"
-            >
-              Professional Painting Services
+            <p class="uppercase tracking-[0.25em] text-sm text-cyan-200">
+              Ceiling & Wall Partitions
             </p>
             <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
-              Professional Painting Services
+              Ceiling & Wall Partitions
             </h1>
             <p class="text-lg text-cyan-50/90">
-              Transform your space with clean lines, quality paints, and lasting
-              finishes
+              Transform your space with false ceilings and partition walls
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div
                 class="bg-white/10 border border-white/20 rounded-xl px-4 py-3"
               >
-                <p class="text-sm text-cyan-100">Quality paints</p>
-                <p class="font-semibold text-white">Nippon / Dulux</p>
+                <p class="text-sm text-cyan-100">False ceiling</p>
+                <p class="font-semibold text-white">Clean finishes</p>
               </div>
               <div
                 class="bg-white/10 border border-white/20 rounded-xl px-4 py-3"
               >
-                <p class="text-sm text-cyan-100">Clean finish</p>
-                <p class="font-semibold text-white">No drips</p>
+                <p class="text-sm text-cyan-100">Partitions</p>
+                <p class="font-semibold text-white">Room dividers</p>
               </div>
               <div
                 class="bg-white/10 border border-white/20 rounded-xl px-4 py-3"
               >
-                <p class="text-sm text-cyan-100">Coverage</p>
-                <p class="font-semibold text-white">2–3 coats</p>
+                <p class="text-sm text-cyan-100">Feature walls</p>
+                <p class="font-semibold text-white">Design focus</p>
               </div>
             </div>
             <div class="flex flex-col sm:flex-row gap-3 pt-4">
@@ -490,15 +397,15 @@ body.menu-open {
             <ul class="space-y-3 text-sm text-cyan-50/90">
               <li class="flex gap-2">
                 <span class="text-cyan-300">•</span
-                ><span>Proper surface prep for smooth, lasting results</span>
+                ><span>Clean and level installations</span>
               </li>
               <li class="flex gap-2">
                 <span class="text-cyan-300">•</span
-                ><span>Protection for floors, furniture, and fixtures</span>
+                ><span>Quality gypsum and plasterboard</span>
               </li>
               <li class="flex gap-2">
                 <span class="text-cyan-300">•</span
-                ><span>Clean edges, even coverage, no mess left behind</span>
+                ><span>Integrated lighting options</span>
               </li>
             </ul>
             <div class="flex items-center gap-3 pt-2">
@@ -508,9 +415,9 @@ body.menu-open {
                 ✓
               </div>
               <div>
-                <p class="font-semibold">Licensed & Insured</p>
+                <p class="font-semibold">Experienced Team</p>
                 <p class="text-sm text-cyan-50/80">
-                  Clean workmanship with protection and tidy handovers.
+                  Precision work with tidy handover.
                 </p>
               </div>
             </div>
@@ -524,12 +431,12 @@ body.menu-open {
       <div class="max-w-6xl mx-auto px-4">
         <div class="flex flex-col lg:flex-row gap-10 items-center">
           <div class="flex-1 space-y-4">
-           
+         
             <h2 class="text-3xl font-bold text-slate-900 leading-tight">
-              Painting Services for discerning homeowners
+              Ceiling & Partitions for discerning homeowners
             </h2>
             <p class="text-gray-600 text-lg leading-relaxed">
-              Refresh your home with <span class="font-semibold text-slate-900">interior painting</span>, <span class="font-semibold text-slate-900">touch-ups</span>, and <span class="font-semibold text-slate-900">feature walls</span> by skilled painters who protect your space. We provide <span class="font-semibold text-slate-900">walls, ceilings, and feature walls</span> with quality paints from trusted brands like Nippon and Dulux, <span class="font-semibold text-slate-900">weather-resistant finishes</span> for balconies and facades, and <span class="font-semibold text-slate-900">proper surface preparation</span> for smooth, lasting results. Our team ensures protection for floors, furniture, and fixtures, with clean edges, even coverage, and no mess left behind. All work is backed by <span class="font-semibold text-slate-900">transparent pricing</span>, <span class="font-semibold text-slate-900">on-time delivery</span>, and a <span class="font-semibold text-slate-900">workmanship warranty</span> you can trust.
+              Transform your space with <span class="font-semibold text-slate-900">false ceilings</span>, <span class="font-semibold text-slate-900">partition walls</span>, and <span class="font-semibold text-slate-900">feature walls</span> by experienced specialists. We provide <span class="font-semibold text-slate-900">professional installation</span> of durable and functional ceiling and partition systems with level, straight, and clean installations, using <span class="font-semibold text-slate-900">fire-rated and moisture-resistant materials</span> for residential and commercial spaces. Our precision work ensures seamless integration with your existing interiors and long-lasting results. All work is backed by <span class="font-semibold text-slate-900">transparent pricing</span>, <span class="font-semibold text-slate-900">on-time delivery</span>, and a <span class="font-semibold text-slate-900">workmanship warranty</span> you can trust.
             </p>
           </div>
           <div class="flex-1">
@@ -537,10 +444,10 @@ body.menu-open {
               class="rounded-xl overflow-hidden shadow-2xl border border-slate-100"
             >
               <img
-                src="images/services images/professional-painting-services-overview.jpg"
-                alt="Professional painting services overview for homeowners"
-                class="w-full h-full object-cover"
+                src="images/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy.png "
+                alt="Professional ceiling and wall partitions service overview"
                 loading="lazy"
+                class="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -552,18 +459,19 @@ body.menu-open {
     <section class="py-16 bg-white">
       <div class="max-w-6xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Card 1: Room Interior Painting -->
+          <!-- Card 1: False Ceiling -->
           <div
-            class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl"
+            class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full hover:shadow-xl transition-all"
           >
-            <div
-              class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
-            >
-             <img src="images/painting/room-interior-painting.jpg" alt="Room interior painting service" loading="lazy">
-            </div>
+          <div
+          class="w-full h-60 overflow-hidden bg-slate-100 flex items-center justify-center"
+        >
+          <img class="w-full h-full object-cover" src="images/partitions/full-ceiling-cover.jpg" alt="Crack repair and patching plastering service" loading="lazy">
+         
+        </div>
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
-                Room Interior Painting
+              <h3 class="text-xl font-bold text-slate-900 mb-4">
+                False Ceiling
               </h3>
               <div class="mb-5 flex-grow">
                 <h4
@@ -583,8 +491,8 @@ body.menu-open {
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clip-rule="evenodd"
                       /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Bedroom painting</span
+                    ><span class="text-slate-700 text-[15px]"
+                      >L-box / pelmet</span
                     >
                   </li>
                   <li class="flex items-start gap-2.5">
@@ -598,8 +506,8 @@ body.menu-open {
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clip-rule="evenodd"
                       /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Living room painting</span
+                    ><span class="text-slate-700 text-[15px]"
+                      >Full ceiling cover</span
                     >
                   </li>
                   <li class="flex items-start gap-2.5">
@@ -613,8 +521,8 @@ body.menu-open {
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clip-rule="evenodd"
                       /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Kitchen painting</span
+                    ><span class="text-slate-700 text-[15px]"
+                      >Cove lighting</span
                     >
                   </li>
                   <li class="flex items-start gap-2.5">
@@ -628,23 +536,8 @@ body.menu-open {
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clip-rule="evenodd"
                       /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Ceiling painting</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Bathroom painting</span
+                    ><span class="text-slate-700 text-[15px]"
+                      >Downlight cutouts</span
                     >
                   </li>
                 </ul>
@@ -666,47 +559,47 @@ body.menu-open {
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
-                  Pricing
+                    /></svg
+                  >Pricing
                 </h4>
                 <div class="space-y-3">
                   <div
                     class="flex justify-between items-center pb-2.5 border-b border-slate-200"
                   >
-                    <span class="text-slate-700 text-[15px]">Per room:</span
-                    ><span class="text-lg font-bold text-red-600">S$250</span>
+                    <span class="text-slate-700 text-[15px]">Per sq ft:</span
+                    ><span class="text-lg font-bold text-red-600">S$4–8</span>
                   </div>
                   <div
                     class="flex justify-between items-center pb-2.5 border-b border-slate-200"
                   >
-                    <span class="text-slate-700 text-[15px]">Per ceiling:</span
-                    ><span class="text-lg font-bold text-red-600">S$150</span>
+                    <span class="text-slate-700 text-[15px]">L-box:</span
+                    ><span class="text-lg font-bold text-red-600">S$12/ft</span>
                   </div>
                   <div class="flex justify-between items-center">
-                    <span class="text-slate-700 text-[15px]">Bathroom:</span
-                    ><span class="text-lg font-bold text-red-600">S$180</span>
+                    <span class="text-slate-700 text-[15px]">Full room:</span
+                    ><span class="text-lg font-bold text-red-600">S$800+</span>
                   </div>
                 </div>
                 <p class="text-xs text-slate-500 italic mt-4">
-                  *Prices may vary by room size
+                  *Prices may vary by design
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Card 2: Whole Unit Painting -->
+          <!-- Card 2: Partition Walls -->
           <div
-            class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl"
+            class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full hover:shadow-xl transition-all"
           >
-            <div
-              class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
-            >
-             <img src="images/whole-unit-painting.jpg" alt="Whole unit painting service" loading="lazy">
-            </div>
+          <div
+          class="w-full h-60 overflow-hidden bg-slate-100 flex items-center justify-center"
+        >
+          <img class="w-full h-full object-cover" src="images/partitions/room-divider.jpg" alt="Crack repair and patching plastering service" loading="lazy">
+         
+        </div>
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
-                Whole Unit Painting
+              <h3 class="text-xl font-bold text-slate-900 mb-4">
+                Partition Walls
               </h3>
               <div class="mb-5 flex-grow">
                 <h4
@@ -726,8 +619,8 @@ body.menu-open {
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clip-rule="evenodd"
                       /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >HDB whole unit</span
+                    ><span class="text-slate-700 text-[15px]"
+                      >Room dividers</span
                     >
                   </li>
                   <li class="flex items-start gap-2.5">
@@ -741,8 +634,8 @@ body.menu-open {
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clip-rule="evenodd"
                       /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Condo whole unit</span
+                    ><span class="text-slate-700 text-[15px]"
+                      >Study / home office</span
                     >
                   </li>
                   <li class="flex items-start gap-2.5">
@@ -756,8 +649,8 @@ body.menu-open {
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clip-rule="evenodd"
                       /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Landed property</span
+                    ><span class="text-slate-700 text-[15px]"
+                      >Soundproofing</span
                     >
                   </li>
                   <li class="flex items-start gap-2.5">
@@ -771,23 +664,8 @@ body.menu-open {
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clip-rule="evenodd"
                       /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Office painting</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Shop / retail space</span
+                    ><span class="text-slate-700 text-[15px]"
+                      >Glass partitions</span
                     >
                   </li>
                 </ul>
@@ -809,48 +687,51 @@ body.menu-open {
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
-                  Pricing
+                    /></svg
+                  >Pricing
                 </h4>
                 <div class="space-y-3">
                   <div
                     class="flex justify-between items-center pb-2.5 border-b border-slate-200"
                   >
-                    <span class="text-slate-700 text-[15px]">HDB interior:</span
-                    ><span class="text-lg font-bold text-red-600">S$1,200</span>
+                    <span class="text-slate-700 text-[15px]">Per sq ft:</span
+                    ><span class="text-lg font-bold text-red-600">S$10–18</span>
                   </div>
                   <div
                     class="flex justify-between items-center pb-2.5 border-b border-slate-200"
                   >
-                    <span class="text-slate-700 text-[15px]"
-                      >Condo interior:</span
-                    ><span class="text-lg font-bold text-red-600">S$2,000</span>
+                    <span class="text-slate-700 text-[15px]">Small room:</span
+                    ><span class="text-lg font-bold text-red-600"
+                      >S$1,500+</span
+                    >
                   </div>
                   <div class="flex justify-between items-center">
-                    <span class="text-slate-700 text-[15px]">Office:</span
-                    ><span class="text-lg font-bold text-red-600">S$3,000</span>
+                    <span class="text-slate-700 text-[15px]">With door:</span
+                    ><span class="text-lg font-bold text-red-600"
+                      >S$2,500+</span
+                    >
                   </div>
                 </div>
                 <p class="text-xs text-slate-500 italic mt-4">
-                  *Prices may vary by unit size
+                  *Prices may vary by size
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Card 3: Touch-Up & Feature Walls -->
+          <!-- Card 3: Feature Walls -->
           <div
-            class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl"
+            class="bg-white  shadow-lg border border-slate-100 overflow-hidden flex flex-col h-full hover:shadow-xl transition-all"
           >
-            <div
-              class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
-            >
-             <img src="images/painting/touch-up-feature-walls.jpg" alt="Touch-up and feature walls painting service" loading="lazy">
-            </div>
+          <div
+          class="w-full h-60 overflow-hidden bg-slate-100 flex items-center justify-center"
+        >
+          <img class="w-full h-full object-cover" src="images/partitions/accent-wall.jpg" alt="Crack repair and patching plastering service" loading="lazy">
+         
+        </div>
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-bold text-slate-900 mb-4 leading-tight">
-                Touch-Up & Feature Walls
+              <h3 class="text-xl font-bold text-slate-900 mb-4">
+                Feature Walls
               </h3>
               <div class="mb-5 flex-grow">
                 <h4
@@ -870,8 +751,8 @@ body.menu-open {
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clip-rule="evenodd"
                       /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Touch-up painting</span
+                    ><span class="text-slate-700 text-[15px]"
+                      >Accent walls</span
                     >
                   </li>
                   <li class="flex items-start gap-2.5">
@@ -885,8 +766,8 @@ body.menu-open {
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clip-rule="evenodd"
                       /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Accent / feature wall</span
+                    ><span class="text-slate-700 text-[15px]"
+                      >Textured panels</span
                     >
                   </li>
                   <li class="flex items-start gap-2.5">
@@ -900,8 +781,8 @@ body.menu-open {
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clip-rule="evenodd"
                       /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Stain / mark coverage</span
+                    ><span class="text-slate-700 text-[15px]"
+                      >Backlit designs</span
                     >
                   </li>
                   <li class="flex items-start gap-2.5">
@@ -915,23 +796,8 @@ body.menu-open {
                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                         clip-rule="evenodd"
                       /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Door / window frame</span
-                    >
-                  </li>
-                  <li class="flex items-start gap-2.5">
-                    <svg
-                      class="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
-                      /></svg
-                    ><span class="text-slate-700 text-[15px] leading-relaxed"
-                      >Colour matching</span
+                    ><span class="text-slate-700 text-[15px]"
+                      >Wood or stone veneer</span
                     >
                   </li>
                 </ul>
@@ -953,30 +819,35 @@ body.menu-open {
                       stroke-linejoin="round"
                       stroke-width="2"
                       d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    ></path>
-                  </svg>
-                  Pricing
+                    /></svg
+                  >Pricing
                 </h4>
                 <div class="space-y-3">
                   <div
                     class="flex justify-between items-center pb-2.5 border-b border-slate-200"
                   >
-                    <span class="text-slate-700 text-[15px]">Touch-up:</span
-                    ><span class="text-lg font-bold text-red-600">S$150</span>
+                    <span class="text-slate-700 text-[15px]">Basic:</span
+                    ><span class="text-lg font-bold text-red-600"
+                      >S$1,000+</span
+                    >
                   </div>
                   <div
                     class="flex justify-between items-center pb-2.5 border-b border-slate-200"
                   >
-                    <span class="text-slate-700 text-[15px]">Feature wall:</span
-                    ><span class="text-lg font-bold text-red-600">S$300</span>
+                    <span class="text-slate-700 text-[15px]">Premium:</span
+                    ><span class="text-lg font-bold text-red-600"
+                      >S$2,500+</span
+                    >
                   </div>
                   <div class="flex justify-between items-center">
-                    <span class="text-slate-700 text-[15px]">Door frame:</span
-                    ><span class="text-lg font-bold text-red-600">S$80</span>
+                    <span class="text-slate-700 text-[15px]">Custom:</span
+                    ><span class="text-lg font-bold text-red-600"
+                      >S$4,000+</span
+                    >
                   </div>
                 </div>
                 <p class="text-xs text-slate-500 italic mt-4">
-                  *Prices may vary by area
+                  *Prices may vary by design
                 </p>
               </div>
             </div>
@@ -997,48 +868,47 @@ body.menu-open {
             Questions we often get
           </h2>
           <p class="text-slate-600">
-            If you don't see your question, reach out and we'll help right away.
+            If you don't see your question, reach out.
           </p>
         </div>
-        <div class="">
+        <div>
           <div class="bg-white border border-slate-200 rounded-xl p-4 faq-card">
             <p class="font-semibold text-slate-900 mb-2">
-              What paint brands do you use?
+              How long does false ceiling installation take?
             </p>
             <p class="text-slate-600 text-sm leading-relaxed">
-              We use Nippon, Dulux, and other premium brands. You can also
-              supply your own.
+              Typically 2-3 days for a standard room. Complex designs may take
+              longer.
             </p>
           </div>
           <div
             class="bg-white my-2 border border-slate-100 rounded-xl p-4 faq-card"
           >
             <p class="font-semibold text-slate-900 mb-2">
-              How many coats are applied?
+              Can you add lighting to the ceiling?
             </p>
             <p class="text-slate-600 text-sm leading-relaxed">
-              Typically 2–3 coats depending on the surface and color. We ensure
-              full coverage.
+              Yes, we coordinate with electricians for downlights and cove
+              lighting.
             </p>
           </div>
           <div
             class="bg-white mb-2 border border-slate-100 rounded-xl p-4 faq-card"
           >
             <p class="font-semibold text-slate-900 mb-2">
-              Do you move furniture?
+              Are partitions soundproof?
             </p>
             <p class="text-slate-600 text-sm leading-relaxed">
-              We cover and protect furniture in place. Large items may need to
-              be shifted beforehand.
+              We offer soundproofing options with insulation for better privacy.
             </p>
           </div>
           <div class="bg-white border border-slate-100 rounded-xl p-4 faq-card">
             <p class="font-semibold text-slate-900 mb-2">
-              How long does it take?
+              What materials do you use?
             </p>
             <p class="text-slate-600 text-sm leading-relaxed">
-              A single room takes 1–2 days. Whole unit painting typically takes
-              3–5 days.
+              Quality gypsum board, plasterboard, and fire-rated options
+              available.
             </p>
           </div>
         </div>
@@ -1072,14 +942,12 @@ body.menu-open {
       </div>
     </section>
 
-    <footer
-      class="bottom-0 bg-gray-900 text-white border-t-4 border-t-cyan-600"
-    >
+    <footer class="bg-gray-900 text-white border-t-4 border-t-cyan-600">
       <div class="border-b border-gray-700">
         <div class="max-w-7xl mx-auto px-4 py-10">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             <div
-              class="lg:col-span-2 md:col-span-1 items-center flex md:items-start justify-center"
+              class="lg:col-span-2 items-center flex md:items-start justify-center"
             >
               <img
                 src="images/company-logo.png"
@@ -1102,13 +970,13 @@ body.menu-open {
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  ></path>
+                  />
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  ></path>
+                  />
                 </svg>
                 <div>
                   <p class="text-gray-400 text-sm">Jalan Besar Plaza #02-36</p>
@@ -1131,10 +999,10 @@ body.menu-open {
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  ></path>
+                  />
                 </svg>
                 <div>
-                  <p class="text-gray-400 text-sm">Tel : +65 85864098</p>
+                  <p class="text-gray-400 text-sm">Tel: +65 85864098</p>
                 </div>
               </div>
             </div>
@@ -1153,7 +1021,7 @@ body.menu-open {
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  ></path>
+                  />
                 </svg>
                 <div>
                   <p class="text-gray-600">reliableeng.c@gmail.com</p>
@@ -1169,7 +1037,7 @@ body.menu-open {
             class="flex flex-col md:flex-row justify-between items-center gap-3"
           >
             <p class="text-gray-400 text-sm">
-              &copy; 2024 Reliable Engineering and Construction. All rights reserved.
+              © 2024 Reliable Engineering and Construction. All rights reserved.
             </p>
             <p class="text-gray-400 text-sm">
               Reliable Engineering and Construction by
@@ -1183,7 +1051,7 @@ body.menu-open {
     <div id="chat-widget" class="fixed bottom-6 right-6 z-50">
       <button
         id="chat-toggle"
-        class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full p-4 shadow-lg transition duration-300 transform hover:scale-110 flex items-center justify-center"
+        class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full p-4 shadow-lg hover:scale-110"
         aria-label="Open chat widget"
       >
         <svg
@@ -1198,7 +1066,7 @@ body.menu-open {
             stroke-linejoin="round"
             stroke-width="2"
             d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-          ></path>
+          />
         </svg>
       </button>
       <div
@@ -1212,11 +1080,7 @@ body.menu-open {
             <h3 class="font-semibold">Reliable Support</h3>
             <p class="text-sm text-white opacity-90">We're here to help</p>
           </div>
-          <button
-            id="chat-close"
-            class="text-white hover:text-sky-200 transition"
-            aria-label="Close chat widget"
-          >
+          <button id="chat-close" class="text-white hover:text-sky-200" aria-label="Close chat widget">
             <svg
               class="w-5 h-5"
               fill="none"
@@ -1229,7 +1093,7 @@ body.menu-open {
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M6 18L18 6M6 6l12 12"
-              ></path>
+              />
             </svg>
           </button>
         </div>
@@ -1238,10 +1102,8 @@ body.menu-open {
           class="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-4"
         >
           <div class="flex items-end space-x-2">
-            <div class="bg-blue-600 text-white rounded-lg p-3 mr-5 max-w-xs">
-              <p class="text-sm">
-                Hello! How can we assist you with your project today?
-              </p>
+            <div class="bg-blue-600 text-white rounded-lg p-3 max-w-xs">
+              <p class="text-sm">Hello! How can we assist you today?</p>
             </div>
           </div>
         </div>
@@ -1254,7 +1116,7 @@ body.menu-open {
               class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-sm"
             /><button
               type="submit"
-              class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg px-4 py-2 transition"
+              class="bg-cyan-500 hover:bg-cyan-600 text-white rounded-lg px-4 py-2"
             >
               <svg
                 class="w-5 h-5"
@@ -1267,7 +1129,7 @@ body.menu-open {
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                ></path>
+                />
               </svg>
             </button>
           </form>
@@ -1745,7 +1607,7 @@ body.menu-open {
         }
         
         if (message.includes('pricing') || message.includes('price') || message.includes('cost') || message.includes('hidden') || message.includes('transparent')) {
-          return `Our painting services pricing:\n• Per room: S$250\n• Per ceiling: S$150\n• Bathroom: S$180\n• HDB whole unit interior: S$1,200\n• Condo whole unit interior: S$2,000\n• Office painting: S$3,000+\n\nPrices may vary by room size and unit size. We offer free site assessment and transparent quotation. Contact us:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+          return faqKnowledge.generalRenovation.pricing;
         }
         
         if (message.includes('budget') || message.includes('affordable') || message.includes('cheap')) {
@@ -1946,6 +1808,11 @@ body.menu-open {
           return `${companyInfo.about}\n\nOur Stats:\n• Experience: ${companyInfo.experience}\n• Projects: ${companyInfo.projectsCompleted} completed\n• Client Satisfaction: ${companyInfo.clientSatisfaction}`;
         }
         
+        // Pricing questions
+        if (message.includes('pricing') || message.includes('price') || message.includes('cost') || message.includes('hidden') || message.includes('transparent')) {
+          return `Our ceiling & partition services pricing:\n• Per sq ft: S$4-S$8\n• L-box installation: S$12/ft\n• Full room ceiling: S$800+\n• Partition wall: S$1,500-S$4,000+\n\nPrices may vary by design complexity. Contact for detailed quotation:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
+        }
+        
         // Project inquiry
         if (message.includes('project') || message.includes('quote') || message.includes('estimate') || message.includes('bid')) {
           return `For project inquiries and quotes, please contact our team:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}\n\nOur team will be happy to discuss your construction needs!`;
@@ -2011,7 +1878,7 @@ body.menu-open {
         mobileMenuOverlay.classList.add('active');
         document.body.classList.add('menu-open');
     
-       
+      
     }
     
     function closeMobileMenu() {
@@ -2151,33 +2018,9 @@ body.menu-open {
       }, { passive: true });
     })();
     </script>
+  <!-- Defer non-critical JavaScript to improve initial page load -->
   <script src="assets/site.js" defer></script>
-  <script>
-    /* ============================================
-       SCROLL ANIMATION OBSERVER
-       Triggers fade-up and stagger animations
-       ============================================ */
-    (function initScrollAnimations() {
-      const animatedElements = document.querySelectorAll('.fade-up, .stagger-children');
-      
-      if (!animatedElements.length) return;
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Animate once only
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      });
-
-      animatedElements.forEach(el => observer.observe(el));
-    })();
-
-    </script>
+  
   <!-- Vercel Speed Insights -->
   <script>
     window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
