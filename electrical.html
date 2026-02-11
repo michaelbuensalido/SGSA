@@ -198,7 +198,7 @@ body.menu-open {
                                <div class="submenu absolute left-full top-0 ml-1 w-64 bg-white  shadow-2xl opacity-0 invisible group-hover/handyman:opacity-100 group-hover/handyman:visible transition-all duration-200 z-50">
                                    <div class="py-2">
                                 
-                                       <a href="aircon.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
+                                       <a href="aircon.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Air Con Service & Installation</a>
                                        <a href="plumbing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
                                        <a href="electrical.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
                                    </div>
@@ -218,10 +218,10 @@ body.menu-open {
                                     <a href="plastering.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plastering Works</a>
                                     <a href="plumbing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Plumbing</a>
                                        <a href="electrical.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Electrical Works</a>
-                                       <a href="painting.html" class="block px-6 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
+                                       <a href="painting.html" class="block px-6 py-3  text-xs text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Painting</a>
                                        <a href="tile-laying.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Tile Laying</a>
                                        <a href="renovation-works.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Renovation Works</a>
-                                       <a href="ceiling-wall-partitions.html" class="block px-6 py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
+                                       <a href="ceiling-wall-partitions.html" class="block px-6 text-xs py-3 text-sm font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Ceiling & Wall Partitions</a>
                                        <a href="carpentry.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Carpentry Works</a>
                                        <a href="waterproofing.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Waterproofing</a>
                                        <a href="hacking-demolition.html" class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium">Reinstatement, Hacking & Demolition</a>
@@ -1213,7 +1213,7 @@ body.menu-open {
       },
       contact: {
         phone: ["+6585864098"],
-        email: ["info.sgsaconstruction@gmail.com", "contact@sgsa.com"],
+        email: ["reliableeng.c@gmail.com"],
         address: "Jalan Besar Plaza #02-36, Singapore 208511"
       },
       services: [
@@ -1230,7 +1230,7 @@ body.menu-open {
         "Reinstatement Works"
       ],
       about: "Reliable Engineering and Construction is a leading construction company in Singapore with over 50 years of experience. We specialize in delivering exceptional construction projects with a commitment to safety, quality, and innovation.",
-      experience: "50+ years",
+      experience: "24+ years",
       projectsCompleted: "500+",
       clientSatisfaction: "98%"
     };
@@ -1280,6 +1280,11 @@ body.menu-open {
       // About company
       if (message.includes('about') || message.includes('who are you') || message.includes('company') || message.includes('experience')) {
         return `${companyInfo.about}\n\nOur Stats:\n• Experience: ${companyInfo.experience}\n• Projects: ${companyInfo.projectsCompleted} completed\n• Client Satisfaction: ${companyInfo.clientSatisfaction}`;
+      }
+      
+      // Pricing questions
+      if (message.includes('pricing') || message.includes('price') || message.includes('cost') || message.includes('hidden') || message.includes('transparent')) {
+        return `Our electrical services pricing:\n• Socket installation: S$80-S$120\n• LED downlight: S$80-S$150\n• Basic light installation: S$50-S$100\n• Electrical troubleshooting: S$80-S$150\n• Repair works (per hour): S$60-S$100\n• RCBO installation: S$120-S$200\n• Complete rewiring: S$400-S$800/room\n• DB replacement: S$800-S$1,500\n\nCommercial: S$150-S$300 per power point. For accurate quote, contact us:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
       }
       
       // Project inquiry

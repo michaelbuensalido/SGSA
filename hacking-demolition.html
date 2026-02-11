@@ -1489,7 +1489,7 @@ body.menu-open {
         },
         contact: {
           phone: ["+6585864098"],
-          email: ["sgsaconstruction@gmail.com", "contact@sgsa.com"],
+          email: ["reliableeng.c@gmail.com"],
           address: "Jalan Besar Plaza #02-36, Singapore 208511"
         },
         services: [
@@ -1506,7 +1506,7 @@ body.menu-open {
           "Reinstatement Works"
         ],
         about: "Reliable Engineering and Construction is a leading construction company in Singapore with over 50 years of experience. We specialize in delivering exceptional construction projects with a commitment to safety, quality, and innovation.",
-        experience: "50+ years",
+        experience: "24+ years",
         projectsCompleted: "500+",
         clientSatisfaction: "98%"
       };
@@ -1872,6 +1872,11 @@ body.menu-open {
         // About company
         if (message.includes('about') || message.includes('who are you') || message.includes('company') || message.includes('experience')) {
           return `${companyInfo.about}\n\nOur Stats:\n• Experience: ${companyInfo.experience}\n• Projects: ${companyInfo.projectsCompleted} completed\n• Client Satisfaction: ${companyInfo.clientSatisfaction}`;
+        }
+        
+        // Pricing questions
+        if (message.includes('pricing') || message.includes('price') || message.includes('cost') || message.includes('hidden') || message.includes('transparent')) {
+          return `Our hacking & demolition services pricing:\n• Per sq ft: S$3-S$6\n• Bathroom hacking: S$800+\n• Full unit demolition: S$3,000+\n\nPrices include disposal of debris. Final costs vary based on area size and materials. Contact us for accurate quote:\n📞 ${companyInfo.contact.phone[0]}\n📧 ${companyInfo.contact.email[0]}`;
         }
         
         // Project inquiry
