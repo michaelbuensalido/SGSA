@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Reliable Engineering and Construction - Get in Touch for Your Home Repair & Renovation Needs</title>
+    <title>Contact Us | Reliable Engineering & Construction</title>
      <link rel="icon" type="image/png" sizes="48x48" href="images/company-logo.png">
     <meta name="description" content="Contact Reliable Engineering and Construction for reliable handyman and renovation services in Singapore. Call, email, or visit us at Jalan Besar Plaza. Free quotes available.">
     <!-- Performance: Resource Hints -->
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Performance: Load Tailwind CSS synchronously (critical for styling - prevents FOUC) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/tailwind.css">
     
-    <!-- Performance: Preload critical font -->
+    <!-- Performance: Preload critical fonts -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"></noscript>
     
     <!-- EmailJS - defer to improve page load -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
@@ -72,8 +72,6 @@
             stroke-dashoffset: 48;
             animation: checkmark 0.3s 0.3s ease-in-out forwards;
         }
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
-        
         .heading-font { font-family: 'Archivo', serif; }
         .body-font { font-family: 'Inter', sans-serif; }
         .font-archivo { font-family: 'Archivo', sans-serif; }
@@ -83,7 +81,7 @@
         .icon-container { transition: all 0.4s ease; }
         .card-hover:hover .icon-container { transform: scale(1.1); }
         
-        .nav-link { position: relative; display: inline-block; }
+        .nav-link { position: relative; }
         .nav-link::after {
             content: ''; position: absolute; width: 0; height: 2px;
             bottom: -5px; left: 50%; background-color: #38bdf8;
@@ -155,7 +153,7 @@ body.menu-open {
            <div class="flex justify-between items-center h-[100px] px-4">
                <div class="flex-shrink-0">
                    <a href="index.html" class="flex items-center">
-                       <img class="w-[160px] h-[130px]" src="images/company-logo.png" alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync">
+                       <picture><source srcset="images/company-logo.webp" type="image/webp"><img class="w-[160px] h-[130px]" src="images/company-logo.png" alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync"></picture>
                    </a>
                </div>
                <div class="hidden md:flex space-x-6 font-archivo items-center">
@@ -251,7 +249,7 @@ body.menu-open {
         <!-- Header with Logo & Close -->
         <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
             <a href="index.html">
-                <img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230" height="70" fetchpriority="high" loading="eager" decoding="sync">
+                <picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230" height="70" fetchpriority="high" loading="eager" decoding="sync"></picture>
             </a>
             <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
                 <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -412,7 +410,7 @@ body.menu-open {
                 <!-- Left: Contact Information -->
                 <div class="space-y-8">
                     <div class="flex justify-center md:justify-start">
-                        <img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-56 mb-3" width="300" height="80" loading="lazy" decoding="async">
+                        <picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-56 mb-3" width="300" height="80" loading="lazy" decoding="async"></picture>
                     </div>
                     
                     <div class="space-y-6">
@@ -536,7 +534,7 @@ body.menu-open {
             <div class="max-w-7xl mx-auto px-4 py-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     <div class="lg:col-span-2 md:col-span-1 items-center flex md:items-start justify-center">
-                        <img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3" width="300" height="80" loading="lazy" decoding="async">
+                        <picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3" width="300" height="80" loading="lazy" decoding="async"></picture>
                     </div>
                     <div class="flex flex-col items-center justify-center md:items-start">
                         <div class="flex items-start gap-3">
