@@ -10,7 +10,7 @@
     content="Reliable Engineering and Construction provides reliable handyman and renovation services in Singapore. Licensed trades, transparent pricing, and clean workmanship for homes and businesses. Get a free quote today.">
 
   <!-- Performance: Resource Hints - DNS Prefetch and Preconnect -->
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <!-- Tailwind CDN removed - using self-hosted minified CSS -->
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,8 @@
   </noscript>
 
   <!-- Performance: Preload critical logo image (LCP candidate) -->
-  <link rel="preload" as="image" href="images/company-logo.png" fetchpriority="high">
+  <link rel="preload" as="image" href="images/optimized/company-logo-280w.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/optimized/company-logo-280w.jpg" fetchpriority="high">
 
   <!-- Performance: Preload additional fonts (non-blocking) -->
   <link rel="preload"
@@ -37,8 +38,8 @@
 
  
 
-  <!-- Performance: Load Tailwind CSS with defer to prevent render blocking -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Performance: Self-hosted minified Tailwind CSS (purged, ~50KB vs 124KB CDN) -->
+  <link rel="stylesheet" href="assets/tailwind.min.css">
 
   <style>
     /* Critical CSS - Above-the-fold styles only (kept under 14KB) */
@@ -1225,9 +1226,14 @@
         <div class="flex justify-between items-center h-[100px]">
           <div class="flex-shrink-0">
             <a href="index.html" class="flex items-center">
-              <img class="w-[160px] h-[130px]" src="images/company-logo.png"
-                alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high"
-                loading="eager" decoding="sync">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/company-logo-140w.webp 140w, images/optimized/company-logo-280w.webp 280w, images/optimized/company-logo-420w.webp 420w"
+                  sizes="160px">
+                <img class="w-[160px] h-[130px]" src="images/optimized/company-logo-280w.jpg"
+                  alt="Reliable Engineering and Construction logo" width="280" height="228" fetchpriority="high"
+                  loading="eager" decoding="sync">
+              </picture>
             </a>
           </div>
           <div class="hidden md:flex space-x-6 font-archivo items-center">
@@ -1316,8 +1322,8 @@
               </div>
             </div>
             <!-- OUR PROJECTS dropdown -->
-            <div class="relative group" data-projects-dropdown>
-              <button type="button"
+            <div class="relative group flex" data-projects-dropdown>
+             <button type="button"
                 class="nav-link text-slate-900 hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1"
                 aria-haspopup="true" aria-expanded="false" aria-label="Our Projects menu" data-projects-dropdown-button>
                 OUR PROJECTS
@@ -1331,7 +1337,7 @@
                 role="menu" data-projects-dropdown-panel>
                 <div class="py-2">
                   <a href="handyman-services-singapore.html"
-                    class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium"
+                    class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200"
                     role="menuitem">Handyman</a>
                   <a href="residential-renovation-singapore.html"
                     class="block px-6 py-3 text-xs font-light text-gray-700 hover:bg-sky-50 hover:text-sky-600 transition duration-200 font-medium"
@@ -1376,8 +1382,13 @@
       <!-- Header with Logo & Close -->
       <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
         <a href="index.html">
-          <img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230"
-            height="70" fetchpriority="high" loading="eager" decoding="sync">
+          <picture>
+            <source type="image/webp"
+              srcset="images/optimized/company-logo-140w.webp 140w, images/optimized/company-logo-280w.webp 280w, images/optimized/company-logo-420w.webp 420w"
+              sizes="230px">
+            <img src="images/optimized/company-logo-280w.jpg" alt="Reliable Engineering and Construction" class="w-[230px]" width="230"
+              height="70" loading="eager" decoding="async">
+          </picture>
         </a>
         <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
           <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1566,12 +1577,22 @@
 
         <!-- Decorative Images -->
         <!-- Decorative images - aria-hidden for screen readers, empty alt is correct for decorative content -->
-        <img src="images/heropagephoto.png" alt=""
-          class="opacity-10 sm:opacity-70 absolute top-24 right-10 w-[350px] h-[350px] object-cover pointer-events-none z-0"
-          loading="eager" fetchpriority="high" width="350" height="350" decoding="async" aria-hidden="true">
-        <img src="images/heropagephoto_2.png" alt=""
-          class="opacity-10 sm:opacity-70 absolute bottom-0 left-0 w-[350px] h-[350px] object-cover pointer-events-none z-0"
-          loading="eager" fetchpriority="high" width="350" height="350" decoding="async" aria-hidden="true">
+        <picture>
+          <source type="image/webp"
+            srcset="images/optimized/heropagephoto-350w.webp 350w, images/optimized/heropagephoto-700w.webp 700w"
+            sizes="350px">
+          <img src="images/optimized/heropagephoto-350w.jpg" alt=""
+            class="opacity-10 sm:opacity-70 absolute top-24 right-10 w-[350px] h-[350px] object-cover pointer-events-none z-0"
+            loading="lazy" width="350" height="350" decoding="async" aria-hidden="true">
+        </picture>
+        <picture>
+          <source type="image/webp"
+            srcset="images/optimized/heropagephoto_2-350w.webp 350w, images/optimized/heropagephoto_2-700w.webp 700w"
+            sizes="350px">
+          <img src="images/optimized/heropagephoto_2-350w.jpg" alt=""
+            class="opacity-10 sm:opacity-70 absolute bottom-0 left-0 w-[350px] h-[350px] object-cover pointer-events-none z-0"
+            loading="lazy" width="350" height="350" decoding="async" aria-hidden="true">
+        </picture>
 
         <!-- Content (centered; text blocks below use max-w for line length) -->
         <div class="relative z-10 max-w-4xl mx-auto text-center">
@@ -1615,21 +1636,41 @@
           <!-- Trust Elements (cleaner layout) -->
           <div class="hero-trust flex flex-wrap gap-6 justify-center items-center">
             <div class="trust-badge">
-              <img class="w-32  h-auto object-contain"
-                src="images/homepage images/Google-Review-Logo-removebg-preview.png" alt="Google Reviews" loading="lazy"
-                width="128" height="128" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/homepage images/Google-Review-Logo-removebg-preview-96w.webp 96w, images/optimized/homepage images/Google-Review-Logo-removebg-preview-128w.webp 128w, images/optimized/homepage images/Google-Review-Logo-removebg-preview-192w.webp 192w"
+                  sizes="128px">
+                <img class="w-32 h-auto object-contain"
+                  src="images/optimized/homepage images/Google-Review-Logo-removebg-preview-128w.jpg" alt="Google Reviews" loading="lazy"
+                  width="128" height="128" decoding="async">
+              </picture>
             </div>
             <div class="trust-badge">
-              <img class="w-32 h-auto object-contain" src="images/homepage images/BCA.png" alt="BCA Registered"
-                loading="lazy" width="128" height="128" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/homepage images/BCA-96w.webp 96w, images/optimized/homepage images/BCA-128w.webp 128w, images/optimized/homepage images/BCA-192w.webp 192w"
+                  sizes="128px">
+                <img class="w-32 h-auto object-contain" src="images/optimized/homepage images/BCA-128w.jpg" alt="BCA Registered"
+                  loading="lazy" width="128" height="128" decoding="async">
+              </picture>
             </div>
             <div class="trust-badge">
-              <img class="w-24 h-auto object-contain" src="images/homepage images/4years.png" alt="4+ Years Experience"
-                loading="lazy" width="96" height="96" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/homepage images/4years-96w.webp 96w, images/optimized/homepage images/4years-128w.webp 128w, images/optimized/homepage images/4years-192w.webp 192w"
+                  sizes="96px">
+                <img class="w-24 h-auto object-contain" src="images/optimized/homepage images/4years-96w.jpg" alt="4+ Years Experience"
+                  loading="lazy" width="96" height="96" decoding="async">
+              </picture>
             </div>
             <div class="trust-badge">
-              <img class="w-32 h-auto object-contain" src="images/homepage images/license.png" alt="Licensed & Insured"
-                loading="lazy" width="128" height="128" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/homepage images/license-96w.webp 96w, images/optimized/homepage images/license-128w.webp 128w, images/optimized/homepage images/license-192w.webp 192w"
+                  sizes="128px">
+                <img class="w-32 h-auto object-contain" src="images/optimized/homepage images/license-128w.jpg" alt="Licensed & Insured"
+                  loading="lazy" width="128" height="128" decoding="async">
+              </picture>
             </div>
           </div>
         </div>
@@ -1641,10 +1682,15 @@
     <section class="w-full overflow-hidden">
       <div class="max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12">
         <div class="w-full flex pt-20 bg-white justify-center items-center left-0 right-0 gap-20">
-          <img
-            class="h-[600px] hidden sm:block transition-all duration-700 transform hover:scale-105 hover:rotate-1  animate-arrow"
-            src="images/homepage images/hand-wearing-safety-glove-holds-riveter-isolated-white-background-working-tools_662430-723-Photoroom.png"
-            alt="Professional construction worker with safety equipment" width="600" height="600" loading="lazy">
+          <picture>
+            <source type="image/webp"
+              srcset="images/optimized/homepage images/hand-wearing-safety-glove-holds-riveter-isolated-white-background-working-tools_662430-723-Photoroom-400w.webp 400w, images/optimized/homepage images/hand-wearing-safety-glove-holds-riveter-isolated-white-background-working-tools_662430-723-Photoroom-600w.webp 600w"
+              sizes="600px">
+            <img
+              class="h-[600px] hidden sm:block transition-all duration-700 transform hover:scale-105 hover:rotate-1 animate-arrow"
+              src="images/optimized/homepage images/hand-wearing-safety-glove-holds-riveter-isolated-white-background-working-tools_662430-723-Photoroom-600w.jpg"
+              alt="Professional construction worker with safety equipment" width="600" height="600" loading="lazy" decoding="async">
+          </picture>
 
           <!-- Text block constrained for readability -->
           <div class="w-[650px] max-w-full max-w-3xl">
@@ -1689,9 +1735,14 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover"
-                src="images/aircon_service/new-installation.jpg" alt="Air Conditioning Services" loading="lazy"
-                width="400" height="256" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/aircon_service/new-installation-400w.webp 400w, images/optimized/aircon_service/new-installation-600w.webp 600w, images/optimized/aircon_service/new-installation-800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw">
+                <img class="w-full service-card-image h-full object-cover"
+                  src="images/optimized/aircon_service/new-installation-400w.jpg" alt="Air Conditioning Services" loading="lazy"
+                  width="400" height="256" decoding="async">
+              </picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1705,9 +1756,14 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover"
-                src="images/plumbing services/installation-replacement.jpg" alt="Plumbing Services" loading="lazy"
-                width="400" height="256" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/plumbing services/installation-replacement-400w.webp 400w, images/optimized/plumbing services/installation-replacement-600w.webp 800w, images/optimized/plumbing services/installation-replacement-800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw">
+                <img class="w-full service-card-image h-full object-cover"
+                  src="images/optimized/plumbing services/installation-replacement-400w.jpg" alt="Plumbing Services" loading="lazy"
+                  width="400" height="256" decoding="async">
+              </picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1721,8 +1777,13 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover" src="images/light-installation.jpg"
-                alt="Electrical Works" loading="lazy" width="400" height="256" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/light-installation-400w.webp 400w, images/optimized/light-installation-800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw">
+                <img class="w-full service-card-image h-full object-cover" src="images/optimized/light-installation-400w.jpg"
+                  alt="Electrical Works" loading="lazy" width="400" height="256" decoding="async">
+              </picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1736,9 +1797,14 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover"
-                src="images/painting/room-interior-painting.jpg" alt="Painting" loading="lazy" width="400" height="256"
-                decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/painting/room-interior-painting-400w.webp 400w, images/optimized/painting/room-interior-painting-600w.webp 600w, images/optimized/painting/room-interior-painting-800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw">
+                <img class="w-full service-card-image h-full object-cover"
+                  src="images/optimized/painting/room-interior-painting-400w.jpg" alt="Painting" loading="lazy" width="400" height="256"
+                  decoding="async">
+              </picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1755,9 +1821,14 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover"
-                src="images/renovation/condo-room-renovation.jpg" alt="Renovation Works" loading="lazy" width="400"
-                height="256" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/renovation/condo-room-renovation-400w.webp 400w, images/optimized/renovation/condo-room-renovation-600w.webp 600w, images/optimized/renovation/condo-room-renovation-800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw">
+                <img class="w-full service-card-image h-full object-cover"
+                  src="images/optimized/renovation/condo-room-renovation-400w.jpg" alt="Renovation Works" loading="lazy" width="400"
+                  height="256" decoding="async">
+              </picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1771,9 +1842,14 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover"
-                src="images/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy.png"
-                alt="Ceiling and Wall Partitions" loading="lazy" width="400" height="256" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy-400w.webp 400w, images/optimized/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy-600w.webp 600w, images/optimized/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy-800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw">
+                <img class="w-full service-card-image h-full object-cover"
+                  src="images/optimized/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy-400w.jpg"
+                  alt="Ceiling and Wall Partitions" loading="lazy" width="400" height="256" decoding="async">
+              </picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1789,8 +1865,13 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover" src="images/tile services/tile-replacement.png"
-                alt="Tile Laying" loading="lazy" width="400" height="256" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/tile services/tile-replacement-400w.webp 400w, images/optimized/tile services/tile-replacement-600w.webp 600w, images/optimized/tile services/tile-replacement-800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw">
+                <img class="w-full service-card-image h-full object-cover" src="images/optimized/tile services/tile-replacement-400w.jpg"
+                  alt="Tile Laying" loading="lazy" width="400" height="256" decoding="async">
+              </picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1804,9 +1885,14 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover"
-                src="images/carpentry/feature-walls-tv-consoles.png" alt="Carpentry Works" loading="lazy" width="400"
-                height="256" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/carpentry/feature-walls-tv-consoles-400w.webp 400w, images/optimized/carpentry/feature-walls-tv-consoles-600w.webp 600w, images/optimized/carpentry/feature-walls-tv-consoles-800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw">
+                <img class="w-full service-card-image h-full object-cover"
+                  src="images/optimized/carpentry/feature-walls-tv-consoles-400w.jpg" alt="Carpentry Works" loading="lazy" width="400"
+                  height="256" decoding="async">
+              </picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1820,9 +1906,14 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover"
-                src="images/waterproofing/hand-painted-gray-flooring-with-paint-rollers-waterproof-reinforcing-netrepairing-waterproofin_483511-1334.jpg"
-                alt="Waterproofing" loading="lazy" width="400" height="256">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/waterproofing/hand-painted-gray-flooring-with-paint-rollers-waterproof-reinforcing-netrepairing-waterproofin_483511-1334-400w.webp 400w, images/optimized/waterproofing/hand-painted-gray-flooring-with-paint-rollers-waterproof-reinforcing-netrepairing-waterproofin_483511-1334-600w.webp 600w, images/optimized/waterproofing/hand-painted-gray-flooring-with-paint-rollers-waterproof-reinforcing-netrepairing-waterproofin_483511-1334-800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw">
+                <img class="w-full service-card-image h-full object-cover"
+                  src="images/optimized/waterproofing/hand-painted-gray-flooring-with-paint-rollers-waterproof-reinforcing-netrepairing-waterproofin_483511-1334-400w.jpg"
+                  alt="Waterproofing" loading="lazy" width="400" height="256" decoding="async">
+              </picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1836,9 +1927,14 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover"
-                src="images/hacking/supermarket-shop-chernobyl-exclusion-zone-with-ruins-abandoned-pripyat-city-zone-radioactivity-ghost-town.jpg"
-                alt="Hacking and Demolition" loading="lazy" width="400" height="256" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/hacking/supermarket-shop-chernobyl-exclusion-zone-with-ruins-abandoned-pripyat-city-zone-radioactivity-ghost-town-400w.webp 400w, images/optimized/hacking/supermarket-shop-chernobyl-exclusion-zone-with-ruins-abandoned-pripyat-city-zone-radioactivity-ghost-town-600w.webp 600w, images/optimized/hacking/supermarket-shop-chernobyl-exclusion-zone-with-ruins-abandoned-pripyat-city-zone-radioactivity-ghost-town-800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw">
+                <img class="w-full service-card-image h-full object-cover"
+                  src="images/optimized/hacking/supermarket-shop-chernobyl-exclusion-zone-with-ruins-abandoned-pripyat-city-zone-radioactivity-ghost-town-400w.jpg"
+                  alt="Hacking and Demolition" loading="lazy" width="400" height="256" decoding="async">
+              </picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1853,9 +1949,14 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover"
-                src="images/services images/plastering-works-overview.jpg" alt="Plastering Works" loading="lazy"
-                width="400" height="256" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/services images/plastering-works-overview-400w.webp 400w, images/optimized/services images/plastering-works-overview-600w.webp 600w, images/optimized/services images/plastering-works-overview-800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw">
+                <img class="w-full service-card-image h-full object-cover"
+                  src="images/optimized/services images/plastering-works-overview-400w.jpg" alt="Plastering Works" loading="lazy"
+                  width="400" height="256" decoding="async">
+              </picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1869,9 +1970,14 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover"
-                src="images/hacking/construction_1018566-174.jpg" alt="Hacking and Demolition" loading="lazy"
-                width="400" height="256" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/hacking/construction_1018566-174-400w.webp 400w, images/optimized/hacking/construction_1018566-174-600w.webp 600w, images/optimized/hacking/construction_1018566-174-800w.webp 800w"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw">
+                <img class="w-full service-card-image h-full object-cover"
+                  src="images/optimized/hacking/construction_1018566-174-400w.jpg" alt="Hacking and Demolition" loading="lazy"
+                  width="400" height="256" decoding="async">
+              </picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1995,7 +2101,7 @@
           <!-- First div: Republic Polytechnic Hotel -->
           <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
             <a href="electrical-works-singapore.html">
-              <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/light-installation.jpg"
+              <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/optimized/light-installation-400w.jpg"
                 alt="Republic Polytechnic Hotel" width="400" height="300" decoding="async">
               <div class="project-overlay">
                 <div class="project-title">
@@ -2010,7 +2116,7 @@
           <div class="w-full h-[200px] sm:h-[250px] rounded-lg shadow-lg project-card overflow-hidden">
             <a href="plumbing-services-singapore.html">
               <img loading="lazy" class="w-full h-full rounded-2xl object-cover"
-                src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Marina Bay Residence" width="400"
+                src="images/optimized/commercial/Pei-chun/IMG20251223170018-400w.jpg" alt="Marina Bay Residence" width="400"
                 height="250" decoding="async">
               <div class="project-overlay">
                 <div class="project-title">
@@ -2024,7 +2130,7 @@
           <!-- Third div: Sentosa Resort -->
           <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
             <a href="painting-services-singapore.html">
-              <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/12.png"
+              <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/optimized/12-400w.jpg"
                 alt="Sentosa Resort" width="400" height="300" decoding="async">
               <div class="project-overlay">
                 <div class="project-title">
@@ -2038,7 +2144,7 @@
           <!-- Fourth div: Orchard Plaza -->
           <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
             <a href="painting-services-singapore.html">
-              <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/9.jpeg" alt="Orchard Plaza"
+              <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/optimized/9-400w.jpg" alt="Orchard Plaza"
                 width="400" height="300" decoding="async">
               <div class="project-overlay">
                 <div class="project-title">
@@ -2052,7 +2158,7 @@
           <!-- Fifth div: Clarke Quay Tower -->
           <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
             <a href="electrical-works-singapore.html">
-              <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/10.jpeg"
+              <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/optimized/10-400w.jpg"
                 alt="Clarke Quay Tower" width="400" height="300" decoding="async">
               <div class="project-overlay">
                 <div class="project-title">
@@ -2069,7 +2175,7 @@
           <!-- First div: Republic Polytechnic Hotel -->
           <div class="col-span-4 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
             <a href="electrical-works-singapore.html">
-              <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/light-installation.jpg"
+              <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/optimized/light-installation-400w.jpg"
                 alt="Republic Polytechnic Hotel" width="400" height="300" decoding="async">
               <div class="project-overlay">
                 <div class="project-title">
@@ -2084,7 +2190,7 @@
           <div class="col-span-2 row-span-1 rounded-2xl shadow-lg project-card overflow-hidden">
             <a href="plumbing-services-singapore.html">
               <img loading="lazy" class="w-full h-full rounded-lg object-cover"
-                src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Marina Bay Residence" width="400"
+                src="images/optimized/commercial/Pei-chun/IMG20251223170018-400w.jpg" alt="Marina Bay Residence" width="400"
                 height="250" decoding="async">
               <div class="project-overlay">
                 <div class="project-title">
@@ -2098,7 +2204,7 @@
           <!-- Third div: Sentosa Resort -->
           <div class="col-span-2 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
             <a href="painting-services-singapore.html">
-              <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort"
+              <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/optimized/12-400w.jpg" alt="Sentosa Resort"
                 width="400" height="300" decoding="async">
               <div class="project-overlay">
                 <div class="project-title">
@@ -2113,7 +2219,7 @@
           <div class="col-span-2 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
             <a href="carpentry-works-singapore.html">
               <img loading="lazy" class="w-full h-full rounded-lg object-cover"
-                src="images/carpentry/feature-walls-tv-consoles.png" alt="Orchard Plaza" width="400" height="300"
+                src="images/optimized/carpentry/feature-walls-tv-consoles-400w.jpg" alt="Orchard Plaza" width="400" height="300"
                 decoding="async">
               <div class="project-overlay">
                 <div class="project-title">
@@ -2128,7 +2234,7 @@
           <div class="col-span-2 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
             <a href="renovation-works-singapore.html" aria-label="View renovation works portfolio">
               <img loading="lazy" class="w-full h-full rounded-lg object-cover"
-                src="images/commercial/school/IMG20251223154650.jpg" alt="Clarke Quay Tower" width="400" height="300"
+                src="images/optimized/commercial/school/IMG20251223154650-400w.jpg" alt="Clarke Quay Tower" width="400" height="300"
                 decoding="async">
               <div class="project-overlay">
                 <div class="project-title">
@@ -2200,7 +2306,7 @@
           <!-- Right Column: Image -->
           <div>
             <img class="w-full rounded-md h-64 sm:h-80 lg:h-96 object-cover"
-              src="images/commercial/Pei-chun/IMG20251223170018.jpg"
+              src="images/optimized/commercial/Pei-chun/IMG20251223170018-800w.jpg"
               alt="Reliable Engineering and Construction Team at Work" loading="lazy" width="800" height="600"
               decoding="async">
           </div>
@@ -2456,8 +2562,13 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             <!-- Logo -->
             <div class="lg:col-span-2 md:col-span-1 items-center flex md:items-start justify-center :col-span-1">
-              <img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3"
-                width="300" height="80" loading="lazy" decoding="async">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/optimized/company-logo-140w.webp 140w, images/optimized/company-logo-280w.webp 280w, images/optimized/company-logo-420w.webp 420w"
+                  sizes="128px">
+                <img src="images/optimized/company-logo-280w.jpg" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3"
+                  width="300" height="80" loading="lazy" decoding="async">
+              </picture>
 
             </div>
 
@@ -3801,14 +3912,9 @@
       })();
     </script>
     <!-- Defer non-critical JavaScript to improve initial page load -->
-    <script src="assets/site.js?v=1.0.0" defer></script>
+    <script src="assets/site.min.js?v=1.0.0" defer></script>
 
     
-    <!-- Vercel Speed Insights -->
-    <script>
-      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 
 </html>
