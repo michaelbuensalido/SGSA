@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Story | Reliable Engineering and Construction - From HDB Repairs to Dream Renovations</title>
+    <title>Our Story | Reliable Engineering & Construction SG</title>
   <link rel="icon" type="image/png" sizes="48x48" href="images/company-logo.png">
     <meta name="description" content="Meet the team behind Reliable Engineering and Construction. From humble beginnings in Jalan Besar to becoming Singapore's trusted handyman service. Our story, our people, our promise.">
     <!-- Performance: Resource Hints -->
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Performance: Load Tailwind CSS synchronously (critical for styling - prevents FOUC) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/tailwind.css">
     
-    <!-- Performance: Preload critical font -->
+    <!-- Performance: Preload critical fonts -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"></noscript>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
         
         .heading-font { font-family: 'Archivo', serif; }
         .body-font { font-family: 'Inter', sans-serif; }
@@ -32,7 +31,7 @@
         .icon-container { transition: all 0.4s ease; }
         .card-hover:hover .icon-container { transform: scale(1.1); }
         
-        .nav-link { position: relative; display: inline-block; }
+        .nav-link { position: relative;  }
         .nav-link::after {
             content: ''; position: absolute; width: 0; height: 2px;
             bottom: -5px; left: 50%; background-color: #38bdf8;
@@ -247,7 +246,7 @@ body.menu-open {
        <div class="flex justify-between items-center h-[100px] px-4">
            <div class="flex-shrink-0">
                <a href="index.html" class="flex items-center">
-                   <img class="w-[160px] h-[130px]" src="images/company-logo.png" alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync">
+                   <picture><source srcset="images/company-logo.webp" type="image/webp"><img class="w-[160px] h-[130px]" src="images/company-logo.png" alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync"></picture>
                </a>
            </div>
            <div class="hidden md:flex space-x-6 font-archivo items-center">
@@ -343,7 +342,7 @@ body.menu-open {
     <!-- Header with Logo & Close -->
     <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
         <a href="index.html">
-            <img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230" height="70" fetchpriority="high" loading="eager" decoding="sync">
+            <picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230" height="70" fetchpriority="high" loading="eager" decoding="sync"></picture>
         </a>
         <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
             <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -523,22 +522,22 @@ body.menu-open {
               <div class="hero-trust flex flex-col sm:flex-row gap-4 sm:gap-6 justify-start items-center text-base sm:text-lg">
                 <!-- Google Rating -->
                 <div class="trust-badge flex items-center gap-2">
-                  <img class="w-32 h-15" src="images/homepage images/Google-Review-Logo-removebg-preview.png" alt="Google Reviews 4.9 Stars">
+                  <picture><source srcset="images/homepage images/Google-Review-Logo-removebg-preview.webp" type="image/webp"><img class="w-32 h-15" src="images/homepage images/Google-Review-Logo-removebg-preview.png" alt="Google Reviews 4.9 Stars" width="666" height="375"></picture>
                 </div>
 
                 <!-- Years Experience -->
                 <div class="trust-badge flex items-center gap-2">
-                  <img class="w-24 h-15" src="images/homepage images/4years.png" alt="4+ Years Experience">
+                  <picture><source srcset="images/homepage images/4years.webp" type="image/webp"><img class="w-24 h-15" src="images/homepage images/4years.png" alt="4+ Years Experience" width="500" height="500"></picture>
                 </div>
 
                 <!-- Best Service -->
                 <div class="trust-badge flex items-center gap-2">
-                  <img class="w-40 h-15" src="images/homepage images/BCA.png" alt="Best Service Award">
+                  <picture><source srcset="images/homepage images/BCA.webp" type="image/webp"><img class="w-40 h-15" src="images/homepage images/BCA.png" alt="Best Service Award" width="300" height="300"></picture>
                 </div>
 
                 <!-- Licensed & Insured -->
                 <div class="trust-badge flex items-center gap-2">
-                  <img class="w-40 h-15" src="images/homepage images/license.png" alt="Licensed & Insured">
+                  <picture><source srcset="images/homepage images/license.webp" type="image/webp"><img class="w-40 h-15" src="images/homepage images/license.png" alt="Licensed & Insured" width="670" height="372"></picture>
                 </div>
               </div>
             </div>
@@ -601,15 +600,15 @@ body.menu-open {
                 <!-- Main large image -->
                 <div class="col-span-2">
                   <div class="aspect-[16/9] overflow-hidden border border-gray-200">
-                    <img src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Reliable Engineering and Construction Project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                    <picture><source srcset="images/commercial/Pei-chun/IMG20251223170018.webp" type="image/webp"><img src="images/commercial/Pei-chun/IMG20251223170018.jpg" alt="Reliable Engineering and Construction Project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" width="2304" height="4096"></picture>
                   </div>
                 </div>
                 <!-- Two smaller images -->
                 <div class="aspect-square overflow-hidden border border-gray-200">
-                  <img src="images/tile services/tile-installation.png" alt="HDB Renovation Work" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                  <picture><source srcset="images/tile services/tile-installation.webp" type="image/webp"><img src="images/tile services/tile-installation.png" alt="HDB Renovation Work" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" width="861" height="1097"></picture>
                 </div>
                 <div class="aspect-square overflow-hidden border border-gray-200">
-                  <img src="images/carpentry/kitchen-cabinets.png" alt="Custom Carpentry Work" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+                  <img src="images/carpentry/kitchen-cabinets.jpg" alt="Custom Carpentry Work" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" width="864" height="1184">
                 </div>
               </div>
               <!-- Caption -->
@@ -647,7 +646,7 @@ body.menu-open {
             <!-- Service 1: Renovation Works -->
             <article class="sgsa-service-item group">
               <div class="aspect-[4/3] overflow-hidden border border-gray-200 mb-6">
-                <img src="images/residential/condo-room-renovation.jpg" alt="Comprehensive Renovation Works" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                <picture><source srcset="images/residential/condo-room-renovation.webp" type="image/webp"><img src="images/residential/condo-room-renovation.jpg" alt="Comprehensive Renovation Works" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="1000" height="668"></picture>
               </div>
               <h3 class="text-xl font-semibold text-gray-900 mb-3">Comprehensive Renovation Works</h3>
               <div class="w-12 h-px bg-sky-300 mb-4"></div>
@@ -659,7 +658,7 @@ body.menu-open {
             <!-- Service 2: Ceiling & Wall -->
             <article class="sgsa-service-item group">
               <div class="aspect-[4/3] overflow-hidden border border-gray-200 mb-6">
-                <img src="images/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy.png" alt="Ceiling & Wall Partition Systems" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                <picture><source srcset="images/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy.webp" type="image/webp"><img src="images/partitions/ceiling-gypsum-board-installation-construction-site_293060-4195 copy.png" alt="Ceiling & Wall Partition Systems" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="626" height="417"></picture>
               </div>
               <h3 class="text-xl font-semibold text-gray-900 mb-3">Ceiling & Wall Partition Systems</h3>
               <div class="w-12 h-px bg-sky-300 mb-4"></div>
@@ -671,7 +670,7 @@ body.menu-open {
             <!-- Service 3: Painting -->
             <article class="sgsa-service-item group">
               <div class="aspect-[4/3] overflow-hidden border border-gray-200 mb-6">
-                <img src="images/painting/room-interior-painting.jpg" alt="Painting & Finishing Works" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                <picture><source srcset="images/painting/room-interior-painting.webp" type="image/webp"><img src="images/painting/room-interior-painting.jpg" alt="Painting & Finishing Works" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="1000" height="1500"></picture>
               </div>
               <h3 class="text-xl font-semibold text-gray-900 mb-3">Painting & Finishing Works</h3>
               <div class="w-12 h-px bg-sky-300 mb-4"></div>
@@ -683,7 +682,7 @@ body.menu-open {
             <!-- Service 4: Electrical -->
             <article class="sgsa-service-item group">
               <div class="aspect-[4/3] overflow-hidden border border-gray-200 mb-6">
-                <img src="images/electrical/2152007080.jpg" alt="Electrical Works" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                <picture><source srcset="images/electrical/2152007080.webp" type="image/webp"><img src="images/electrical/2152007080.jpg" alt="Electrical Works" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="1500" height="1050"></picture>
               </div>
               <h3 class="text-xl font-semibold text-gray-900 mb-3">Electrical Works</h3>
               <div class="w-12 h-px bg-sky-300 mb-4"></div>
@@ -695,7 +694,7 @@ body.menu-open {
             <!-- Service 5: Hacking & Demolition -->
             <article class="sgsa-service-item group">
               <div class="aspect-[4/3] overflow-hidden border border-gray-200 mb-6">
-                <img src="images/hacking/supermarket-shop-chernobyl-exclusion-zone-with-ruins-abandoned-pripyat-city-zone-radioactivity-ghost-town.jpg" alt="Reinstatement, Hacking & Demolition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                <picture><source srcset="images/hacking/supermarket-shop-chernobyl-exclusion-zone-with-ruins-abandoned-pripyat-city-zone-radioactivity-ghost-town.webp" type="image/webp"><img src="images/hacking/supermarket-shop-chernobyl-exclusion-zone-with-ruins-abandoned-pripyat-city-zone-radioactivity-ghost-town.jpg" alt="Reinstatement, Hacking & Demolition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="4928" height="2999"></picture>
               </div>
               <h3 class="text-xl font-semibold text-gray-900 mb-3">Reinstatement, Hacking & Demolition</h3>
               <div class="w-12 h-px bg-sky-300 mb-4"></div>
@@ -707,7 +706,7 @@ body.menu-open {
             <!-- Service 6: Carpentry -->
             <article class="sgsa-service-item group">
               <div class="aspect-[4/3] overflow-hidden border border-gray-200 mb-6">
-                <img src="images/carpentry/kitchen-cabinets.png" alt="Carpentry Works" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                <picture><source srcset="images/carpentry/kitchen-cabinets.webp" type="image/webp"><img src="images/carpentry/kitchen-cabinets.jpg" alt="Carpentry Works" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="864" height="1184"></picture>
               </div>
               <h3 class="text-xl font-semibold text-gray-900 mb-3">Carpentry Works</h3>
               <div class="w-12 h-px bg-sky-300 mb-4"></div>
@@ -878,7 +877,7 @@ body.menu-open {
             <div class="max-w-7xl mx-auto px-4 py-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     <div class="lg:col-span-2 md:col-span-1 items-center flex md:items-start justify-center">
-                        <img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3" width="300" height="80" loading="lazy" decoding="async">
+                        <picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3" width="300" height="80" loading="lazy" decoding="async"></picture>
                     </div>
                     <div class="flex flex-col items-center justify-center md:items-start">
                         <div class="flex items-start gap-3">
@@ -1573,7 +1572,7 @@ body.menu-open {
     })();
     </script>
     <!-- Load site.js - removed defer to ensure it runs -->
-    <script src="assets/site.js"></script>
+    <script src="assets/site.min.js"></script>
     <script>
       // Fallback: Ensure dropdown and mobile accordion initialize on about page
       // This runs after site.js loads to guarantee initialization
@@ -1635,10 +1634,5 @@ body.menu-open {
         }, 100);
       })();
     </script>
-  <!-- Vercel Speed Insights -->
-  <script>
-    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>

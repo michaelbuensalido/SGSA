@@ -8,12 +8,14 @@
   <link rel="icon" type="image/png" sizes="48x48" href="images/company-logo.png">
   <meta name="description"
     content="Browse Reliable Engineering and Construction's handyman project gallery. Aircon servicing, plumbing repairs, and electrical works completed with professional workmanship.">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/gallery.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/gallery.min.css">
   <style>
     .font-archivo {
       font-family: 'Archivo', sans-serif;
@@ -21,7 +23,7 @@
 
     .nav-link {
       position: relative;
-      display: inline-block;
+   
     }
 
     .nav-link::after {
@@ -95,9 +97,9 @@ position: relative;
         <div class="flex justify-between items-center h-[100px] px-4">
           <div class="flex-shrink-0">
             <a href="index.html" class="flex items-center">
-              <img class="w-[160px] h-[130px]" src="images/company-logo.png"
+              <picture><source srcset="images/company-logo.webp" type="image/webp"><img class="w-[160px] h-[130px]" src="images/company-logo.png"
                 alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high"
-                loading="eager" decoding="sync">
+                loading="eager" decoding="sync"></picture>
             </a>
           </div>
           <div class="hidden md:flex space-x-6 font-archivo items-center">
@@ -243,8 +245,8 @@ position: relative;
       <!-- Header with Logo & Close -->
       <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
         <a href="index.html">
-          <img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230"
-            height="70" fetchpriority="high" loading="eager" decoding="sync">
+          <picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230"
+            height="70" fetchpriority="high" loading="eager" decoding="sync"></picture>
         </a>
         <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
           <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -594,8 +596,8 @@ position: relative;
       <div class="max-w-7xl mx-auto px-4 py-10">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           <div class="lg:col-span-2 md:col-span-1 items-center flex md:items-start justify-center :col-span-1">
-            <img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3"
-              width="300" height="80" loading="lazy" decoding="async">
+            <picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3"
+              width="300" height="80" loading="lazy" decoding="async"></picture>
           </div>
           <div class="flex flex-col items-center justify-center md:items-start">
             <div class="flex items-start gap-3">
@@ -653,7 +655,7 @@ position: relative;
     </div>
   </footer>
 
-  <script src="assets/site.js"></script>
+  <script src="assets/site.min.js"></script>
   <script>
     // Off-canvas mobile menu
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -741,11 +743,6 @@ position: relative;
       });
     }
   </script>
-  <!-- Vercel Speed Insights -->
-  <script>
-    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 
 </html>

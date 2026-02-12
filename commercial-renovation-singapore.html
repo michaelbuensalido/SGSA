@@ -4,16 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Projects – Commercial Construction | Reliable Engineering and Construction</title>
+  <title>Commercial Projects | Reliable Engineering SG</title>
   <link rel="icon" type="image/png" sizes="48x48" href="images/company-logo.png">
   <meta name="description"
     content="View Reliable Engineering and Construction's commercial project portfolio. Office fit-outs, retail renovations, and industrial construction delivered on time and on budget.">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/tailwind.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/gallery.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/gallery.min.css">
   <style>
     .font-archivo {
       font-family: 'Archivo', sans-serif;
@@ -21,7 +23,7 @@
 
     .nav-link {
       position: relative;
-      display: inline-block;
+    
     }
 
     .nav-link::after {
@@ -93,9 +95,9 @@ position: relative;" class="font-archivo">
         <div class="flex justify-between items-center h-[100px] px-4">
           <div class="flex-shrink-0">
             <a href="index.html" class="flex items-center">
-              <img class="w-[160px] h-[130px]" src="images/company-logo.png"
+              <picture><source srcset="images/company-logo.webp" type="image/webp"><img class="w-[160px] h-[130px]" src="images/company-logo.png"
                 alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high"
-                loading="eager" decoding="sync">
+                loading="eager" decoding="sync"></picture>
             </a>
           </div>
           <div class="hidden md:flex space-x-10 font-archivo items-center">
@@ -243,8 +245,8 @@ position: relative;" class="font-archivo">
       <!-- Header with Logo & Close -->
       <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
         <a href="index.html">
-          <img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230"
-            height="70" fetchpriority="high" loading="eager" decoding="sync">
+          <picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230"
+            height="70" fetchpriority="high" loading="eager" decoding="sync"></picture>
         </a>
         <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
           <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -719,9 +721,9 @@ position: relative;" class="font-archivo">
     <div class="border-b border-gray-700">
       <div class="max-w-7xl mx-auto px-4 py-10">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          <div class="lg:col-span-2 items-center flex md:items-start justify-center"><img src="images/company-logo.png"
+          <div class="lg:col-span-2 items-center flex md:items-start justify-center"><picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png"
               alt="Reliable Engineering and Construction Logo" class="h-32 mb-3" width="300" height="80" loading="lazy"
-              decoding="async"></div>
+              decoding="async"></picture></div>
           <div class="flex flex-col items-center justify-center md:items-start">
             <div class="flex items-start gap-3"><svg class="w-6 h-6 text-sky-400 mt-1 flex-shrink-0" fill="none"
                 stroke="currentColor" viewBox="0 0 24 24">
@@ -775,15 +777,10 @@ position: relative;" class="font-archivo">
     </div>
   </footer>
 
-  <script src="assets/site.js"></script>
+  <script src="assets/site.min.js"></script>
   <script>
     const mobileMenuBtn = document.getElementById('mobile-menu-btn'), mobileMenuPanel = document.getElementById('mobile-menu-panel'), mobileMenuOverlay = document.getElementById('mobile-menu-overlay'), mobileMenuClose = document.getElementById('mobile-menu-close'); function openMobileMenu() { mobileMenuPanel.classList.add('active'); mobileMenuOverlay.classList.add('active'); document.body.classList.add('menu-open') } function closeMobileMenu() { mobileMenuPanel.classList.remove('active'); mobileMenuOverlay.classList.remove('active'); document.body.classList.remove('menu-open') } if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu); if (mobileMenuClose) mobileMenuClose.addEventListener('click', closeMobileMenu); if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMobileMenu); const mobileMenuLinks = mobileMenuPanel?.querySelectorAll('a:not([href="#"])'); mobileMenuLinks?.forEach(link => { link.addEventListener('click', () => { setTimeout(closeMobileMenu, 150) }) }); const mobileHandymanBtn = document.getElementById('mobile-handyman-btn'), mobileHandymanMenu = document.getElementById('mobile-handyman-menu'), mobileHandymanArrow = document.getElementById('mobile-handyman-arrow'); if (mobileHandymanBtn && mobileHandymanMenu && mobileHandymanArrow) { mobileHandymanBtn.addEventListener('click', () => { mobileHandymanMenu.classList.toggle('hidden'); mobileHandymanArrow.classList.toggle('rotate-180') }) } const mobileRenovationBtn = document.getElementById('mobile-renovation-btn'), mobileRenovationMenu = document.getElementById('mobile-renovation-menu'), mobileRenovationArrow = document.getElementById('mobile-renovation-arrow'); if (mobileRenovationBtn && mobileRenovationMenu && mobileRenovationArrow) { mobileRenovationBtn.addEventListener('click', () => { mobileRenovationMenu.classList.toggle('hidden'); mobileRenovationArrow.classList.toggle('rotate-180') }) } const navbar = document.getElementById('navbar'), navLinks = navbar?.querySelectorAll('.nav-link'), mobileMenuButton = document.getElementById('mobile-menu-btn'); if (navbar && navLinks) { window.addEventListener('scroll', () => { if (window.scrollY > 50) { navbar.classList.add('bg-white', 'shadow-lg'); navbar.classList.remove('bg-transparent'); navLinks.forEach(link => { link.classList.remove('text-white', 'hover:text-sky-400'); link.classList.add('text-sky-600', 'hover:text-sky-500') }); if (mobileMenuButton) { mobileMenuButton.classList.remove('text-white', 'hover:text-sky-400'); mobileMenuButton.classList.add('text-gray-800', 'hover:text-sky-600') } } else { navbar.classList.remove('bg-white', 'shadow-lg'); navbar.classList.add('bg-transparent'); navLinks.forEach(link => { link.classList.remove('text-sky-600', 'hover:text-sky-500'); link.classList.add('text-white', 'hover:text-sky-400') }); if (mobileMenuButton) { mobileMenuButton.classList.remove('text-gray-800', 'hover:text-sky-600'); mobileMenuButton.classList.add('text-white', 'hover:text-sky-400') } } }) } const chatToggle = document.getElementById('chat-toggle'), chatClose = document.getElementById('chat-close'), chatWindow = document.getElementById('chat-window'), chatForm = document.getElementById('chat-form'), chatInput = document.getElementById('chat-input'), chatMessages = document.getElementById('chat-messages'); function generateResponse(r) { const m = r.toLowerCase().trim(); if (m.includes('open') || m.includes('close') || m.includes('hours')) return "Our office hours are:\n• Monday-Friday: 9:00 AM - 6:00 PM\n• Saturday: 9:00 AM - 2:00 PM\n• Sunday & Public Holidays: Closed"; if (m.includes('phone') || m.includes('contact') || m.includes('call')) return "You can reach us at:\n• Main: +65 85864098\n• Site Manager: +65 85864098"; if (m.includes('email')) return "You can email us at:\n• info.sgsaconstruction@gmail.com\n• contact@sgsa.com"; if (m.includes('address') || m.includes('location') || m.includes('where')) return "Our address is:\nJalan Besar Plaza #02-36, Singapore 208511"; if (m.includes('service') || m.includes('offer')) return "We offer handyman, renovation, carpentry, waterproofing, tiling, plumbing, and electrical works."; if (m.includes('project') || m.includes('quote')) return "For quotes, share photos/floor plans and contact us at:\n📞 +65 85864098\n📧 info.sgsaconstruction@gmail.com"; return "Thank you! For specific questions:\n📞 +65 85864098\n📧 info.sgsaconstruction@gmail.com" } if (chatToggle && chatWindow) chatToggle.addEventListener('click', () => { chatWindow.classList.toggle('hidden') }); if (chatClose) chatClose.addEventListener('click', () => chatWindow.classList.add('hidden')); if (chatForm) { chatForm.addEventListener('submit', e => { e.preventDefault(); const msg = chatInput.value.trim(); if (!msg) return; const u = document.createElement('div'); u.className = 'flex justify-end'; u.innerHTML = "<div class=\"bg-gray-300 text-gray-900 rounded-lg p-3 max-w-xs\"><p class=\"text-sm\">" + msg + "</p></div>"; chatMessages.appendChild(u); chatInput.value = ''; setTimeout(() => { const reply = generateResponse(msg); const r = document.createElement('div'); r.className = 'flex items-end space-x-2'; r.innerHTML = "<div class=\"bg-sky-600 text-white rounded-lg p-3 max-w-xs\"><p class=\"text-sm whitespace-pre-line\">" + reply + "</p></div>"; chatMessages.appendChild(r); chatMessages.scrollTop = chatMessages.scrollHeight }, 400); chatMessages.scrollTop = chatMessages.scrollHeight }) }
   </script>
-  <!-- Vercel Speed Insights -->
-  <script>
-    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 
 </html>

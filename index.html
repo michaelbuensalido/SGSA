@@ -4,13 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reliable Engineering and Construction - Reliable Handyman & Renovation Services in Singapore</title>
+  <title>Reliable Handyman & Renovation Services Singapore</title>
   <link rel="icon" type="image/png" sizes="48x48" href="images/company-logo.png">
   <meta name="description"
     content="Reliable Engineering and Construction provides reliable handyman and renovation services in Singapore. Licensed trades, transparent pricing, and clean workmanship for homes and businesses. Get a free quote today.">
 
   <!-- Performance: Resource Hints - DNS Prefetch and Preconnect -->
-  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
   <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +37,7 @@
  
 
   <!-- Performance: Load Tailwind CSS with defer to prevent render blocking -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/tailwind.css">
 
   <style>
     /* Critical CSS - Above-the-fold styles only (kept under 14KB) */
@@ -322,7 +321,7 @@
 
     .nav-link {
       position: relative;
-      display: inline-block;
+      
     }
 
     .nav-link::after {
@@ -1225,9 +1224,9 @@
         <div class="flex justify-between items-center h-[100px]">
           <div class="flex-shrink-0">
             <a href="index.html" class="flex items-center">
-              <img class="w-[160px] h-[130px]" src="images/company-logo.png"
+              <picture><source srcset="images/company-logo.webp" type="image/webp"><img class="w-[160px] h-[130px]" src="images/company-logo.png"
                 alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high"
-                loading="eager" decoding="sync">
+                loading="eager" decoding="sync"></picture>
             </a>
           </div>
           <div class="hidden md:flex space-x-6 font-archivo items-center">
@@ -1238,7 +1237,7 @@
               US</a>
             <div class="relative dropdown-wrapper group">
               <button type="button"
-                class="nav-link text-slate-900 hover:text-sky-400 text-xs font-medium transition duration-300 flex items-center gap-1"
+                class="nav-link text-slate-900 hover:text-sky-400 text-xs w-full font-medium transition duration-300 flex items-center gap-1"
                 aria-haspopup="true" aria-expanded="false">OUR SERVICES
                 <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor"
                   viewBox="0 0 24 24">
@@ -1376,8 +1375,8 @@
       <!-- Header with Logo & Close -->
       <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
         <a href="index.html">
-          <img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230"
-            height="70" fetchpriority="high" loading="eager" decoding="sync">
+          <picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230"
+            height="70" fetchpriority="high" loading="eager" decoding="sync"></picture>
         </a>
         <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
           <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1566,9 +1565,9 @@
 
         <!-- Decorative Images -->
         <!-- Decorative images - aria-hidden for screen readers, empty alt is correct for decorative content -->
-        <img src="images/heropagephoto.png" alt=""
+        <picture><source srcset="images/heropagephoto.webp" type="image/webp"><img src="images/heropagephoto.png" alt=""
           class="opacity-10 sm:opacity-70 absolute top-24 right-10 w-[350px] h-[350px] object-cover pointer-events-none z-0"
-          loading="eager" fetchpriority="high" width="350" height="350" decoding="async" aria-hidden="true">
+          loading="eager" fetchpriority="high" width="350" height="350" decoding="async" aria-hidden="true"></picture>
         <img src="images/heropagephoto_2.png" alt=""
           class="opacity-10 sm:opacity-70 absolute bottom-0 left-0 w-[350px] h-[350px] object-cover pointer-events-none z-0"
           loading="eager" fetchpriority="high" width="350" height="350" decoding="async" aria-hidden="true">
@@ -1620,16 +1619,16 @@
                 width="128" height="128" decoding="async">
             </div>
             <div class="trust-badge">
-              <img class="w-32 h-auto object-contain" src="images/homepage images/BCA.png" alt="BCA Registered"
-                loading="lazy" width="128" height="128" decoding="async">
+              <picture><source srcset="images/homepage images/BCA.webp" type="image/webp"><img class="w-32 h-auto object-contain" src="images/homepage images/BCA.png" alt="BCA Registered"
+                loading="lazy" width="128" height="128" decoding="async"></picture>
             </div>
             <div class="trust-badge">
               <img class="w-24 h-auto object-contain" src="images/homepage images/4years.png" alt="4+ Years Experience"
                 loading="lazy" width="96" height="96" decoding="async">
             </div>
             <div class="trust-badge">
-              <img class="w-32 h-auto object-contain" src="images/homepage images/license.png" alt="Licensed & Insured"
-                loading="lazy" width="128" height="128" decoding="async">
+              <picture><source srcset="images/homepage images/license.webp" type="image/webp"><img class="w-32 h-auto object-contain" src="images/homepage images/license.png" alt="Licensed & Insured"
+                loading="lazy" width="128" height="128" decoding="async"></picture>
             </div>
           </div>
         </div>
@@ -1721,8 +1720,8 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover" src="images/light-installation.jpg"
-                alt="Electrical Works" loading="lazy" width="400" height="256" decoding="async">
+              <picture><source srcset="images/light-installation.webp" type="image/webp"><img class="w-full service-card-image h-full object-cover" src="images/light-installation.jpg"
+                alt="Electrical Works" loading="lazy" width="400" height="256" decoding="async"></picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1789,8 +1788,8 @@
             <div
               class="relative flex justify-center group overflow-hidden cursor-pointer items-center bg-blue-600 h-56 sm:h-64">
               <div class="service-card-overlay"></div>
-              <img class="w-full service-card-image h-full object-cover" src="images/tile services/tile-replacement.png"
-                alt="Tile Laying" loading="lazy" width="400" height="256" decoding="async">
+              <picture><source srcset="images/tile services/tile-replacement.webp" type="image/webp"><img class="w-full service-card-image h-full object-cover" src="images/tile services/tile-replacement.png"
+                alt="Tile Laying" loading="lazy" width="400" height="256" decoding="async"></picture>
               <div
                 class="absolute inset-0 bg-gradient-to-t from-black/100 to-transparent opacity-50 transition-opacity duration-500 group-hover:opacity-100">
               </div>
@@ -1995,8 +1994,8 @@
           <!-- First div: Republic Polytechnic Hotel -->
           <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
             <a href="electrical-works-singapore.html">
-              <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/light-installation.jpg"
-                alt="Republic Polytechnic Hotel" width="400" height="300" decoding="async">
+              <picture><source srcset="images/light-installation.webp" type="image/webp"><img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/light-installation.jpg"
+                alt="Republic Polytechnic Hotel" width="400" height="300" decoding="async"></picture>
               <div class="project-overlay">
                 <div class="project-title">
                   <h2 class="text-white text-xl sm:text-2xl font-bold">Light Installation</h2>
@@ -2024,8 +2023,8 @@
           <!-- Third div: Sentosa Resort -->
           <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
             <a href="painting-services-singapore.html">
-              <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/12.png"
-                alt="Sentosa Resort" width="400" height="300" decoding="async">
+              <picture><source srcset="images/12.webp" type="image/webp"><img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/12.png"
+                alt="Sentosa Resort" width="400" height="300" decoding="async"></picture>
               <div class="project-overlay">
                 <div class="project-title">
                   <h3 class="text-white text-lg sm:text-xl font-bold">Landed Property Painting</h3>
@@ -2038,8 +2037,8 @@
           <!-- Fourth div: Orchard Plaza -->
           <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
             <a href="painting-services-singapore.html">
-              <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/9.jpeg" alt="Orchard Plaza"
-                width="400" height="300" decoding="async">
+              <picture><source srcset="images/9.webp" type="image/webp"><img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/9.jpeg" alt="Orchard Plaza"
+                width="400" height="300" decoding="async"></picture>
               <div class="project-overlay">
                 <div class="project-title">
                   <h3 class="text-white text-lg sm:text-xl font-bold">Wall Painting</h3>
@@ -2052,8 +2051,8 @@
           <!-- Fifth div: Clarke Quay Tower -->
           <div class="w-full h-[250px] sm:h-[300px] rounded-lg shadow-lg project-card overflow-hidden">
             <a href="electrical-works-singapore.html">
-              <img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/10.jpeg"
-                alt="Clarke Quay Tower" width="400" height="300" decoding="async">
+              <picture><source srcset="images/10.webp" type="image/webp"><img loading="lazy" class="w-full h-full rounded-2xl object-cover" src="images/10.jpeg"
+                alt="Clarke Quay Tower" width="400" height="300" decoding="async"></picture>
               <div class="project-overlay">
                 <div class="project-title">
                   <h3 class="text-white text-lg sm:text-xl font-bold">Light Installation</h3>
@@ -2069,8 +2068,8 @@
           <!-- First div: Republic Polytechnic Hotel -->
           <div class="col-span-4 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
             <a href="electrical-works-singapore.html">
-              <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/light-installation.jpg"
-                alt="Republic Polytechnic Hotel" width="400" height="300" decoding="async">
+              <picture><source srcset="images/light-installation.webp" type="image/webp"><img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/light-installation.jpg"
+                alt="Republic Polytechnic Hotel" width="400" height="300" decoding="async"></picture>
               <div class="project-overlay">
                 <div class="project-title">
                   <h3 class="text-white text-2xl font-bold">Light Installation</h3>
@@ -2098,8 +2097,8 @@
           <!-- Third div: Sentosa Resort -->
           <div class="col-span-2 row-span-2 rounded-2xl shadow-lg project-card overflow-hidden">
             <a href="painting-services-singapore.html">
-              <img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort"
-                width="400" height="300" decoding="async">
+              <picture><source srcset="images/12.webp" type="image/webp"><img loading="lazy" class="w-full h-full rounded-lg object-cover" src="images/12.png" alt="Sentosa Resort"
+                width="400" height="300" decoding="async"></picture>
               <div class="project-overlay">
                 <div class="project-title">
                   <h3 class="text-white text-xl font-bold">Wall Painting</h3>
@@ -2456,8 +2455,8 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             <!-- Logo -->
             <div class="lg:col-span-2 md:col-span-1 items-center flex md:items-start justify-center :col-span-1">
-              <img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3"
-                width="300" height="80" loading="lazy" decoding="async">
+              <picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3"
+                width="300" height="80" loading="lazy" decoding="async"></picture>
 
             </div>
 
@@ -3801,14 +3800,10 @@
       })();
     </script>
     <!-- Defer non-critical JavaScript to improve initial page load -->
-    <script src="assets/site.js?v=1.0.0" defer></script>
+    <script src="assets/site.min.js?v=1.0.0" defer></script>
 
     
-    <!-- Vercel Speed Insights -->
-    <script>
-      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
+   
 </body>
 
 </html>

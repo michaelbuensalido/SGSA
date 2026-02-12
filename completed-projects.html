@@ -6,16 +6,15 @@
   <title>Reliable Engineering and Construction - Completed Projects Gallery</title>
   <link  rel="icon" type="image/x-icon" href="images/company-logo.png">
   <meta name="description" content="Explore Reliable Engineering and Construction’s completed projects with interactive before-and-after views showcasing professional workmanship.">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/tailwind.css">
   <!-- Performance: Preconnect to font domains for faster loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"></noscript>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
         
     .heading-font {
         font-family: 'Archivo', serif;
@@ -45,7 +44,7 @@
     }
     .nav-link {
             position: relative;
-            display: inline-block;
+        
         }
         
         .nav-link::after {
@@ -271,7 +270,7 @@ body.menu-open {
            <div class="flex justify-between items-center h-[100px] px-4">
                <div class="flex-shrink-0">
                    <a href="index.html" class="flex items-center">
-                       <img class="w-[160px] h-[130px]" src="images/company-logo.png" alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync">
+                       <picture><source srcset="images/company-logo.webp" type="image/webp"><img class="w-[160px] h-[130px]" src="images/company-logo.png" alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync"></picture>
                    </a>
                </div>
                <div class="hidden md:flex space-x-10 font-archivo items-center">
@@ -367,7 +366,7 @@ body.menu-open {
         <!-- Header with Logo & Close -->
         <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
             <a href="index.html">
-                <img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230" height="70" fetchpriority="high" loading="eager" decoding="sync">
+                <picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230" height="70" fetchpriority="high" loading="eager" decoding="sync"></picture>
             </a>
             <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
                 <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -530,7 +529,7 @@ body.menu-open {
           
 
       <a href="carpentry-works-singapore.html" class="gallery-image-wrapper block">
-        <img src="images/carpentry/kitchen-cabinets.png" alt="Carpentry" class="gallery-image">
+        <picture><source srcset="images/carpentry/kitchen-cabinets.webp" type="image/webp"><img src="images/carpentry/kitchen-cabinets.jpg" alt="Carpentry" class="gallery-image" loading="lazy" width="864" height="1184"></picture>
         <div class="gallery-overlay">
           <div class="gallery-overlay-content">
             <p class="gallery-service-type">Carpentry</p>
@@ -540,7 +539,7 @@ body.menu-open {
       </a>
          
           <a href="electrical-works-singapore.html" class="gallery-image-wrapper block">
-            <img src="images/light-installation.jpg" alt="Before" class="gallery-image">
+            <picture><source srcset="images/light-installation.webp" type="image/webp"><img src="images/light-installation.jpg" alt="Before" class="gallery-image" loading="lazy" width="1024" height="768"></picture>
             <div class="gallery-overlay">
               <div class="gallery-overlay-content">
                 <p class="gallery-service-type">Electrical</p>
@@ -551,7 +550,7 @@ body.menu-open {
           
 
             <a href="carpentry-works-singapore.html" class="gallery-image-wrapper block">
-              <img src="images/carpentry/feature-walls-tv-consoles.png" alt="Carpentry" class="gallery-image">
+              <picture><source srcset="images/carpentry/feature-walls-tv-consoles.webp" type="image/webp"><img src="images/carpentry/feature-walls-tv-consoles.png" alt="Carpentry" class="gallery-image" loading="lazy" width="864" height="1013"></picture>
               <div class="gallery-overlay">
                 <div class="gallery-overlay-content">
                   <p class="gallery-service-type">Carpentry</p>
@@ -564,7 +563,7 @@ body.menu-open {
         <!-- Row 2 -->
         <div class="gallery-row grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           <a href="tile-laying-services-singapore.html" class="gallery-image-wrapper block">
-            <img src="images/tile services/tile-replacement.png" alt="After" class="gallery-image">
+            <picture><source srcset="images/tile services/tile-replacement.webp" type="image/webp"><img src="images/tile services/tile-replacement.png" alt="After" class="gallery-image" loading="lazy" width="797" height="1091"></picture>
             <div class="gallery-overlay">
               <div class="gallery-overlay-content">
                 <p class="gallery-service-type">Tile Laying</p>
@@ -576,7 +575,7 @@ body.menu-open {
          
 
           <a href="tile-laying-services-singapore.html" class="gallery-image-wrapper block">
-            <img src="images/tile services/tile-installation.png" alt="After" class="gallery-image">
+            <picture><source srcset="images/tile services/tile-installation.webp" type="image/webp"><img src="images/tile services/tile-installation.png" alt="After" class="gallery-image" loading="lazy" width="861" height="1097"></picture>
             <div class="gallery-overlay">
               <div class="gallery-overlay-content">
                 <p class="gallery-service-type">Tile Laying</p>
@@ -589,7 +588,7 @@ body.menu-open {
 
 
           <a href="tile-laying-services-singapore.html" class="gallery-image-wrapper block">
-            <img src="images/tile services/grouting-sealing.png" alt="Before" class="gallery-image">
+            <picture><source srcset="images/tile services/grouting-sealing.webp" type="image/webp"><img src="images/tile services/grouting-sealing.png" alt="Before" class="gallery-image" loading="lazy" width="864" height="1097"></picture>
             <div class="gallery-overlay">
               <div class="gallery-overlay-content">
                 <p class="gallery-service-type">Tile Laying</p>
@@ -603,7 +602,7 @@ body.menu-open {
         <div class="gallery-row grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           
           <a href="electrical-works-singapore.html" class="gallery-image-wrapper block">
-            <img src="images/7.jpeg" alt="Before" class="gallery-image">
+            <picture><source srcset="images/7.webp" type="image/webp"><img src="images/7.jpeg" alt="Before" class="gallery-image" loading="lazy" width="1600" height="1200"></picture>
             <div class="gallery-overlay">
               <div class="gallery-overlay-content">
                 <p class="gallery-service-type">Electrical</p>
@@ -614,7 +613,7 @@ body.menu-open {
 
      
           <a href="painting-services-singapore.html" class="gallery-image-wrapper block">
-            <img src="images/12.png" alt="After" class="gallery-image">
+            <picture><source srcset="images/12.webp" type="image/webp"><img src="images/12.png" alt="After" class="gallery-image" loading="lazy" width="2000" height="1545"></picture>
             <div class="gallery-overlay">
               <div class="gallery-overlay-content">
                 <p class="gallery-service-type">Painting</p>
@@ -624,7 +623,7 @@ body.menu-open {
           </a>
           
           <a href="plastering-services-singapore.html" class="gallery-image-wrapper block">
-            <img src="images/8.jpeg" alt="After" class="gallery-image">
+            <picture><source srcset="images/8.webp" type="image/webp"><img src="images/8.jpeg" alt="After" class="gallery-image" loading="lazy" width="720" height="1422"></picture>
             <div class="gallery-overlay">
               <div class="gallery-overlay-content">
                 <p class="gallery-service-type">Plastering</p>
@@ -639,7 +638,7 @@ body.menu-open {
         <div class="gallery-row grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           
           <a href="painting-services-singapore.html" class="gallery-image-wrapper block">
-            <img src="images/9.jpeg" alt="Before" class="gallery-image">
+            <picture><source srcset="images/9.webp" type="image/webp"><img src="images/9.jpeg" alt="Before" class="gallery-image" loading="lazy" width="1600" height="1200"></picture>
             <div class="gallery-overlay">
               <div class="gallery-overlay-content">
                 <p class="gallery-service-type">Painting</p>
@@ -649,7 +648,7 @@ body.menu-open {
           </a>
           
           <a href="carpentry-works-singapore.html" class="gallery-image-wrapper block">
-            <img src="images/carpentry/custom-wardrobes.png" alt="Carpentry" class="gallery-image">
+            <picture><source srcset="images/carpentry/custom-wardrobes.webp" type="image/webp"><img src="images/carpentry/custom-wardrobes.jpg" alt="Carpentry" class="gallery-image" loading="lazy" width="832" height="1248"></picture>
             <div class="gallery-overlay">
               <div class="gallery-overlay-content">
                 <p class="gallery-service-type">Carpentry</p>
@@ -673,7 +672,7 @@ body.menu-open {
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     <!-- Logo -->
                     <div class="lg:col-span-2 md:col-span-1 items-center flex md:items-start justify-center :col-span-1">
-                        <img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3" width="300" height="80" loading="lazy" decoding="async">
+                        <picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png" alt="Reliable Engineering and Construction Logo" class="h-32 mb-3" width="300" height="80" loading="lazy" decoding="async"></picture>
                         
                     </div>
 
@@ -1664,13 +1663,8 @@ body.menu-open {
     }
   </script>
   <!-- Defer non-critical JavaScript to improve initial page load -->
-  <script src="assets/site.js" defer></script>
+  <script src="assets/site.min.js" defer></script>
  
-  <!-- Vercel Speed Insights -->
-  <script>
-    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
 

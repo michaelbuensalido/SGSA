@@ -9,7 +9,7 @@
       name="description"
       content="Keep your spaces cool with reliable servicing, installations, and tidy pipework."
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/tailwind.css">
     <!-- Performance: Preconnect to font domains for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
       }
       .nav-link {
         position: relative;
-        display: inline-block;
+      
       }
       .nav-link::after {
         content: "";
@@ -105,7 +105,7 @@ body.menu-open {
            <div class="flex justify-between items-center h-[100px] px-4">
                <div class="flex-shrink-0">
                    <a href="index.html" class="flex items-center">
-                       <img class="w-[160px] h-[130px]" src="images/company-logo.png" alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync">
+                       <picture><source srcset="images/company-logo.webp" type="image/webp"><img class="w-[160px] h-[130px]" src="images/company-logo.png" alt="Reliable Engineering and Construction logo" width="280" height="80" fetchpriority="high" loading="eager" decoding="sync"></picture>
                    </a>
                </div>
                <div class="hidden md:flex space-x-6 font-archivo items-center">
@@ -201,7 +201,7 @@ body.menu-open {
         <!-- Header with Logo & Close -->
         <div class="flex items-center justify-between h-32 px-4 py-5 border-b border-gray-100 bg-gray-50">
             <a href="index.html">
-                <img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230" height="70" fetchpriority="high" loading="eager" decoding="sync">
+                <picture><source srcset="images/company-logo.webp" type="image/webp"><img src="images/company-logo.png" alt="Reliable Engineering and Construction" class="w-[230px]" width="230" height="70" fetchpriority="high" loading="eager" decoding="sync"></picture>
             </a>
             <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-gray-200 transition">
                 <svg class="w-7 h-7 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -478,7 +478,7 @@ body.menu-open {
             <div
               class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
             >
-              <img src="images/aircon_service/general-servicing.jpg" alt="General air conditioning servicing service" loading="lazy" width="400" height="300">
+              <picture><source srcset="images/aircon_service/general-servicing.webp" type="image/webp"><img src="images/aircon_service/general-servicing.jpg" alt="General air conditioning servicing service" loading="lazy" width="400" height="300"></picture>
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="text-xl font-bold text-slate-900 mb-4">
@@ -607,7 +607,7 @@ body.menu-open {
             <div
               class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
             >
-              <img src="images/aircon_service/chemical-wash.jpg" alt="Air conditioning chemical wash service" loading="lazy" width="400" height="300">
+              <picture><source srcset="images/aircon_service/chemical-wash.webp" type="image/webp"><img src="images/aircon_service/chemical-wash.jpg" alt="Air conditioning chemical wash service" loading="lazy" width="400" height="300"></picture>
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="text-xl font-bold text-slate-900 mb-4">
@@ -734,7 +734,7 @@ body.menu-open {
             <div
               class="w-full h-52 overflow-hidden bg-slate-100 flex items-center justify-center"
             >
-              <img src="images/aircon_service/new-installation.jpg" alt="New air conditioning system installation service" loading="lazy" width="400" height="300">
+              <picture><source srcset="images/aircon_service/new-installation.webp" type="image/webp"><img src="images/aircon_service/new-installation.jpg" alt="New air conditioning system installation service" loading="lazy" width="400" height="300"></picture>
             </div>
             <div class="p-6 flex flex-col flex-grow">
               <h3 class="text-xl font-bold text-slate-900 mb-4">
@@ -2023,11 +2023,6 @@ body.menu-open {
     })();
     </script>
     <!-- Defer non-critical JavaScript to improve initial page load -->
-    <script src="assets/site.js" defer></script>
-    <!-- Vercel Speed Insights -->
-  <script>
-    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/speed-insights/script.js"></script>
+    <script src="assets/site.min.js" defer></script>
 </body>
 </html>
